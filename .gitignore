@@ -1,0 +1,12 @@
+# Build artifacts
+node_modules/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+
+# Parser script (development tool)
+parse-content-library.js

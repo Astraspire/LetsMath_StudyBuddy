@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precalc Review Master</title>
+    <title>Let's Math!</title>
     <style>
         :root {
             --color-white: rgba(255, 255, 255, 1);
@@ -111,56 +111,41 @@
             margin-bottom: var(--space-24);
         }
 
-        .nav-tabs {
-            display: flex;
-            gap: var(--space-12);
+        .app-icon {
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: var(--space-32);
-            animation: fadeIn 0.6s ease-out 0.2s both;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: transparent;
+            font-size: 22px;
+            margin-right: 8px;
+            vertical-align: middle;
         }
 
-        .tab-btn {
-            padding: var(--space-12) var(--space-24);
-            border: 2px solid var(--color-dark-border);
-            background: var(--color-dark-surface);
-            color: var(--color-text);
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            transition: all var(--duration-normal) ease;
-            position: relative;
+        #home-hero {
+            text-align: center;
+            margin-bottom: var(--space-24);
+            transition: opacity 300ms ease-out;
+            opacity: 1;
+        }
+
+        #home-hero.is-hidden {
+            opacity: 0;
+            pointer-events: none;
+            height: 0;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            margin: 0;
+            transition: opacity 300ms ease-out, height 0s 300ms, margin 0s 300ms;
         }
 
-        .tab-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .tab-btn:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .tab-btn.active {
-            background: var(--color-primary);
-            color: var(--color-white);
-            border-color: var(--color-primary);
-            box-shadow: 0 0 20px rgba(45, 212, 191, 0.5), 0 0 40px rgba(45, 212, 191, 0.2);
-        }
-
-        .tab-btn.active::before {
-            left: 100%;
+        #home-hero img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: var(--radius-lg);
+            object-fit: cover;
         }
 
         .content-section {
@@ -722,45 +707,7 @@
             margin-top: var(--space-16);
         }
 
-        .animation-visual {
-            width: 100%;
-            height: 200px;
-            background: rgba(45, 212, 191, 0.05);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-dark-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: var(--space-16) 0;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .wave {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .dot {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: var(--color-primary);
-            border-radius: 50%;
-            animation: bounce 1.5s ease-in-out infinite;
-        }
-
-        .dot:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .dot:nth-child(2) { left: 30%; animation-delay: 0.2s; }
-        .dot:nth-child(3) { left: 50%; animation-delay: 0.4s; }
-        .dot:nth-child(4) { left: 70%; animation-delay: 0.6s; }
-        .dot:nth-child(5) { left: 90%; animation-delay: 0.8s; }
-
-        @keyframes bounce {
-            0%, 100% { top: 50%; opacity: 1; }
-            50% { top: 20%; opacity: 0.7; }
-        }
 
         @keyframes slideDown {
             from {
@@ -972,8 +919,7 @@
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .review-grid { grid-template-columns: 1fr; }
-            .nav-tabs { gap: var(--space-8); }
-            .tab-btn { padding: var(--space-10) var(--space-16); font-size: 0.9rem; }
+
             .results-detail { grid-template-columns: 1fr; }
         }
     </style>
@@ -1074,17 +1020,14 @@
     </nav>
 
     <div class="container">
-        <header>
-            <h1>📚 Precalc Review Master</h1>
-            <p class="subtitle">Master precalculus concepts with interactive review, flashcards, and quizzes</p>
-        </header>
-
-        <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('review')">📖 Review</button>
-            <button class="tab-btn" onclick="switchTab('unit-circle')">🔄 Unit Circle</button>
-            <button class="tab-btn" onclick="switchTab('flashcards')">🎴 Flashcards</button>
-            <button class="tab-btn" onclick="switchTab('quiz')">❓ Quiz Mode</button>
+        <div id="home-hero">
+            <img src="assets/brainCalc.jpg" alt="Brain and calculator illustration" loading="lazy" />
         </div>
+
+        <header>
+            <h1><span class="app-icon">🧮</span> Let's Math!</h1>
+            <p class="subtitle">Master precalculus &amp; calculus with interactive review, flashcards, and quizzes</p>
+        </header>
 
         <!-- REVIEW TAB -->
         <div id="review" class="content-section active">
@@ -2547,19 +2490,7 @@
 
             </div>
 
-            <div style="text-align: center; margin-top: var(--space-40);">
-                <h2 style="margin-bottom: var(--space-24);">Visual Learning: Sine Wave Animation</h2>
-                <div class="animation-visual">
-                    <div class="wave">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                </div>
-                <p style="color: var(--color-text-secondary); margin-top: var(--space-12);">See how amplitude and period work in oscillatory motion</p>
-            </div>
+
         </div>
 
         <!-- UNIT CIRCLE TAB -->
@@ -2881,6 +2812,61 @@
     </div>
 
     <script>
+        // ===== APP CONFIG =====
+        const APP_NAME = "Let's Math!";
+
+        // ===== CONTENT INDEX =====
+        // Load from Organized-Content-Library.md via contentIndex.json
+        let contentIndex = null;
+        let FLASHCARDS = [];
+        
+        // Load contentIndex.json
+        async function loadContentIndex() {
+            try {
+                const response = await fetch('contentIndex.json');
+                contentIndex = await response.json();
+                
+                // Convert flashcard items to individual cards
+                const flashcardItems = contentIndex.items.filter(item => item.type === 'flashcard');
+                FLASHCARDS = [];
+                
+                flashcardItems.forEach(item => {
+                    if (item.qa && item.qa.length > 0) {
+                        item.qa.forEach((qa, idx) => {
+                            FLASHCARDS.push({
+                                id: `${item.id}-${idx + 1}`,
+                                sourceId: item.id,
+                                course: item.course,
+                                area: item.area,
+                                type: item.type,
+                                subtopic: item.subtopic,
+                                tier: item.tier,
+                                yugioh: item.yugioh,
+                                q: qa.q,
+                                a: qa.a
+                            });
+                        });
+                    }
+                });
+                
+                console.log(`Loaded ${FLASHCARDS.length} flashcards from ${flashcardItems.length} flashcard items`);
+                
+                // Initialize flashcard deck after loading
+                cardDeck = [...FLASHCARDS];
+                if (cardDeck.length > 0) {
+                    updateFlashcard();
+                }
+            } catch (error) {
+                console.error('Failed to load contentIndex.json:', error);
+                // Fall back to legacy flashcards
+                FLASHCARDS = LEGACY_FLASHCARDS;
+                cardDeck = [...FLASHCARDS];
+                if (cardDeck.length > 0) {
+                    updateFlashcard();
+                }
+            }
+        }
+
         // ===== TOPICS REGISTRY (Expansion Plan) =====
         const TOPICS = [
           // --- Precalculus (A1-A13) ---
@@ -2914,8 +2900,8 @@
           { id: 'trig_polar_conics',               label: 'Conic Sections in Polar Form',           tier: 3, section: 'Trigonometry' },
         ];
 
-        // ===== FLASHCARDS DATA (consolidated from flashcards-data.js) =====
-        const FLASHCARDS = [
+        // ===== LEGACY FLASHCARDS DATA (fallback) =====
+        const LEGACY_FLASHCARDS = [
 
     // ==================== FUNCTIONS (4 cards) ====================
     { topic: 'functions', q: 'What does f(a + h) mean?', a: 'Replace every <em>x</em> in the function rule with <strong>(a + h)</strong>, keeping the parentheses. For example, if f(x) = x<sup>2</sup>, then f(a + h) = (a + h)<sup>2</sup> = a<sup>2</sup> + 2ah + h<sup>2</sup>.' },
@@ -3179,11 +3165,9 @@
 
         ];
 
-        const flashcards = FLASHCARDS;
-
         let currentCardIndex = 0;
         let isFlipped = false;
-        let cardDeck = [...flashcards];
+        let cardDeck = [];  // Will be initialized after loading contentIndex
         let currentFlashcardTopicId = '';
         let currentTopicId = null; // Cross-tab sync: last selected topic
 
@@ -3192,14 +3176,19 @@
         const LEGACY_CALCULUS_TOPICS = ['calc-limits','calc-derivatives','calc-integrals','calc-applications'];
 
         function getFilteredFlashcards() {
-            if (!currentFlashcardTopicId) return [...flashcards];
+            if (!currentFlashcardTopicId) return [...FLASHCARDS];
             if (currentFlashcardTopicId === '_legacy_precalc') {
-                return flashcards.filter(c => c.topic && LEGACY_PRECALC_TOPICS.includes(c.topic));
+                return FLASHCARDS.filter(c => c.topic && LEGACY_PRECALC_TOPICS.includes(c.topic));
             }
             if (currentFlashcardTopicId === '_legacy_calculus') {
-                return flashcards.filter(c => c.topic && LEGACY_CALCULUS_TOPICS.includes(c.topic));
+                return FLASHCARDS.filter(c => c.topic && LEGACY_CALCULUS_TOPICS.includes(c.topic));
             }
-            return flashcards.filter(c => c.topicId === currentFlashcardTopicId);
+            // Filter by area (algebra, trig, calculus, precalc-general)
+            if (['algebra', 'trig', 'calculus', 'precalc-general'].includes(currentFlashcardTopicId)) {
+                return FLASHCARDS.filter(c => c.area === currentFlashcardTopicId);
+            }
+            // Filter by subtopic
+            return FLASHCARDS.filter(c => c.subtopic === currentFlashcardTopicId);
         }
 
         function filterFlashcards(topicId) {
@@ -3397,13 +3386,24 @@
             document.getElementById('reviewTopicSelect').selectedIndex = 0;
         }
 
+        // ===== HERO IMAGE FADE =====
+        function updateHero(activeTab) {
+            var hero = document.getElementById('home-hero');
+            if (!hero) return;
+            if (activeTab === 'review') {
+                hero.classList.remove('is-hidden');
+            } else {
+                hero.classList.add('is-hidden');
+            }
+        }
+
         // ===== TAB SWITCHING =====
         function switchTab(tab) {
             document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            
             document.getElementById(tab).classList.add('active');
-            event.target.classList.add('active');
+
+            // Fade hero image in/out
+            updateHero(tab);
 
             // Cross-tab sync: when switching to flashcards or quiz, default to currentTopicId
             if (tab === 'flashcards' && currentTopicId) {
@@ -3476,6 +3476,15 @@
             cardEl.classList.remove('flipped');
             document.getElementById('questionText').style.display = 'block';
             document.getElementById('answerText').style.display = 'none';
+            
+            // Add data attributes for tag-based filtering
+            if (card.id) cardEl.setAttribute('data-id', card.id);
+            if (card.course) cardEl.setAttribute('data-course', card.course);
+            if (card.area) cardEl.setAttribute('data-area', card.area);
+            if (card.type) cardEl.setAttribute('data-type', card.type);
+            if (card.subtopic) cardEl.setAttribute('data-subtopic', card.subtopic);
+            if (card.tier) cardEl.setAttribute('data-tier', card.tier);
+            if (card.yugioh) cardEl.setAttribute('data-yugioh', card.yugioh);
         }
 
         // ===== QUIZ FUNCTIONS =====
@@ -3788,15 +3797,8 @@
                 if (href.startsWith('#tab-')) {
                     var tabName = href.substring(5); // remove '#tab-'
                     document.querySelectorAll('.content-section').forEach(function(s) { s.classList.remove('active'); });
-                    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
                     document.getElementById(tabName).classList.add('active');
-                    // Find matching tab button
-                    document.querySelectorAll('.tab-btn').forEach(function(btn) {
-                        if (btn.textContent.toLowerCase().indexOf(tabName.replace('-', ' ').replace('unit circle', 'unit')) > -1 ||
-                            btn.getAttribute('onclick').indexOf("'" + tabName + "'") > -1) {
-                            btn.classList.add('active');
-                        }
-                    });
+                    updateHero(tabName);
                     if (tabName === 'quiz') {
                         if (quizState.current === 0 && quizState.answers.length === 0) {
                             initQuiz();
@@ -3814,9 +3816,8 @@
                 var reviewSection = document.getElementById('review');
                 if (!reviewSection.classList.contains('active')) {
                     document.querySelectorAll('.content-section').forEach(function(s) { s.classList.remove('active'); });
-                    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
                     reviewSection.classList.add('active');
-                    document.querySelector('.tab-btn').classList.add('active');
+                    updateHero('review');
                 }
 
                 // Exit any existing focus mode first
@@ -3834,6 +3835,9 @@
                 }, 300);
             });
         });
+        
+        // Initialize content index on page load
+        loadContentIndex();
     </script>
 
 <!--
@@ -3889,6 +3893,28 @@ LOG:
               Added currentTopicId cross-tab sync variable.
               Updated switchTab() to auto-set flashcard/quiz filter when user navigates from Review.
               All 7 parts of the expansion plan are now complete.
+  2026-02-16: UpdatePlan Step 0 — Global Renaming & Branding.
+              0.1: Renamed app from "Precalc Review Master" to "Let's Math!" in <title>, <h1>, and subtitle.
+                   Added APP_NAME constant at top of <script> block for centralized reference.
+              0.2: Added calculator emoji (🧮) in a rounded .app-icon container in the <h1>.
+                   Added .app-icon CSS class: 36px circle, white background, subtle border/shadow.
+  2026-02-16: UpdatePlan Step 1 — Layout Changes: Header, Tabs, and Hero Image.
+              1.1: Removed .nav-tabs container and all four <button class="tab-btn"> elements from HTML.
+                   Removed .nav-tabs, .tab-btn, .tab-btn::before, .tab-btn:hover, .tab-btn.active,
+                   .tab-btn.active::before CSS rules and their responsive media-query overrides.
+                   Refactored switchTab() to remove event.target and .tab-btn references.
+                   Updated sidebar link handler to remove .tab-btn references (sidebar is now sole nav).
+              1.2: Inserted #home-hero with brainCalc.jpg above the <header> inside .container.
+                   Added #home-hero CSS with fade transition (opacity 300ms) and collapse on hide
+                   (height:0, overflow:hidden after fade via delayed transitions).
+                   Added #home-hero img responsive styling (max-height 300px, border-radius, object-fit).
+                   Added updateHero(activeTab) helper function; called from switchTab() and sidebar handler.
+                   Hero visible on review (homepage) tab, fades out on unit-circle/flashcards/quiz tabs.
+  2026-02-16: UI Polish — .app-icon: removed white background, set transparent bg with subtle
+              white-border outline only so emoji is fully visible on dark theme.
+              Removed sine wave animation: deleted .animation-visual, .wave, .dot CSS and
+              @keyframes bounce; removed the "Visual Learning: Sine Wave Animation" HTML block
+              from the Review tab.
 ==========================================================
 -->
 
