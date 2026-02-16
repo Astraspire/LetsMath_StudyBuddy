@@ -1,0 +1,383 @@
+# Study App – Implementation Steps Using Expansion Plan Files
+
+You have:
+
+- `Study-Buddy_App.html` (single‑file app).
+- `Study_App_Expansion_Plan.md` – full topic list: key points, formulas, flashcards, quizzes, Yu‑Gi‑Oh! notes.
+- `Study_App_Expansion_Plan_partial-additional.md` – overlapping subset/backup slice of the main plan.
+- `Website-Content-Inventory.md`.
+
+Rule: Do not invent new content. Use the two plan markdown files as the canonical source for all new explanations, flashcards, and quiz questions.
+
+---
+
+## 1. Prepare and Align Topic IDs
+
+1. Open `Study_App_Expansion_Plan.md` and identify all topic headings:
+   - A1–A13 (Precalculus gaps).
+   - B1–B14 (Trigonometry gaps).
+
+2. For each topic, define a `topicId` string in a small mapping (can be in comments or a separate note), for example:
+
+   - A1. Domain and Range → `precalc_domain_range`
+   - A2. Rates of Change and Behavior of Graphs → `precalc_rates_of_change`
+   - A3. Composition of Functions → `precalc_composition`
+   - A4. Linear Functions (Detailed Treatment) → `precalc_linear_functions`
+   - A5. Power Functions and Polynomial Functions (Deep Dive) → `precalc_polynomials_deep`
+   - A6. Quadratic Functions (Expanded) → `precalc_quadratics_expanded`
+   - A7. Factor Theorem, Remainder Theorem, and Synthetic Division → `precalc_factor_remainder`
+   - A8. Real Zeros of Polynomials → `precalc_real_zeros`
+   - A9. Complex Zeros → `precalc_complex_zeros`
+   - A10. Rational Functions (Deep Dive) → `precalc_rational_functions_deep`
+   - A11. Inverses and Radical Functions → `precalc_inverses_radicals`
+   - A12. Exponential Functions (Expanded) → `precalc_exponential_models`
+   - A13. Logarithmic Functions (Expanded) → `precalc_logarithmic_models`
+
+   - B1. Angles and Their Measure (Expanded) → `trig_angles_measure`
+   - B2. The Six Circular Functions and Fundamental Identities → `trig_six_functions`
+   - B3. Trigonometric Identities (Proving and Verifying) → `trig_identities_proofs`
+   - B4. Graphs of Trigonometric Functions (Expanded) → `trig_graphs_all_functions`
+   - B5. Inverse Trigonometric Functions → `trig_inverse_functions`
+   - B6. Trigonometric Equations and Inequalities → `trig_equations`
+   - B7. Law of Sines → `trig_law_of_sines`
+   - B8. Law of Cosines → `trig_law_of_cosines`
+   - B9. Polar Coordinates → `trig_polar_coordinates`
+   - B10. Vectors → `trig_vectors`
+   - B11. Parametric Equations → `trig_parametric_equations`
+   - B12. Polar Form of Complex Numbers → `trig_polar_complex`
+   - B13. Applications of Sinusoids / Harmonic Motion → `trig_harmonic_motion`
+   - B14. Conic Sections in Polar Form / Rotation of Axes → `trig_polar_conics`
+
+3. Inside `Study-Buddy_App.html`, add a script block with a topics registry:
+
+```js
+const TOPICS = [
+  { id: 'precalc_domain_range', label: 'Domain & Range', tier: 1, section: 'Precalculus' },
+  { id: 'precalc_composition', label: 'Function Composition', tier: 1, section: 'Precalculus' },
+  // ... all A1–A13, B1–B14
+];
+```
+
+---
+
+## 2. Implement Topic Sections from the Plan Files
+
+### 2.1 General Pattern for Each Topic
+
+For every topic A1–A13, B1–B14 in `Study_App_Expansion_Plan.md`:
+
+1. In the markdown, locate the block for that topic, which has:
+   - `Status`
+   - `Key Points`
+   - `Formulas` (if present)
+   - `Flashcards`
+   - `Quiz`
+   - Optional `Yu-Gi-Oh! Crossover`
+
+2. In the Review tab area inside `Study-Buddy_App.html`, create a section:
+
+```html
+<section id="precalc_domain_range" class="topic-section">
+  <h2>A1. Domain and Range</h2>
+
+  <h3>Status</h3>
+  <p>Shortened version of the “Status” line from the plan.</p>
+
+  <h3>Key Ideas</h3>
+  <ul>
+    <li>Convert each “Key Points” bullet into its own list item.</li>
+  </ul>
+
+  <h3>Formulas</h3>
+  <ul>
+    <li>Convert each “Formulas” bullet into its own list item.</li>
+  </ul>
+
+  <h3>Examples</h3>
+  <p>Optionally turn one or two flashcard/quiz ideas into worked examples here.</p>
+
+  <h3>Yu-Gi-Oh! Connection</h3>
+  <details>
+    <summary>Show Yu-Gi-Oh! Analogy</summary>
+    <p>Copy the “Yu-Gi-Oh! Crossover” text from the plan and adjust formatting.</p>
+  </details>
+</section>
+```
+
+3. Repeat this pattern for each topic, changing the `id`, heading text, and body content to match the corresponding topic in the plan.
+
+### 2.2 Handling the Two Plan Files
+
+- Use `Study_App_Expansion_Plan.md` as the **primary source** for content.
+- Use `Study_App_Expansion_Plan_partial-additional.md` only if:
+  - A topic’s text in the main plan looks truncated or incomplete.
+  - You need to cross-check details for a topic that appears in both files.
+- When there is overlap, prefer the more complete, detailed text.
+
+---
+
+## 3. Implement Flashcards from the Plan Files
+
+### 3.1 Normalize Flashcard Data Structure in HTML
+
+1. In `Study-Buddy_App.html`, locate the JavaScript structure that holds flashcards. Standardize it to something like:
+
+```js
+const FLASHCARDS = [
+  // existing cards
+];
+```
+
+2. Ensure each card object has at least:
+   - `id` (string)
+   - `topicId` (matches a `TOPICS` entry)
+   - `question` (string)
+   - `answer` (string)
+
+Example schema:
+
+```js
+{
+  id: 'fc_precalc_domain_range_1',
+  topicId: 'precalc_domain_range',
+  question: 'What three things restrict a function’s domain?',
+  answer: '1) Denominator = 0, 2) Even root of a negative, 3) Log of zero or negative.'
+}
+```
+
+### 3.2 Populate Flashcards from “Flashcards” Sections
+
+For each topic:
+
+1. In `Study_App_Expansion_Plan.md`, under that topic’s “Flashcards” subsection, identify Q/A pairs. They appear as:
+
+   - `- Q: ...`
+   - `A: ...`
+
+2. For each Q/A:
+
+   - Create a card entry in `FLASHCARDS`.
+   - Use this pattern for IDs: `fc_<topicId>_<number>`.
+   - Use the full question text after `Q:` as `question`.
+   - Use the full answer text after `A:` as `answer`.
+
+3. Append these new entries into the `FLASHCARDS` array in the script block.
+
+4. Assign existing flashcards to appropriate `topicId`s where possible, using `Website-Content-Inventory.md` and the current HTML content to match them.
+
+5. Repeat for all topics A1–A13 and B1–B14.
+
+### 3.3 (Optional) Flashcard Topic Filter
+
+1. Add a topic selector to the Flashcards tab, for example:
+
+```html
+<select id="flashcardTopicSelect" onchange="setFlashcardTopic(this.value)">
+  <!-- options generated from TOPICS -->
+</select>
+```
+
+2. Implement filtering logic:
+
+```js
+let currentFlashcardTopicId = null;
+
+function setFlashcardTopic(topicId) {
+  currentFlashcardTopicId = topicId;
+  // re-load or reset the flashcard sequence here
+}
+
+function getFlashcardsForTopic(topicId) {
+  return FLASHCARDS.filter(fc => !topicId || fc.topicId === topicId);
+}
+```
+
+---
+
+## 4. Implement Quiz Questions from the Plan Files
+
+### 4.1 Normalize Quiz Data Structure in HTML
+
+1. In `Study-Buddy_App.html`, locate the quiz question data. Standardize it to:
+
+```js
+const QUIZ_QUESTIONS = [
+  // existing questions
+];
+```
+
+2. Ensure each question object has at least:
+   - `id` (string)
+   - `topicId`
+   - `question` (string)
+   - `options` (array of strings)
+   - `correctIndex` (integer index into `options`)
+
+Example:
+
+```js
+{
+  id: 'qq_precalc_domain_range_1',
+  topicId: 'precalc_domain_range',
+  question: 'What is the domain of f(x) = √(x - 2)?',
+  options: ['[2, ∞)', '(2, ∞)', '(-∞, 2]', 'All reals'],
+  correctIndex: 0
+}
+```
+
+### 4.2 Populate Quiz Questions from “Quiz” Sections
+
+For each topic:
+
+1. In `Study_App_Expansion_Plan.md`, under that topic’s “Quiz” subsection, identify each question, which appears as:
+
+   - `- Q: ...`
+   - `Options: A) ..., B) ..., C) ..., D) ...`
+   - `Answer: X) ...`
+
+2. For each question:
+
+   - Extract the text after `Q:` as `question`.
+   - Extract each option in alphabetical order as an element in `options`.
+   - Map the correct letter from `Answer:` to an index:
+     - A → 0, B → 1, C → 2, D → 3.
+   - Create an object with `id`, `topicId`, `question`, `options`, `correctIndex`.
+
+3. Append each question object to `QUIZ_QUESTIONS` in the script block.
+
+4. Assign `topicId`s to any existing quiz questions where possible, based on their content.
+
+### 4.3 (Optional) Quiz Topic Filter
+
+1. Add a topic selector in the Quiz tab, similar to the Flashcards tab:
+
+```html
+<select id="quizTopicSelect" onchange="setQuizTopic(this.value)">
+  <!-- options generated from TOPICS -->
+</select>
+```
+
+2. Implement filtering logic:
+
+```js
+let currentQuizTopicId = null;
+
+function setQuizTopic(topicId) {
+  currentQuizTopicId = topicId;
+  // re-load quiz questions based on this topic
+}
+
+function getQuestionsForTopic(topicId) {
+  return QUIZ_QUESTIONS.filter(q => !topicId || q.topicId === topicId);
+}
+```
+
+---
+
+## 5. Use the Plan’s Priority Tiers for Implementation Order
+
+At the end of `Study_App_Expansion_Plan.md` there is a Priority Tiers table and content counts.
+
+Implement topics in this order:
+
+### 5.1 Tier 1 (Essential) – Implement First
+
+- Precalculus:
+  - A1 `precalc_domain_range`
+  - A3 `precalc_composition`
+  - A5 `precalc_polynomials_deep`
+  - A6 `precalc_quadratics_expanded`
+  - A7 `precalc_factor_remainder`
+- Trigonometry:
+  - B2 `trig_six_functions`
+  - B3 `trig_identities_proofs`
+  - B5 `trig_inverse_functions`
+  - B6 `trig_equations`
+
+For each of these topics:
+
+1. Add the Review section `<section>` with content from `Status`, `Key Points`, `Formulas`, and `Yu-Gi-Oh! Crossover`.
+2. Add all flashcards for that topic from `Flashcards`.
+3. Add all quiz questions for that topic from `Quiz`.
+4. Insert an HTML comment indicating status, for example:
+
+```html
+<!-- IMPLEMENTATION STATUS: precalc_domain_range – review=done, flashcards=done, quiz=done -->
+```
+
+### 5.2 Tier 2 (Important) – Implement Next
+
+- Precalculus:
+  - A2, A8, A9, A10, A12, A13
+- Trigonometry:
+  - B1, B4, B7, B8
+
+Apply the same pattern: Review section, flashcards, quizzes, status comment.
+
+### 5.3 Tier 3 (Advanced) – After Core is Stable
+
+- Precalculus:
+  - A11
+- Trigonometry:
+  - B9, B10, B11, B12, B13, B14
+
+Apply the same pattern here, possibly with shorter example sets at first.
+
+---
+
+## 6. Basic Navigation and Sync Across Tabs
+
+### 6.1 Topic Navigation in Review Tab
+
+1. Add a topic selector built from `TOPICS`:
+
+```html
+<select id="reviewTopicSelect" onchange="goToTopic(this.value)">
+  <!-- populate options via inline script if desired -->
+</select>
+```
+
+2. Implement scrolling:
+
+```js
+function goToTopic(topicId) {
+  const el = document.getElementById(topicId);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+```
+
+### 6.2 Sync Selected Topic with Flashcards and Quiz (Optional)
+
+1. Maintain a `currentTopicId` variable:
+
+```js
+let currentTopicId = null;
+```
+
+2. When the user chooses a topic in the Review tab, set `currentTopicId`.
+
+3. In Flashcards and Quiz tabs, default to `currentTopicId` as the filter when they open those tabs.
+
+---
+
+## 7. Maintenance and Progress Logging Inside the HTML
+
+1. At the bottom of `Study-Buddy_App.html`, add a multi-line comment with a simple log:
+
+```html
+<!--
+IMPLEMENTATION LOG
+2026-02-16: Added TOPICS registry and structure.
+2026-02-17: Implemented precalc_domain_range (review, flashcards, quiz).
+2026-02-18: Implemented trig_six_functions (review, flashcards, quiz).
+...
+-->
+```
+
+2. Each time you complete a topic (Review + Flashcards + Quiz), add a new entry to this log.
+
+3. Keep the mapping from A1–A13 / B1–B14 to `topicId`s documented either above the log or in a separate comment block for quick reference.
+
+---

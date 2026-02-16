@@ -210,6 +210,14 @@
         .concept-card.card-trig     { border-left-color: var(--color-purple-500); }
         .concept-card.card-misc     { border-left-color: var(--color-orange-500); }
         .concept-card.card-calc     { border-left-color: var(--color-green-500); }
+        .concept-card.card-precalc-exp { border-left-color: #f59e0b; }  /* amber / gold */
+        .concept-card.card-trig-exp    { border-left-color: #e879a0; }  /* rose / pink */
+
+        /* Tier badges */
+        .tier-badge { display: inline-block; font-size: 0.65rem; padding: 2px 7px; border-radius: 6px; vertical-align: middle; margin-left: 8px; font-weight: 600; letter-spacing: 0.03em; }
+        .tier-badge.tier-1 { background: rgba(234, 179, 8, 0.18); color: #eab308; }
+        .tier-badge.tier-2 { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+        .tier-badge.tier-3 { background: rgba(168, 85, 247, 0.15); color: #a78bfa; }
 
         .concept-card:hover {
             transform: translateY(-8px);
@@ -220,6 +228,8 @@
         .concept-card.card-trig:hover    { box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3), 0 0 15px rgba(168, 85, 247, 0.15); }
         .concept-card.card-misc:hover    { box-shadow: 0 8px 30px rgba(168, 75, 47, 0.3), 0 0 15px rgba(168, 75, 47, 0.15); }
         .concept-card.card-calc:hover    { box-shadow: 0 8px 30px rgba(34, 197, 94, 0.3), 0 0 15px rgba(34, 197, 94, 0.15); }
+        .concept-card.card-precalc-exp:hover { box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3), 0 0 15px rgba(245, 158, 11, 0.15); }
+        .concept-card.card-trig-exp:hover    { box-shadow: 0 8px 30px rgba(232, 121, 160, 0.3), 0 0 15px rgba(232, 121, 160, 0.15); }
 
         .concept-card:not(.expanded) > *:not(h3) {
             display: none;
@@ -1024,6 +1034,41 @@
                 <li><a href="#topic-second-deriv-test" class="sidebar-link">Second Derivative Test</a></li>
                 <li><a href="#topic-graphing-derivatives" class="sidebar-link">Graphing with Derivatives</a></li>
                 <li><a href="#topic-integration-formulas" class="sidebar-link">Integration Formulas</a></li>
+            </ul>
+
+            <li class="sidebar-section-label sidebar-collapsible" onclick="toggleSidebarSection(this)">Precalculus (Expanded)</li>
+            <ul class="sidebar-group">
+                <li><a href="#topic-precalc_domain_range" class="sidebar-link">A1. Domain &amp; Range</a></li>
+                <li><a href="#topic-precalc_composition" class="sidebar-link">A3. Function Composition</a></li>
+                <li><a href="#topic-precalc_polynomials_deep" class="sidebar-link">A5. Polynomials (Deep)</a></li>
+                <li><a href="#topic-precalc_quadratics_expanded" class="sidebar-link">A6. Quadratics (Expanded)</a></li>
+                <li><a href="#topic-precalc_factor_remainder" class="sidebar-link">A7. Factor &amp; Remainder</a></li>
+                <li><a href="#topic-precalc_rates_of_change" class="sidebar-link">A2. Rates of Change</a></li>
+                <li><a href="#topic-precalc_linear_functions" class="sidebar-link">A4. Linear Functions</a></li>
+                <li><a href="#topic-precalc_real_zeros" class="sidebar-link">A8. Real Zeros</a></li>
+                <li><a href="#topic-precalc_complex_zeros" class="sidebar-link">A9. Complex Zeros</a></li>
+                <li><a href="#topic-precalc_rational_functions_deep" class="sidebar-link">A10. Rational Functions (Deep)</a></li>
+                <li><a href="#topic-precalc_exponential_models" class="sidebar-link">A12. Exponential (Expanded)</a></li>
+                <li><a href="#topic-precalc_logarithmic_models" class="sidebar-link">A13. Logarithmic (Expanded)</a></li>
+                <li><a href="#topic-precalc_inverses_radicals" class="sidebar-link">A11. Inverses &amp; Radicals</a></li>
+            </ul>
+
+            <li class="sidebar-section-label sidebar-collapsible" onclick="toggleSidebarSection(this)">Trigonometry (Expanded)</li>
+            <ul class="sidebar-group">
+                <li><a href="#topic-trig_six_functions" class="sidebar-link">B2. Six Trig Functions</a></li>
+                <li><a href="#topic-trig_identities_proofs" class="sidebar-link">B3. Trig Identities (Proofs)</a></li>
+                <li><a href="#topic-trig_inverse_functions" class="sidebar-link">B5. Inverse Trig Functions</a></li>
+                <li><a href="#topic-trig_equations" class="sidebar-link">B6. Trig Equations</a></li>
+                <li><a href="#topic-trig_angles_measure" class="sidebar-link">B1. Angles &amp; Measure</a></li>
+                <li><a href="#topic-trig_graphs_all_functions" class="sidebar-link">B4. Trig Graphs (All)</a></li>
+                <li><a href="#topic-trig_law_of_sines" class="sidebar-link">B7. Law of Sines</a></li>
+                <li><a href="#topic-trig_law_of_cosines" class="sidebar-link">B8. Law of Cosines</a></li>
+                <li><a href="#topic-trig_polar_coordinates" class="sidebar-link">B9. Polar Coordinates</a></li>
+                <li><a href="#topic-trig_vectors" class="sidebar-link">B10. Vectors</a></li>
+                <li><a href="#topic-trig_parametric_equations" class="sidebar-link">B11. Parametric Equations</a></li>
+                <li><a href="#topic-trig_polar_complex" class="sidebar-link">B12. Polar Complex Numbers</a></li>
+                <li><a href="#topic-trig_harmonic_motion" class="sidebar-link">B13. Harmonic Motion</a></li>
+                <li><a href="#topic-trig_polar_conics" class="sidebar-link">B14. Polar Conics</a></li>
             </ul>
         </ul>
     </nav>
@@ -1889,6 +1934,539 @@
                         </table>
                     </div>
                 </div>
+
+                <!-- ============================================================= -->
+                <!-- ===== PRECALCULUS EXPANSION TOPICS (A1-A13) ================= -->
+                <!-- ============================================================= -->
+
+                <!-- IMPLEMENTATION STATUS: precalc_domain_range – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_domain_range">
+                    <h3>📘 A1. Domain and Range <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>Detailed treatment — interval notation, set-builder notation, toolkit function domains, piecewise functions.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Domain = set of all valid inputs; Range = set of all valid outputs.</li>
+                        <li>Three main domain restrictions: division by zero, even roots of negatives, log of non-positives.</li>
+                        <li>Interval notation: (a, b) open, [a, b] closed, use ∪ for union.</li>
+                        <li>Set-builder notation: {x | condition}.</li>
+                        <li>Toolkit function domains/ranges (constant, identity, quadratic, cubic, reciprocal, square root, cube root, absolute value).</li>
+                        <li>Piecewise functions: formula changes based on which sub-domain the input lies in.</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        Reciprocal: f(x) = 1/x → Domain: (−∞, 0) ∪ (0, ∞), Range: (−∞, 0) ∪ (0, ∞)<br>
+                        Square root: f(x) = √x → Domain: [0, ∞), Range: [0, ∞)<br>
+                        Reciprocal squared: f(x) = 1/x² → Domain: (−∞, 0) ∪ (0, ∞), Range: (0, ∞)
+                    </div>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">In Yu-Gi-Oh!, many cards have activation conditions — "You can only activate this card when your opponent controls a monster" is a <em>domain restriction</em>. The card's "function" (its effect) is undefined when the condition isn't met, just like f(x) = 1/x is undefined at x = 0. Piecewise functions mirror cards with multiple effects depending on conditions (e.g., "If your LP are 1000 or less, do X; otherwise, do Y").</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_composition – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_composition">
+                    <h3>📘 A3. Composition of Functions <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>Composition notation, evaluating from tables/graphs/formulas, domain of compositions, decomposition.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Composition: (f ∘ g)(x) = f(g(x)) — evaluate the inner function first, then the outer.</li>
+                        <li>The output of g becomes the input of f.</li>
+                        <li>Domain of f(g(x)): x must be in the domain of g, AND g(x) must be in the domain of f.</li>
+                        <li>Decomposition: breaking a complex function into simpler composed parts.</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        (f ∘ g)(x) = f(g(x))<br>
+                        (g ∘ f)(x) = g(f(x))<br>
+                        Order matters: f(g(x)) ≠ g(f(x)) in general
+                    </div>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">A Yu-Gi-Oh! chain is literally function composition. Chain Link 1 activates an effect (function g), its resolution becomes the "input" for Chain Link 2 (function f). The final game state is f(g(initial state)). Importantly, just like f(g(x)) ≠ g(f(x)), resolving effects in a different chain order produces different outcomes.</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_polynomials_deep – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_polynomials_deep">
+                    <h3>📘 A5. Power Functions &amp; Polynomial Functions (Deep Dive) <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>Power functions, end behavior, intercepts, turning points, multiplicity, polynomial inequalities.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Power function: f(x) = x<sup>p</sup>. Toolkit: x², x³, 1/x, √x, ³√x.</li>
+                        <li>End behavior determined by degree and leading coefficient:
+                            <ul>
+                                <li>Even degree, positive lead → both ends up.</li>
+                                <li>Even degree, negative lead → both ends down.</li>
+                                <li>Odd degree, positive lead → left down, right up.</li>
+                                <li>Odd degree, negative lead → left up, right down.</li>
+                            </ul>
+                        </li>
+                        <li>A degree-n polynomial has at most n horizontal intercepts and at most n−1 turning points.</li>
+                        <li>Multiplicity of zeros: 1 → crosses linearly; 2 → bounces off; 3 → crosses with cubic flattening.</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        General polynomial: f(x) = a<sub>n</sub>x<sup>n</sup> + a<sub>n−1</sub>x<sup>n−1</sup> + … + a<sub>1</sub>x + a<sub>0</sub><br>
+                        End behavior determined by leading term a<sub>n</sub>x<sup>n</sup>
+                    </div>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">Think of multiplicity like stacking the same continuous effect. A single "Skill Drain" (multiplicity 1) negates monster effects — the game state "crosses" from effects-on to effects-off cleanly. But if you have two copies active (multiplicity 2), removing one doesn't change the game state — it "bounces" back to the same condition. The more layers of the same restriction, the "flatter" the transition.</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_quadratics_expanded – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_quadratics_expanded">
+                    <h3>📘 A6. Quadratic Functions (Expanded) <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>Vertex form, completing the square, max/min applications, optimization problems.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Standard form: f(x) = ax² + bx + c.</li>
+                        <li>Vertex form: f(x) = a(x − h)² + k, where vertex is (h, k).</li>
+                        <li>Vertex formula: h = −b/(2a), k = f(h).</li>
+                        <li>If a &gt; 0, parabola opens up → vertex is a minimum.</li>
+                        <li>If a &lt; 0, parabola opens down → vertex is a maximum.</li>
+                        <li>Applications: maximizing area, revenue, projectile motion.</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        Standard: f(x) = ax² + bx + c<br>
+                        Vertex: f(x) = a(x − h)² + k<br>
+                        h = −b/(2a), k = f(h)
+                    </div>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_factor_remainder – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_factor_remainder">
+                    <h3>📘 A7. Factor Theorem, Remainder Theorem &amp; Synthetic Division <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>Remainder/Factor theorems, polynomial long division, synthetic division, finding zeros.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Remainder Theorem: When p(x) is divided by (x − c), the remainder is p(c).</li>
+                        <li>Factor Theorem: (x − c) is a factor of p(x) if and only if p(c) = 0.</li>
+                        <li>Polynomial long division: divide leading terms, multiply, subtract, repeat.</li>
+                        <li>Synthetic division: shortcut for dividing by (x − c). Write c on the left, coefficients across; bring down, multiply, add, repeat.</li>
+                        <li>If synthetic division gives remainder 0, then c is a zero and the quotient gives the reduced polynomial.</li>
+                    </ul>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">Testing if a card interaction is legal is exactly the Factor Theorem. You "plug in" a specific game state (c) into the ruling (polynomial). If the result is 0 (legal / the effect resolves successfully), then that game state is a "zero" — it satisfies the condition. Synthetic division is like systematically checking each link in a chain to see which card effects "factor out."</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_rates_of_change – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_rates_of_change">
+                    <h3>📘 A2. Rates of Change &amp; Behavior of Graphs <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Average rate of change, increasing/decreasing intervals, local extrema, concavity, inflection points.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Average rate of change = Δy/Δx = [f(b) − f(a)] / (b − a).</li>
+                        <li>Increasing on an interval if f(b) &gt; f(a) for b &gt; a.</li>
+                        <li>Decreasing on an interval if f(b) &lt; f(a) for b &gt; a.</li>
+                        <li>Local maximum: function changes from increasing to decreasing.</li>
+                        <li>Local minimum: function changes from decreasing to increasing.</li>
+                        <li>Concave up: rate of change is increasing (smile ∪). Concave down: rate of change is decreasing (frown ∩).</li>
+                        <li>Inflection point: where concavity changes.</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        Average rate of change: [f(b) − f(a)] / (b − a)
+                    </div>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_linear_functions – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_linear_functions">
+                    <h3>📘 A4. Linear Functions (Detailed Treatment) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Modeling, interpretation of slope, finding equations from data, parallel/perpendicular lines.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Linear function: f(x) = mx + b, where m = rate of change, b = initial value.</li>
+                        <li>Finding equations from two points: compute slope, then use point-slope form.</li>
+                        <li>Interpreting slope in context (e.g., "population increases by 1700 people per year").</li>
+                        <li>Parallel lines: same slope. Perpendicular lines: slopes are negative reciprocals.</li>
+                        <li>Intersection of two lines: set f(x) = g(x) and solve for x.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_real_zeros – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_real_zeros">
+                    <h3>📘 A8. Real Zeros of Polynomials <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Rational Roots Theorem, Cauchy's Bound, systematic zero-finding strategies.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Cauchy's Bound: All real zeros lie in [−M−1, M+1] where M = max(|a<sub>i</sub>/a<sub>n</sub>|).</li>
+                        <li>Rational Roots Theorem: If p/q is a rational zero, then p divides the constant term and q divides the leading coefficient.</li>
+                        <li>Strategy: List possible rational zeros → test using synthetic division → reduce polynomial → use quadratic formula on remainder.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_complex_zeros – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_complex_zeros">
+                    <h3>📘 A9. Complex Zeros <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Imaginary unit, complex arithmetic, Fundamental Theorem of Algebra, conjugate pairs.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Imaginary unit: i = √(−1), i² = −1.</li>
+                        <li>Complex number: a + bi. Conjugate: a − bi.</li>
+                        <li>Fundamental Theorem of Algebra: every degree-n polynomial (n ≥ 1) has at least one complex zero.</li>
+                        <li>A degree-n polynomial has exactly n complex zeros (counting multiplicities).</li>
+                        <li>Complex zeros of real-coefficient polynomials come in conjugate pairs.</li>
+                        <li>To multiply: use FOIL, replace i² with −1. To divide: multiply by conjugate of denominator.</li>
+                    </ul>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">Complex zeros are "invisible" on the real number line, just like face-down cards are hidden information in Yu-Gi-Oh!. You know they <em>exist</em> (the Fundamental Theorem guarantees it), but you can't see them on the real graph — they're in the "complex plane." Conjugate pairs are like a set card and its mirror ruling.</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_rational_functions_deep – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_rational_functions_deep">
+                    <h3>📘 A10. Rational Functions (Deep Dive) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Oblique asymptotes, holes, writing equations from graphs, sign analysis.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Vertical asymptotes: denominator = 0 (where numerator ≠ 0).</li>
+                        <li>Holes: both numerator and denominator are 0 at the same x-value.</li>
+                        <li>Horizontal asymptotes — compare degrees n (numerator) and m (denominator):
+                            <ul>
+                                <li>n &lt; m → y = 0</li>
+                                <li>n = m → y = ratio of leading coefficients</li>
+                                <li>n &gt; m → no horizontal asymptote (check for oblique)</li>
+                            </ul>
+                        </li>
+                        <li>Oblique (slant) asymptote: when n = m + 1, perform polynomial long division; the quotient is the oblique asymptote.</li>
+                        <li>Writing equations: identify intercepts, asymptotes, multiplicities; form f(x) = a · (numerator factors)/(denominator factors); solve for stretch factor using a known point.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_exponential_models – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_exponential_models">
+                    <h3>📘 A12. Exponential Functions (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Growth/decay models, half-life, doubling time, compound interest, fitting models.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Exponential growth: f(t) = a · b<sup>t</sup>, b &gt; 1. Decay: 0 &lt; b &lt; 1.</li>
+                        <li>Continuous growth/decay: f(t) = a · e<sup>rt</sup>.</li>
+                        <li>Compound interest: A = P(1 + r/n)<sup>nt</sup>. Continuous: A = Pe<sup>rt</sup>.</li>
+                        <li>Doubling time: t = ln(2)/r (continuous) or t = ln(2)/ln(1+r) (periodic).</li>
+                        <li>Half-life: t = ln(2)/|r|.</li>
+                        <li>Solving exponential equations: take log of both sides.</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        Continuous: A = Pe<sup>rt</sup><br>
+                        Compound: A = P(1 + r/n)<sup>nt</sup><br>
+                        Doubling time: t = ln(2)/r<br>
+                        Half-life: t = ln(2)/|r|
+                    </div>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">Cards like "Ring of Destruction" or repeated effect damage follow exponential patterns. If your LP get halved each turn (8000 → 4000 → 2000 → 1000), that's exponential decay with b = 0.5. The half-life concept maps directly: "How many turns until LP drop below 500?" is the same calculation as radioactive half-life.</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_logarithmic_models – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_logarithmic_models">
+                    <h3>📘 A13. Logarithmic Functions (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Graphs of log functions, solving log equations, applications (pH, decibels, Richter scale).</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>log<sub>a</sub>(x) is defined only for x &gt; 0.</li>
+                        <li>Graph of y = log<sub>a</sub>(x): passes through (1, 0), has vertical asymptote at x = 0.</li>
+                        <li>Domain of log: (0, ∞). Range: all reals.</li>
+                        <li>Solving log equations: convert to exponential form, or condense/expand using log properties.</li>
+                        <li>Common applications: pH = −log[H⁺], Richter scale, decibel scale.</li>
+                        <li>Change of base: log<sub>a</sub>(x) = ln(x)/ln(a).</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: precalc_inverses_radicals – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-precalc-exp" id="topic-precalc_inverses_radicals">
+                    <h3>📘 A11. Inverses &amp; Radical Functions <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <p><em>Restricting domains, inverse of quadratics, radical functions, solving radical equations.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>To find the inverse of a non-one-to-one function, restrict the domain first.</li>
+                        <li>Inverse of f(x) = x² (x ≥ 0) is f⁻¹(x) = √x.</li>
+                        <li>Radical equations: isolate the radical, raise both sides to the appropriate power, CHECK for extraneous solutions.</li>
+                        <li>The domain of the inverse becomes the range of the original function, and vice versa.</li>
+                    </ul>
+                </div>
+
+                <!-- ============================================================= -->
+                <!-- ===== TRIGONOMETRY EXPANSION TOPICS (B1-B14) ================ -->
+                <!-- ============================================================= -->
+
+                <!-- IMPLEMENTATION STATUS: trig_six_functions – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_six_functions">
+                    <h3>🔺 B2. The Six Circular Functions &amp; Fundamental Identities <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>All six trig functions, reciprocal/quotient/Pythagorean/cofunction identities, ASTC rule.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Six trig functions: sin, cos, tan, csc, sec, cot.</li>
+                        <li>Reciprocal identities: csc(θ) = 1/sin(θ), sec(θ) = 1/cos(θ), cot(θ) = 1/tan(θ).</li>
+                        <li>Quotient identities: tan(θ) = sin(θ)/cos(θ), cot(θ) = cos(θ)/sin(θ).</li>
+                        <li>Three Pythagorean identities:
+                            <ol>
+                                <li>sin²(θ) + cos²(θ) = 1</li>
+                                <li>1 + tan²(θ) = sec²(θ)</li>
+                                <li>1 + cot²(θ) = csc²(θ)</li>
+                            </ol>
+                        </li>
+                        <li>Cofunction identities: sin(π/2 − θ) = cos(θ), etc.</li>
+                        <li>Signs by quadrant: ASTC ("All Students Take Calculus").</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_identities_proofs – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_identities_proofs">
+                    <h3>🔺 B3. Trigonometric Identities (Proving &amp; Verifying) <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>Sum/difference formulas, double-angle, half-angle, power-reducing formulas, proof strategies.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Sum/Difference formulas:
+                            <ul>
+                                <li>sin(A ± B) = sinA·cosB ± cosA·sinB</li>
+                                <li>cos(A ± B) = cosA·cosB ∓ sinA·sinB</li>
+                                <li>tan(A ± B) = (tanA ± tanB) / (1 ∓ tanA·tanB)</li>
+                            </ul>
+                        </li>
+                        <li>Double-angle formulas:
+                            <ul>
+                                <li>sin(2θ) = 2sinθ·cosθ</li>
+                                <li>cos(2θ) = cos²θ − sin²θ = 2cos²θ − 1 = 1 − 2sin²θ</li>
+                                <li>tan(2θ) = 2tanθ / (1 − tan²θ)</li>
+                            </ul>
+                        </li>
+                        <li>Half-angle formulas: sin(θ/2) = ±√[(1 − cosθ)/2], cos(θ/2) = ±√[(1 + cosθ)/2].</li>
+                        <li>Power-reducing: sin²θ = (1 − cos2θ)/2, cos²θ = (1 + cos2θ)/2.</li>
+                        <li>Proof strategies: work one side only, convert everything to sin/cos, factor, use known identities.</li>
+                    </ul>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">Proving a trig identity is exactly like proving that two different card combos produce the same end result. You have Side A and Side B — you can't "move things across the equal sign" (that's like illegally moving cards between zones). Instead, you manipulate one side using known rules (identities = established rulings) until it matches the other.</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_inverse_functions – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_inverse_functions">
+                    <h3>🔺 B5. Inverse Trigonometric Functions <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>arcsin, arccos, arctan domains/ranges, composing trig and inverse trig functions.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>arcsin(x): domain [−1, 1], range [−π/2, π/2].</li>
+                        <li>arccos(x): domain [−1, 1], range [0, π].</li>
+                        <li>arctan(x): domain (−∞, ∞), range (−π/2, π/2).</li>
+                        <li>These are the "undo" functions: sin(arcsin(x)) = x for x ∈ [−1, 1].</li>
+                        <li>Composing trig and inverse trig functions requires care with domain restrictions.</li>
+                        <li>arcsec(x): domain |x| ≥ 1, range [0, π], excluding π/2.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_equations – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_equations">
+                    <h3>🔺 B6. Trigonometric Equations &amp; Inequalities <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <p><em>Systematic solving techniques, general solutions with +2πk, multi-angle equations, quadratic-type trig equations.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>General solutions:
+                            <ul>
+                                <li>sin(θ) = k → θ = arcsin(k) + 2πn or θ = π − arcsin(k) + 2πn</li>
+                                <li>cos(θ) = k → θ = ±arccos(k) + 2πn</li>
+                                <li>tan(θ) = k → θ = arctan(k) + πn</li>
+                            </ul>
+                        </li>
+                        <li>Multi-angle equations: sin(2x) = √3/2 → solve for 2x first, then divide.</li>
+                        <li>Quadratic-type: 2cos²x − cosx − 1 = 0 → factor as (2cosx + 1)(cosx − 1) = 0.</li>
+                        <li>Trig inequalities: solve the equality first, then use sign charts or unit circle to find intervals.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_angles_measure – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_angles_measure">
+                    <h3>🔺 B1. Angles and Their Measure (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>DMS system, arc length, sector area, circular motion, angular/linear velocity.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>DMS (Degree-Minute-Second): 1° = 60', 1' = 60".</li>
+                        <li>Converting DMS ↔ decimal degrees.</li>
+                        <li>Complementary angles: sum = 90°. Supplementary angles: sum = 180°.</li>
+                        <li>Coterminal angles: differ by multiples of 360° (or 2π).</li>
+                        <li>Arc length: s = rθ (θ in radians).</li>
+                        <li>Sector area: A = (1/2)r²θ.</li>
+                        <li>Linear velocity: v = rω (ω = angular velocity in rad/s).</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        Arc length: s = rθ<br>
+                        Sector area: A = ½r²θ<br>
+                        Angular velocity: ω = θ/t<br>
+                        Linear velocity: v = rω
+                    </div>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">Each game turn in Yu-Gi-Oh! cycles through phases: Draw → Standby → Main 1 → Battle → Main 2 → End. After a full "revolution" (one complete turn), you're back to Draw Phase — that's a coterminal angle. Turn 1's Draw Phase and Turn 3's Draw Phase are coterminal (differ by full revolutions).</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_graphs_all_functions – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_graphs_all_functions">
+                    <h3>🔺 B4. Graphs of Trigonometric Functions (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>Graphs of all six trig functions, period/asymptote analysis, transformations.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>y = sin(x) and y = cos(x): period 2π, amplitude 1, smooth waves.</li>
+                        <li>y = tan(x): period π, vertical asymptotes at x = π/2 + nπ, no amplitude.</li>
+                        <li>y = cot(x): period π, vertical asymptotes at x = nπ.</li>
+                        <li>y = sec(x): period 2π, vertical asymptotes where cos(x) = 0, U-shapes.</li>
+                        <li>y = csc(x): period 2π, vertical asymptotes where sin(x) = 0, U-shapes.</li>
+                        <li>Transformations: y = A·tan(B(x − C)) + D — period = π/|B|, phase shift = C, vertical shift = D.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_law_of_sines – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_law_of_sines">
+                    <h3>🔺 B7. Law of Sines <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>AAS/ASA/SSA cases, the ambiguous case (SSA), deriving equations from triangle relationships.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>For any triangle with sides a, b, c opposite angles A, B, C: a/sin(A) = b/sin(B) = c/sin(C).</li>
+                        <li>Used when you know: AAS, ASA, or SSA (ambiguous case).</li>
+                        <li>Ambiguous case (SSA): zero, one, or two triangles possible.</li>
+                        <li>Always check: does the given information yield a valid triangle?</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        a/sin(A) = b/sin(B) = c/sin(C)<br>
+                        Area = ½ · a · b · sin(C)
+                    </div>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_law_of_cosines – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_law_of_cosines">
+                    <h3>🔺 B8. Law of Cosines <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <p><em>SAS/SSS cases, connection to Pythagorean theorem, finding angles from three sides.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>For any triangle: c² = a² + b² − 2ab·cos(C).</li>
+                        <li>Used when you know: SAS or SSS.</li>
+                        <li>Reduces to Pythagorean theorem when C = 90°.</li>
+                        <li>Find angles from three sides: cos(C) = (a² + b² − c²)/(2ab).</li>
+                    </ul>
+                    <h4>Formulas</h4>
+                    <div class="equation-box">
+                        c² = a² + b² − 2ab·cos(C)<br>
+                        cos(C) = (a² + b² − c²) / (2ab)
+                    </div>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">Battle damage in Yu-Gi-Oh! involves comparing ATK/DEF values, but imagine a more complex scenario with three interacting monsters (a triangular relationship). The Law of Cosines is like calculating the "effective damage" when two stat values and the "angle" between them (game mechanic interaction) are known.</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_polar_coordinates – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_polar_coordinates">
+                    <h3>🔺 B9. Polar Coordinates <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <p><em>Polar ↔ Cartesian conversion, multiple representations, polar graphs (cardioids, rose curves, limaçons).</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Polar point: (r, θ) where r = distance from origin, θ = angle from positive x-axis.</li>
+                        <li>Conversion: x = r·cos(θ), y = r·sin(θ), r² = x² + y², tan(θ) = y/x.</li>
+                        <li>Same point has infinitely many polar representations: (r, θ + 2πk) and (−r, θ + π + 2πk).</li>
+                        <li>Polar graphs: circles, cardioids, rose curves, limaçons, lemniscates.</li>
+                        <li>Rose curve r = a·cos(nθ): n petals if n odd, 2n petals if n even.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_vectors – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_vectors">
+                    <h3>🔺 B10. Vectors <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <p><em>Magnitude, direction, unit vectors, operations, dot product, angle between vectors, projection, work.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>A vector has magnitude and direction: v = ⟨a, b⟩.</li>
+                        <li>Magnitude: ||v|| = √(a² + b²). Unit vector: v/||v||.</li>
+                        <li>Operations: addition ⟨a₁+a₂, b₁+b₂⟩, scalar multiplication ⟨ca, cb⟩.</li>
+                        <li>Dot product: v · w = a₁a₂ + b₁b₂ = ||v|| ||w|| cos(θ).</li>
+                        <li>Angle between vectors: cos(θ) = (v · w)/(||v|| ||w||).</li>
+                        <li>Perpendicular vectors: v · w = 0.</li>
+                        <li>Projection of v onto w: proj_w(v) = [(v · w)/(w · w)] · w.</li>
+                        <li>Work: W = F · d = ||F|| ||d|| cos(θ).</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_parametric_equations – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_parametric_equations">
+                    <h3>🔺 B11. Parametric Equations <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <p><em>Parameter elimination, common parametrizations (line, circle, ellipse), orientation.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>System: x = f(t), y = g(t), where t is the parameter.</li>
+                        <li>The parameter adds orientation (direction of travel) to a curve.</li>
+                        <li>Eliminating the parameter: solve one equation for t, substitute into the other.</li>
+                        <li>Common parametrizations:
+                            <ul>
+                                <li>Line from (x₀,y₀) to (x₁,y₁): x = x₀ + (x₁−x₀)t, y = y₀ + (y₁−y₀)t, 0 ≤ t ≤ 1.</li>
+                                <li>Circle: x = h + r·cos(t), y = k + r·sin(t), 0 ≤ t ≤ 2π.</li>
+                                <li>Ellipse: x = h + a·cos(t), y = k + b·sin(t).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <details style="margin-top: var(--space-12);">
+                        <summary>🎴 Yu-Gi-Oh! Connection</summary>
+                        <p style="margin-top: var(--space-8); font-size: 0.9rem;">A Yu-Gi-Oh! duel's game state can be described parametrically with "turn number" as parameter t. At each t, LP = f(t), hand size = g(t), field state = h(t). The parameter gives the game an <em>orientation</em> (you can't go backwards), just like parametric equations give a curve a direction. Eliminating the parameter is like summarizing a whole duel replay into just "final LP vs. cards used."</p>
+                    </details>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_polar_complex – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_polar_complex">
+                    <h3>🔺 B12. Polar Form of Complex Numbers <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <p><em>Polar representation, multiplication/division in polar form, De Moivre's Theorem, nth roots.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Complex number z = a + bi can be written as z = r(cosθ + i·sinθ) = r·cis(θ).</li>
+                        <li>r = |z| = √(a² + b²), θ = arg(z) = arctan(b/a).</li>
+                        <li>Multiplication: r₁cis(θ₁) · r₂cis(θ₂) = r₁r₂ · cis(θ₁ + θ₂).</li>
+                        <li>Division: (r₁/r₂) · cis(θ₁ − θ₂).</li>
+                        <li>De Moivre's Theorem: [r·cis(θ)]<sup>n</sup> = r<sup>n</sup> · cis(nθ).</li>
+                        <li>nth roots of a complex number: n equally-spaced points on a circle of radius r<sup>1/n</sup>.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_harmonic_motion – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_harmonic_motion">
+                    <h3>🔺 B13. Applications of Sinusoids / Harmonic Motion <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <p><em>Ferris wheels, springs, sound waves, daylight models, fitting sinusoidal models to data.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>S(t) = A·sin(ωt − φ) + B models periodic real-world phenomena.</li>
+                        <li>Amplitude A: maximum displacement from baseline.</li>
+                        <li>Angular frequency ω = 2π/period. Ordinary frequency f = ω/(2π).</li>
+                        <li>Phase shift: −φ/ω. Vertical shift (baseline): B.</li>
+                        <li>Harmonic motion: x(t) = A·sin(ωt + φ) models spring/pendulum motion.</li>
+                        <li>ω for a spring: ω = √(k/m), where k = spring constant, m = mass.</li>
+                        <li>Fitting sinusoidal models: estimate A, B, ω, φ from max/min/period.</li>
+                    </ul>
+                </div>
+
+                <!-- IMPLEMENTATION STATUS: trig_polar_conics – review=done, flashcards=done, quiz=done -->
+                <div class="concept-card card-trig-exp" id="topic-trig_polar_conics">
+                    <h3>🔺 B14. Conic Sections in Polar Form / Rotation of Axes <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <p><em>Polar form of conics with eccentricity, rotation of axes to remove xy-term.</em></p>
+                    <h4>Key Ideas</h4>
+                    <ul>
+                        <li>Polar form of conics: r = ed/(1 ± e·cos(θ)) or r = ed/(1 ± e·sin(θ)).
+                            <ul>
+                                <li>e &lt; 1: ellipse. e = 1: parabola. e &gt; 1: hyperbola.</li>
+                            </ul>
+                        </li>
+                        <li>Rotation of axes removes the xy-term from Ax² + Bxy + Cy² + Dx + Ey + F = 0.</li>
+                        <li>Rotation angle: cot(2α) = (A − C)/B.</li>
+                        <li>After rotation: x = Xcosα − Ysinα, y = Xsinα + Ycosα.</li>
+                    </ul>
+                </div>
+
             </div>
 
             <div style="text-align: center; margin-top: var(--space-40);">
@@ -2116,6 +2694,46 @@
 
         <!-- FLASHCARDS TAB -->
         <div id="flashcards" class="content-section">
+            <div style="text-align: center; margin-bottom: var(--space-16);">
+                <label for="flashcardTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Filter by topic:</label>
+                <select id="flashcardTopicSelect" onchange="filterFlashcards(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
+                    <option value="">All Topics</option>
+                    <option value="_legacy_precalc">— Original Pre-Calc Cards —</option>
+                    <option value="_legacy_calculus">— Original Calculus Cards —</option>
+                    <optgroup label="Precalculus (Expanded)">
+                        <option value="precalc_domain_range">A1. Domain &amp; Range</option>
+                        <option value="precalc_rates_of_change">A2. Rates of Change</option>
+                        <option value="precalc_composition">A3. Function Composition</option>
+                        <option value="precalc_linear_functions">A4. Linear Functions</option>
+                        <option value="precalc_polynomials_deep">A5. Polynomials (Deep)</option>
+                        <option value="precalc_quadratics_expanded">A6. Quadratics (Expanded)</option>
+                        <option value="precalc_factor_remainder">A7. Factor &amp; Remainder</option>
+                        <option value="precalc_real_zeros">A8. Real Zeros</option>
+                        <option value="precalc_complex_zeros">A9. Complex Zeros</option>
+                        <option value="precalc_rational_functions_deep">A10. Rational Functions (Deep)</option>
+                        <option value="precalc_inverses_radicals">A11. Inverses &amp; Radicals</option>
+                        <option value="precalc_exponential_models">A12. Exponential (Expanded)</option>
+                        <option value="precalc_logarithmic_models">A13. Logarithmic (Expanded)</option>
+                    </optgroup>
+                    <optgroup label="Trigonometry (Expanded)">
+                        <option value="trig_angles_measure">B1. Angles &amp; Measure</option>
+                        <option value="trig_six_functions">B2. Six Trig Functions</option>
+                        <option value="trig_identities_proofs">B3. Trig Identities (Proofs)</option>
+                        <option value="trig_graphs_all_functions">B4. Trig Graphs (All)</option>
+                        <option value="trig_inverse_functions">B5. Inverse Trig Functions</option>
+                        <option value="trig_equations">B6. Trig Equations</option>
+                        <option value="trig_law_of_sines">B7. Law of Sines</option>
+                        <option value="trig_law_of_cosines">B8. Law of Cosines</option>
+                        <option value="trig_polar_coordinates">B9. Polar Coordinates</option>
+                        <option value="trig_vectors">B10. Vectors</option>
+                        <option value="trig_parametric_equations">B11. Parametric Equations</option>
+                        <option value="trig_polar_complex">B12. Polar Complex Numbers</option>
+                        <option value="trig_harmonic_motion">B13. Harmonic Motion</option>
+                        <option value="trig_polar_conics">B14. Polar Conics</option>
+                    </optgroup>
+                </select>
+            </div>
+
             <div class="flashcard-container">
                 <div id="currentFlashcard" class="flashcard" onclick="toggleFlashcard()">
                     <span class="flashcard-label"><span id="cardIndex">1</span> / <span id="cardTotal">10</span></span>
@@ -2138,6 +2756,46 @@
 
         <!-- QUIZ TAB -->
         <div id="quiz" class="content-section">
+            <div style="text-align: center; margin-bottom: var(--space-16);">
+                <label for="quizTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Quiz topic:</label>
+                <select id="quizTopicSelect" onchange="setQuizTopic(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
+                    <option value="">All Topics (random 10)</option>
+                    <option value="_legacy_precalc">— Original Pre-Calc —</option>
+                    <option value="_legacy_calculus">— Original Calculus —</option>
+                    <optgroup label="Precalculus (Expanded)">
+                        <option value="precalc_domain_range">A1. Domain &amp; Range</option>
+                        <option value="precalc_rates_of_change">A2. Rates of Change</option>
+                        <option value="precalc_composition">A3. Function Composition</option>
+                        <option value="precalc_linear_functions">A4. Linear Functions</option>
+                        <option value="precalc_polynomials_deep">A5. Polynomials (Deep)</option>
+                        <option value="precalc_quadratics_expanded">A6. Quadratics (Expanded)</option>
+                        <option value="precalc_factor_remainder">A7. Factor &amp; Remainder</option>
+                        <option value="precalc_real_zeros">A8. Real Zeros</option>
+                        <option value="precalc_complex_zeros">A9. Complex Zeros</option>
+                        <option value="precalc_rational_functions_deep">A10. Rational Functions (Deep)</option>
+                        <option value="precalc_inverses_radicals">A11. Inverses &amp; Radicals</option>
+                        <option value="precalc_exponential_models">A12. Exponential (Expanded)</option>
+                        <option value="precalc_logarithmic_models">A13. Logarithmic (Expanded)</option>
+                    </optgroup>
+                    <optgroup label="Trigonometry (Expanded)">
+                        <option value="trig_angles_measure">B1. Angles &amp; Measure</option>
+                        <option value="trig_six_functions">B2. Six Trig Functions</option>
+                        <option value="trig_identities_proofs">B3. Trig Identities (Proofs)</option>
+                        <option value="trig_graphs_all_functions">B4. Trig Graphs (All)</option>
+                        <option value="trig_inverse_functions">B5. Inverse Trig Functions</option>
+                        <option value="trig_equations">B6. Trig Equations</option>
+                        <option value="trig_law_of_sines">B7. Law of Sines</option>
+                        <option value="trig_law_of_cosines">B8. Law of Cosines</option>
+                        <option value="trig_polar_coordinates">B9. Polar Coordinates</option>
+                        <option value="trig_vectors">B10. Vectors</option>
+                        <option value="trig_parametric_equations">B11. Parametric Equations</option>
+                        <option value="trig_polar_complex">B12. Polar Complex Numbers</option>
+                        <option value="trig_harmonic_motion">B13. Harmonic Motion</option>
+                        <option value="trig_polar_conics">B14. Polar Conics</option>
+                    </optgroup>
+                </select>
+            </div>
+
             <div class="quiz-container">
                 <div id="quizContent"></div>
             </div>
@@ -2145,6 +2803,39 @@
     </div>
 
     <script>
+        // ===== TOPICS REGISTRY (Expansion Plan) =====
+        const TOPICS = [
+          // --- Precalculus (A1-A13) ---
+          { id: 'precalc_domain_range',           label: 'Domain & Range',                         tier: 1, section: 'Precalculus' },
+          { id: 'precalc_composition',             label: 'Function Composition',                   tier: 1, section: 'Precalculus' },
+          { id: 'precalc_polynomials_deep',        label: 'Polynomials (Deep Dive)',                tier: 1, section: 'Precalculus' },
+          { id: 'precalc_quadratics_expanded',     label: 'Quadratics (Expanded)',                  tier: 1, section: 'Precalculus' },
+          { id: 'precalc_factor_remainder',        label: 'Factor & Remainder Theorem',             tier: 1, section: 'Precalculus' },
+          { id: 'precalc_rates_of_change',         label: 'Rates of Change & Graph Behavior',       tier: 2, section: 'Precalculus' },
+          { id: 'precalc_linear_functions',        label: 'Linear Functions (Detailed)',             tier: 2, section: 'Precalculus' },
+          { id: 'precalc_real_zeros',              label: 'Real Zeros of Polynomials',              tier: 2, section: 'Precalculus' },
+          { id: 'precalc_complex_zeros',           label: 'Complex Zeros',                          tier: 2, section: 'Precalculus' },
+          { id: 'precalc_rational_functions_deep', label: 'Rational Functions (Deep Dive)',          tier: 2, section: 'Precalculus' },
+          { id: 'precalc_exponential_models',      label: 'Exponential Functions (Expanded)',        tier: 2, section: 'Precalculus' },
+          { id: 'precalc_logarithmic_models',      label: 'Logarithmic Functions (Expanded)',        tier: 2, section: 'Precalculus' },
+          { id: 'precalc_inverses_radicals',       label: 'Inverses & Radical Functions',            tier: 3, section: 'Precalculus' },
+          // --- Trigonometry (B1-B14) ---
+          { id: 'trig_six_functions',              label: 'Six Trig Functions & Identities',        tier: 1, section: 'Trigonometry' },
+          { id: 'trig_identities_proofs',          label: 'Trig Identities (Proving)',               tier: 1, section: 'Trigonometry' },
+          { id: 'trig_inverse_functions',          label: 'Inverse Trig Functions',                 tier: 1, section: 'Trigonometry' },
+          { id: 'trig_equations',                  label: 'Trig Equations & Inequalities',          tier: 1, section: 'Trigonometry' },
+          { id: 'trig_angles_measure',             label: 'Angles & Their Measure',                 tier: 2, section: 'Trigonometry' },
+          { id: 'trig_graphs_all_functions',       label: 'Graphs of Trig Functions',               tier: 2, section: 'Trigonometry' },
+          { id: 'trig_law_of_sines',              label: 'Law of Sines',                           tier: 2, section: 'Trigonometry' },
+          { id: 'trig_law_of_cosines',            label: 'Law of Cosines',                         tier: 2, section: 'Trigonometry' },
+          { id: 'trig_polar_coordinates',          label: 'Polar Coordinates',                      tier: 3, section: 'Trigonometry' },
+          { id: 'trig_vectors',                    label: 'Vectors',                                tier: 3, section: 'Trigonometry' },
+          { id: 'trig_parametric_equations',       label: 'Parametric Equations',                   tier: 3, section: 'Trigonometry' },
+          { id: 'trig_polar_complex',              label: 'Polar Form of Complex Numbers',          tier: 3, section: 'Trigonometry' },
+          { id: 'trig_harmonic_motion',            label: 'Harmonic Motion / Sinusoid Apps',        tier: 3, section: 'Trigonometry' },
+          { id: 'trig_polar_conics',               label: 'Conic Sections in Polar Form',           tier: 3, section: 'Trigonometry' },
+        ];
+
         // ===== FLASHCARDS DATA (consolidated from flashcards-data.js) =====
         const FLASHCARDS = [
 
@@ -2276,7 +2967,137 @@
     { topic: 'calc-applications', q: 'What is the rate of change of f(x) = x² at x = 3?', a: 'The rate of change is the derivative: f\'(x) = 2x.<br>At x = 3: f\'(3) = 2(3) = <strong>6</strong>.' },
     { topic: 'calc-applications', q: 'What is the derivative of f(x) = x²·sin(x)?', a: 'Product rule: f\'(x) = 2x·sin(x) + x<sup>2</sup>·cos(x) = <strong>2x·sin(x) + x<sup>2</sup>·cos(x)</strong>.' },
     { topic: 'calc-applications', q: 'What is the slope of the tangent line to y = ln(x) at x = 1?', a: 'dy/dx = 1/x. At x = 1: slope = 1/1 = <strong>1</strong>.' },
-    { topic: 'calc-applications', q: 'What are the critical points of f(x) = x³ − 6x² + 11x − 6?', a: 'f\'(x) = 3x<sup>2</sup> − 12x + 11 = 0. Quadratic formula:<br>x = (12 ± √(144 − 132))/6 = (12 ± 2√3)/6 = <strong>(6 ± √3)/3</strong>.' }
+    { topic: 'calc-applications', q: 'What are the critical points of f(x) = x³ − 6x² + 11x − 6?', a: 'f\'(x) = 3x<sup>2</sup> − 12x + 11 = 0. Quadratic formula:<br>x = (12 ± √(144 − 132))/6 = (12 ± 2√3)/6 = <strong>(6 ± √3)/3</strong>.' },
+
+    // ==================== EXPANSION: A1 — Domain & Range (3 cards) ====================
+    { topicId: 'precalc_domain_range', q: 'What three things restrict a function\'s domain?', a: '1) Denominator = 0, 2) Even root of a negative, 3) Log of zero or negative.' },
+    { topicId: 'precalc_domain_range', q: 'Write the domain of f(x) = √(4 − x) in interval notation.', a: '<strong>(−∞, 4]</strong>.' },
+    { topicId: 'precalc_domain_range', q: 'What is the domain of f(x) = 1/(x − 3)?', a: '<strong>(−∞, 3) ∪ (3, ∞)</strong>.' },
+
+    // ==================== EXPANSION: A2 — Rates of Change (3 cards) ====================
+    { topicId: 'precalc_rates_of_change', q: 'What is the average rate of change of f(x) = x² on [1, 5]?', a: '(25 − 1)/(5 − 1) = 24/4 = <strong>6</strong>.' },
+    { topicId: 'precalc_rates_of_change', q: 'What is an inflection point?', a: 'A point where the function changes from <strong>concave up to concave down</strong>, or vice versa.' },
+    { topicId: 'precalc_rates_of_change', q: 'How do you tell if a function is concave up from a table?', a: 'The <strong>rate of change between consecutive points is increasing</strong>.' },
+
+    // ==================== EXPANSION: A3 — Function Composition (3 cards) ====================
+    { topicId: 'precalc_composition', q: 'If f(x) = x² and g(x) = x + 3, what is f(g(2))?', a: 'g(2) = 5, then f(5) = <strong>25</strong>.' },
+    { topicId: 'precalc_composition', q: 'What is the domain of f(g(x)) if f(x) = √x and g(x) = x − 4?', a: 'Need g(x) ≥ 0, so x − 4 ≥ 0, meaning x ≥ 4. Domain: <strong>[4, ∞)</strong>.' },
+    { topicId: 'precalc_composition', q: 'What does "decomposition" of a function mean?', a: 'Writing a function as a composition of two simpler functions.<br>E.g., h(x) = √(x² + 5) can be decomposed as f(x) = √x, g(x) = x² + 5, so <strong>h = f ∘ g</strong>.' },
+
+    // ==================== EXPANSION: A4 — Linear Functions (2 cards) ====================
+    { topicId: 'precalc_linear_functions', q: 'A town had population 45,000 in 2003 and grows by 1,700/year. Write the equation.', a: '<strong>P(t) = 1700t + 45000</strong>, where t = years after 2003.' },
+    { topicId: 'precalc_linear_functions', q: 'Find the equation of the line through (2, 4) and (4, 10).', a: 'm = (10−4)/(4−2) = 3. y − 4 = 3(x − 2) → <strong>y = 3x − 2</strong>.' },
+
+    // ==================== EXPANSION: A5 — Polynomials Deep (3 cards) ====================
+    { topicId: 'precalc_polynomials_deep', q: 'What determines the end behavior of a polynomial?', a: 'The <strong>degree</strong> (even/odd) and the <strong>sign of the leading coefficient</strong>.' },
+    { topicId: 'precalc_polynomials_deep', q: 'What happens at a zero with multiplicity 2?', a: 'The graph <strong>touches (bounces off) the x-axis</strong> but doesn\'t cross it.' },
+    { topicId: 'precalc_polynomials_deep', q: 'A degree-5 polynomial has at most how many turning points?', a: '<strong>4</strong>.' },
+
+    // ==================== EXPANSION: A6 — Quadratics Expanded (2 cards) ====================
+    { topicId: 'precalc_quadratics_expanded', q: 'Find the vertex of f(x) = 2x² − 12x + 7.', a: 'h = 12/4 = 3, k = f(3) = 18 − 36 + 7 = −11. Vertex: <strong>(3, −11)</strong>.' },
+    { topicId: 'precalc_quadratics_expanded', q: 'When does a quadratic have a maximum vs. minimum?', a: '<strong>Maximum when a < 0</strong> (opens down); <strong>minimum when a > 0</strong> (opens up).' },
+
+    // ==================== EXPANSION: A7 — Factor & Remainder Theorem (3 cards) ====================
+    { topicId: 'precalc_factor_remainder', q: 'What does the Remainder Theorem state?', a: 'When polynomial p(x) is divided by (x − c), the remainder equals <strong>p(c)</strong>.' },
+    { topicId: 'precalc_factor_remainder', q: 'What does the Factor Theorem tell us?', a: '<strong>(x − c) is a factor of p(x) ⟺ p(c) = 0</strong>.' },
+    { topicId: 'precalc_factor_remainder', q: 'Describe synthetic division in 3 steps.', a: '1) Write c and the coefficients. 2) Bring down first coeff. 3) <strong>Multiply by c, add to next coeff, repeat</strong>.' },
+
+    // ==================== EXPANSION: A8 — Real Zeros (2 cards) ====================
+    { topicId: 'precalc_real_zeros', q: 'State the Rational Roots Theorem.', a: 'For polynomial a<sub>n</sub>x<sup>n</sup> + … + a<sub>0</sub> with integer coefficients, any rational zero p/q has <strong>p | a<sub>0</sub></strong> and <strong>q | a<sub>n</sub></strong>.' },
+    { topicId: 'precalc_real_zeros', q: 'What are the possible rational zeros of 2x³ + 3x² − 1?', a: '<strong>±{1, 1/2}</strong>.' },
+
+    // ==================== EXPANSION: A9 — Complex Zeros (3 cards) ====================
+    { topicId: 'precalc_complex_zeros', q: 'What is the conjugate of 3 − 2i?', a: '<strong>3 + 2i</strong>.' },
+    { topicId: 'precalc_complex_zeros', q: 'Simplify (2 + i)(3 − 4i).', a: '6 − 8i + 3i − 4i² = 6 − 5i + 4 = <strong>10 − 5i</strong>.' },
+    { topicId: 'precalc_complex_zeros', q: 'Why do complex zeros come in conjugate pairs for real-coefficient polynomials?', a: 'Because the <strong>complex conjugate of each step in evaluation also equals zero</strong>.' },
+
+    // ==================== EXPANSION: A10 — Rational Functions Deep (3 cards) ====================
+    { topicId: 'precalc_rational_functions_deep', q: 'When does a rational function have a hole instead of a vertical asymptote?', a: 'When a factor <strong>cancels from both numerator and denominator</strong> (both zero at the same x).' },
+    { topicId: 'precalc_rational_functions_deep', q: 'What is an oblique asymptote?', a: 'A <strong>slant line</strong> that the function approaches as x → ±∞. Occurs when degree of numerator = degree of denominator + 1.' },
+    { topicId: 'precalc_rational_functions_deep', q: 'Find the oblique asymptote of f(x) = (x² + 2x + 1)/(x − 1).', a: 'Perform long division: quotient is x + 3. Oblique asymptote: <strong>y = x + 3</strong>.' },
+
+    // ==================== EXPANSION: A11 — Inverses & Radicals (2 cards) ====================
+    { topicId: 'precalc_inverses_radicals', q: 'Why must we check for extraneous solutions when solving radical equations?', a: '<strong>Squaring both sides can introduce solutions</strong> that don\'t satisfy the original equation.' },
+    { topicId: 'precalc_inverses_radicals', q: 'What is the inverse of f(x) = x² for x ≥ 0?', a: '<strong>f⁻¹(x) = √x</strong>.' },
+
+    // ==================== EXPANSION: A12 — Exponential Models (3 cards) ====================
+    { topicId: 'precalc_exponential_models', q: 'What is the formula for continuous compound interest?', a: '<strong>A = Pe<sup>rt</sup></strong>, where P = principal, r = rate, t = time.' },
+    { topicId: 'precalc_exponential_models', q: 'If a population doubles every 5 years with continuous growth, what is r?', a: 'r = ln(2)/5 ≈ <strong>0.1386</strong>.' },
+    { topicId: 'precalc_exponential_models', q: 'Solve 3ˣ = 81.', a: '3ˣ = 3⁴, so <strong>x = 4</strong>.' },
+
+    // ==================== EXPANSION: A13 — Logarithmic Models (3 cards) ====================
+    { topicId: 'precalc_logarithmic_models', q: 'Solve log₂(x) = 5.', a: 'x = 2⁵ = <strong>32</strong>.' },
+    { topicId: 'precalc_logarithmic_models', q: 'Solve ln(x) + ln(x − 2) = ln(3).', a: 'ln(x(x−2)) = ln(3) → x² − 2x = 3 → x² − 2x − 3 = 0 → <strong>x = 3</strong> (reject x = −1).' },
+    { topicId: 'precalc_logarithmic_models', q: 'What is the domain of f(x) = log(x − 5)?', a: 'x > 5, or <strong>(5, ∞)</strong>.' },
+
+    // ==================== EXPANSION: B1 — Angles & Measure (3 cards) ====================
+    { topicId: 'trig_angles_measure', q: 'Convert 42°7\'30" to decimal degrees.', a: '42 + 7/60 + 30/3600 = <strong>42.125°</strong>.' },
+    { topicId: 'trig_angles_measure', q: 'Find the arc length of a sector with radius 5 and central angle π/3.', a: 's = 5 · π/3 = <strong>5π/3 ≈ 5.24</strong>.' },
+    { topicId: 'trig_angles_measure', q: 'What are coterminal angles?', a: 'Angles that share the same terminal side; they differ by multiples of <strong>360° (or 2π)</strong>.' },
+
+    // ==================== EXPANSION: B2 — Six Trig Functions (3 cards) ====================
+    { topicId: 'trig_six_functions', q: 'State the three Pythagorean identities.', a: '<strong>sin²θ + cos²θ = 1</strong>; <strong>1 + tan²θ = sec²θ</strong>; <strong>1 + cot²θ = csc²θ</strong>.' },
+    { topicId: 'trig_six_functions', q: 'If sin(θ) = 3/5 and θ is in QI, find all six trig values.', a: 'cos = <strong>4/5</strong>, tan = <strong>3/4</strong>, csc = <strong>5/3</strong>, sec = <strong>5/4</strong>, cot = <strong>4/3</strong>.' },
+    { topicId: 'trig_six_functions', q: 'State the cofunction identity for sin.', a: '<strong>sin(π/2 − θ) = cos(θ)</strong>.' },
+
+    // ==================== EXPANSION: B3 — Trig Identities / Proofs (3 cards) ====================
+    { topicId: 'trig_identities_proofs', q: 'State the sum formula for sin(A + B).', a: '<strong>sin(A + B) = sinA·cosB + cosA·sinB</strong>.' },
+    { topicId: 'trig_identities_proofs', q: 'Find the exact value of cos(75°) using sum formulas.', a: 'cos(45° + 30°) = cos45·cos30 − sin45·sin30 = (√2/2)(√3/2) − (√2/2)(1/2) = <strong>(√6 − √2)/4</strong>.' },
+    { topicId: 'trig_identities_proofs', q: 'State the half-angle formula for sin(θ/2).', a: '<strong>sin(θ/2) = ±√[(1 − cosθ)/2]</strong>, sign depends on quadrant of θ/2.' },
+
+    // ==================== EXPANSION: B4 — Trig Graphs All (3 cards) ====================
+    { topicId: 'trig_graphs_all_functions', q: 'What is the period of y = tan(x)?', a: '<strong>π</strong>.' },
+    { topicId: 'trig_graphs_all_functions', q: 'Where are the vertical asymptotes of y = csc(x)?', a: 'At <strong>x = nπ</strong> for integer n (wherever sin(x) = 0).' },
+    { topicId: 'trig_graphs_all_functions', q: 'What is the period of y = 3tan(2x)?', a: '<strong>π/2</strong>.' },
+
+    // ==================== EXPANSION: B5 — Inverse Trig Functions (3 cards) ====================
+    { topicId: 'trig_inverse_functions', q: 'What is arcsin(1/2)?', a: '<strong>π/6 (30°)</strong>.' },
+    { topicId: 'trig_inverse_functions', q: 'What is the range of arccos(x)?', a: '<strong>[0, π]</strong>.' },
+    { topicId: 'trig_inverse_functions', q: 'Evaluate cos(arctan(3/4)).', a: 'Draw right triangle with opposite 3, adjacent 4, hypotenuse 5. cos = <strong>4/5</strong>.' },
+
+    // ==================== EXPANSION: B6 — Trig Equations (3 cards) ====================
+    { topicId: 'trig_equations', q: 'Find all solutions to sin(x) = √3/2 in [0, 2π).', a: 'x = <strong>π/3</strong> and x = <strong>2π/3</strong>.' },
+    { topicId: 'trig_equations', q: 'Find the general solution to cos(x) = −1/2.', a: 'x = <strong>2π/3 + 2πk</strong> or x = <strong>4π/3 + 2πk</strong>, where k is any integer.' },
+    { topicId: 'trig_equations', q: 'Solve 2sin²(x) − sin(x) − 1 = 0.', a: 'Factor: (2sinx + 1)(sinx − 1) = 0 → <strong>sinx = −1/2</strong> or <strong>sinx = 1</strong>.' },
+
+    // ==================== EXPANSION: B7 — Law of Sines (3 cards) ====================
+    { topicId: 'trig_law_of_sines', q: 'State the Law of Sines.', a: '<strong>a/sinA = b/sinB = c/sinC</strong>.' },
+    { topicId: 'trig_law_of_sines', q: 'When is the Law of Sines ambiguous?', a: 'In the <strong>SSA case</strong> — you might get 0, 1, or 2 valid triangles.' },
+    { topicId: 'trig_law_of_sines', q: 'Find side b if A = 30°, B = 45°, a = 10.', a: 'b = 10·sin(45°)/sin(30°) = 10·(√2/2)/(1/2) = <strong>10√2 ≈ 14.14</strong>.' },
+
+    // ==================== EXPANSION: B8 — Law of Cosines (3 cards) ====================
+    { topicId: 'trig_law_of_cosines', q: 'State the Law of Cosines.', a: '<strong>c² = a² + b² − 2ab·cos(C)</strong>.' },
+    { topicId: 'trig_law_of_cosines', q: 'If a = 5, b = 7, C = 60°, find c.', a: 'c² = 25 + 49 − 2(5)(7)cos(60°) = 74 − 35 = 39. <strong>c = √39 ≈ 6.24</strong>.' },
+    { topicId: 'trig_law_of_cosines', q: 'When does the Law of Cosines reduce to the Pythagorean theorem?', a: 'When <strong>C = 90°</strong> (cos 90° = 0), so c² = a² + b².' },
+
+    // ==================== EXPANSION: B9 — Polar Coordinates (3 cards) ====================
+    { topicId: 'trig_polar_coordinates', q: 'Convert (3, π/4) from polar to Cartesian.', a: 'x = 3cos(π/4) = <strong>3√2/2</strong>, y = 3sin(π/4) = <strong>3√2/2</strong>.' },
+    { topicId: 'trig_polar_coordinates', q: 'Convert (1, 1) from Cartesian to polar.', a: 'r = √2, θ = arctan(1) = π/4. Polar: <strong>(√2, π/4)</strong>.' },
+    { topicId: 'trig_polar_coordinates', q: 'How many petals does r = 3cos(4θ) have?', a: '<strong>8</strong> (2n = 2·4 = 8, since n is even).' },
+
+    // ==================== EXPANSION: B10 — Vectors (3 cards) ====================
+    { topicId: 'trig_vectors', q: 'Find the magnitude of v = ⟨3, 4⟩.', a: '||v|| = √(9 + 16) = <strong>5</strong>.' },
+    { topicId: 'trig_vectors', q: 'Find the dot product of ⟨2, −1⟩ and ⟨3, 4⟩.', a: '2(3) + (−1)(4) = 6 − 4 = <strong>2</strong>.' },
+    { topicId: 'trig_vectors', q: 'When are two vectors perpendicular?', a: 'When their <strong>dot product equals zero</strong>.' },
+
+    // ==================== EXPANSION: B11 — Parametric Equations (3 cards) ====================
+    { topicId: 'trig_parametric_equations', q: 'Eliminate the parameter from x = t², y = 2t + 1.', a: 'From y: t = (y−1)/2. Substituting: x = ((y−1)/2)² = (y−1)²/4. So <strong>4x = (y−1)²</strong>.' },
+    { topicId: 'trig_parametric_equations', q: 'Parametrize the line segment from (1, 3) to (4, 7).', a: '<strong>x = 1 + 3t, y = 3 + 4t</strong>, for 0 ≤ t ≤ 1.' },
+    { topicId: 'trig_parametric_equations', q: 'What do parametric equations add that y = f(x) doesn\'t?', a: '<strong>Direction/orientation</strong> and the ability to represent curves that aren\'t functions.' },
+
+    // ==================== EXPANSION: B12 — Polar Complex Numbers (3 cards) ====================
+    { topicId: 'trig_polar_complex', q: 'Write z = 1 + i in polar form.', a: 'r = √2, θ = π/4. <strong>z = √2 · cis(π/4)</strong>.' },
+    { topicId: 'trig_polar_complex', q: 'State De Moivre\'s Theorem.', a: '<strong>[r·cis(θ)]<sup>n</sup> = r<sup>n</sup> · cis(nθ)</strong>.' },
+    { topicId: 'trig_polar_complex', q: 'Multiply 2·cis(π/3) and 3·cis(π/6).', a: '6·cis(π/3 + π/6) = <strong>6·cis(π/2) = 6i</strong>.' },
+
+    // ==================== EXPANSION: B13 — Harmonic Motion (3 cards) ====================
+    { topicId: 'trig_harmonic_motion', q: 'A Ferris wheel has diameter 128 ft and completes 2 revolutions in 127 seconds. What is the angular frequency?', a: 'ω = 2·(2π)/127 = <strong>4π/127 rad/s</strong>.' },
+    { topicId: 'trig_harmonic_motion', q: 'How do you find amplitude from a graph?', a: '<strong>Amplitude = (max − min)/2</strong>.' },
+    { topicId: 'trig_harmonic_motion', q: 'What is the midline of a sinusoid with max 80 and min 20?', a: 'Midline = (80 + 20)/2 = <strong>50</strong>.' },
+
+    // ==================== EXPANSION: B14 — Polar Conics (2 cards) ====================
+    { topicId: 'trig_polar_conics', q: 'What determines if a polar conic is an ellipse, parabola, or hyperbola?', a: 'The eccentricity e: <strong>e < 1 → ellipse</strong>, <strong>e = 1 → parabola</strong>, <strong>e > 1 → hyperbola</strong>.' },
+    { topicId: 'trig_polar_conics', q: 'What is the rotation angle formula for eliminating an xy-term?', a: '<strong>cot(2α) = (A − C)/B</strong>.' }
 
         ];
 
@@ -2285,6 +3106,37 @@
         let currentCardIndex = 0;
         let isFlipped = false;
         let cardDeck = [...flashcards];
+        let currentFlashcardTopicId = '';
+
+        // Legacy topic groupings for the filter dropdown
+        const LEGACY_PRECALC_TOPICS = ['functions','exponentials','trigonometry','unit-circle','sinusoidal','polynomials','algebra-skills','lines','absolute-piecewise','inverses','transformations','inequalities','sequences','limits','common-mistakes','calculator'];
+        const LEGACY_CALCULUS_TOPICS = ['calc-limits','calc-derivatives','calc-integrals','calc-applications'];
+
+        function getFilteredFlashcards() {
+            if (!currentFlashcardTopicId) return [...flashcards];
+            if (currentFlashcardTopicId === '_legacy_precalc') {
+                return flashcards.filter(c => c.topic && LEGACY_PRECALC_TOPICS.includes(c.topic));
+            }
+            if (currentFlashcardTopicId === '_legacy_calculus') {
+                return flashcards.filter(c => c.topic && LEGACY_CALCULUS_TOPICS.includes(c.topic));
+            }
+            return flashcards.filter(c => c.topicId === currentFlashcardTopicId);
+        }
+
+        function filterFlashcards(topicId) {
+            currentFlashcardTopicId = topicId;
+            cardDeck = getFilteredFlashcards();
+            currentCardIndex = 0;
+            isFlipped = false;
+            if (cardDeck.length > 0) {
+                updateFlashcard();
+            } else {
+                document.getElementById('questionText').innerHTML = 'No cards match this filter.';
+                document.getElementById('answerText').innerHTML = '';
+                document.getElementById('cardIndex').textContent = '0';
+                document.getElementById('cardTotal').textContent = '0';
+            }
+        }
 
         // ===== QUIZ DATA =====
         const quizQuestions = [
@@ -2348,8 +3200,78 @@
             { q: "Find the critical points of f(x) = x³ − 6x² + 11x − 6.", opts: ["x = 1, 2, 3", "x = (6 ± √3)/3", "x = 2 only", "x = 3 ± √2"], ans: 1 },
         ];
 
-        // Combined pool of all quiz questions (50 total)
-        const allQuizQuestions = [...quizQuestions, ...calculusQuizPool];
+        // Expansion quiz pool (39 questions) — from expansion plan topics A1-A13, B1-B14
+        const expansionQuizPool = [
+            // A1. Domain & Range (2)
+            { topicId: 'precalc_domain_range', q: "What is the domain of f(x) = √(x − 2)?", opts: ["[2, ∞)", "(2, ∞)", "(−∞, 2]", "All reals"], ans: 0 },
+            { topicId: 'precalc_domain_range', q: "What is the range of f(x) = x²?", opts: ["All reals", "[0, ∞)", "(0, ∞)", "(−∞, 0]"], ans: 1 },
+            // A2. Rates of Change (2)
+            { topicId: 'precalc_rates_of_change', q: "If f(x) = x² − 4x, what is the average rate of change on [1, 3]?", opts: ["0", "−2", "2", "4"], ans: 0 },
+            { topicId: 'precalc_rates_of_change', q: "A function that is concave down has what shape?", opts: ["Frown (∩)", "Smile (∪)", "Straight line", "Vertical"], ans: 0 },
+            // A3. Composition (2)
+            { topicId: 'precalc_composition', q: "If f(x) = 2x + 1 and g(x) = x², what is (f ∘ g)(3)?", opts: ["49", "19", "7", "13"], ans: 1 },
+            { topicId: 'precalc_composition', q: "f(g(x)) is the same as g(f(x)). True or false?", opts: ["True", "False"], ans: 1 },
+            // A4. Linear Functions (1)
+            { topicId: 'precalc_linear_functions', q: "What is the slope of a line passing through (−1, 4) and (5, 2)?", opts: ["−1/3", "1/3", "−3", "3"], ans: 0 },
+            // A5. Polynomials Deep (2)
+            { topicId: 'precalc_polynomials_deep', q: "What is the end behavior of f(x) = −2x⁵ + 3x² − 1?", opts: ["Both ends up", "Both ends down", "Left up, right down", "Left down, right up"], ans: 2 },
+            { topicId: 'precalc_polynomials_deep', q: "At a zero of multiplicity 3, the graph:", opts: ["Bounces", "Crosses linearly", "Crosses with flattening", "Has a vertical asymptote"], ans: 2 },
+            // A6. Quadratics Expanded (1)
+            { topicId: 'precalc_quadratics_expanded', q: "What is the vertex of f(x) = −x² + 6x − 5?", opts: ["(3, 4)", "(−3, −4)", "(3, −4)", "(−3, 4)"], ans: 0 },
+            // A7. Factor & Remainder (2)
+            { topicId: 'precalc_factor_remainder', q: "If p(x) = x³ − 4x² + 5x − 14, what is the remainder when divided by (x − 2)?", opts: ["0", "−12", "−16", "2"], ans: 1 },
+            { topicId: 'precalc_factor_remainder', q: "If p(3) = 0 for polynomial p(x), which is true?", opts: ["(x + 3) is a factor", "(x − 3) is a factor", "x = −3 is a zero", "None of these"], ans: 1 },
+            // A8. Real Zeros (1)
+            { topicId: 'precalc_real_zeros', q: "What are the possible rational zeros of f(x) = 3x³ − x² + 2?", opts: ["±{1, 2, 1/3, 2/3}", "±{1, 3}", "±{1, 2}", "±{2, 3}"], ans: 0 },
+            // A9. Complex Zeros (2)
+            { topicId: 'precalc_complex_zeros', q: "What are the zeros of f(x) = x² + 4?", opts: ["±2", "±2i", "±4i", "No zeros"], ans: 1 },
+            { topicId: 'precalc_complex_zeros', q: "How many complex zeros does a degree-5 polynomial have?", opts: ["At most 5", "Exactly 5", "At least 1", "Both B and C"], ans: 3 },
+            // A10. Rational Functions Deep (1)
+            { topicId: 'precalc_rational_functions_deep', q: "f(x) = (x − 2)/((x − 2)(x + 3)) has:", opts: ["VA at x = 2 and x = −3", "Hole at x = 2, VA at x = −3", "VA at x = −3 only", "Both B and C"], ans: 1 },
+            // A11. Inverses & Radicals (1)
+            { topicId: 'precalc_inverses_radicals', q: "Solve √(x + 3) = 5.", opts: ["x = 22", "x = 28", "x = 8", "x = 2"], ans: 0 },
+            // A12. Exponential Models (1)
+            { topicId: 'precalc_exponential_models', q: "An investment of $1000 at 5% compounded continuously is worth how much after 10 years?", opts: ["$1,628.89", "$1,500", "$1,648.72", "$1,050"], ans: 2 },
+            // A13. Logarithmic Models (1)
+            { topicId: 'precalc_logarithmic_models', q: "Solve: log₃(x + 1) = 2", opts: ["x = 8", "x = 7", "x = 9", "x = 5"], ans: 0 },
+            // B1. Angles & Measure (2)
+            { topicId: 'trig_angles_measure', q: "What is the arc length of a circle with radius 10 and central angle 2 radians?", opts: ["20", "5", "10", "40"], ans: 0 },
+            { topicId: 'trig_angles_measure', q: "Which angle is coterminal with 450°?", opts: ["90°", "180°", "270°", "360°"], ans: 0 },
+            // B2. Six Trig Functions (2)
+            { topicId: 'trig_six_functions', q: "If tan(θ) = 3 and θ is in QIII, what is sin(θ)?", opts: ["3/√10", "−3/√10", "−1/√10", "1/√10"], ans: 1 },
+            { topicId: 'trig_six_functions', q: "sec(θ) is the reciprocal of:", opts: ["sin(θ)", "cos(θ)", "tan(θ)", "cot(θ)"], ans: 1 },
+            // B3. Trig Identities Proofs (2)
+            { topicId: 'trig_identities_proofs', q: "What is sin(2θ) equal to?", opts: ["2sinθ", "sin²θ", "2sinθ·cosθ", "cos²θ − sin²θ"], ans: 2 },
+            { topicId: 'trig_identities_proofs', q: "cos(A − B) =", opts: ["cosA·cosB + sinA·sinB", "cosA·cosB − sinA·sinB", "sinA·cosB − cosA·sinB", "sinA·cosB + cosA·sinB"], ans: 0 },
+            // B4. Trig Graphs (1)
+            { topicId: 'trig_graphs_all_functions', q: "The period of y = sec(3x) is:", opts: ["2π", "2π/3", "π/3", "3π"], ans: 1 },
+            // B5. Inverse Trig (2)
+            { topicId: 'trig_inverse_functions', q: "arctan(1) = ?", opts: ["π/6", "π/4", "π/3", "π/2"], ans: 1 },
+            { topicId: 'trig_inverse_functions', q: "The domain of arcsin(x) is:", opts: ["All reals", "[−1, 1]", "[0, 1]", "(−π/2, π/2)"], ans: 1 },
+            // B6. Trig Equations (2)
+            { topicId: 'trig_equations', q: "How many solutions does sin(x) = 1/2 have in [0, 2π)?", opts: ["1", "2", "3", "Infinite"], ans: 1 },
+            { topicId: 'trig_equations', q: "The general solution to tan(x) = 1 is:", opts: ["x = π/4 + 2πk", "x = π/4 + πk", "x = π/4 only", "x = 3π/4 + πk"], ans: 1 },
+            // B7. Law of Sines (1)
+            { topicId: 'trig_law_of_sines', q: "The Law of Sines is useful when you know:", opts: ["SSS", "SAS", "AAS", "All of these"], ans: 2 },
+            // B8. Law of Cosines (1)
+            { topicId: 'trig_law_of_cosines', q: "Given a = 8, b = 6, c = 10, find angle C.", opts: ["90°", "60°", "120°", "45°"], ans: 0 },
+            // B9. Polar Coordinates (1)
+            { topicId: 'trig_polar_coordinates', q: "The Cartesian coordinates of the polar point (4, π/3) are:", opts: ["(2, 2√3)", "(2√3, 2)", "(4, 4)", "(2, 2)"], ans: 0 },
+            // B10. Vectors (2)
+            { topicId: 'trig_vectors', q: "What is the dot product of ⟨1, 2⟩ and ⟨−2, 1⟩?", opts: ["0", "4", "−4", "2"], ans: 0 },
+            { topicId: 'trig_vectors', q: "The work done by a force F = 10 lbs at 30° over 50 ft is:", opts: ["250√3", "500", "250", "125√3"], ans: 0 },
+            // B11. Parametric Equations (1)
+            { topicId: 'trig_parametric_equations', q: "The parametric equations x = 3cos(t), y = 3sin(t) trace out:", opts: ["A line", "A parabola", "A circle of radius 3", "An ellipse"], ans: 2 },
+            // B12. Polar Complex (1)
+            { topicId: 'trig_polar_complex', q: "The modulus of z = 3 + 4i is:", opts: ["5", "7", "√7", "25"], ans: 0 },
+            // B13. Harmonic Motion (1)
+            { topicId: 'trig_harmonic_motion', q: "The period of S(t) = 5sin(πt/3) is:", opts: ["6", "3", "π/3", "2π/3"], ans: 0 },
+            // B14. Polar Conics (1)
+            { topicId: 'trig_polar_conics', q: "A conic with eccentricity e = 0.5 is:", opts: ["Circle", "Ellipse", "Parabola", "Hyperbola"], ans: 1 },
+        ];
+
+        // Combined pool of all quiz questions (89 total: 15 legacy + 35 calculus + 39 expansion)
+        const allQuizQuestions = [...quizQuestions, ...calculusQuizPool, ...expansionQuizPool];
 
         let quizState = {
             current: 0,
@@ -2357,6 +3279,19 @@
             submitted: false,
             activeQuiz: [],
         };
+        let currentQuizTopicId = '';
+
+        function getFilteredQuizPool() {
+            if (!currentQuizTopicId) return [...allQuizQuestions];
+            if (currentQuizTopicId === '_legacy_precalc') return [...quizQuestions];
+            if (currentQuizTopicId === '_legacy_calculus') return [...calculusQuizPool];
+            return allQuizQuestions.filter(q => q.topicId === currentQuizTopicId);
+        }
+
+        function setQuizTopic(topicId) {
+            currentQuizTopicId = topicId;
+            initQuiz();
+        }
 
         // ===== TAB SWITCHING =====
         function switchTab(tab) {
@@ -2402,7 +3337,7 @@
         }
 
         function shuffleCards() {
-            cardDeck = [...flashcards].sort(() => Math.random() - 0.5);
+            cardDeck = getFilteredFlashcards().sort(() => Math.random() - 0.5);
             currentCardIndex = 0;
             isFlipped = false;
             updateFlashcard();
@@ -2423,15 +3358,21 @@
 
         // ===== QUIZ FUNCTIONS =====
         function initQuiz() {
-            var shuffled = [...allQuizQuestions].sort(function() { return Math.random() - 0.5; });
-            var selected = shuffled.slice(0, 10);
+            var pool = getFilteredQuizPool();
+            var shuffled = pool.sort(function() { return Math.random() - 0.5; });
+            var count = Math.min(10, shuffled.length);
+            var selected = shuffled.slice(0, count);
             quizState = {
                 current: 0,
-                answers: new Array(10).fill(null),
+                answers: new Array(count).fill(null),
                 submitted: false,
                 activeQuiz: selected,
             };
-            renderQuestionCard();
+            if (selected.length > 0) {
+                renderQuestionCard();
+            } else {
+                document.getElementById('quizContent').innerHTML = '<p style="color: var(--color-text-secondary); text-align: center; padding: var(--space-24);">No quiz questions available for this topic.</p>';
+            }
         }
 
         function renderQuestionCard() {
@@ -2772,5 +3713,57 @@
             });
         });
     </script>
+
+<!--
+==========================================================
+IMPLEMENTATION LOG — Expansion Plan
+==========================================================
+TOPIC ID MAPPING:
+  A1  → precalc_domain_range          A2  → precalc_rates_of_change
+  A3  → precalc_composition           A4  → precalc_linear_functions
+  A5  → precalc_polynomials_deep      A6  → precalc_quadratics_expanded
+  A7  → precalc_factor_remainder      A8  → precalc_real_zeros
+  A9  → precalc_complex_zeros         A10 → precalc_rational_functions_deep
+  A11 → precalc_inverses_radicals     A12 → precalc_exponential_models
+  A13 → precalc_logarithmic_models
+  B1  → trig_angles_measure           B2  → trig_six_functions
+  B3  → trig_identities_proofs        B4  → trig_graphs_all_functions
+  B5  → trig_inverse_functions        B6  → trig_equations
+  B7  → trig_law_of_sines             B8  → trig_law_of_cosines
+  B9  → trig_polar_coordinates        B10 → trig_vectors
+  B11 → trig_parametric_equations     B12 → trig_polar_complex
+  B13 → trig_harmonic_motion          B14 → trig_polar_conics
+
+LOG:
+  2026-02-16: Part 1 — Added TOPICS registry (27 entries) with id, label, tier, section.
+  2026-02-16: Part 2 — Added 27 concept-card sections in Review tab (A1-A13 Precalc, B1-B14 Trig).
+              Added two new CSS card classes: card-precalc-exp (amber/gold), card-trig-exp (rose/pink).
+              Added sidebar navigation groups: "Precalculus (Expanded)" and "Trigonometry (Expanded)".
+              Cards ordered by priority tier within each section group.
+              Yu-Gi-Oh! crossover sections included where available (in <details> elements).
+              Parts 3-7 (flashcards, quiz, filtering, sync, etc.) NOT YET implemented.
+  2026-02-16: Part 3 — Added 76 new expansion flashcards (A1-A13: 35 cards, B1-B14: 41 cards).
+              Each new card uses { topicId, q, a } schema; legacy cards keep { topic, q, a }.
+              Added topic-filter <select> dropdown to Flashcards tab with optgroups.
+              Added getFilteredFlashcards(), filterFlashcards() functions + legacy topic arrays.
+              Updated shuffleCards() to respect active filter via getFilteredFlashcards().
+              Total flashcards: ~121 (45 legacy + 76 expansion).
+  2026-02-16: Part 4 — Added 39 new expansion quiz questions (A1-A13: 19 Qs, B1-B14: 20 Qs).
+              Each new quiz Q uses { topicId, q, opts, ans } schema; legacy Qs keep { q, opts, ans }.
+              Added quiz topic-filter <select> dropdown to Quiz tab with optgroups.
+              Added getFilteredQuizPool(), setQuizTopic() functions + currentQuizTopicId state.
+              Updated initQuiz() to draw from filtered pool; caps at min(10, pool.length).
+              Total quiz questions: 89 (15 legacy precalc + 35 calculus + 39 expansion).
+  2026-02-16: Part 5 — Applied priority tier badges to all 27 expansion cards.
+              Tier 1 (⭐ Essential): A1,A3,A5,A6,A7 + B2,B3,B5,B6 — 9 topics.
+              Tier 2 (📗 Important): A2,A4,A8,A9,A10,A12,A13 + B1,B4,B7,B8 — 11 topics.
+              Tier 3 (🔬 Advanced): A11 + B9,B10,B11,B12,B13,B14 — 7 topics.
+              Updated all 27 IMPLEMENTATION STATUS comments → review=done, flashcards=done, quiz=done.
+              Added .tier-badge CSS classes (tier-1 gold, tier-2 blue, tier-3 purple).
+              Cards already ordered by tier within each section group (confirmed).
+              Parts 6-7 (navigation sync, maintenance logging) NOT YET implemented.
+==========================================================
+-->
+
 </body>
 </html>
