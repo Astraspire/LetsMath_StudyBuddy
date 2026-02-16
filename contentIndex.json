@@ -1864,7 +1864,39 @@
       "type": "quiz",
       "subtopic": "functions-notation",
       "title": "QZ-ALG-01 · Functions and Algebra",
-      "body": "- Q: If f(x) = x^2 - 3x + 2, what is f(2)?\n  Options: A) 0  B) 2  C) 4  D) 6\n  Answer: A) 0\n- Q: Factor: x^2 - 9\n  Options: A) (x - 3)^2  B) (x + 3)^2  C) (x - 3)(x + 3)  D) (x - 3)(x - 3)\n  Answer: C) (x - 3)(x + 3)\n- Q: Solve: x^2 - 5x + 6 = 0\n  Options: A) 1, 6  B) 2, 3  C) -2, -3  D) 2, -3\n  Answer: B) 2, 3"
+      "body": "- Q: If f(x) = x^2 - 3x + 2, what is f(2)?\n  Options: A) 0  B) 2  C) 4  D) 6\n  Answer: A) 0\n- Q: Factor: x^2 - 9\n  Options: A) (x - 3)^2  B) (x + 3)^2  C) (x - 3)(x + 3)  D) (x - 3)(x - 3)\n  Answer: C) (x - 3)(x + 3)\n- Q: Solve: x^2 - 5x + 6 = 0\n  Options: A) 1, 6  B) 2, 3  C) -2, -3  D) 2, -3\n  Answer: B) 2, 3",
+      "questions": [
+        {
+          "q": "If f(x) = x^2 - 3x + 2, what is f(2)?",
+          "opts": [
+            "0",
+            "2",
+            "4",
+            "6"
+          ],
+          "ans": 0
+        },
+        {
+          "q": "Factor: x^2 - 9",
+          "opts": [
+            "(x - 3)^2",
+            "(x + 3)^2",
+            "(x - 3)(x + 3)",
+            "(x - 3)(x - 3)"
+          ],
+          "ans": 2
+        },
+        {
+          "q": "Solve: x^2 - 5x + 6 = 0",
+          "opts": [
+            "1, 6",
+            "2, 3",
+            "-2, -3",
+            "2, -3"
+          ],
+          "ans": 1
+        }
+      ]
     },
     {
       "id": "QZ-ALG-02",
@@ -1873,7 +1905,49 @@
       "type": "quiz",
       "subtopic": "exponentials-logs",
       "title": "QZ-ALG-02 · Exponentials and Logs",
-      "body": "- Q: Solve: 2^x = 16\n  Options: A) 2  B) 3  C) 4  D) 8\n  Answer: C) 4\n- Q: Which is equivalent to ln(e^5)?\n  Options: A) 1  B) e  C) 5  D) e^5\n  Answer: C) 5\n- Q: Expand: log(x^2 y / z)\n  Options: A) 2log(x) + log(y) - log(z)  B) log(x) + log(y) - log(z)  C) 2log(x) - log(y) - log(z)  D) log(2x) + log(y) - log(z)\n  Answer: A) 2log(x) + log(y) - log(z)\n- Q: What is ln(1)?\n  Options: A) 0  B) 1  C) undefined  D) e\n  Answer: A) 0"
+      "body": "- Q: Solve: 2^x = 16\n  Options: A) 2  B) 3  C) 4  D) 8\n  Answer: C) 4\n- Q: Which is equivalent to ln(e^5)?\n  Options: A) 1  B) e  C) 5  D) e^5\n  Answer: C) 5\n- Q: Expand: log(x^2 y / z)\n  Options: A) 2log(x) + log(y) - log(z)  B) log(x) + log(y) - log(z)  C) 2log(x) - log(y) - log(z)  D) log(2x) + log(y) - log(z)\n  Answer: A) 2log(x) + log(y) - log(z)\n- Q: What is ln(1)?\n  Options: A) 0  B) 1  C) undefined  D) e\n  Answer: A) 0",
+      "questions": [
+        {
+          "q": "Solve: 2^x = 16",
+          "opts": [
+            "2",
+            "3",
+            "4",
+            "8"
+          ],
+          "ans": 2
+        },
+        {
+          "q": "Which is equivalent to ln(e^5)?",
+          "opts": [
+            "1",
+            "e",
+            "5",
+            "e^5"
+          ],
+          "ans": 2
+        },
+        {
+          "q": "Expand: log(x^2 y / z)",
+          "opts": [
+            "2log(x) + log(y) - log(z)",
+            "log(x) + log(y) - log(z)",
+            "2log(x) - log(y) - log(z)",
+            "log(2x) + log(y) - log(z)"
+          ],
+          "ans": 0
+        },
+        {
+          "q": "What is ln(1)?",
+          "opts": [
+            "0",
+            "1",
+            "undefined",
+            "e"
+          ],
+          "ans": 0
+        }
+      ]
     },
     {
       "id": "QZ-ALG-03",
@@ -1882,7 +1956,19 @@
       "type": "quiz",
       "subtopic": "absolute-value-piecewise",
       "title": "QZ-ALG-03 · Absolute Value",
-      "body": "- Q: Solve: |x - 3| = 5\n  Options: A) 3  B) 8, -2  C) 5, -5  D) -2, 8\n  Answer: D) -2, 8"
+      "body": "- Q: Solve: |x - 3| = 5\n  Options: A) 3  B) 8, -2  C) 5, -5  D) -2, 8\n  Answer: D) -2, 8",
+      "questions": [
+        {
+          "q": "Solve: |x - 3| = 5",
+          "opts": [
+            "3",
+            "8, -2",
+            "5, -5",
+            "-2, 8"
+          ],
+          "ans": 3
+        }
+      ]
     },
     {
       "id": "QZ-ALG-04",
@@ -1891,7 +1977,19 @@
       "type": "quiz",
       "subtopic": "linear-functions",
       "title": "QZ-ALG-04 · Lines",
-      "body": "- Q: Which are perpendicular lines?\n  Options: A) m=2, m=2  B) m=2, m=-1/2  C) m=2, m=1/2  D) m=2, m=1\n  Answer: B) m=2, m=-1/2"
+      "body": "- Q: Which are perpendicular lines?\n  Options: A) m=2, m=2  B) m=2, m=-1/2  C) m=2, m=1/2  D) m=2, m=1\n  Answer: B) m=2, m=-1/2",
+      "questions": [
+        {
+          "q": "Which are perpendicular lines?",
+          "opts": [
+            "m=2, m=2",
+            "m=2, m=-1/2",
+            "m=2, m=1/2",
+            "m=2, m=1"
+          ],
+          "ans": 1
+        }
+      ]
     },
     {
       "id": "QZ-ALG-05",
@@ -1900,7 +1998,19 @@
       "type": "quiz",
       "subtopic": "rational-functions",
       "title": "QZ-ALG-05 · Rational Functions",
-      "body": "- Q: For f(x) = 1/(x - 2), what is the vertical asymptote?\n  Options: A) x=0  B) x=1  C) x=2  D) x=-2\n  Answer: C) x=2\n\n---\n\n## 4B. Precalc Quiz — Trigonometry"
+      "body": "- Q: For f(x) = 1/(x - 2), what is the vertical asymptote?\n  Options: A) x=0  B) x=1  C) x=2  D) x=-2\n  Answer: C) x=2\n\n---\n\n## 4B. Precalc Quiz — Trigonometry",
+      "questions": [
+        {
+          "q": "For f(x) = 1/(x - 2), what is the vertical asymptote?",
+          "opts": [
+            "x=0",
+            "x=1",
+            "x=2",
+            "x=-2"
+          ],
+          "ans": 2
+        }
+      ]
     },
     {
       "id": "QZ-TRIG-01",
@@ -1909,7 +2019,49 @@
       "type": "quiz",
       "subtopic": "trig-core",
       "title": "QZ-TRIG-01 · Trigonometry and Unit Circle",
-      "body": "- Q: What is cos(pi/3)?\n  Options: A) 0  B) 1/2  C) sqrt(3)/2  D) 1\n  Answer: B) 1/2\n- Q: Solve: sin(x) = 1/2 for x in [0, 2pi)\n  Options: A) pi/6, 5pi/6  B) pi/3, 2pi/3  C) pi/4, 3pi/4  D) pi/6, pi/3\n  Answer: A) pi/6, 5pi/6\n- Q: Simplify: sin^2(x) + cos^2(x)\n  Options: A) 0  B) 1  C) sin(2x)  D) tan(x)\n  Answer: B) 1\n- Q: Find the period of y = cos(pi x)\n  Options: A) pi  B) 2pi  C) 2  D) 1/2\n  Answer: C) 2"
+      "body": "- Q: What is cos(pi/3)?\n  Options: A) 0  B) 1/2  C) sqrt(3)/2  D) 1\n  Answer: B) 1/2\n- Q: Solve: sin(x) = 1/2 for x in [0, 2pi)\n  Options: A) pi/6, 5pi/6  B) pi/3, 2pi/3  C) pi/4, 3pi/4  D) pi/6, pi/3\n  Answer: A) pi/6, 5pi/6\n- Q: Simplify: sin^2(x) + cos^2(x)\n  Options: A) 0  B) 1  C) sin(2x)  D) tan(x)\n  Answer: B) 1\n- Q: Find the period of y = cos(pi x)\n  Options: A) pi  B) 2pi  C) 2  D) 1/2\n  Answer: C) 2",
+      "questions": [
+        {
+          "q": "What is cos(pi/3)?",
+          "opts": [
+            "0",
+            "1/2",
+            "sqrt(3)/2",
+            "1"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Solve: sin(x) = 1/2 for x in [0, 2pi)",
+          "opts": [
+            "pi/6, 5pi/6",
+            "pi/3, 2pi/3",
+            "pi/4, 3pi/4",
+            "pi/6, pi/3"
+          ],
+          "ans": 0
+        },
+        {
+          "q": "Simplify: sin^2(x) + cos^2(x)",
+          "opts": [
+            "0",
+            "1",
+            "sin(2x)",
+            "tan(x)"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Find the period of y = cos(pi x)",
+          "opts": [
+            "pi",
+            "2pi",
+            "2",
+            "1/2"
+          ],
+          "ans": 2
+        }
+      ]
     },
     {
       "id": "QZ-TRIG-02",
@@ -1918,7 +2070,19 @@
       "type": "quiz",
       "subtopic": "sinusoidal-models",
       "title": "QZ-TRIG-02 · Sinusoidal Models",
-      "body": "- Q: Find the amplitude of y = 3sin(2x) - 5\n  Options: A) 2  B) 3  C) 5  D) -5\n  Answer: B) 3\n\n---\n\n## 4C. Calculus Quiz Pool (35 questions)"
+      "body": "- Q: Find the amplitude of y = 3sin(2x) - 5\n  Options: A) 2  B) 3  C) 5  D) -5\n  Answer: B) 3\n\n---\n\n## 4C. Calculus Quiz Pool (35 questions)",
+      "questions": [
+        {
+          "q": "Find the amplitude of y = 3sin(2x) - 5",
+          "opts": [
+            "2",
+            "3",
+            "5",
+            "-5"
+          ],
+          "ans": 1
+        }
+      ]
     },
     {
       "id": "QZ-CALC-01",
@@ -1927,7 +2091,8 @@
       "type": "quiz",
       "subtopic": "limits",
       "title": "QZ-CALC-01 · Limits (7 Qs)",
-      "body": "- Q: What is the limit of f(x) = 3x^2 - 2x + 1 as x approaches 2?\n  Options: A) 9  B) 5  C) 11  D) 7   Answer: A) 9\n- Q: Evaluate: lim(x->0) sin(x)/x\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: B) 1\n- Q: What is the limit of (x^2 - 4)/(x - 2) as x approaches 2?\n  Options: A) 0  B) 2  C) 4  D) undefined   Answer: C) 4\n- Q: Evaluate: lim(x->inf) (2x^2 + 3x)/(x^2 + 1)\n  Options: A) 0  B) 1  C) 2  D) 3   Answer: C) 2\n- Q: What is the limit of 1/x as x approaches infinity?\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: A) 0\n- Q: Evaluate: lim(x->3) (x^2 - 9)/(x - 3)\n  Options: A) 0  B) 3  C) 6  D) 9   Answer: C) 6\n- Q: What is the limit of e^x as x approaches negative infinity?\n  Options: A) 0  B) 1  C) -inf  D) inf   Answer: A) 0"
+      "body": "- Q: What is the limit of f(x) = 3x^2 - 2x + 1 as x approaches 2?\n  Options: A) 9  B) 5  C) 11  D) 7   Answer: A) 9\n- Q: Evaluate: lim(x->0) sin(x)/x\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: B) 1\n- Q: What is the limit of (x^2 - 4)/(x - 2) as x approaches 2?\n  Options: A) 0  B) 2  C) 4  D) undefined   Answer: C) 4\n- Q: Evaluate: lim(x->inf) (2x^2 + 3x)/(x^2 + 1)\n  Options: A) 0  B) 1  C) 2  D) 3   Answer: C) 2\n- Q: What is the limit of 1/x as x approaches infinity?\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: A) 0\n- Q: Evaluate: lim(x->3) (x^2 - 9)/(x - 3)\n  Options: A) 0  B) 3  C) 6  D) 9   Answer: C) 6\n- Q: What is the limit of e^x as x approaches negative infinity?\n  Options: A) 0  B) 1  C) -inf  D) inf   Answer: A) 0",
+      "questions": []
     },
     {
       "id": "QZ-CALC-02",
@@ -1936,7 +2101,8 @@
       "type": "quiz",
       "subtopic": "derivatives",
       "title": "QZ-CALC-02 · Derivatives (10 Qs)",
-      "body": "- Q: What is the derivative of f(x) = x^3?\n  Options: A) x^2  B) 3x  C) 3x^2  D) x^3   Answer: C) 3x^2\n- Q: Find the derivative of f(x) = sin(x).\n  Options: A) cos(x)  B) -cos(x)  C) -sin(x)  D) tan(x)   Answer: A) cos(x)\n- Q: What is the derivative of f(x) = e^x?\n  Options: A) x e^(x-1)  B) e^x  C) e^(x-1)  D) ln(x)   Answer: B) e^x\n- Q: Find the derivative of f(x) = ln(x).\n  Options: A) x  B) 1/x  C) ln(x)/x  D) e^x   Answer: B) 1/x\n- Q: What is the derivative of f(x) = x^2 + 3x - 4?\n  Options: A) 2x + 3  B) x^2 + 3  C) 2x - 4  D) 2x + 3x   Answer: A) 2x + 3\n- Q: Find the derivative of f(x) = cos(x).\n  Options: A) sin(x)  B) -sin(x)  C) -cos(x)  D) tan(x)   Answer: B) -sin(x)\n- Q: What is the derivative of f(x) = tan(x)?\n  Options: A) sec(x)  B) cot(x)  C) sec^2(x)  D) -csc^2(x)   Answer: C) sec^2(x)\n- Q: Find the derivative of f(x) = x sin(x).\n  Options: A) cos(x)  B) x cos(x)  C) sin(x) + cos(x)  D) sin(x) + x cos(x)   Answer: D) sin(x) + x cos(x)\n- Q: What is the derivative of f(x) = 1/x?\n  Options: A) 1/x^2  B) -1/x^2  C) ln(x)  D) -ln(x)   Answer: B) -1/x^2\n- Q: Find the derivative of f(x) = x^4 - 2x^3 + 5x^2 - 3x + 1.\n  Options: A) 4x^3 - 6x^2 + 10x - 3  B) 4x^3 - 2x^2 + 5x - 3  C) x^3 - 6x^2 + 10x - 3  D) 4x^4 - 6x^3 + 10x^2 - 3x   Answer: A) 4x^3 - 6x^2 + 10x - 3"
+      "body": "- Q: What is the derivative of f(x) = x^3?\n  Options: A) x^2  B) 3x  C) 3x^2  D) x^3   Answer: C) 3x^2\n- Q: Find the derivative of f(x) = sin(x).\n  Options: A) cos(x)  B) -cos(x)  C) -sin(x)  D) tan(x)   Answer: A) cos(x)\n- Q: What is the derivative of f(x) = e^x?\n  Options: A) x e^(x-1)  B) e^x  C) e^(x-1)  D) ln(x)   Answer: B) e^x\n- Q: Find the derivative of f(x) = ln(x).\n  Options: A) x  B) 1/x  C) ln(x)/x  D) e^x   Answer: B) 1/x\n- Q: What is the derivative of f(x) = x^2 + 3x - 4?\n  Options: A) 2x + 3  B) x^2 + 3  C) 2x - 4  D) 2x + 3x   Answer: A) 2x + 3\n- Q: Find the derivative of f(x) = cos(x).\n  Options: A) sin(x)  B) -sin(x)  C) -cos(x)  D) tan(x)   Answer: B) -sin(x)\n- Q: What is the derivative of f(x) = tan(x)?\n  Options: A) sec(x)  B) cot(x)  C) sec^2(x)  D) -csc^2(x)   Answer: C) sec^2(x)\n- Q: Find the derivative of f(x) = x sin(x).\n  Options: A) cos(x)  B) x cos(x)  C) sin(x) + cos(x)  D) sin(x) + x cos(x)   Answer: D) sin(x) + x cos(x)\n- Q: What is the derivative of f(x) = 1/x?\n  Options: A) 1/x^2  B) -1/x^2  C) ln(x)  D) -ln(x)   Answer: B) -1/x^2\n- Q: Find the derivative of f(x) = x^4 - 2x^3 + 5x^2 - 3x + 1.\n  Options: A) 4x^3 - 6x^2 + 10x - 3  B) 4x^3 - 2x^2 + 5x - 3  C) x^3 - 6x^2 + 10x - 3  D) 4x^4 - 6x^3 + 10x^2 - 3x   Answer: A) 4x^3 - 6x^2 + 10x - 3",
+      "questions": []
     },
     {
       "id": "QZ-CALC-03",
@@ -1945,7 +2111,8 @@
       "type": "quiz",
       "subtopic": "integrals",
       "title": "QZ-CALC-03 · Integrals (10 Qs)",
-      "body": "- Q: What is the integral of f(x) = x^2?\n  Options: A) x^3/3 + C  B) 2x + C  C) x^3 + C  D) x^2/2 + C   Answer: A) x^3/3 + C\n- Q: Evaluate: int e^x dx\n  Options: A) e^x + C  B) x e^x + C  C) e^(x+1)/(x+1) + C  D) ln(x) + C   Answer: A) e^x + C\n- Q: What is the integral of f(x) = sin(x)?\n  Options: A) cos(x) + C  B) -cos(x) + C  C) -sin(x) + C  D) sin^2(x)/2 + C   Answer: B) -cos(x) + C\n- Q: Evaluate: int (1/x) dx\n  Options: A) x + C  B) ln(x) + C  C) ln|x| + C  D) -1/x^2 + C   Answer: C) ln|x| + C\n- Q: What is the integral of f(x) = cos(x)?\n  Options: A) sin(x) + C  B) -sin(x) + C  C) cos^2(x) + C  D) tan(x) + C   Answer: A) sin(x) + C\n- Q: Evaluate: int x^3 dx\n  Options: A) 3x^2 + C  B) x^4 + C  C) x^4/4 + C  D) x^3/3 + C   Answer: C) x^4/4 + C\n- Q: What is the integral of f(x) = 1/x^2?\n  Options: A) -1/x + C  B) 1/x + C  C) ln(x^2) + C  D) -2/x^3 + C   Answer: A) -1/x + C\n- Q: Evaluate: int (2x + 3) dx\n  Options: A) x^2 + 3x + C  B) 2x^2 + 3x + C  C) x^2 + 3 + C  D) 2 + C   Answer: A) x^2 + 3x + C\n- Q: What is the integral of f(x) = tan(x)?\n  Options: A) sec^2(x) + C  B) -ln|cos(x)| + C  C) ln|sin(x)| + C  D) -cot(x) + C   Answer: B) -ln|cos(x)| + C\n- Q: Evaluate: int sqrt(x) dx\n  Options: A) (2/3)x^(3/2) + C  B) (1/2)x^(1/2) + C  C) 2 sqrt(x) + C  D) (3/2)x^(1/2) + C   Answer: A) (2/3)x^(3/2) + C"
+      "body": "- Q: What is the integral of f(x) = x^2?\n  Options: A) x^3/3 + C  B) 2x + C  C) x^3 + C  D) x^2/2 + C   Answer: A) x^3/3 + C\n- Q: Evaluate: int e^x dx\n  Options: A) e^x + C  B) x e^x + C  C) e^(x+1)/(x+1) + C  D) ln(x) + C   Answer: A) e^x + C\n- Q: What is the integral of f(x) = sin(x)?\n  Options: A) cos(x) + C  B) -cos(x) + C  C) -sin(x) + C  D) sin^2(x)/2 + C   Answer: B) -cos(x) + C\n- Q: Evaluate: int (1/x) dx\n  Options: A) x + C  B) ln(x) + C  C) ln|x| + C  D) -1/x^2 + C   Answer: C) ln|x| + C\n- Q: What is the integral of f(x) = cos(x)?\n  Options: A) sin(x) + C  B) -sin(x) + C  C) cos^2(x) + C  D) tan(x) + C   Answer: A) sin(x) + C\n- Q: Evaluate: int x^3 dx\n  Options: A) 3x^2 + C  B) x^4 + C  C) x^4/4 + C  D) x^3/3 + C   Answer: C) x^4/4 + C\n- Q: What is the integral of f(x) = 1/x^2?\n  Options: A) -1/x + C  B) 1/x + C  C) ln(x^2) + C  D) -2/x^3 + C   Answer: A) -1/x + C\n- Q: Evaluate: int (2x + 3) dx\n  Options: A) x^2 + 3x + C  B) 2x^2 + 3x + C  C) x^2 + 3 + C  D) 2 + C   Answer: A) x^2 + 3x + C\n- Q: What is the integral of f(x) = tan(x)?\n  Options: A) sec^2(x) + C  B) -ln|cos(x)| + C  C) ln|sin(x)| + C  D) -cot(x) + C   Answer: B) -ln|cos(x)| + C\n- Q: Evaluate: int sqrt(x) dx\n  Options: A) (2/3)x^(3/2) + C  B) (1/2)x^(1/2) + C  C) 2 sqrt(x) + C  D) (3/2)x^(1/2) + C   Answer: A) (2/3)x^(3/2) + C",
+      "questions": []
     },
     {
       "id": "QZ-CALC-04",
@@ -1954,7 +2121,8 @@
       "type": "quiz",
       "subtopic": "applications",
       "title": "QZ-CALC-04 · Applications (8 Qs)",
-      "body": "- Q: What is the slope of the tangent line to y = x^2 at x = 2?\n  Options: A) 2  B) 4  C) 8  D) 1   Answer: B) 4\n- Q: Find the critical points of f(x) = x^3 - 3x^2.\n  Options: A) x = 0 only  B) x = 3 only  C) x = 0 and x = 2  D) x = 1 and x = 3   Answer: C) x = 0 and x = 2\n- Q: What is the maximum value of f(x) = x^4 - 4x^3 + 4 on [0, 4]?\n  Options: A) 4  B) -23  C) 0  D) 260   Answer: A) 4\n- Q: Find the minimum value of f(x) = x^2 - 4x + 4.\n  Options: A) 0  B) 2  C) 4  D) -4   Answer: A) 0\n- Q: What is the rate of change of f(x) = x^2 at x = 3?\n  Options: A) 3  B) 6  C) 9  D) 12   Answer: B) 6\n- Q: Find the derivative of f(x) = x^2 sin(x).\n  Options: A) 2x sin(x)  B) x^2 cos(x)  C) 2x sin(x) + x^2 cos(x)  D) 2x cos(x) - x^2 sin(x)   Answer: C) 2x sin(x) + x^2 cos(x)\n- Q: What is the slope of the tangent line to y = ln(x) at x = 1?\n  Options: A) 0  B) 1  C) e  D) undefined   Answer: B) 1\n- Q: Find the critical points of f(x) = x^3 - 6x^2 + 11x - 6.\n  Options: A) x = 1, 2, 3  B) x = (6 +/- sqrt(3))/3  C) x = 2 only  D) x = 3 +/- sqrt(2)   Answer: B) x = (6 +/- sqrt(3))/3\n\n---\n\n## 4D. Expansion Quiz — Precalculus (A-coded, 19 Qs)"
+      "body": "- Q: What is the slope of the tangent line to y = x^2 at x = 2?\n  Options: A) 2  B) 4  C) 8  D) 1   Answer: B) 4\n- Q: Find the critical points of f(x) = x^3 - 3x^2.\n  Options: A) x = 0 only  B) x = 3 only  C) x = 0 and x = 2  D) x = 1 and x = 3   Answer: C) x = 0 and x = 2\n- Q: What is the maximum value of f(x) = x^4 - 4x^3 + 4 on [0, 4]?\n  Options: A) 4  B) -23  C) 0  D) 260   Answer: A) 4\n- Q: Find the minimum value of f(x) = x^2 - 4x + 4.\n  Options: A) 0  B) 2  C) 4  D) -4   Answer: A) 0\n- Q: What is the rate of change of f(x) = x^2 at x = 3?\n  Options: A) 3  B) 6  C) 9  D) 12   Answer: B) 6\n- Q: Find the derivative of f(x) = x^2 sin(x).\n  Options: A) 2x sin(x)  B) x^2 cos(x)  C) 2x sin(x) + x^2 cos(x)  D) 2x cos(x) - x^2 sin(x)   Answer: C) 2x sin(x) + x^2 cos(x)\n- Q: What is the slope of the tangent line to y = ln(x) at x = 1?\n  Options: A) 0  B) 1  C) e  D) undefined   Answer: B) 1\n- Q: Find the critical points of f(x) = x^3 - 6x^2 + 11x - 6.\n  Options: A) x = 1, 2, 3  B) x = (6 +/- sqrt(3))/3  C) x = 2 only  D) x = 3 +/- sqrt(2)   Answer: B) x = (6 +/- sqrt(3))/3\n\n---\n\n## 4D. Expansion Quiz — Precalculus (A-coded, 19 Qs)",
+      "questions": []
     },
     {
       "id": "QZ-EA-01",
@@ -1964,7 +2132,8 @@
       "code": "A1",
       "subtopic": "domain-range",
       "title": "QZ-EA-01 · A1. Domain & Range (2 Qs)",
-      "body": "- Q: What is the domain of f(x) = sqrt(x - 2)?\n  Options: A) [2, inf)  B) (2, inf)  C) (-inf, 2]  D) All reals   Answer: A) [2, inf)\n- Q: What is the range of f(x) = x^2?\n  Options: A) All reals  B) [0, inf)  C) (0, inf)  D) (-inf, 0]   Answer: B) [0, inf)"
+      "body": "- Q: What is the domain of f(x) = sqrt(x - 2)?\n  Options: A) [2, inf)  B) (2, inf)  C) (-inf, 2]  D) All reals   Answer: A) [2, inf)\n- Q: What is the range of f(x) = x^2?\n  Options: A) All reals  B) [0, inf)  C) (0, inf)  D) (-inf, 0]   Answer: B) [0, inf)",
+      "questions": []
     },
     {
       "id": "QZ-EA-02",
@@ -1974,7 +2143,8 @@
       "code": "A2",
       "subtopic": "rates-of-change",
       "title": "QZ-EA-02 · A2. Rates of Change (2 Qs)",
-      "body": "- Q: If f(x) = x^2 - 4x, what is the average rate of change on [1, 3]?\n  Options: A) 0  B) -2  C) 2  D) 4   Answer: A) 0\n- Q: A function that is concave down has what shape?\n  Options: A) Frown (cap)  B) Smile (cup)  C) Straight line  D) Vertical   Answer: A) Frown (cap)"
+      "body": "- Q: If f(x) = x^2 - 4x, what is the average rate of change on [1, 3]?\n  Options: A) 0  B) -2  C) 2  D) 4   Answer: A) 0\n- Q: A function that is concave down has what shape?\n  Options: A) Frown (cap)  B) Smile (cup)  C) Straight line  D) Vertical   Answer: A) Frown (cap)",
+      "questions": []
     },
     {
       "id": "QZ-EA-03",
@@ -1984,7 +2154,8 @@
       "code": "A3",
       "subtopic": "function-composition",
       "title": "QZ-EA-03 · A3. Composition (2 Qs)",
-      "body": "- Q: If f(x) = 2x + 1 and g(x) = x^2, what is (f o g)(3)?\n  Options: A) 49  B) 19  C) 7  D) 13   Answer: B) 19\n- Q: f(g(x)) is the same as g(f(x)). True or false?\n  Options: A) True  B) False   Answer: B) False"
+      "body": "- Q: If f(x) = 2x + 1 and g(x) = x^2, what is (f o g)(3)?\n  Options: A) 49  B) 19  C) 7  D) 13   Answer: B) 19\n- Q: f(g(x)) is the same as g(f(x)). True or false?\n  Options: A) True  B) False   Answer: B) False",
+      "questions": []
     },
     {
       "id": "QZ-EA-04",
@@ -1994,7 +2165,8 @@
       "code": "A4",
       "subtopic": "linear-functions",
       "title": "QZ-EA-04 · A4. Linear Functions (1 Q)",
-      "body": "- Q: What is the slope of a line passing through (-1, 4) and (5, 2)?\n  Options: A) -1/3  B) 1/3  C) -3  D) 3   Answer: A) -1/3"
+      "body": "- Q: What is the slope of a line passing through (-1, 4) and (5, 2)?\n  Options: A) -1/3  B) 1/3  C) -3  D) 3   Answer: A) -1/3",
+      "questions": []
     },
     {
       "id": "QZ-EA-05",
@@ -2004,7 +2176,8 @@
       "code": "A5",
       "subtopic": "polynomials-deep",
       "title": "QZ-EA-05 · A5. Polynomials Deep (2 Qs)",
-      "body": "- Q: What is the end behavior of f(x) = -2x^5 + 3x^2 - 1?\n  Options: A) Both ends up  B) Both ends down  C) Left up, right down  D) Left down, right up   Answer: C) Left up, right down\n- Q: At a zero of multiplicity 3, the graph:\n  Options: A) Bounces  B) Crosses linearly  C) Crosses with flattening  D) Has a vertical asymptote   Answer: C) Crosses with flattening"
+      "body": "- Q: What is the end behavior of f(x) = -2x^5 + 3x^2 - 1?\n  Options: A) Both ends up  B) Both ends down  C) Left up, right down  D) Left down, right up   Answer: C) Left up, right down\n- Q: At a zero of multiplicity 3, the graph:\n  Options: A) Bounces  B) Crosses linearly  C) Crosses with flattening  D) Has a vertical asymptote   Answer: C) Crosses with flattening",
+      "questions": []
     },
     {
       "id": "QZ-EA-06",
@@ -2014,7 +2187,8 @@
       "code": "A6",
       "subtopic": "quadratics-expanded",
       "title": "QZ-EA-06 · A6. Quadratics Expanded (1 Q)",
-      "body": "- Q: What is the vertex of f(x) = -x^2 + 6x - 5?\n  Options: A) (3, 4)  B) (-3, -4)  C) (3, -4)  D) (-3, 4)   Answer: A) (3, 4)"
+      "body": "- Q: What is the vertex of f(x) = -x^2 + 6x - 5?\n  Options: A) (3, 4)  B) (-3, -4)  C) (3, -4)  D) (-3, 4)   Answer: A) (3, 4)",
+      "questions": []
     },
     {
       "id": "QZ-EA-07",
@@ -2024,7 +2198,8 @@
       "code": "A7",
       "subtopic": "factor-remainder",
       "title": "QZ-EA-07 · A7. Factor & Remainder (2 Qs)",
-      "body": "- Q: If p(x) = x^3 - 4x^2 + 5x - 14, what is the remainder when divided by (x - 2)?\n  Options: A) 0  B) -12  C) -16  D) 2   Answer: B) -12\n- Q: If p(3) = 0 for polynomial p(x), which is true?\n  Options: A) (x + 3) is a factor  B) (x - 3) is a factor  C) x = -3 is a zero  D) None of these   Answer: B) (x - 3) is a factor"
+      "body": "- Q: If p(x) = x^3 - 4x^2 + 5x - 14, what is the remainder when divided by (x - 2)?\n  Options: A) 0  B) -12  C) -16  D) 2   Answer: B) -12\n- Q: If p(3) = 0 for polynomial p(x), which is true?\n  Options: A) (x + 3) is a factor  B) (x - 3) is a factor  C) x = -3 is a zero  D) None of these   Answer: B) (x - 3) is a factor",
+      "questions": []
     },
     {
       "id": "QZ-EA-08",
@@ -2034,7 +2209,8 @@
       "code": "A8",
       "subtopic": "real-zeros",
       "title": "QZ-EA-08 · A8. Real Zeros (1 Q)",
-      "body": "- Q: What are the possible rational zeros of f(x) = 3x^3 - x^2 + 2?\n  Options: A) +/-{1, 2, 1/3, 2/3}  B) +/-{1, 3}  C) +/-{1, 2}  D) +/-{2, 3}   Answer: A) +/-{1, 2, 1/3, 2/3}"
+      "body": "- Q: What are the possible rational zeros of f(x) = 3x^3 - x^2 + 2?\n  Options: A) +/-{1, 2, 1/3, 2/3}  B) +/-{1, 3}  C) +/-{1, 2}  D) +/-{2, 3}   Answer: A) +/-{1, 2, 1/3, 2/3}",
+      "questions": []
     },
     {
       "id": "QZ-EA-09",
@@ -2044,7 +2220,8 @@
       "code": "A9",
       "subtopic": "complex-zeros",
       "title": "QZ-EA-09 · A9. Complex Zeros (2 Qs)",
-      "body": "- Q: What are the zeros of f(x) = x^2 + 4?\n  Options: A) +/-2  B) +/-2i  C) +/-4i  D) No zeros   Answer: B) +/-2i\n- Q: How many complex zeros does a degree-5 polynomial have?\n  Options: A) At most 5  B) Exactly 5  C) At least 1  D) Both B and C   Answer: D) Both B and C"
+      "body": "- Q: What are the zeros of f(x) = x^2 + 4?\n  Options: A) +/-2  B) +/-2i  C) +/-4i  D) No zeros   Answer: B) +/-2i\n- Q: How many complex zeros does a degree-5 polynomial have?\n  Options: A) At most 5  B) Exactly 5  C) At least 1  D) Both B and C   Answer: D) Both B and C",
+      "questions": []
     },
     {
       "id": "QZ-EA-10",
@@ -2054,7 +2231,8 @@
       "code": "A10",
       "subtopic": "rational-functions-deep",
       "title": "QZ-EA-10 · A10. Rational Functions Deep (1 Q)",
-      "body": "- Q: f(x) = (x - 2)/((x - 2)(x + 3)) has:\n  Options: A) VA at x=2 and x=-3  B) Hole at x=2, VA at x=-3  C) VA at x=-3 only  D) Both B and C   Answer: B) Hole at x=2, VA at x=-3"
+      "body": "- Q: f(x) = (x - 2)/((x - 2)(x + 3)) has:\n  Options: A) VA at x=2 and x=-3  B) Hole at x=2, VA at x=-3  C) VA at x=-3 only  D) Both B and C   Answer: B) Hole at x=2, VA at x=-3",
+      "questions": []
     },
     {
       "id": "QZ-EA-11",
@@ -2064,7 +2242,8 @@
       "code": "A11",
       "subtopic": "inverses-radicals",
       "title": "QZ-EA-11 · A11. Inverses & Radicals (1 Q)",
-      "body": "- Q: Solve sqrt(x + 3) = 5.\n  Options: A) x = 22  B) x = 28  C) x = 8  D) x = 2   Answer: A) x = 22"
+      "body": "- Q: Solve sqrt(x + 3) = 5.\n  Options: A) x = 22  B) x = 28  C) x = 8  D) x = 2   Answer: A) x = 22",
+      "questions": []
     },
     {
       "id": "QZ-EA-12",
@@ -2074,7 +2253,8 @@
       "code": "A12",
       "subtopic": "exponential-models",
       "title": "QZ-EA-12 · A12. Exponential Models (1 Q)",
-      "body": "- Q: An investment of $1000 at 5% compounded continuously is worth how much after 10 years?\n  Options: A) $1,628.89  B) $1,500  C) $1,648.72  D) $1,050   Answer: C) $1,648.72"
+      "body": "- Q: An investment of $1000 at 5% compounded continuously is worth how much after 10 years?\n  Options: A) $1,628.89  B) $1,500  C) $1,648.72  D) $1,050   Answer: C) $1,648.72",
+      "questions": []
     },
     {
       "id": "QZ-EA-13",
@@ -2084,7 +2264,8 @@
       "code": "A13",
       "subtopic": "logarithmic-models",
       "title": "QZ-EA-13 · A13. Logarithmic Models (1 Q)",
-      "body": "- Q: Solve: log_3(x + 1) = 2\n  Options: A) x = 8  B) x = 7  C) x = 9  D) x = 5   Answer: A) x = 8\n\n---\n\n## 4E. Expansion Quiz — Trigonometry (B-coded, 20 Qs)"
+      "body": "- Q: Solve: log_3(x + 1) = 2\n  Options: A) x = 8  B) x = 7  C) x = 9  D) x = 5   Answer: A) x = 8\n\n---\n\n## 4E. Expansion Quiz — Trigonometry (B-coded, 20 Qs)",
+      "questions": []
     },
     {
       "id": "QZ-EB-01",
@@ -2094,7 +2275,8 @@
       "code": "B1",
       "subtopic": "angles-measure",
       "title": "QZ-EB-01 · B1. Angles & Measure (2 Qs)",
-      "body": "- Q: What is the arc length of a circle with radius 10 and central angle 2 radians?\n  Options: A) 20  B) 5  C) 10  D) 40   Answer: A) 20\n- Q: Which angle is coterminal with 450 deg?\n  Options: A) 90 deg  B) 180 deg  C) 270 deg  D) 360 deg   Answer: A) 90 deg"
+      "body": "- Q: What is the arc length of a circle with radius 10 and central angle 2 radians?\n  Options: A) 20  B) 5  C) 10  D) 40   Answer: A) 20\n- Q: Which angle is coterminal with 450 deg?\n  Options: A) 90 deg  B) 180 deg  C) 270 deg  D) 360 deg   Answer: A) 90 deg",
+      "questions": []
     },
     {
       "id": "QZ-EB-02",
@@ -2104,7 +2286,8 @@
       "code": "B2",
       "subtopic": "six-functions-identities",
       "title": "QZ-EB-02 · B2. Six Trig Functions (2 Qs)",
-      "body": "- Q: If tan(theta) = 3 and theta is in QIII, what is sin(theta)?\n  Options: A) 3/sqrt(10)  B) -3/sqrt(10)  C) -1/sqrt(10)  D) 1/sqrt(10)   Answer: B) -3/sqrt(10)\n- Q: sec(theta) is the reciprocal of:\n  Options: A) sin(theta)  B) cos(theta)  C) tan(theta)  D) cot(theta)   Answer: B) cos(theta)"
+      "body": "- Q: If tan(theta) = 3 and theta is in QIII, what is sin(theta)?\n  Options: A) 3/sqrt(10)  B) -3/sqrt(10)  C) -1/sqrt(10)  D) 1/sqrt(10)   Answer: B) -3/sqrt(10)\n- Q: sec(theta) is the reciprocal of:\n  Options: A) sin(theta)  B) cos(theta)  C) tan(theta)  D) cot(theta)   Answer: B) cos(theta)",
+      "questions": []
     },
     {
       "id": "QZ-EB-03",
@@ -2114,7 +2297,8 @@
       "code": "B3",
       "subtopic": "trig-identities-proofs",
       "title": "QZ-EB-03 · B3. Trig Identities Proofs (2 Qs)",
-      "body": "- Q: What is sin(2theta) equal to?\n  Options: A) 2sin(theta)  B) sin^2(theta)  C) 2sin(theta)*cos(theta)  D) cos^2(theta) - sin^2(theta)   Answer: C) 2sin(theta)*cos(theta)\n- Q: cos(A - B) =\n  Options: A) cosA*cosB + sinA*sinB  B) cosA*cosB - sinA*sinB  C) sinA*cosB - cosA*sinB  D) sinA*cosB + cosA*sinB   Answer: A) cosA*cosB + sinA*sinB"
+      "body": "- Q: What is sin(2theta) equal to?\n  Options: A) 2sin(theta)  B) sin^2(theta)  C) 2sin(theta)*cos(theta)  D) cos^2(theta) - sin^2(theta)   Answer: C) 2sin(theta)*cos(theta)\n- Q: cos(A - B) =\n  Options: A) cosA*cosB + sinA*sinB  B) cosA*cosB - sinA*sinB  C) sinA*cosB - cosA*sinB  D) sinA*cosB + cosA*sinB   Answer: A) cosA*cosB + sinA*sinB",
+      "questions": []
     },
     {
       "id": "QZ-EB-04",
@@ -2124,7 +2308,8 @@
       "code": "B4",
       "subtopic": "trig-graphs",
       "title": "QZ-EB-04 · B4. Trig Graphs (1 Q)",
-      "body": "- Q: The period of y = sec(3x) is:\n  Options: A) 2pi  B) 2pi/3  C) pi/3  D) 3pi   Answer: B) 2pi/3"
+      "body": "- Q: The period of y = sec(3x) is:\n  Options: A) 2pi  B) 2pi/3  C) pi/3  D) 3pi   Answer: B) 2pi/3",
+      "questions": []
     },
     {
       "id": "QZ-EB-05",
@@ -2134,7 +2319,8 @@
       "code": "B5",
       "subtopic": "inverse-trig",
       "title": "QZ-EB-05 · B5. Inverse Trig (2 Qs)",
-      "body": "- Q: arctan(1) = ?\n  Options: A) pi/6  B) pi/4  C) pi/3  D) pi/2   Answer: B) pi/4\n- Q: The domain of arcsin(x) is:\n  Options: A) All reals  B) [-1, 1]  C) [0, 1]  D) (-pi/2, pi/2)   Answer: B) [-1, 1]"
+      "body": "- Q: arctan(1) = ?\n  Options: A) pi/6  B) pi/4  C) pi/3  D) pi/2   Answer: B) pi/4\n- Q: The domain of arcsin(x) is:\n  Options: A) All reals  B) [-1, 1]  C) [0, 1]  D) (-pi/2, pi/2)   Answer: B) [-1, 1]",
+      "questions": []
     },
     {
       "id": "QZ-EB-06",
@@ -2144,7 +2330,8 @@
       "code": "B6",
       "subtopic": "trig-equations",
       "title": "QZ-EB-06 · B6. Trig Equations (2 Qs)",
-      "body": "- Q: How many solutions does sin(x) = 1/2 have in [0, 2pi)?\n  Options: A) 1  B) 2  C) 3  D) Infinite   Answer: B) 2\n- Q: The general solution to tan(x) = 1 is:\n  Options: A) x = pi/4 + 2pi*k  B) x = pi/4 + pi*k  C) x = pi/4 only  D) x = 3pi/4 + pi*k   Answer: B) x = pi/4 + pi*k"
+      "body": "- Q: How many solutions does sin(x) = 1/2 have in [0, 2pi)?\n  Options: A) 1  B) 2  C) 3  D) Infinite   Answer: B) 2\n- Q: The general solution to tan(x) = 1 is:\n  Options: A) x = pi/4 + 2pi*k  B) x = pi/4 + pi*k  C) x = pi/4 only  D) x = 3pi/4 + pi*k   Answer: B) x = pi/4 + pi*k",
+      "questions": []
     },
     {
       "id": "QZ-EB-07",
@@ -2154,7 +2341,8 @@
       "code": "B7",
       "subtopic": "law-of-sines",
       "title": "QZ-EB-07 · B7. Law of Sines (1 Q)",
-      "body": "- Q: The Law of Sines is useful when you know:\n  Options: A) SSS  B) SAS  C) AAS  D) All of these   Answer: C) AAS"
+      "body": "- Q: The Law of Sines is useful when you know:\n  Options: A) SSS  B) SAS  C) AAS  D) All of these   Answer: C) AAS",
+      "questions": []
     },
     {
       "id": "QZ-EB-08",
@@ -2164,7 +2352,8 @@
       "code": "B8",
       "subtopic": "law-of-cosines",
       "title": "QZ-EB-08 · B8. Law of Cosines (1 Q)",
-      "body": "- Q: Given a = 8, b = 6, c = 10, find angle C.\n  Options: A) 90 deg  B) 60 deg  C) 120 deg  D) 45 deg   Answer: A) 90 deg"
+      "body": "- Q: Given a = 8, b = 6, c = 10, find angle C.\n  Options: A) 90 deg  B) 60 deg  C) 120 deg  D) 45 deg   Answer: A) 90 deg",
+      "questions": []
     },
     {
       "id": "QZ-EB-09",
@@ -2174,7 +2363,8 @@
       "code": "B9",
       "subtopic": "polar-coordinates",
       "title": "QZ-EB-09 · B9. Polar Coordinates (1 Q)",
-      "body": "- Q: The Cartesian coordinates of the polar point (4, pi/3) are:\n  Options: A) (2, 2*sqrt(3))  B) (2*sqrt(3), 2)  C) (4, 4)  D) (2, 2)   Answer: A) (2, 2*sqrt(3))"
+      "body": "- Q: The Cartesian coordinates of the polar point (4, pi/3) are:\n  Options: A) (2, 2*sqrt(3))  B) (2*sqrt(3), 2)  C) (4, 4)  D) (2, 2)   Answer: A) (2, 2*sqrt(3))",
+      "questions": []
     },
     {
       "id": "QZ-EB-10",
@@ -2184,7 +2374,8 @@
       "code": "B10",
       "subtopic": "vectors",
       "title": "QZ-EB-10 · B10. Vectors (2 Qs)",
-      "body": "- Q: What is the dot product of <1, 2> and <-2, 1>?\n  Options: A) 0  B) 4  C) -4  D) 2   Answer: A) 0\n- Q: The work done by a force F = 10 lbs at 30 deg over 50 ft is:\n  Options: A) 250*sqrt(3)  B) 500  C) 250  D) 125*sqrt(3)   Answer: A) 250*sqrt(3)"
+      "body": "- Q: What is the dot product of <1, 2> and <-2, 1>?\n  Options: A) 0  B) 4  C) -4  D) 2   Answer: A) 0\n- Q: The work done by a force F = 10 lbs at 30 deg over 50 ft is:\n  Options: A) 250*sqrt(3)  B) 500  C) 250  D) 125*sqrt(3)   Answer: A) 250*sqrt(3)",
+      "questions": []
     },
     {
       "id": "QZ-EB-11",
@@ -2194,7 +2385,8 @@
       "code": "B11",
       "subtopic": "parametric-equations",
       "title": "QZ-EB-11 · B11. Parametric Equations (1 Q)",
-      "body": "- Q: The parametric equations x = 3cos(t), y = 3sin(t) trace out:\n  Options: A) A line  B) A parabola  C) A circle of radius 3  D) An ellipse   Answer: C) A circle of radius 3"
+      "body": "- Q: The parametric equations x = 3cos(t), y = 3sin(t) trace out:\n  Options: A) A line  B) A parabola  C) A circle of radius 3  D) An ellipse   Answer: C) A circle of radius 3",
+      "questions": []
     },
     {
       "id": "QZ-EB-12",
@@ -2204,7 +2396,8 @@
       "code": "B12",
       "subtopic": "polar-complex",
       "title": "QZ-EB-12 · B12. Polar Complex (1 Q)",
-      "body": "- Q: The modulus of z = 3 + 4i is:\n  Options: A) 5  B) 7  C) sqrt(7)  D) 25   Answer: A) 5"
+      "body": "- Q: The modulus of z = 3 + 4i is:\n  Options: A) 5  B) 7  C) sqrt(7)  D) 25   Answer: A) 5",
+      "questions": []
     },
     {
       "id": "QZ-EB-13",
@@ -2214,7 +2407,8 @@
       "code": "B13",
       "subtopic": "harmonic-motion",
       "title": "QZ-EB-13 · B13. Harmonic Motion (1 Q)",
-      "body": "- Q: The period of S(t) = 5sin(pi*t/3) is:\n  Options: A) 6  B) 3  C) pi/3  D) 2pi/3   Answer: A) 6"
+      "body": "- Q: The period of S(t) = 5sin(pi*t/3) is:\n  Options: A) 6  B) 3  C) pi/3  D) 2pi/3   Answer: A) 6",
+      "questions": []
     },
     {
       "id": "QZ-EB-14",
@@ -2224,7 +2418,8 @@
       "code": "B14",
       "subtopic": "polar-conics-rotation",
       "title": "QZ-EB-14 · B14. Polar Conics (1 Q)",
-      "body": "- Q: A conic with eccentricity e = 0.5 is:\n  Options: A) Circle  B) Ellipse  C) Parabola  D) Hyperbola   Answer: B) Ellipse\n\n---\n---\n\n# PART 5 — CONTENT TOTALS & FEATURES\n# ====================================\n\n## Content Totals\n\n| Category | Original | Expansion | Total |\n| --- | --- | --- | --- |\n| Review Cards | ~25 sections | 27 topics | ~52 sections |\n| Flashcards | 45 cards | 76 cards | ~121 cards |\n| Quiz Questions | 50 (15 precalc + 35 calculus) | 39 questions | 89 questions |\n\n## Features\n- Topic navigation dropdown in Review tab with smooth scroll and highlight\n- Topic filter dropdowns in Flashcards and Quiz tabs\n- Cross-tab sync: selecting an expansion topic in Review auto-sets flashcard/quiz filters\n- Priority tier badges: Tier 1 (Essential), Tier 2 (Important), Tier 3 (Advanced)\n- Sidebar navigation with grouped expansion topics\n- Quiz history with localStorage persistence and CSV export\n- Yu-Gi-Oh! crossover sections on 10 expansion topics (collapsible)\n\n---\n\n# APPENDIX — TAG INDEX (for programmatic lookup)\n# ================================================\n#\n# To filter by course:\n#   grep \"course:precalc\" this_file.md\n#   grep \"course:calculus\" this_file.md\n#\n# To filter by area:\n#   grep \"area:algebra\" this_file.md\n#   grep \"area:trig\" this_file.md\n#   grep \"area:calculus\" this_file.md\n#   grep \"area:precalc-general\" this_file.md\n#\n# To filter by type:\n#   grep \"type:review-card\" this_file.md\n#   grep \"type:expansion-review\" this_file.md\n#   grep \"type:flashcard\" this_file.md\n#   grep \"type:quiz\" this_file.md\n#\n# To filter by tier:\n#   grep \"tier:1-essential\" this_file.md\n#   grep \"tier:2-important\" this_file.md\n#   grep \"tier:3-advanced\" this_file.md\n#\n# To filter by expansion code:\n#   grep \"code:A1\" this_file.md\n#   grep \"code:B13\" this_file.md\n#\n# To get all items with Yu-Gi-Oh! crossover:\n#   grep \"yugioh:yes\" this_file.md"
+      "body": "- Q: A conic with eccentricity e = 0.5 is:\n  Options: A) Circle  B) Ellipse  C) Parabola  D) Hyperbola   Answer: B) Ellipse\n\n---\n---\n\n# PART 5 — CONTENT TOTALS & FEATURES\n# ====================================\n\n## Content Totals\n\n| Category | Original | Expansion | Total |\n| --- | --- | --- | --- |\n| Review Cards | ~25 sections | 27 topics | ~52 sections |\n| Flashcards | 45 cards | 76 cards | ~121 cards |\n| Quiz Questions | 50 (15 precalc + 35 calculus) | 39 questions | 89 questions |\n\n## Features\n- Topic navigation dropdown in Review tab with smooth scroll and highlight\n- Topic filter dropdowns in Flashcards and Quiz tabs\n- Cross-tab sync: selecting an expansion topic in Review auto-sets flashcard/quiz filters\n- Priority tier badges: Tier 1 (Essential), Tier 2 (Important), Tier 3 (Advanced)\n- Sidebar navigation with grouped expansion topics\n- Quiz history with localStorage persistence and CSV export\n- Yu-Gi-Oh! crossover sections on 10 expansion topics (collapsible)\n\n---\n\n# APPENDIX — TAG INDEX (for programmatic lookup)\n# ================================================\n#\n# To filter by course:\n#   grep \"course:precalc\" this_file.md\n#   grep \"course:calculus\" this_file.md\n#\n# To filter by area:\n#   grep \"area:algebra\" this_file.md\n#   grep \"area:trig\" this_file.md\n#   grep \"area:calculus\" this_file.md\n#   grep \"area:precalc-general\" this_file.md\n#\n# To filter by type:\n#   grep \"type:review-card\" this_file.md\n#   grep \"type:expansion-review\" this_file.md\n#   grep \"type:flashcard\" this_file.md\n#   grep \"type:quiz\" this_file.md\n#\n# To filter by tier:\n#   grep \"tier:1-essential\" this_file.md\n#   grep \"tier:2-important\" this_file.md\n#   grep \"tier:3-advanced\" this_file.md\n#\n# To filter by expansion code:\n#   grep \"code:A1\" this_file.md\n#   grep \"code:B13\" this_file.md\n#\n# To get all items with Yu-Gi-Oh! crossover:\n#   grep \"yugioh:yes\" this_file.md",
+      "questions": []
     }
   ],
   "indexByTag": {
@@ -4899,7 +5094,39 @@
       "type": "quiz",
       "subtopic": "functions-notation",
       "title": "QZ-ALG-01 · Functions and Algebra",
-      "body": "- Q: If f(x) = x^2 - 3x + 2, what is f(2)?\n  Options: A) 0  B) 2  C) 4  D) 6\n  Answer: A) 0\n- Q: Factor: x^2 - 9\n  Options: A) (x - 3)^2  B) (x + 3)^2  C) (x - 3)(x + 3)  D) (x - 3)(x - 3)\n  Answer: C) (x - 3)(x + 3)\n- Q: Solve: x^2 - 5x + 6 = 0\n  Options: A) 1, 6  B) 2, 3  C) -2, -3  D) 2, -3\n  Answer: B) 2, 3"
+      "body": "- Q: If f(x) = x^2 - 3x + 2, what is f(2)?\n  Options: A) 0  B) 2  C) 4  D) 6\n  Answer: A) 0\n- Q: Factor: x^2 - 9\n  Options: A) (x - 3)^2  B) (x + 3)^2  C) (x - 3)(x + 3)  D) (x - 3)(x - 3)\n  Answer: C) (x - 3)(x + 3)\n- Q: Solve: x^2 - 5x + 6 = 0\n  Options: A) 1, 6  B) 2, 3  C) -2, -3  D) 2, -3\n  Answer: B) 2, 3",
+      "questions": [
+        {
+          "q": "If f(x) = x^2 - 3x + 2, what is f(2)?",
+          "opts": [
+            "0",
+            "2",
+            "4",
+            "6"
+          ],
+          "ans": 0
+        },
+        {
+          "q": "Factor: x^2 - 9",
+          "opts": [
+            "(x - 3)^2",
+            "(x + 3)^2",
+            "(x - 3)(x + 3)",
+            "(x - 3)(x - 3)"
+          ],
+          "ans": 2
+        },
+        {
+          "q": "Solve: x^2 - 5x + 6 = 0",
+          "opts": [
+            "1, 6",
+            "2, 3",
+            "-2, -3",
+            "2, -3"
+          ],
+          "ans": 1
+        }
+      ]
     },
     "QZ-ALG-02": {
       "id": "QZ-ALG-02",
@@ -4908,7 +5135,49 @@
       "type": "quiz",
       "subtopic": "exponentials-logs",
       "title": "QZ-ALG-02 · Exponentials and Logs",
-      "body": "- Q: Solve: 2^x = 16\n  Options: A) 2  B) 3  C) 4  D) 8\n  Answer: C) 4\n- Q: Which is equivalent to ln(e^5)?\n  Options: A) 1  B) e  C) 5  D) e^5\n  Answer: C) 5\n- Q: Expand: log(x^2 y / z)\n  Options: A) 2log(x) + log(y) - log(z)  B) log(x) + log(y) - log(z)  C) 2log(x) - log(y) - log(z)  D) log(2x) + log(y) - log(z)\n  Answer: A) 2log(x) + log(y) - log(z)\n- Q: What is ln(1)?\n  Options: A) 0  B) 1  C) undefined  D) e\n  Answer: A) 0"
+      "body": "- Q: Solve: 2^x = 16\n  Options: A) 2  B) 3  C) 4  D) 8\n  Answer: C) 4\n- Q: Which is equivalent to ln(e^5)?\n  Options: A) 1  B) e  C) 5  D) e^5\n  Answer: C) 5\n- Q: Expand: log(x^2 y / z)\n  Options: A) 2log(x) + log(y) - log(z)  B) log(x) + log(y) - log(z)  C) 2log(x) - log(y) - log(z)  D) log(2x) + log(y) - log(z)\n  Answer: A) 2log(x) + log(y) - log(z)\n- Q: What is ln(1)?\n  Options: A) 0  B) 1  C) undefined  D) e\n  Answer: A) 0",
+      "questions": [
+        {
+          "q": "Solve: 2^x = 16",
+          "opts": [
+            "2",
+            "3",
+            "4",
+            "8"
+          ],
+          "ans": 2
+        },
+        {
+          "q": "Which is equivalent to ln(e^5)?",
+          "opts": [
+            "1",
+            "e",
+            "5",
+            "e^5"
+          ],
+          "ans": 2
+        },
+        {
+          "q": "Expand: log(x^2 y / z)",
+          "opts": [
+            "2log(x) + log(y) - log(z)",
+            "log(x) + log(y) - log(z)",
+            "2log(x) - log(y) - log(z)",
+            "log(2x) + log(y) - log(z)"
+          ],
+          "ans": 0
+        },
+        {
+          "q": "What is ln(1)?",
+          "opts": [
+            "0",
+            "1",
+            "undefined",
+            "e"
+          ],
+          "ans": 0
+        }
+      ]
     },
     "QZ-ALG-03": {
       "id": "QZ-ALG-03",
@@ -4917,7 +5186,19 @@
       "type": "quiz",
       "subtopic": "absolute-value-piecewise",
       "title": "QZ-ALG-03 · Absolute Value",
-      "body": "- Q: Solve: |x - 3| = 5\n  Options: A) 3  B) 8, -2  C) 5, -5  D) -2, 8\n  Answer: D) -2, 8"
+      "body": "- Q: Solve: |x - 3| = 5\n  Options: A) 3  B) 8, -2  C) 5, -5  D) -2, 8\n  Answer: D) -2, 8",
+      "questions": [
+        {
+          "q": "Solve: |x - 3| = 5",
+          "opts": [
+            "3",
+            "8, -2",
+            "5, -5",
+            "-2, 8"
+          ],
+          "ans": 3
+        }
+      ]
     },
     "QZ-ALG-04": {
       "id": "QZ-ALG-04",
@@ -4926,7 +5207,19 @@
       "type": "quiz",
       "subtopic": "linear-functions",
       "title": "QZ-ALG-04 · Lines",
-      "body": "- Q: Which are perpendicular lines?\n  Options: A) m=2, m=2  B) m=2, m=-1/2  C) m=2, m=1/2  D) m=2, m=1\n  Answer: B) m=2, m=-1/2"
+      "body": "- Q: Which are perpendicular lines?\n  Options: A) m=2, m=2  B) m=2, m=-1/2  C) m=2, m=1/2  D) m=2, m=1\n  Answer: B) m=2, m=-1/2",
+      "questions": [
+        {
+          "q": "Which are perpendicular lines?",
+          "opts": [
+            "m=2, m=2",
+            "m=2, m=-1/2",
+            "m=2, m=1/2",
+            "m=2, m=1"
+          ],
+          "ans": 1
+        }
+      ]
     },
     "QZ-ALG-05": {
       "id": "QZ-ALG-05",
@@ -4935,7 +5228,19 @@
       "type": "quiz",
       "subtopic": "rational-functions",
       "title": "QZ-ALG-05 · Rational Functions",
-      "body": "- Q: For f(x) = 1/(x - 2), what is the vertical asymptote?\n  Options: A) x=0  B) x=1  C) x=2  D) x=-2\n  Answer: C) x=2\n\n---\n\n## 4B. Precalc Quiz — Trigonometry"
+      "body": "- Q: For f(x) = 1/(x - 2), what is the vertical asymptote?\n  Options: A) x=0  B) x=1  C) x=2  D) x=-2\n  Answer: C) x=2\n\n---\n\n## 4B. Precalc Quiz — Trigonometry",
+      "questions": [
+        {
+          "q": "For f(x) = 1/(x - 2), what is the vertical asymptote?",
+          "opts": [
+            "x=0",
+            "x=1",
+            "x=2",
+            "x=-2"
+          ],
+          "ans": 2
+        }
+      ]
     },
     "QZ-TRIG-01": {
       "id": "QZ-TRIG-01",
@@ -4944,7 +5249,49 @@
       "type": "quiz",
       "subtopic": "trig-core",
       "title": "QZ-TRIG-01 · Trigonometry and Unit Circle",
-      "body": "- Q: What is cos(pi/3)?\n  Options: A) 0  B) 1/2  C) sqrt(3)/2  D) 1\n  Answer: B) 1/2\n- Q: Solve: sin(x) = 1/2 for x in [0, 2pi)\n  Options: A) pi/6, 5pi/6  B) pi/3, 2pi/3  C) pi/4, 3pi/4  D) pi/6, pi/3\n  Answer: A) pi/6, 5pi/6\n- Q: Simplify: sin^2(x) + cos^2(x)\n  Options: A) 0  B) 1  C) sin(2x)  D) tan(x)\n  Answer: B) 1\n- Q: Find the period of y = cos(pi x)\n  Options: A) pi  B) 2pi  C) 2  D) 1/2\n  Answer: C) 2"
+      "body": "- Q: What is cos(pi/3)?\n  Options: A) 0  B) 1/2  C) sqrt(3)/2  D) 1\n  Answer: B) 1/2\n- Q: Solve: sin(x) = 1/2 for x in [0, 2pi)\n  Options: A) pi/6, 5pi/6  B) pi/3, 2pi/3  C) pi/4, 3pi/4  D) pi/6, pi/3\n  Answer: A) pi/6, 5pi/6\n- Q: Simplify: sin^2(x) + cos^2(x)\n  Options: A) 0  B) 1  C) sin(2x)  D) tan(x)\n  Answer: B) 1\n- Q: Find the period of y = cos(pi x)\n  Options: A) pi  B) 2pi  C) 2  D) 1/2\n  Answer: C) 2",
+      "questions": [
+        {
+          "q": "What is cos(pi/3)?",
+          "opts": [
+            "0",
+            "1/2",
+            "sqrt(3)/2",
+            "1"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Solve: sin(x) = 1/2 for x in [0, 2pi)",
+          "opts": [
+            "pi/6, 5pi/6",
+            "pi/3, 2pi/3",
+            "pi/4, 3pi/4",
+            "pi/6, pi/3"
+          ],
+          "ans": 0
+        },
+        {
+          "q": "Simplify: sin^2(x) + cos^2(x)",
+          "opts": [
+            "0",
+            "1",
+            "sin(2x)",
+            "tan(x)"
+          ],
+          "ans": 1
+        },
+        {
+          "q": "Find the period of y = cos(pi x)",
+          "opts": [
+            "pi",
+            "2pi",
+            "2",
+            "1/2"
+          ],
+          "ans": 2
+        }
+      ]
     },
     "QZ-TRIG-02": {
       "id": "QZ-TRIG-02",
@@ -4953,7 +5300,19 @@
       "type": "quiz",
       "subtopic": "sinusoidal-models",
       "title": "QZ-TRIG-02 · Sinusoidal Models",
-      "body": "- Q: Find the amplitude of y = 3sin(2x) - 5\n  Options: A) 2  B) 3  C) 5  D) -5\n  Answer: B) 3\n\n---\n\n## 4C. Calculus Quiz Pool (35 questions)"
+      "body": "- Q: Find the amplitude of y = 3sin(2x) - 5\n  Options: A) 2  B) 3  C) 5  D) -5\n  Answer: B) 3\n\n---\n\n## 4C. Calculus Quiz Pool (35 questions)",
+      "questions": [
+        {
+          "q": "Find the amplitude of y = 3sin(2x) - 5",
+          "opts": [
+            "2",
+            "3",
+            "5",
+            "-5"
+          ],
+          "ans": 1
+        }
+      ]
     },
     "QZ-CALC-01": {
       "id": "QZ-CALC-01",
@@ -4962,7 +5321,8 @@
       "type": "quiz",
       "subtopic": "limits",
       "title": "QZ-CALC-01 · Limits (7 Qs)",
-      "body": "- Q: What is the limit of f(x) = 3x^2 - 2x + 1 as x approaches 2?\n  Options: A) 9  B) 5  C) 11  D) 7   Answer: A) 9\n- Q: Evaluate: lim(x->0) sin(x)/x\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: B) 1\n- Q: What is the limit of (x^2 - 4)/(x - 2) as x approaches 2?\n  Options: A) 0  B) 2  C) 4  D) undefined   Answer: C) 4\n- Q: Evaluate: lim(x->inf) (2x^2 + 3x)/(x^2 + 1)\n  Options: A) 0  B) 1  C) 2  D) 3   Answer: C) 2\n- Q: What is the limit of 1/x as x approaches infinity?\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: A) 0\n- Q: Evaluate: lim(x->3) (x^2 - 9)/(x - 3)\n  Options: A) 0  B) 3  C) 6  D) 9   Answer: C) 6\n- Q: What is the limit of e^x as x approaches negative infinity?\n  Options: A) 0  B) 1  C) -inf  D) inf   Answer: A) 0"
+      "body": "- Q: What is the limit of f(x) = 3x^2 - 2x + 1 as x approaches 2?\n  Options: A) 9  B) 5  C) 11  D) 7   Answer: A) 9\n- Q: Evaluate: lim(x->0) sin(x)/x\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: B) 1\n- Q: What is the limit of (x^2 - 4)/(x - 2) as x approaches 2?\n  Options: A) 0  B) 2  C) 4  D) undefined   Answer: C) 4\n- Q: Evaluate: lim(x->inf) (2x^2 + 3x)/(x^2 + 1)\n  Options: A) 0  B) 1  C) 2  D) 3   Answer: C) 2\n- Q: What is the limit of 1/x as x approaches infinity?\n  Options: A) 0  B) 1  C) inf  D) undefined   Answer: A) 0\n- Q: Evaluate: lim(x->3) (x^2 - 9)/(x - 3)\n  Options: A) 0  B) 3  C) 6  D) 9   Answer: C) 6\n- Q: What is the limit of e^x as x approaches negative infinity?\n  Options: A) 0  B) 1  C) -inf  D) inf   Answer: A) 0",
+      "questions": []
     },
     "QZ-CALC-02": {
       "id": "QZ-CALC-02",
@@ -4971,7 +5331,8 @@
       "type": "quiz",
       "subtopic": "derivatives",
       "title": "QZ-CALC-02 · Derivatives (10 Qs)",
-      "body": "- Q: What is the derivative of f(x) = x^3?\n  Options: A) x^2  B) 3x  C) 3x^2  D) x^3   Answer: C) 3x^2\n- Q: Find the derivative of f(x) = sin(x).\n  Options: A) cos(x)  B) -cos(x)  C) -sin(x)  D) tan(x)   Answer: A) cos(x)\n- Q: What is the derivative of f(x) = e^x?\n  Options: A) x e^(x-1)  B) e^x  C) e^(x-1)  D) ln(x)   Answer: B) e^x\n- Q: Find the derivative of f(x) = ln(x).\n  Options: A) x  B) 1/x  C) ln(x)/x  D) e^x   Answer: B) 1/x\n- Q: What is the derivative of f(x) = x^2 + 3x - 4?\n  Options: A) 2x + 3  B) x^2 + 3  C) 2x - 4  D) 2x + 3x   Answer: A) 2x + 3\n- Q: Find the derivative of f(x) = cos(x).\n  Options: A) sin(x)  B) -sin(x)  C) -cos(x)  D) tan(x)   Answer: B) -sin(x)\n- Q: What is the derivative of f(x) = tan(x)?\n  Options: A) sec(x)  B) cot(x)  C) sec^2(x)  D) -csc^2(x)   Answer: C) sec^2(x)\n- Q: Find the derivative of f(x) = x sin(x).\n  Options: A) cos(x)  B) x cos(x)  C) sin(x) + cos(x)  D) sin(x) + x cos(x)   Answer: D) sin(x) + x cos(x)\n- Q: What is the derivative of f(x) = 1/x?\n  Options: A) 1/x^2  B) -1/x^2  C) ln(x)  D) -ln(x)   Answer: B) -1/x^2\n- Q: Find the derivative of f(x) = x^4 - 2x^3 + 5x^2 - 3x + 1.\n  Options: A) 4x^3 - 6x^2 + 10x - 3  B) 4x^3 - 2x^2 + 5x - 3  C) x^3 - 6x^2 + 10x - 3  D) 4x^4 - 6x^3 + 10x^2 - 3x   Answer: A) 4x^3 - 6x^2 + 10x - 3"
+      "body": "- Q: What is the derivative of f(x) = x^3?\n  Options: A) x^2  B) 3x  C) 3x^2  D) x^3   Answer: C) 3x^2\n- Q: Find the derivative of f(x) = sin(x).\n  Options: A) cos(x)  B) -cos(x)  C) -sin(x)  D) tan(x)   Answer: A) cos(x)\n- Q: What is the derivative of f(x) = e^x?\n  Options: A) x e^(x-1)  B) e^x  C) e^(x-1)  D) ln(x)   Answer: B) e^x\n- Q: Find the derivative of f(x) = ln(x).\n  Options: A) x  B) 1/x  C) ln(x)/x  D) e^x   Answer: B) 1/x\n- Q: What is the derivative of f(x) = x^2 + 3x - 4?\n  Options: A) 2x + 3  B) x^2 + 3  C) 2x - 4  D) 2x + 3x   Answer: A) 2x + 3\n- Q: Find the derivative of f(x) = cos(x).\n  Options: A) sin(x)  B) -sin(x)  C) -cos(x)  D) tan(x)   Answer: B) -sin(x)\n- Q: What is the derivative of f(x) = tan(x)?\n  Options: A) sec(x)  B) cot(x)  C) sec^2(x)  D) -csc^2(x)   Answer: C) sec^2(x)\n- Q: Find the derivative of f(x) = x sin(x).\n  Options: A) cos(x)  B) x cos(x)  C) sin(x) + cos(x)  D) sin(x) + x cos(x)   Answer: D) sin(x) + x cos(x)\n- Q: What is the derivative of f(x) = 1/x?\n  Options: A) 1/x^2  B) -1/x^2  C) ln(x)  D) -ln(x)   Answer: B) -1/x^2\n- Q: Find the derivative of f(x) = x^4 - 2x^3 + 5x^2 - 3x + 1.\n  Options: A) 4x^3 - 6x^2 + 10x - 3  B) 4x^3 - 2x^2 + 5x - 3  C) x^3 - 6x^2 + 10x - 3  D) 4x^4 - 6x^3 + 10x^2 - 3x   Answer: A) 4x^3 - 6x^2 + 10x - 3",
+      "questions": []
     },
     "QZ-CALC-03": {
       "id": "QZ-CALC-03",
@@ -4980,7 +5341,8 @@
       "type": "quiz",
       "subtopic": "integrals",
       "title": "QZ-CALC-03 · Integrals (10 Qs)",
-      "body": "- Q: What is the integral of f(x) = x^2?\n  Options: A) x^3/3 + C  B) 2x + C  C) x^3 + C  D) x^2/2 + C   Answer: A) x^3/3 + C\n- Q: Evaluate: int e^x dx\n  Options: A) e^x + C  B) x e^x + C  C) e^(x+1)/(x+1) + C  D) ln(x) + C   Answer: A) e^x + C\n- Q: What is the integral of f(x) = sin(x)?\n  Options: A) cos(x) + C  B) -cos(x) + C  C) -sin(x) + C  D) sin^2(x)/2 + C   Answer: B) -cos(x) + C\n- Q: Evaluate: int (1/x) dx\n  Options: A) x + C  B) ln(x) + C  C) ln|x| + C  D) -1/x^2 + C   Answer: C) ln|x| + C\n- Q: What is the integral of f(x) = cos(x)?\n  Options: A) sin(x) + C  B) -sin(x) + C  C) cos^2(x) + C  D) tan(x) + C   Answer: A) sin(x) + C\n- Q: Evaluate: int x^3 dx\n  Options: A) 3x^2 + C  B) x^4 + C  C) x^4/4 + C  D) x^3/3 + C   Answer: C) x^4/4 + C\n- Q: What is the integral of f(x) = 1/x^2?\n  Options: A) -1/x + C  B) 1/x + C  C) ln(x^2) + C  D) -2/x^3 + C   Answer: A) -1/x + C\n- Q: Evaluate: int (2x + 3) dx\n  Options: A) x^2 + 3x + C  B) 2x^2 + 3x + C  C) x^2 + 3 + C  D) 2 + C   Answer: A) x^2 + 3x + C\n- Q: What is the integral of f(x) = tan(x)?\n  Options: A) sec^2(x) + C  B) -ln|cos(x)| + C  C) ln|sin(x)| + C  D) -cot(x) + C   Answer: B) -ln|cos(x)| + C\n- Q: Evaluate: int sqrt(x) dx\n  Options: A) (2/3)x^(3/2) + C  B) (1/2)x^(1/2) + C  C) 2 sqrt(x) + C  D) (3/2)x^(1/2) + C   Answer: A) (2/3)x^(3/2) + C"
+      "body": "- Q: What is the integral of f(x) = x^2?\n  Options: A) x^3/3 + C  B) 2x + C  C) x^3 + C  D) x^2/2 + C   Answer: A) x^3/3 + C\n- Q: Evaluate: int e^x dx\n  Options: A) e^x + C  B) x e^x + C  C) e^(x+1)/(x+1) + C  D) ln(x) + C   Answer: A) e^x + C\n- Q: What is the integral of f(x) = sin(x)?\n  Options: A) cos(x) + C  B) -cos(x) + C  C) -sin(x) + C  D) sin^2(x)/2 + C   Answer: B) -cos(x) + C\n- Q: Evaluate: int (1/x) dx\n  Options: A) x + C  B) ln(x) + C  C) ln|x| + C  D) -1/x^2 + C   Answer: C) ln|x| + C\n- Q: What is the integral of f(x) = cos(x)?\n  Options: A) sin(x) + C  B) -sin(x) + C  C) cos^2(x) + C  D) tan(x) + C   Answer: A) sin(x) + C\n- Q: Evaluate: int x^3 dx\n  Options: A) 3x^2 + C  B) x^4 + C  C) x^4/4 + C  D) x^3/3 + C   Answer: C) x^4/4 + C\n- Q: What is the integral of f(x) = 1/x^2?\n  Options: A) -1/x + C  B) 1/x + C  C) ln(x^2) + C  D) -2/x^3 + C   Answer: A) -1/x + C\n- Q: Evaluate: int (2x + 3) dx\n  Options: A) x^2 + 3x + C  B) 2x^2 + 3x + C  C) x^2 + 3 + C  D) 2 + C   Answer: A) x^2 + 3x + C\n- Q: What is the integral of f(x) = tan(x)?\n  Options: A) sec^2(x) + C  B) -ln|cos(x)| + C  C) ln|sin(x)| + C  D) -cot(x) + C   Answer: B) -ln|cos(x)| + C\n- Q: Evaluate: int sqrt(x) dx\n  Options: A) (2/3)x^(3/2) + C  B) (1/2)x^(1/2) + C  C) 2 sqrt(x) + C  D) (3/2)x^(1/2) + C   Answer: A) (2/3)x^(3/2) + C",
+      "questions": []
     },
     "QZ-CALC-04": {
       "id": "QZ-CALC-04",
@@ -4989,7 +5351,8 @@
       "type": "quiz",
       "subtopic": "applications",
       "title": "QZ-CALC-04 · Applications (8 Qs)",
-      "body": "- Q: What is the slope of the tangent line to y = x^2 at x = 2?\n  Options: A) 2  B) 4  C) 8  D) 1   Answer: B) 4\n- Q: Find the critical points of f(x) = x^3 - 3x^2.\n  Options: A) x = 0 only  B) x = 3 only  C) x = 0 and x = 2  D) x = 1 and x = 3   Answer: C) x = 0 and x = 2\n- Q: What is the maximum value of f(x) = x^4 - 4x^3 + 4 on [0, 4]?\n  Options: A) 4  B) -23  C) 0  D) 260   Answer: A) 4\n- Q: Find the minimum value of f(x) = x^2 - 4x + 4.\n  Options: A) 0  B) 2  C) 4  D) -4   Answer: A) 0\n- Q: What is the rate of change of f(x) = x^2 at x = 3?\n  Options: A) 3  B) 6  C) 9  D) 12   Answer: B) 6\n- Q: Find the derivative of f(x) = x^2 sin(x).\n  Options: A) 2x sin(x)  B) x^2 cos(x)  C) 2x sin(x) + x^2 cos(x)  D) 2x cos(x) - x^2 sin(x)   Answer: C) 2x sin(x) + x^2 cos(x)\n- Q: What is the slope of the tangent line to y = ln(x) at x = 1?\n  Options: A) 0  B) 1  C) e  D) undefined   Answer: B) 1\n- Q: Find the critical points of f(x) = x^3 - 6x^2 + 11x - 6.\n  Options: A) x = 1, 2, 3  B) x = (6 +/- sqrt(3))/3  C) x = 2 only  D) x = 3 +/- sqrt(2)   Answer: B) x = (6 +/- sqrt(3))/3\n\n---\n\n## 4D. Expansion Quiz — Precalculus (A-coded, 19 Qs)"
+      "body": "- Q: What is the slope of the tangent line to y = x^2 at x = 2?\n  Options: A) 2  B) 4  C) 8  D) 1   Answer: B) 4\n- Q: Find the critical points of f(x) = x^3 - 3x^2.\n  Options: A) x = 0 only  B) x = 3 only  C) x = 0 and x = 2  D) x = 1 and x = 3   Answer: C) x = 0 and x = 2\n- Q: What is the maximum value of f(x) = x^4 - 4x^3 + 4 on [0, 4]?\n  Options: A) 4  B) -23  C) 0  D) 260   Answer: A) 4\n- Q: Find the minimum value of f(x) = x^2 - 4x + 4.\n  Options: A) 0  B) 2  C) 4  D) -4   Answer: A) 0\n- Q: What is the rate of change of f(x) = x^2 at x = 3?\n  Options: A) 3  B) 6  C) 9  D) 12   Answer: B) 6\n- Q: Find the derivative of f(x) = x^2 sin(x).\n  Options: A) 2x sin(x)  B) x^2 cos(x)  C) 2x sin(x) + x^2 cos(x)  D) 2x cos(x) - x^2 sin(x)   Answer: C) 2x sin(x) + x^2 cos(x)\n- Q: What is the slope of the tangent line to y = ln(x) at x = 1?\n  Options: A) 0  B) 1  C) e  D) undefined   Answer: B) 1\n- Q: Find the critical points of f(x) = x^3 - 6x^2 + 11x - 6.\n  Options: A) x = 1, 2, 3  B) x = (6 +/- sqrt(3))/3  C) x = 2 only  D) x = 3 +/- sqrt(2)   Answer: B) x = (6 +/- sqrt(3))/3\n\n---\n\n## 4D. Expansion Quiz — Precalculus (A-coded, 19 Qs)",
+      "questions": []
     },
     "QZ-EA-01": {
       "id": "QZ-EA-01",
@@ -4999,7 +5362,8 @@
       "code": "A1",
       "subtopic": "domain-range",
       "title": "QZ-EA-01 · A1. Domain & Range (2 Qs)",
-      "body": "- Q: What is the domain of f(x) = sqrt(x - 2)?\n  Options: A) [2, inf)  B) (2, inf)  C) (-inf, 2]  D) All reals   Answer: A) [2, inf)\n- Q: What is the range of f(x) = x^2?\n  Options: A) All reals  B) [0, inf)  C) (0, inf)  D) (-inf, 0]   Answer: B) [0, inf)"
+      "body": "- Q: What is the domain of f(x) = sqrt(x - 2)?\n  Options: A) [2, inf)  B) (2, inf)  C) (-inf, 2]  D) All reals   Answer: A) [2, inf)\n- Q: What is the range of f(x) = x^2?\n  Options: A) All reals  B) [0, inf)  C) (0, inf)  D) (-inf, 0]   Answer: B) [0, inf)",
+      "questions": []
     },
     "QZ-EA-02": {
       "id": "QZ-EA-02",
@@ -5009,7 +5373,8 @@
       "code": "A2",
       "subtopic": "rates-of-change",
       "title": "QZ-EA-02 · A2. Rates of Change (2 Qs)",
-      "body": "- Q: If f(x) = x^2 - 4x, what is the average rate of change on [1, 3]?\n  Options: A) 0  B) -2  C) 2  D) 4   Answer: A) 0\n- Q: A function that is concave down has what shape?\n  Options: A) Frown (cap)  B) Smile (cup)  C) Straight line  D) Vertical   Answer: A) Frown (cap)"
+      "body": "- Q: If f(x) = x^2 - 4x, what is the average rate of change on [1, 3]?\n  Options: A) 0  B) -2  C) 2  D) 4   Answer: A) 0\n- Q: A function that is concave down has what shape?\n  Options: A) Frown (cap)  B) Smile (cup)  C) Straight line  D) Vertical   Answer: A) Frown (cap)",
+      "questions": []
     },
     "QZ-EA-03": {
       "id": "QZ-EA-03",
@@ -5019,7 +5384,8 @@
       "code": "A3",
       "subtopic": "function-composition",
       "title": "QZ-EA-03 · A3. Composition (2 Qs)",
-      "body": "- Q: If f(x) = 2x + 1 and g(x) = x^2, what is (f o g)(3)?\n  Options: A) 49  B) 19  C) 7  D) 13   Answer: B) 19\n- Q: f(g(x)) is the same as g(f(x)). True or false?\n  Options: A) True  B) False   Answer: B) False"
+      "body": "- Q: If f(x) = 2x + 1 and g(x) = x^2, what is (f o g)(3)?\n  Options: A) 49  B) 19  C) 7  D) 13   Answer: B) 19\n- Q: f(g(x)) is the same as g(f(x)). True or false?\n  Options: A) True  B) False   Answer: B) False",
+      "questions": []
     },
     "QZ-EA-04": {
       "id": "QZ-EA-04",
@@ -5029,7 +5395,8 @@
       "code": "A4",
       "subtopic": "linear-functions",
       "title": "QZ-EA-04 · A4. Linear Functions (1 Q)",
-      "body": "- Q: What is the slope of a line passing through (-1, 4) and (5, 2)?\n  Options: A) -1/3  B) 1/3  C) -3  D) 3   Answer: A) -1/3"
+      "body": "- Q: What is the slope of a line passing through (-1, 4) and (5, 2)?\n  Options: A) -1/3  B) 1/3  C) -3  D) 3   Answer: A) -1/3",
+      "questions": []
     },
     "QZ-EA-05": {
       "id": "QZ-EA-05",
@@ -5039,7 +5406,8 @@
       "code": "A5",
       "subtopic": "polynomials-deep",
       "title": "QZ-EA-05 · A5. Polynomials Deep (2 Qs)",
-      "body": "- Q: What is the end behavior of f(x) = -2x^5 + 3x^2 - 1?\n  Options: A) Both ends up  B) Both ends down  C) Left up, right down  D) Left down, right up   Answer: C) Left up, right down\n- Q: At a zero of multiplicity 3, the graph:\n  Options: A) Bounces  B) Crosses linearly  C) Crosses with flattening  D) Has a vertical asymptote   Answer: C) Crosses with flattening"
+      "body": "- Q: What is the end behavior of f(x) = -2x^5 + 3x^2 - 1?\n  Options: A) Both ends up  B) Both ends down  C) Left up, right down  D) Left down, right up   Answer: C) Left up, right down\n- Q: At a zero of multiplicity 3, the graph:\n  Options: A) Bounces  B) Crosses linearly  C) Crosses with flattening  D) Has a vertical asymptote   Answer: C) Crosses with flattening",
+      "questions": []
     },
     "QZ-EA-06": {
       "id": "QZ-EA-06",
@@ -5049,7 +5417,8 @@
       "code": "A6",
       "subtopic": "quadratics-expanded",
       "title": "QZ-EA-06 · A6. Quadratics Expanded (1 Q)",
-      "body": "- Q: What is the vertex of f(x) = -x^2 + 6x - 5?\n  Options: A) (3, 4)  B) (-3, -4)  C) (3, -4)  D) (-3, 4)   Answer: A) (3, 4)"
+      "body": "- Q: What is the vertex of f(x) = -x^2 + 6x - 5?\n  Options: A) (3, 4)  B) (-3, -4)  C) (3, -4)  D) (-3, 4)   Answer: A) (3, 4)",
+      "questions": []
     },
     "QZ-EA-07": {
       "id": "QZ-EA-07",
@@ -5059,7 +5428,8 @@
       "code": "A7",
       "subtopic": "factor-remainder",
       "title": "QZ-EA-07 · A7. Factor & Remainder (2 Qs)",
-      "body": "- Q: If p(x) = x^3 - 4x^2 + 5x - 14, what is the remainder when divided by (x - 2)?\n  Options: A) 0  B) -12  C) -16  D) 2   Answer: B) -12\n- Q: If p(3) = 0 for polynomial p(x), which is true?\n  Options: A) (x + 3) is a factor  B) (x - 3) is a factor  C) x = -3 is a zero  D) None of these   Answer: B) (x - 3) is a factor"
+      "body": "- Q: If p(x) = x^3 - 4x^2 + 5x - 14, what is the remainder when divided by (x - 2)?\n  Options: A) 0  B) -12  C) -16  D) 2   Answer: B) -12\n- Q: If p(3) = 0 for polynomial p(x), which is true?\n  Options: A) (x + 3) is a factor  B) (x - 3) is a factor  C) x = -3 is a zero  D) None of these   Answer: B) (x - 3) is a factor",
+      "questions": []
     },
     "QZ-EA-08": {
       "id": "QZ-EA-08",
@@ -5069,7 +5439,8 @@
       "code": "A8",
       "subtopic": "real-zeros",
       "title": "QZ-EA-08 · A8. Real Zeros (1 Q)",
-      "body": "- Q: What are the possible rational zeros of f(x) = 3x^3 - x^2 + 2?\n  Options: A) +/-{1, 2, 1/3, 2/3}  B) +/-{1, 3}  C) +/-{1, 2}  D) +/-{2, 3}   Answer: A) +/-{1, 2, 1/3, 2/3}"
+      "body": "- Q: What are the possible rational zeros of f(x) = 3x^3 - x^2 + 2?\n  Options: A) +/-{1, 2, 1/3, 2/3}  B) +/-{1, 3}  C) +/-{1, 2}  D) +/-{2, 3}   Answer: A) +/-{1, 2, 1/3, 2/3}",
+      "questions": []
     },
     "QZ-EA-09": {
       "id": "QZ-EA-09",
@@ -5079,7 +5450,8 @@
       "code": "A9",
       "subtopic": "complex-zeros",
       "title": "QZ-EA-09 · A9. Complex Zeros (2 Qs)",
-      "body": "- Q: What are the zeros of f(x) = x^2 + 4?\n  Options: A) +/-2  B) +/-2i  C) +/-4i  D) No zeros   Answer: B) +/-2i\n- Q: How many complex zeros does a degree-5 polynomial have?\n  Options: A) At most 5  B) Exactly 5  C) At least 1  D) Both B and C   Answer: D) Both B and C"
+      "body": "- Q: What are the zeros of f(x) = x^2 + 4?\n  Options: A) +/-2  B) +/-2i  C) +/-4i  D) No zeros   Answer: B) +/-2i\n- Q: How many complex zeros does a degree-5 polynomial have?\n  Options: A) At most 5  B) Exactly 5  C) At least 1  D) Both B and C   Answer: D) Both B and C",
+      "questions": []
     },
     "QZ-EA-10": {
       "id": "QZ-EA-10",
@@ -5089,7 +5461,8 @@
       "code": "A10",
       "subtopic": "rational-functions-deep",
       "title": "QZ-EA-10 · A10. Rational Functions Deep (1 Q)",
-      "body": "- Q: f(x) = (x - 2)/((x - 2)(x + 3)) has:\n  Options: A) VA at x=2 and x=-3  B) Hole at x=2, VA at x=-3  C) VA at x=-3 only  D) Both B and C   Answer: B) Hole at x=2, VA at x=-3"
+      "body": "- Q: f(x) = (x - 2)/((x - 2)(x + 3)) has:\n  Options: A) VA at x=2 and x=-3  B) Hole at x=2, VA at x=-3  C) VA at x=-3 only  D) Both B and C   Answer: B) Hole at x=2, VA at x=-3",
+      "questions": []
     },
     "QZ-EA-11": {
       "id": "QZ-EA-11",
@@ -5099,7 +5472,8 @@
       "code": "A11",
       "subtopic": "inverses-radicals",
       "title": "QZ-EA-11 · A11. Inverses & Radicals (1 Q)",
-      "body": "- Q: Solve sqrt(x + 3) = 5.\n  Options: A) x = 22  B) x = 28  C) x = 8  D) x = 2   Answer: A) x = 22"
+      "body": "- Q: Solve sqrt(x + 3) = 5.\n  Options: A) x = 22  B) x = 28  C) x = 8  D) x = 2   Answer: A) x = 22",
+      "questions": []
     },
     "QZ-EA-12": {
       "id": "QZ-EA-12",
@@ -5109,7 +5483,8 @@
       "code": "A12",
       "subtopic": "exponential-models",
       "title": "QZ-EA-12 · A12. Exponential Models (1 Q)",
-      "body": "- Q: An investment of $1000 at 5% compounded continuously is worth how much after 10 years?\n  Options: A) $1,628.89  B) $1,500  C) $1,648.72  D) $1,050   Answer: C) $1,648.72"
+      "body": "- Q: An investment of $1000 at 5% compounded continuously is worth how much after 10 years?\n  Options: A) $1,628.89  B) $1,500  C) $1,648.72  D) $1,050   Answer: C) $1,648.72",
+      "questions": []
     },
     "QZ-EA-13": {
       "id": "QZ-EA-13",
@@ -5119,7 +5494,8 @@
       "code": "A13",
       "subtopic": "logarithmic-models",
       "title": "QZ-EA-13 · A13. Logarithmic Models (1 Q)",
-      "body": "- Q: Solve: log_3(x + 1) = 2\n  Options: A) x = 8  B) x = 7  C) x = 9  D) x = 5   Answer: A) x = 8\n\n---\n\n## 4E. Expansion Quiz — Trigonometry (B-coded, 20 Qs)"
+      "body": "- Q: Solve: log_3(x + 1) = 2\n  Options: A) x = 8  B) x = 7  C) x = 9  D) x = 5   Answer: A) x = 8\n\n---\n\n## 4E. Expansion Quiz — Trigonometry (B-coded, 20 Qs)",
+      "questions": []
     },
     "QZ-EB-01": {
       "id": "QZ-EB-01",
@@ -5129,7 +5505,8 @@
       "code": "B1",
       "subtopic": "angles-measure",
       "title": "QZ-EB-01 · B1. Angles & Measure (2 Qs)",
-      "body": "- Q: What is the arc length of a circle with radius 10 and central angle 2 radians?\n  Options: A) 20  B) 5  C) 10  D) 40   Answer: A) 20\n- Q: Which angle is coterminal with 450 deg?\n  Options: A) 90 deg  B) 180 deg  C) 270 deg  D) 360 deg   Answer: A) 90 deg"
+      "body": "- Q: What is the arc length of a circle with radius 10 and central angle 2 radians?\n  Options: A) 20  B) 5  C) 10  D) 40   Answer: A) 20\n- Q: Which angle is coterminal with 450 deg?\n  Options: A) 90 deg  B) 180 deg  C) 270 deg  D) 360 deg   Answer: A) 90 deg",
+      "questions": []
     },
     "QZ-EB-02": {
       "id": "QZ-EB-02",
@@ -5139,7 +5516,8 @@
       "code": "B2",
       "subtopic": "six-functions-identities",
       "title": "QZ-EB-02 · B2. Six Trig Functions (2 Qs)",
-      "body": "- Q: If tan(theta) = 3 and theta is in QIII, what is sin(theta)?\n  Options: A) 3/sqrt(10)  B) -3/sqrt(10)  C) -1/sqrt(10)  D) 1/sqrt(10)   Answer: B) -3/sqrt(10)\n- Q: sec(theta) is the reciprocal of:\n  Options: A) sin(theta)  B) cos(theta)  C) tan(theta)  D) cot(theta)   Answer: B) cos(theta)"
+      "body": "- Q: If tan(theta) = 3 and theta is in QIII, what is sin(theta)?\n  Options: A) 3/sqrt(10)  B) -3/sqrt(10)  C) -1/sqrt(10)  D) 1/sqrt(10)   Answer: B) -3/sqrt(10)\n- Q: sec(theta) is the reciprocal of:\n  Options: A) sin(theta)  B) cos(theta)  C) tan(theta)  D) cot(theta)   Answer: B) cos(theta)",
+      "questions": []
     },
     "QZ-EB-03": {
       "id": "QZ-EB-03",
@@ -5149,7 +5527,8 @@
       "code": "B3",
       "subtopic": "trig-identities-proofs",
       "title": "QZ-EB-03 · B3. Trig Identities Proofs (2 Qs)",
-      "body": "- Q: What is sin(2theta) equal to?\n  Options: A) 2sin(theta)  B) sin^2(theta)  C) 2sin(theta)*cos(theta)  D) cos^2(theta) - sin^2(theta)   Answer: C) 2sin(theta)*cos(theta)\n- Q: cos(A - B) =\n  Options: A) cosA*cosB + sinA*sinB  B) cosA*cosB - sinA*sinB  C) sinA*cosB - cosA*sinB  D) sinA*cosB + cosA*sinB   Answer: A) cosA*cosB + sinA*sinB"
+      "body": "- Q: What is sin(2theta) equal to?\n  Options: A) 2sin(theta)  B) sin^2(theta)  C) 2sin(theta)*cos(theta)  D) cos^2(theta) - sin^2(theta)   Answer: C) 2sin(theta)*cos(theta)\n- Q: cos(A - B) =\n  Options: A) cosA*cosB + sinA*sinB  B) cosA*cosB - sinA*sinB  C) sinA*cosB - cosA*sinB  D) sinA*cosB + cosA*sinB   Answer: A) cosA*cosB + sinA*sinB",
+      "questions": []
     },
     "QZ-EB-04": {
       "id": "QZ-EB-04",
@@ -5159,7 +5538,8 @@
       "code": "B4",
       "subtopic": "trig-graphs",
       "title": "QZ-EB-04 · B4. Trig Graphs (1 Q)",
-      "body": "- Q: The period of y = sec(3x) is:\n  Options: A) 2pi  B) 2pi/3  C) pi/3  D) 3pi   Answer: B) 2pi/3"
+      "body": "- Q: The period of y = sec(3x) is:\n  Options: A) 2pi  B) 2pi/3  C) pi/3  D) 3pi   Answer: B) 2pi/3",
+      "questions": []
     },
     "QZ-EB-05": {
       "id": "QZ-EB-05",
@@ -5169,7 +5549,8 @@
       "code": "B5",
       "subtopic": "inverse-trig",
       "title": "QZ-EB-05 · B5. Inverse Trig (2 Qs)",
-      "body": "- Q: arctan(1) = ?\n  Options: A) pi/6  B) pi/4  C) pi/3  D) pi/2   Answer: B) pi/4\n- Q: The domain of arcsin(x) is:\n  Options: A) All reals  B) [-1, 1]  C) [0, 1]  D) (-pi/2, pi/2)   Answer: B) [-1, 1]"
+      "body": "- Q: arctan(1) = ?\n  Options: A) pi/6  B) pi/4  C) pi/3  D) pi/2   Answer: B) pi/4\n- Q: The domain of arcsin(x) is:\n  Options: A) All reals  B) [-1, 1]  C) [0, 1]  D) (-pi/2, pi/2)   Answer: B) [-1, 1]",
+      "questions": []
     },
     "QZ-EB-06": {
       "id": "QZ-EB-06",
@@ -5179,7 +5560,8 @@
       "code": "B6",
       "subtopic": "trig-equations",
       "title": "QZ-EB-06 · B6. Trig Equations (2 Qs)",
-      "body": "- Q: How many solutions does sin(x) = 1/2 have in [0, 2pi)?\n  Options: A) 1  B) 2  C) 3  D) Infinite   Answer: B) 2\n- Q: The general solution to tan(x) = 1 is:\n  Options: A) x = pi/4 + 2pi*k  B) x = pi/4 + pi*k  C) x = pi/4 only  D) x = 3pi/4 + pi*k   Answer: B) x = pi/4 + pi*k"
+      "body": "- Q: How many solutions does sin(x) = 1/2 have in [0, 2pi)?\n  Options: A) 1  B) 2  C) 3  D) Infinite   Answer: B) 2\n- Q: The general solution to tan(x) = 1 is:\n  Options: A) x = pi/4 + 2pi*k  B) x = pi/4 + pi*k  C) x = pi/4 only  D) x = 3pi/4 + pi*k   Answer: B) x = pi/4 + pi*k",
+      "questions": []
     },
     "QZ-EB-07": {
       "id": "QZ-EB-07",
@@ -5189,7 +5571,8 @@
       "code": "B7",
       "subtopic": "law-of-sines",
       "title": "QZ-EB-07 · B7. Law of Sines (1 Q)",
-      "body": "- Q: The Law of Sines is useful when you know:\n  Options: A) SSS  B) SAS  C) AAS  D) All of these   Answer: C) AAS"
+      "body": "- Q: The Law of Sines is useful when you know:\n  Options: A) SSS  B) SAS  C) AAS  D) All of these   Answer: C) AAS",
+      "questions": []
     },
     "QZ-EB-08": {
       "id": "QZ-EB-08",
@@ -5199,7 +5582,8 @@
       "code": "B8",
       "subtopic": "law-of-cosines",
       "title": "QZ-EB-08 · B8. Law of Cosines (1 Q)",
-      "body": "- Q: Given a = 8, b = 6, c = 10, find angle C.\n  Options: A) 90 deg  B) 60 deg  C) 120 deg  D) 45 deg   Answer: A) 90 deg"
+      "body": "- Q: Given a = 8, b = 6, c = 10, find angle C.\n  Options: A) 90 deg  B) 60 deg  C) 120 deg  D) 45 deg   Answer: A) 90 deg",
+      "questions": []
     },
     "QZ-EB-09": {
       "id": "QZ-EB-09",
@@ -5209,7 +5593,8 @@
       "code": "B9",
       "subtopic": "polar-coordinates",
       "title": "QZ-EB-09 · B9. Polar Coordinates (1 Q)",
-      "body": "- Q: The Cartesian coordinates of the polar point (4, pi/3) are:\n  Options: A) (2, 2*sqrt(3))  B) (2*sqrt(3), 2)  C) (4, 4)  D) (2, 2)   Answer: A) (2, 2*sqrt(3))"
+      "body": "- Q: The Cartesian coordinates of the polar point (4, pi/3) are:\n  Options: A) (2, 2*sqrt(3))  B) (2*sqrt(3), 2)  C) (4, 4)  D) (2, 2)   Answer: A) (2, 2*sqrt(3))",
+      "questions": []
     },
     "QZ-EB-10": {
       "id": "QZ-EB-10",
@@ -5219,7 +5604,8 @@
       "code": "B10",
       "subtopic": "vectors",
       "title": "QZ-EB-10 · B10. Vectors (2 Qs)",
-      "body": "- Q: What is the dot product of <1, 2> and <-2, 1>?\n  Options: A) 0  B) 4  C) -4  D) 2   Answer: A) 0\n- Q: The work done by a force F = 10 lbs at 30 deg over 50 ft is:\n  Options: A) 250*sqrt(3)  B) 500  C) 250  D) 125*sqrt(3)   Answer: A) 250*sqrt(3)"
+      "body": "- Q: What is the dot product of <1, 2> and <-2, 1>?\n  Options: A) 0  B) 4  C) -4  D) 2   Answer: A) 0\n- Q: The work done by a force F = 10 lbs at 30 deg over 50 ft is:\n  Options: A) 250*sqrt(3)  B) 500  C) 250  D) 125*sqrt(3)   Answer: A) 250*sqrt(3)",
+      "questions": []
     },
     "QZ-EB-11": {
       "id": "QZ-EB-11",
@@ -5229,7 +5615,8 @@
       "code": "B11",
       "subtopic": "parametric-equations",
       "title": "QZ-EB-11 · B11. Parametric Equations (1 Q)",
-      "body": "- Q: The parametric equations x = 3cos(t), y = 3sin(t) trace out:\n  Options: A) A line  B) A parabola  C) A circle of radius 3  D) An ellipse   Answer: C) A circle of radius 3"
+      "body": "- Q: The parametric equations x = 3cos(t), y = 3sin(t) trace out:\n  Options: A) A line  B) A parabola  C) A circle of radius 3  D) An ellipse   Answer: C) A circle of radius 3",
+      "questions": []
     },
     "QZ-EB-12": {
       "id": "QZ-EB-12",
@@ -5239,7 +5626,8 @@
       "code": "B12",
       "subtopic": "polar-complex",
       "title": "QZ-EB-12 · B12. Polar Complex (1 Q)",
-      "body": "- Q: The modulus of z = 3 + 4i is:\n  Options: A) 5  B) 7  C) sqrt(7)  D) 25   Answer: A) 5"
+      "body": "- Q: The modulus of z = 3 + 4i is:\n  Options: A) 5  B) 7  C) sqrt(7)  D) 25   Answer: A) 5",
+      "questions": []
     },
     "QZ-EB-13": {
       "id": "QZ-EB-13",
@@ -5249,7 +5637,8 @@
       "code": "B13",
       "subtopic": "harmonic-motion",
       "title": "QZ-EB-13 · B13. Harmonic Motion (1 Q)",
-      "body": "- Q: The period of S(t) = 5sin(pi*t/3) is:\n  Options: A) 6  B) 3  C) pi/3  D) 2pi/3   Answer: A) 6"
+      "body": "- Q: The period of S(t) = 5sin(pi*t/3) is:\n  Options: A) 6  B) 3  C) pi/3  D) 2pi/3   Answer: A) 6",
+      "questions": []
     },
     "QZ-EB-14": {
       "id": "QZ-EB-14",
@@ -5259,7 +5648,8 @@
       "code": "B14",
       "subtopic": "polar-conics-rotation",
       "title": "QZ-EB-14 · B14. Polar Conics (1 Q)",
-      "body": "- Q: A conic with eccentricity e = 0.5 is:\n  Options: A) Circle  B) Ellipse  C) Parabola  D) Hyperbola   Answer: B) Ellipse\n\n---\n---\n\n# PART 5 — CONTENT TOTALS & FEATURES\n# ====================================\n\n## Content Totals\n\n| Category | Original | Expansion | Total |\n| --- | --- | --- | --- |\n| Review Cards | ~25 sections | 27 topics | ~52 sections |\n| Flashcards | 45 cards | 76 cards | ~121 cards |\n| Quiz Questions | 50 (15 precalc + 35 calculus) | 39 questions | 89 questions |\n\n## Features\n- Topic navigation dropdown in Review tab with smooth scroll and highlight\n- Topic filter dropdowns in Flashcards and Quiz tabs\n- Cross-tab sync: selecting an expansion topic in Review auto-sets flashcard/quiz filters\n- Priority tier badges: Tier 1 (Essential), Tier 2 (Important), Tier 3 (Advanced)\n- Sidebar navigation with grouped expansion topics\n- Quiz history with localStorage persistence and CSV export\n- Yu-Gi-Oh! crossover sections on 10 expansion topics (collapsible)\n\n---\n\n# APPENDIX — TAG INDEX (for programmatic lookup)\n# ================================================\n#\n# To filter by course:\n#   grep \"course:precalc\" this_file.md\n#   grep \"course:calculus\" this_file.md\n#\n# To filter by area:\n#   grep \"area:algebra\" this_file.md\n#   grep \"area:trig\" this_file.md\n#   grep \"area:calculus\" this_file.md\n#   grep \"area:precalc-general\" this_file.md\n#\n# To filter by type:\n#   grep \"type:review-card\" this_file.md\n#   grep \"type:expansion-review\" this_file.md\n#   grep \"type:flashcard\" this_file.md\n#   grep \"type:quiz\" this_file.md\n#\n# To filter by tier:\n#   grep \"tier:1-essential\" this_file.md\n#   grep \"tier:2-important\" this_file.md\n#   grep \"tier:3-advanced\" this_file.md\n#\n# To filter by expansion code:\n#   grep \"code:A1\" this_file.md\n#   grep \"code:B13\" this_file.md\n#\n# To get all items with Yu-Gi-Oh! crossover:\n#   grep \"yugioh:yes\" this_file.md"
+      "body": "- Q: A conic with eccentricity e = 0.5 is:\n  Options: A) Circle  B) Ellipse  C) Parabola  D) Hyperbola   Answer: B) Ellipse\n\n---\n---\n\n# PART 5 — CONTENT TOTALS & FEATURES\n# ====================================\n\n## Content Totals\n\n| Category | Original | Expansion | Total |\n| --- | --- | --- | --- |\n| Review Cards | ~25 sections | 27 topics | ~52 sections |\n| Flashcards | 45 cards | 76 cards | ~121 cards |\n| Quiz Questions | 50 (15 precalc + 35 calculus) | 39 questions | 89 questions |\n\n## Features\n- Topic navigation dropdown in Review tab with smooth scroll and highlight\n- Topic filter dropdowns in Flashcards and Quiz tabs\n- Cross-tab sync: selecting an expansion topic in Review auto-sets flashcard/quiz filters\n- Priority tier badges: Tier 1 (Essential), Tier 2 (Important), Tier 3 (Advanced)\n- Sidebar navigation with grouped expansion topics\n- Quiz history with localStorage persistence and CSV export\n- Yu-Gi-Oh! crossover sections on 10 expansion topics (collapsible)\n\n---\n\n# APPENDIX — TAG INDEX (for programmatic lookup)\n# ================================================\n#\n# To filter by course:\n#   grep \"course:precalc\" this_file.md\n#   grep \"course:calculus\" this_file.md\n#\n# To filter by area:\n#   grep \"area:algebra\" this_file.md\n#   grep \"area:trig\" this_file.md\n#   grep \"area:calculus\" this_file.md\n#   grep \"area:precalc-general\" this_file.md\n#\n# To filter by type:\n#   grep \"type:review-card\" this_file.md\n#   grep \"type:expansion-review\" this_file.md\n#   grep \"type:flashcard\" this_file.md\n#   grep \"type:quiz\" this_file.md\n#\n# To filter by tier:\n#   grep \"tier:1-essential\" this_file.md\n#   grep \"tier:2-important\" this_file.md\n#   grep \"tier:3-advanced\" this_file.md\n#\n# To filter by expansion code:\n#   grep \"code:A1\" this_file.md\n#   grep \"code:B13\" this_file.md\n#\n# To get all items with Yu-Gi-Oh! crossover:\n#   grep \"yugioh:yes\" this_file.md",
+      "questions": []
     }
   }
 }
