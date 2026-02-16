@@ -1088,6 +1088,84 @@
 
         <!-- REVIEW TAB -->
         <div id="review" class="content-section active">
+            <div style="text-align: center; margin-bottom: var(--space-16);">
+                <label for="reviewTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Jump to topic:</label>
+                <select id="reviewTopicSelect" onchange="goToTopic(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
+                    <option value="">— Select a topic —</option>
+                    <optgroup label="Core Review">
+                        <option value="topic-functions-notation">Functions &amp; Notation</option>
+                        <option value="topic-exponentials-logs">Exponentials &amp; Logs</option>
+                        <option value="topic-log-properties">Log Properties</option>
+                        <option value="topic-unit-circle">Unit Circle</option>
+                        <option value="topic-trig-reference">Quick Trig Reference</option>
+                        <option value="topic-identities">Key Identities</option>
+                        <option value="topic-sinusoidal">Sinusoidal Models</option>
+                        <option value="topic-factoring">Factoring Patterns</option>
+                        <option value="topic-quadratics">Solving Quadratics</option>
+                        <option value="topic-algebra-skills">More Algebra Skills</option>
+                        <option value="topic-rational-functions">Rational Functions</option>
+                        <option value="topic-inverses">Inverse Functions</option>
+                        <option value="topic-lines">Lines &amp; Slopes</option>
+                        <option value="topic-absolute-piecewise">Absolute Value &amp; Piecewise</option>
+                        <option value="topic-transformations">Function Transformations</option>
+                        <option value="topic-inequalities">Inequalities</option>
+                        <option value="topic-sequences">Sequences &amp; Series</option>
+                        <option value="topic-limits">Limits (Calculus Preview)</option>
+                        <option value="topic-common-mistakes">Common Mistakes</option>
+                        <option value="topic-calculator">Calculator Skills</option>
+                    </optgroup>
+                    <optgroup label="Calculus Preview">
+                        <option value="topic-calc-what-is-function">What Is a Function?</option>
+                        <option value="topic-calc-what-is-limit">What Is a Limit?</option>
+                        <option value="topic-calc-what-is-derivative">What Is a Derivative?</option>
+                        <option value="topic-calc-what-is-integral">What Is an Integral?</option>
+                        <option value="topic-calc-continuity">What Is Continuity?</option>
+                    </optgroup>
+                    <optgroup label="Calculus Topics">
+                        <option value="topic-calc-quick-ref">Quick Reference Chart</option>
+                        <option value="topic-calc-graph-key">Graph Reference Key</option>
+                        <option value="topic-calc-definitions">Definitions</option>
+                        <option value="topic-calc-rolles">Rolle's Theorem</option>
+                        <option value="topic-calc-mvt">Mean Value Theorem</option>
+                        <option value="topic-calc-corollaries">Corollaries</option>
+                        <option value="topic-calc-first-deriv-test">First Derivative Test</option>
+                        <option value="topic-calc-second-deriv-test">Second Derivative Test</option>
+                        <option value="topic-calc-graphing">Graphing with Derivatives</option>
+                        <option value="topic-calc-integration">Integration Formulas</option>
+                    </optgroup>
+                    <optgroup label="Precalculus (Expanded)">
+                        <option value="topic-precalc_domain_range">A1. Domain &amp; Range</option>
+                        <option value="topic-precalc_rates_of_change">A2. Rates of Change</option>
+                        <option value="topic-precalc_composition">A3. Function Composition</option>
+                        <option value="topic-precalc_linear_functions">A4. Linear Functions</option>
+                        <option value="topic-precalc_polynomials_deep">A5. Polynomials (Deep)</option>
+                        <option value="topic-precalc_quadratics_expanded">A6. Quadratics (Expanded)</option>
+                        <option value="topic-precalc_factor_remainder">A7. Factor &amp; Remainder</option>
+                        <option value="topic-precalc_real_zeros">A8. Real Zeros</option>
+                        <option value="topic-precalc_complex_zeros">A9. Complex Zeros</option>
+                        <option value="topic-precalc_rational_functions_deep">A10. Rational Functions (Deep)</option>
+                        <option value="topic-precalc_inverses_radicals">A11. Inverses &amp; Radicals</option>
+                        <option value="topic-precalc_exponential_models">A12. Exponential (Expanded)</option>
+                        <option value="topic-precalc_logarithmic_models">A13. Logarithmic (Expanded)</option>
+                    </optgroup>
+                    <optgroup label="Trigonometry (Expanded)">
+                        <option value="topic-trig_angles_measure">B1. Angles &amp; Measure</option>
+                        <option value="topic-trig_six_functions">B2. Six Trig Functions</option>
+                        <option value="topic-trig_identities_proofs">B3. Trig Identities (Proofs)</option>
+                        <option value="topic-trig_graphs_all_functions">B4. Trig Graphs (All)</option>
+                        <option value="topic-trig_inverse_functions">B5. Inverse Trig Functions</option>
+                        <option value="topic-trig_equations">B6. Trig Equations</option>
+                        <option value="topic-trig_law_of_sines">B7. Law of Sines</option>
+                        <option value="topic-trig_law_of_cosines">B8. Law of Cosines</option>
+                        <option value="topic-trig_polar_coordinates">B9. Polar Coordinates</option>
+                        <option value="topic-trig_vectors">B10. Vectors</option>
+                        <option value="topic-trig_parametric_equations">B11. Parametric Equations</option>
+                        <option value="topic-trig_polar_complex">B12. Polar Complex Numbers</option>
+                        <option value="topic-trig_harmonic_motion">B13. Harmonic Motion</option>
+                        <option value="topic-trig_polar_conics">B14. Polar Conics</option>
+                    </optgroup>
+                </select>
+            </div>
             <button class="card-back-btn" id="cardBackBtn" onclick="exitFocusMode()">&larr; Back to all topics</button>
             <div class="review-grid">
                 <!-- Functions -->
@@ -3107,6 +3185,7 @@
         let isFlipped = false;
         let cardDeck = [...flashcards];
         let currentFlashcardTopicId = '';
+        let currentTopicId = null; // Cross-tab sync: last selected topic
 
         // Legacy topic groupings for the filter dropdown
         const LEGACY_PRECALC_TOPICS = ['functions','exponentials','trigonometry','unit-circle','sinusoidal','polynomials','algebra-skills','lines','absolute-piecewise','inverses','transformations','inequalities','sequences','limits','common-mistakes','calculator'];
@@ -3293,6 +3372,31 @@
             initQuiz();
         }
 
+        // ===== TOPIC NAVIGATION (Review Tab) =====
+        function goToTopic(elementId) {
+            if (!elementId) return;
+            var el = document.getElementById(elementId);
+            if (el) {
+                // Exit focus mode first so the grid is visible
+                exitFocusMode();
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Briefly highlight the card
+                el.style.outline = '2px solid var(--color-primary)';
+                el.style.outlineOffset = '4px';
+                setTimeout(function() {
+                    el.style.outline = '';
+                    el.style.outlineOffset = '';
+                }, 2000);
+                // Set cross-tab sync topic (strip 'topic-' prefix for topicId)
+                var topicId = elementId.replace('topic-', '');
+                if (TOPICS.some(function(t) { return t.id === topicId; })) {
+                    currentTopicId = topicId;
+                }
+            }
+            // Reset the dropdown to placeholder after navigation
+            document.getElementById('reviewTopicSelect').selectedIndex = 0;
+        }
+
         // ===== TAB SWITCHING =====
         function switchTab(tab) {
             document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
@@ -3301,8 +3405,26 @@
             document.getElementById(tab).classList.add('active');
             event.target.classList.add('active');
 
-            if (tab === 'quiz' && (!quizState.activeQuiz || quizState.activeQuiz.length === 0)) {
-                initQuiz();
+            // Cross-tab sync: when switching to flashcards or quiz, default to currentTopicId
+            if (tab === 'flashcards' && currentTopicId) {
+                var fcSelect = document.getElementById('flashcardTopicSelect');
+                if (fcSelect) {
+                    fcSelect.value = currentTopicId;
+                    filterFlashcards(currentTopicId);
+                }
+            }
+
+            if (tab === 'quiz') {
+                if (currentTopicId) {
+                    var qSelect = document.getElementById('quizTopicSelect');
+                    if (qSelect) {
+                        qSelect.value = currentTopicId;
+                        currentQuizTopicId = currentTopicId;
+                    }
+                }
+                if (!quizState.activeQuiz || quizState.activeQuiz.length === 0) {
+                    initQuiz();
+                }
             }
         }
 
@@ -3761,7 +3883,12 @@ LOG:
               Updated all 27 IMPLEMENTATION STATUS comments → review=done, flashcards=done, quiz=done.
               Added .tier-badge CSS classes (tier-1 gold, tier-2 blue, tier-3 purple).
               Cards already ordered by tier within each section group (confirmed).
-              Parts 6-7 (navigation sync, maintenance logging) NOT YET implemented.
+  2026-02-16: Part 6 — Added topic navigation dropdown to Review tab ("Jump to topic" selector).
+              Options cover all original cards, calculus preview, calculus topics, and 27 expansion topics.
+              Implemented goToTopic() with smooth scroll + brief outline highlight.
+              Added currentTopicId cross-tab sync variable.
+              Updated switchTab() to auto-set flashcard/quiz filter when user navigates from Review.
+              All 7 parts of the expansion plan are now complete.
 ==========================================================
 -->
 

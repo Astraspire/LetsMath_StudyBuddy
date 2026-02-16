@@ -759,3 +759,564 @@ Source: Study-Buddy_App.html
 - Q: Find the critical points of f(x) = x^3 - 6x^2 + 11x - 6.
   Options: A) x = 1, 2, 3 B) x = (6 +/- sqrt(3))/3 C) x = 2 only D) x = 3 +/- sqrt(2)
   Answer: B) x = (6 +/- sqrt(3))/3
+
+---
+
+## Expansion Review Cards (27 Topics)
+
+### Precalculus Expansion (A1–A13)
+
+#### Tier 1 (Essential)
+
+**A1. Domain & Range** (precalc_domain_range) — Yu-Gi-Oh!: Yes
+- Interval notation, set-builder notation, toolkit function domains, piecewise functions
+- Three main domain restrictions: division by zero, even roots of negatives, log of non-positives
+- Formulas: reciprocal, square root, reciprocal squared domain/range examples
+
+**A3. Function Composition** (precalc_composition) — Yu-Gi-Oh!: Yes
+- Composition notation (f∘g)(x) = f(g(x)), evaluating from tables/graphs/formulas
+- Domain of compositions: x in domain of g AND g(x) in domain of f
+- Decomposition of complex functions; order matters: f(g(x)) != g(f(x))
+
+**A5. Power Functions & Polynomial Functions (Deep Dive)** (precalc_polynomials_deep) — Yu-Gi-Oh!: Yes
+- Power functions, end behavior (4 cases by degree parity & leading coefficient sign)
+- Max n intercepts, max n-1 turning points for degree-n polynomial
+- Multiplicity of zeros: 1 → crosses, 2 → bounces, 3 → cubic flattening
+
+**A6. Quadratic Functions (Expanded)** (precalc_quadratics_expanded)
+- Vertex form f(x) = a(x-h)^2+k, completing the square, vertex formula h = -b/(2a)
+- Parabola opens up (a>0) → min; opens down (a<0) → max
+- Applications: area, revenue, projectile motion optimization
+
+**A7. Factor Theorem, Remainder Theorem & Synthetic Division** (precalc_factor_remainder) — Yu-Gi-Oh!: Yes
+- Remainder Theorem: p(x) / (x-c) remainder = p(c)
+- Factor Theorem: (x-c) is factor iff p(c) = 0
+- Polynomial long division and synthetic division procedures
+
+#### Tier 2 (Important)
+
+**A2. Rates of Change & Behavior of Graphs** (precalc_rates_of_change)
+- Average rate of change = [f(b)-f(a)]/(b-a)
+- Increasing/decreasing intervals, local max/min definitions
+- Concave up vs concave down, inflection points
+
+**A4. Linear Functions (Detailed Treatment)** (precalc_linear_functions)
+- f(x) = mx + b, modeling, slope interpretation in context
+- Finding equations from two points, point-slope form
+- Parallel lines (same slope), perpendicular lines (negative reciprocal)
+
+**A8. Real Zeros of Polynomials** (precalc_real_zeros)
+- Cauchy's Bound for locating real zeros
+- Rational Roots Theorem: p divides constant term, q divides leading coefficient
+- Strategy: list candidates → synthetic division → quadratic formula on remainder
+
+**A9. Complex Zeros** (precalc_complex_zeros) — Yu-Gi-Oh!: Yes
+- Imaginary unit i = sqrt(-1), complex number a + bi, conjugate a - bi
+- Fundamental Theorem of Algebra: degree-n polynomial has exactly n complex zeros
+- Complex zeros of real-coefficient polynomials come in conjugate pairs
+
+**A10. Rational Functions (Deep Dive)** (precalc_rational_functions_deep)
+- Vertical asymptotes, holes (common factors), horizontal asymptote rules
+- Oblique/slant asymptotes when degree numerator = degree denominator + 1
+- Writing equations from graphs: intercepts, asymptotes, stretch factor
+
+**A12. Exponential Functions (Expanded)** (precalc_exponential_models) — Yu-Gi-Oh!: Yes
+- Growth: f(t) = a*b^t (b>1), decay (0<b<1), continuous: A = Pe^(rt)
+- Compound interest: A = P(1+r/n)^(nt)
+- Doubling time: t = ln(2)/r; half-life: t = ln(2)/|r|
+
+**A13. Logarithmic Functions (Expanded)** (precalc_logarithmic_models)
+- log_a(x) defined for x > 0, graph passes through (1,0), VA at x = 0
+- Solving log equations: convert to exponential form, condense/expand
+- Applications: pH, Richter scale, decibels; change of base formula
+
+#### Tier 3 (Advanced)
+
+**A11. Inverses & Radical Functions** (precalc_inverses_radicals)
+- Restricting domains for non-one-to-one functions before finding inverses
+- Inverse of x^2 (x>=0) is sqrt(x)
+- Radical equations: isolate, raise to power, check for extraneous solutions
+
+### Trigonometry Expansion (B1–B14)
+
+#### Tier 1 (Essential)
+
+**B2. The Six Circular Functions & Fundamental Identities** (trig_six_functions)
+- Six trig functions: sin, cos, tan, csc, sec, cot
+- Reciprocal, quotient, Pythagorean (3), and cofunction identities
+- ASTC rule for signs by quadrant
+
+**B3. Trigonometric Identities (Proving & Verifying)** (trig_identities_proofs) — Yu-Gi-Oh!: Yes
+- Sum/difference formulas for sin, cos, tan
+- Double-angle formulas: sin(2x), cos(2x) (3 forms), tan(2x)
+- Half-angle and power-reducing formulas; proof strategies
+
+**B5. Inverse Trigonometric Functions** (trig_inverse_functions)
+- arcsin: domain [-1,1], range [-pi/2, pi/2]
+- arccos: domain [-1,1], range [0, pi]
+- arctan: domain (-inf,inf), range (-pi/2, pi/2); composing trig/inverse trig
+
+**B6. Trigonometric Equations & Inequalities** (trig_equations)
+- General solutions with +2pi*n for sin/cos, +pi*n for tan
+- Multi-angle equations, quadratic-type trig equations
+- Trig inequalities: solve equality, then sign chart/unit circle
+
+#### Tier 2 (Important)
+
+**B1. Angles and Their Measure (Expanded)** (trig_angles_measure) — Yu-Gi-Oh!: Yes
+- DMS system, DMS <-> decimal conversion
+- Complementary, supplementary, coterminal angles
+- Arc length: s = r*theta; sector area: A = (1/2)*r^2*theta
+- Angular velocity omega = theta/t; linear velocity v = r*omega
+
+**B4. Graphs of Trigonometric Functions (Expanded)** (trig_graphs_all_functions)
+- Graphs of all six trig functions with periods and asymptotes
+- sin/cos: period 2pi; tan/cot: period pi; sec/csc: period 2pi
+- Transformations: y = A*tan(B(x-C))+D, period = pi/|B|
+
+**B7. Law of Sines** (trig_law_of_sines)
+- a/sin(A) = b/sin(B) = c/sin(C)
+- Used for AAS, ASA, SSA cases
+- Ambiguous case (SSA): 0, 1, or 2 triangles possible
+
+**B8. Law of Cosines** (trig_law_of_cosines) — Yu-Gi-Oh!: Yes
+- c^2 = a^2 + b^2 - 2ab*cos(C)
+- Used for SAS and SSS cases; reduces to Pythagorean theorem at C = 90°
+- Finding angles: cos(C) = (a^2 + b^2 - c^2)/(2ab)
+
+#### Tier 3 (Advanced)
+
+**B9. Polar Coordinates** (trig_polar_coordinates)
+- Polar point (r, theta), conversion to/from Cartesian
+- Polar graphs: circles, cardioids, rose curves, limicons, lemniscates
+
+**B10. Vectors** (trig_vectors)
+- Vector v = <a, b>; magnitude, unit vector
+- Dot product, perpendicularity, projection, work
+
+**B11. Parametric Equations** (trig_parametric_equations) — Yu-Gi-Oh!: Yes
+- x = f(t), y = g(t); eliminating parameter
+- Common parametrizations: line, circle, ellipse
+
+**B12. Polar Form of Complex Numbers** (trig_polar_complex)
+- z = r*cis(theta), De Moivre's Theorem, nth roots
+
+**B13. Applications of Sinusoids / Harmonic Motion** (trig_harmonic_motion)
+- Model: S(t) = A*sin(omega*t - phi) + B
+- Applications: Ferris wheels, springs, sound waves, daylight models
+
+**B14. Conic Sections in Polar Form / Rotation of Axes** (trig_polar_conics)
+- Polar conics with eccentricity; rotation of axes to remove xy-term
+
+---
+
+## Expansion Flashcards (76 cards total)
+
+### Precalculus Expansion Flashcards (35 cards)
+
+**A1. Domain & Range (3 cards)**
+- Q: What three things restrict a function's domain?
+  A: 1) Denominator = 0, 2) Even root of a negative, 3) Log of zero or negative.
+- Q: Write the domain of f(x) = sqrt(4 - x) in interval notation.
+  A: (-inf, 4].
+- Q: What is the domain of f(x) = 1/(x - 3)?
+  A: (-inf, 3) union (3, inf).
+
+**A2. Rates of Change (3 cards)**
+- Q: What is the average rate of change of f(x) = x^2 on [1, 5]?
+  A: (25 - 1)/(5 - 1) = 6.
+- Q: What is an inflection point?
+  A: A point where the function changes from concave up to concave down, or vice versa.
+- Q: How do you tell if a function is concave up from a table?
+  A: The rate of change between consecutive points is increasing.
+
+**A3. Function Composition (3 cards)**
+- Q: If f(x) = x^2 and g(x) = x + 3, what is f(g(2))?
+  A: g(2) = 5, then f(5) = 25.
+- Q: What is the domain of f(g(x)) if f(x) = sqrt(x) and g(x) = x - 4?
+  A: Need g(x) >= 0, so x >= 4. Domain: [4, inf).
+- Q: What does "decomposition" of a function mean?
+  A: Writing a function as a composition of two simpler functions.
+
+**A4. Linear Functions (2 cards)**
+- Q: A town had population 45,000 in 2003 and grows by 1,700/year. Write the equation.
+  A: P(t) = 1700t + 45000, where t = years after 2003.
+- Q: Find the equation of the line through (2, 4) and (4, 10).
+  A: m = 3. y = 3x - 2.
+
+**A5. Polynomials Deep (3 cards)**
+- Q: What determines the end behavior of a polynomial?
+  A: The degree (even/odd) and the sign of the leading coefficient.
+- Q: What happens at a zero with multiplicity 2?
+  A: The graph touches (bounces off) the x-axis but doesn't cross it.
+- Q: A degree-5 polynomial has at most how many turning points?
+  A: 4.
+
+**A6. Quadratics Expanded (2 cards)**
+- Q: Find the vertex of f(x) = 2x^2 - 12x + 7.
+  A: h = 3, k = f(3) = -11. Vertex: (3, -11).
+- Q: When does a quadratic have a maximum vs. minimum?
+  A: Maximum when a < 0 (opens down); minimum when a > 0 (opens up).
+
+**A7. Factor & Remainder (3 cards)**
+- Q: What does the Remainder Theorem state?
+  A: When polynomial p(x) is divided by (x - c), the remainder equals p(c).
+- Q: What does the Factor Theorem tell us?
+  A: (x - c) is a factor of p(x) iff p(c) = 0.
+- Q: Describe synthetic division in 3 steps.
+  A: 1) Write c and the coefficients. 2) Bring down first coeff. 3) Multiply by c, add to next coeff, repeat.
+
+**A8. Real Zeros (2 cards)**
+- Q: State the Rational Roots Theorem.
+  A: Any rational zero p/q has p | a_0 and q | a_n.
+- Q: What are the possible rational zeros of 2x^3 + 3x^2 - 1?
+  A: +/-{1, 1/2}.
+
+**A9. Complex Zeros (3 cards)**
+- Q: What is the conjugate of 3 - 2i?
+  A: 3 + 2i.
+- Q: Simplify (2 + i)(3 - 4i).
+  A: 10 - 5i.
+- Q: Why do complex zeros come in conjugate pairs for real-coefficient polynomials?
+  A: Because the complex conjugate of each step in evaluation also equals zero.
+
+**A10. Rational Functions Deep (3 cards)**
+- Q: When does a rational function have a hole instead of a vertical asymptote?
+  A: When a factor cancels from both numerator and denominator.
+- Q: What is an oblique asymptote?
+  A: A slant line the function approaches as x -> +/-inf. Occurs when deg(num) = deg(denom) + 1.
+- Q: Find the oblique asymptote of f(x) = (x^2 + 2x + 1)/(x - 1).
+  A: y = x + 3.
+
+**A11. Inverses & Radicals (2 cards)**
+- Q: Why must we check for extraneous solutions when solving radical equations?
+  A: Squaring both sides can introduce solutions that don't satisfy the original equation.
+- Q: What is the inverse of f(x) = x^2 for x >= 0?
+  A: f^-1(x) = sqrt(x).
+
+**A12. Exponential Models (3 cards)**
+- Q: What is the formula for continuous compound interest?
+  A: A = Pe^(rt).
+- Q: If a population doubles every 5 years with continuous growth, what is r?
+  A: r = ln(2)/5 approx 0.1386.
+- Q: Solve 3^x = 81.
+  A: x = 4.
+
+**A13. Logarithmic Models (3 cards)**
+- Q: Solve log_2(x) = 5.
+  A: x = 32.
+- Q: Solve ln(x) + ln(x - 2) = ln(3).
+  A: x = 3 (reject x = -1).
+- Q: What is the domain of f(x) = log(x - 5)?
+  A: (5, inf).
+
+### Trigonometry Expansion Flashcards (41 cards)
+
+**B1. Angles & Measure (3 cards)**
+- Q: Convert 42 deg 7' 30" to decimal degrees.
+  A: 42.125 deg.
+- Q: Find the arc length of a sector with radius 5 and central angle pi/3.
+  A: 5pi/3 approx 5.24.
+- Q: What are coterminal angles?
+  A: Angles that share the same terminal side; they differ by multiples of 360 deg (or 2pi).
+
+**B2. Six Trig Functions (3 cards)**
+- Q: State the three Pythagorean identities.
+  A: sin^2(x) + cos^2(x) = 1; 1 + tan^2(x) = sec^2(x); 1 + cot^2(x) = csc^2(x).
+- Q: If sin(theta) = 3/5 and theta is in QI, find all six trig values.
+  A: cos = 4/5, tan = 3/4, csc = 5/3, sec = 5/4, cot = 4/3.
+- Q: State the cofunction identity for sin.
+  A: sin(pi/2 - theta) = cos(theta).
+
+**B3. Trig Identities Proofs (3 cards)**
+- Q: State the sum formula for sin(A + B).
+  A: sinA*cosB + cosA*sinB.
+- Q: Find the exact value of cos(75 deg) using sum formulas.
+  A: (sqrt(6) - sqrt(2))/4.
+- Q: State the half-angle formula for sin(theta/2).
+  A: sin(theta/2) = +/-sqrt[(1 - cos(theta))/2], sign depends on quadrant.
+
+**B4. Trig Graphs (3 cards)**
+- Q: What is the period of y = tan(x)?
+  A: pi.
+- Q: Where are the vertical asymptotes of y = csc(x)?
+  A: At x = n*pi for integer n (wherever sin(x) = 0).
+- Q: What is the period of y = 3tan(2x)?
+  A: pi/2.
+
+**B5. Inverse Trig Functions (3 cards)**
+- Q: What is arcsin(1/2)?
+  A: pi/6 (30 deg).
+- Q: What is the range of arccos(x)?
+  A: [0, pi].
+- Q: Evaluate cos(arctan(3/4)).
+  A: 4/5 (draw right triangle: opp 3, adj 4, hyp 5).
+
+**B6. Trig Equations (3 cards)**
+- Q: Find all solutions to sin(x) = sqrt(3)/2 in [0, 2pi).
+  A: x = pi/3 and x = 2pi/3.
+- Q: Find the general solution to cos(x) = -1/2.
+  A: x = 2pi/3 + 2pi*k or x = 4pi/3 + 2pi*k.
+- Q: Solve 2sin^2(x) - sin(x) - 1 = 0.
+  A: (2sinx + 1)(sinx - 1) = 0 → sinx = -1/2 or sinx = 1.
+
+**B7. Law of Sines (3 cards)**
+- Q: State the Law of Sines.
+  A: a/sinA = b/sinB = c/sinC.
+- Q: When is the Law of Sines ambiguous?
+  A: In the SSA case — you might get 0, 1, or 2 valid triangles.
+- Q: Find side b if A = 30 deg, B = 45 deg, a = 10.
+  A: b = 10*sin(45 deg)/sin(30 deg) = 10*sqrt(2) approx 14.14.
+
+**B8. Law of Cosines (3 cards)**
+- Q: State the Law of Cosines.
+  A: c^2 = a^2 + b^2 - 2ab*cos(C).
+- Q: If a = 5, b = 7, C = 60 deg, find c.
+  A: c = sqrt(39) approx 6.24.
+- Q: When does the Law of Cosines reduce to the Pythagorean theorem?
+  A: When C = 90 deg (cos 90 deg = 0).
+
+**B9. Polar Coordinates (3 cards)**
+- Q: Convert (3, pi/4) from polar to Cartesian.
+  A: x = 3*sqrt(2)/2, y = 3*sqrt(2)/2.
+- Q: Convert (1, 1) from Cartesian to polar.
+  A: (sqrt(2), pi/4).
+- Q: How many petals does r = 3cos(4*theta) have?
+  A: 8 (2n = 2*4, since n is even).
+
+**B10. Vectors (3 cards)**
+- Q: Find the magnitude of v = <3, 4>.
+  A: 5.
+- Q: Find the dot product of <2, -1> and <3, 4>.
+  A: 2.
+- Q: When are two vectors perpendicular?
+  A: When their dot product equals zero.
+
+**B11. Parametric Equations (3 cards)**
+- Q: Eliminate the parameter from x = t^2, y = 2t + 1.
+  A: 4x = (y - 1)^2.
+- Q: Parametrize the line segment from (1, 3) to (4, 7).
+  A: x = 1 + 3t, y = 3 + 4t, for 0 <= t <= 1.
+- Q: What do parametric equations add that y = f(x) doesn't?
+  A: Direction/orientation and the ability to represent curves that aren't functions.
+
+**B12. Polar Complex Numbers (3 cards)**
+- Q: Write z = 1 + i in polar form.
+  A: z = sqrt(2) * cis(pi/4).
+- Q: State De Moivre's Theorem.
+  A: [r*cis(theta)]^n = r^n * cis(n*theta).
+- Q: Multiply 2*cis(pi/3) and 3*cis(pi/6).
+  A: 6*cis(pi/2) = 6i.
+
+**B13. Harmonic Motion (3 cards)**
+- Q: A Ferris wheel has diameter 128 ft and completes 2 revolutions in 127 seconds. What is the angular frequency?
+  A: omega = 4pi/127 rad/s.
+- Q: How do you find amplitude from a graph?
+  A: Amplitude = (max - min)/2.
+- Q: What is the midline of a sinusoid with max 80 and min 20?
+  A: 50.
+
+**B14. Polar Conics (2 cards)**
+- Q: What determines if a polar conic is an ellipse, parabola, or hyperbola?
+  A: Eccentricity e: e < 1 → ellipse, e = 1 → parabola, e > 1 → hyperbola.
+- Q: What is the rotation angle formula for eliminating an xy-term?
+  A: cot(2*alpha) = (A - C)/B.
+
+---
+
+## Expansion Quiz Questions (39 questions)
+
+### Precalculus Expansion Quiz (19 questions)
+
+**A1. Domain & Range (2 Qs)**
+- Q: What is the domain of f(x) = sqrt(x - 2)?
+  Options: A) [2, inf) B) (2, inf) C) (-inf, 2] D) All reals
+  Answer: A) [2, inf)
+- Q: What is the range of f(x) = x^2?
+  Options: A) All reals B) [0, inf) C) (0, inf) D) (-inf, 0]
+  Answer: B) [0, inf)
+
+**A2. Rates of Change (2 Qs)**
+- Q: If f(x) = x^2 - 4x, what is the average rate of change on [1, 3]?
+  Options: A) 0 B) -2 C) 2 D) 4
+  Answer: A) 0
+- Q: A function that is concave down has what shape?
+  Options: A) Frown (cap) B) Smile (cup) C) Straight line D) Vertical
+  Answer: A) Frown (cap)
+
+**A3. Composition (2 Qs)**
+- Q: If f(x) = 2x + 1 and g(x) = x^2, what is (f o g)(3)?
+  Options: A) 49 B) 19 C) 7 D) 13
+  Answer: B) 19
+- Q: f(g(x)) is the same as g(f(x)). True or false?
+  Options: A) True B) False
+  Answer: B) False
+
+**A4. Linear Functions (1 Q)**
+- Q: What is the slope of a line passing through (-1, 4) and (5, 2)?
+  Options: A) -1/3 B) 1/3 C) -3 D) 3
+  Answer: A) -1/3
+
+**A5. Polynomials Deep (2 Qs)**
+- Q: What is the end behavior of f(x) = -2x^5 + 3x^2 - 1?
+  Options: A) Both ends up B) Both ends down C) Left up, right down D) Left down, right up
+  Answer: C) Left up, right down
+- Q: At a zero of multiplicity 3, the graph:
+  Options: A) Bounces B) Crosses linearly C) Crosses with flattening D) Has a vertical asymptote
+  Answer: C) Crosses with flattening
+
+**A6. Quadratics Expanded (1 Q)**
+- Q: What is the vertex of f(x) = -x^2 + 6x - 5?
+  Options: A) (3, 4) B) (-3, -4) C) (3, -4) D) (-3, 4)
+  Answer: A) (3, 4)
+
+**A7. Factor & Remainder (2 Qs)**
+- Q: If p(x) = x^3 - 4x^2 + 5x - 14, what is the remainder when divided by (x - 2)?
+  Options: A) 0 B) -12 C) -16 D) 2
+  Answer: B) -12
+- Q: If p(3) = 0 for polynomial p(x), which is true?
+  Options: A) (x + 3) is a factor B) (x - 3) is a factor C) x = -3 is a zero D) None of these
+  Answer: B) (x - 3) is a factor
+
+**A8. Real Zeros (1 Q)**
+- Q: What are the possible rational zeros of f(x) = 3x^3 - x^2 + 2?
+  Options: A) +/-{1, 2, 1/3, 2/3} B) +/-{1, 3} C) +/-{1, 2} D) +/-{2, 3}
+  Answer: A) +/-{1, 2, 1/3, 2/3}
+
+**A9. Complex Zeros (2 Qs)**
+- Q: What are the zeros of f(x) = x^2 + 4?
+  Options: A) +/-2 B) +/-2i C) +/-4i D) No zeros
+  Answer: B) +/-2i
+- Q: How many complex zeros does a degree-5 polynomial have?
+  Options: A) At most 5 B) Exactly 5 C) At least 1 D) Both B and C
+  Answer: D) Both B and C
+
+**A10. Rational Functions Deep (1 Q)**
+- Q: f(x) = (x - 2)/((x - 2)(x + 3)) has:
+  Options: A) VA at x=2 and x=-3 B) Hole at x=2, VA at x=-3 C) VA at x=-3 only D) Both B and C
+  Answer: B) Hole at x=2, VA at x=-3
+
+**A11. Inverses & Radicals (1 Q)**
+- Q: Solve sqrt(x + 3) = 5.
+  Options: A) x = 22 B) x = 28 C) x = 8 D) x = 2
+  Answer: A) x = 22
+
+**A12. Exponential Models (1 Q)**
+- Q: An investment of $1000 at 5% compounded continuously is worth how much after 10 years?
+  Options: A) $1,628.89 B) $1,500 C) $1,648.72 D) $1,050
+  Answer: C) $1,648.72
+
+**A13. Logarithmic Models (1 Q)**
+- Q: Solve: log_3(x + 1) = 2
+  Options: A) x = 8 B) x = 7 C) x = 9 D) x = 5
+  Answer: A) x = 8
+
+### Trigonometry Expansion Quiz (20 questions)
+
+**B1. Angles & Measure (2 Qs)**
+- Q: What is the arc length of a circle with radius 10 and central angle 2 radians?
+  Options: A) 20 B) 5 C) 10 D) 40
+  Answer: A) 20
+- Q: Which angle is coterminal with 450 deg?
+  Options: A) 90 deg B) 180 deg C) 270 deg D) 360 deg
+  Answer: A) 90 deg
+
+**B2. Six Trig Functions (2 Qs)**
+- Q: If tan(theta) = 3 and theta is in QIII, what is sin(theta)?
+  Options: A) 3/sqrt(10) B) -3/sqrt(10) C) -1/sqrt(10) D) 1/sqrt(10)
+  Answer: B) -3/sqrt(10)
+- Q: sec(theta) is the reciprocal of:
+  Options: A) sin(theta) B) cos(theta) C) tan(theta) D) cot(theta)
+  Answer: B) cos(theta)
+
+**B3. Trig Identities Proofs (2 Qs)**
+- Q: What is sin(2theta) equal to?
+  Options: A) 2sin(theta) B) sin^2(theta) C) 2sin(theta)*cos(theta) D) cos^2(theta) - sin^2(theta)
+  Answer: C) 2sin(theta)*cos(theta)
+- Q: cos(A - B) =
+  Options: A) cosA*cosB + sinA*sinB B) cosA*cosB - sinA*sinB C) sinA*cosB - cosA*sinB D) sinA*cosB + cosA*sinB
+  Answer: A) cosA*cosB + sinA*sinB
+
+**B4. Trig Graphs (1 Q)**
+- Q: The period of y = sec(3x) is:
+  Options: A) 2pi B) 2pi/3 C) pi/3 D) 3pi
+  Answer: B) 2pi/3
+
+**B5. Inverse Trig (2 Qs)**
+- Q: arctan(1) = ?
+  Options: A) pi/6 B) pi/4 C) pi/3 D) pi/2
+  Answer: B) pi/4
+- Q: The domain of arcsin(x) is:
+  Options: A) All reals B) [-1, 1] C) [0, 1] D) (-pi/2, pi/2)
+  Answer: B) [-1, 1]
+
+**B6. Trig Equations (2 Qs)**
+- Q: How many solutions does sin(x) = 1/2 have in [0, 2pi)?
+  Options: A) 1 B) 2 C) 3 D) Infinite
+  Answer: B) 2
+- Q: The general solution to tan(x) = 1 is:
+  Options: A) x = pi/4 + 2pi*k B) x = pi/4 + pi*k C) x = pi/4 only D) x = 3pi/4 + pi*k
+  Answer: B) x = pi/4 + pi*k
+
+**B7. Law of Sines (1 Q)**
+- Q: The Law of Sines is useful when you know:
+  Options: A) SSS B) SAS C) AAS D) All of these
+  Answer: C) AAS
+
+**B8. Law of Cosines (1 Q)**
+- Q: Given a = 8, b = 6, c = 10, find angle C.
+  Options: A) 90 deg B) 60 deg C) 120 deg D) 45 deg
+  Answer: A) 90 deg
+
+**B9. Polar Coordinates (1 Q)**
+- Q: The Cartesian coordinates of the polar point (4, pi/3) are:
+  Options: A) (2, 2*sqrt(3)) B) (2*sqrt(3), 2) C) (4, 4) D) (2, 2)
+  Answer: A) (2, 2*sqrt(3))
+
+**B10. Vectors (2 Qs)**
+- Q: What is the dot product of <1, 2> and <-2, 1>?
+  Options: A) 0 B) 4 C) -4 D) 2
+  Answer: A) 0
+- Q: The work done by a force F = 10 lbs at 30 deg over 50 ft is:
+  Options: A) 250*sqrt(3) B) 500 C) 250 D) 125*sqrt(3)
+  Answer: A) 250*sqrt(3)
+
+**B11. Parametric Equations (1 Q)**
+- Q: The parametric equations x = 3cos(t), y = 3sin(t) trace out:
+  Options: A) A line B) A parabola C) A circle of radius 3 D) An ellipse
+  Answer: C) A circle of radius 3
+
+**B12. Polar Complex (1 Q)**
+- Q: The modulus of z = 3 + 4i is:
+  Options: A) 5 B) 7 C) sqrt(7) D) 25
+  Answer: A) 5
+
+**B13. Harmonic Motion (1 Q)**
+- Q: The period of S(t) = 5sin(pi*t/3) is:
+  Options: A) 6 B) 3 C) pi/3 D) 2pi/3
+  Answer: A) 6
+
+**B14. Polar Conics (1 Q)**
+- Q: A conic with eccentricity e = 0.5 is:
+  Options: A) Circle B) Ellipse C) Parabola D) Hyperbola
+  Answer: B) Ellipse
+
+---
+
+## Content Totals
+
+| Category | Original | Expansion | Total |
+| --- | --- | --- | --- |
+| Review Cards | ~25 sections | 27 topics | ~52 sections |
+| Flashcards | 45 cards | 76 cards | ~121 cards |
+| Quiz Questions | 50 (15 precalc + 35 calculus) | 39 questions | 89 questions |
+
+## Features
+
+- Topic navigation dropdown in Review tab with smooth scroll and highlight
+- Topic filter dropdowns in Flashcards and Quiz tabs
+- Cross-tab sync: selecting an expansion topic in Review auto-sets flashcard/quiz filters
+- Priority tier badges: Tier 1 (Essential), Tier 2 (Important), Tier 3 (Advanced)
+- Sidebar navigation with grouped expansion topics
+- Quiz history with localStorage persistence and CSV export
+- Yu-Gi-Oh! crossover sections on 10 expansion topics (collapsible)
