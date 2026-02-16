@@ -4073,33 +4073,15 @@
                         var mainTab = parts[0]; // 'review', 'flashcards', 'quiz'
                         var areaOrType = parts[1]; // 'algebra', 'trig', 'expansion', etc.
                         
+                        // Get valid area IDs from AREA_CARDS
+                        var validAreas = AREA_CARDS.map(function(card) { return card.area; });
+                        
                         // Check if this is an area-specific navigation
-                        if (['algebra', 'trig', 'calculus', 'precalc'].includes(areaOrType)) {
+                        if (validAreas.includes(areaOrType) || areaOrType === 'precalc') {
                             // Map precalc to precalc-general
                             var area = areaOrType === 'precalc' ? 'precalc-general' : areaOrType;
-                            
-                            // Switch to the appropriate tab
-                            document.querySelectorAll('.content-section').forEach(function(s) { s.classList.remove('active'); });
-                            document.getElementById(mainTab).classList.add('active');
-                            updateHero(mainTab);
-                            
-                            // For flashcards and quiz, set the filter
-                            if (mainTab === 'flashcards') {
-                                // Set flashcard topic filter
-                                setFlashcardTopic(area);
-                                var topicSelect = document.getElementById('flashcardTopicSelect');
-                                if (topicSelect) {
-                                    topicSelect.value = area;
-                                }
-                            } else if (mainTab === 'quiz') {
-                                // Set quiz topic filter
-                                setQuizTopic(area);
-                                var quizSelect = document.getElementById('quizTopicSelect');
-                                if (quizSelect) {
-                                    quizSelect.value = area;
-                                }
-                            }
-                            
+                            // Use the navigateToArea function to handle navigation
+                            navigateToArea(mainTab, area);
                             return;
                         }
                     }
