@@ -9005,11 +9005,17 @@
                         let answer = qa.a;
                         
                         // Check if the question contains "A:" pattern (indicating combined Q&A)
-                        if (question && !answer) {
+                        // Only parse if answer is empty/null/undefined
+                        if (question && (!answer || answer.trim() === '')) {
+                            // Use a more specific pattern: at least one space before "A:", at least one space after
                             const parts = question.split(/\s+A:\s+/);
                             if (parts.length === 2) {
                                 question = parts[0].trim();
                                 answer = parts[1].trim();
+                            } else if (parts.length > 2) {
+                                // If multiple "A:" patterns exist, treat first as delimiter
+                                question = parts[0].trim();
+                                answer = parts.slice(1).join(' A: ').trim();
                             }
                         }
                         
