@@ -1,0 +1,2776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precalc Review Master</title>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-teal-500: rgba(45, 212, 191, 1);
+            --color-teal-600: rgba(34, 197, 176, 1);
+            --color-teal-700: rgba(29, 180, 161, 1);
+            --color-red-500: rgba(239, 68, 68, 1);
+            --color-orange-500: rgba(249, 115, 22, 1);
+            --color-blue-400: rgba(96, 165, 250, 1);
+            --color-green-500: rgba(74, 222, 128, 1);
+            --color-purple-500: rgba(192, 132, 252, 1);
+            --color-pink-500: rgba(244, 114, 182, 1);
+            --color-cyan-500: rgba(34, 211, 238, 1);
+            --color-teal-400: rgba(94, 234, 212, 1);
+            --color-yellow-400: rgba(250, 204, 21, 1);
+            --color-purple-400: rgba(216, 180, 254, 1);
+            --color-blue-500: rgba(59, 130, 246, 1);
+            --color-dark-card: rgba(17, 24, 39, 1);
+            --color-dark-border: rgba(75, 85, 99, 1);
+            --color-dark-surface: rgba(9, 11, 17, 1);
+
+            --color-accent-glow-yellow: 0 0 25px rgba(250, 204, 21, 0.5), 0 0 50px rgba(250, 204, 21, 0.2);
+            --color-accent-glow-purple: 0 0 25px rgba(192, 132, 252, 0.5), 0 0 50px rgba(192, 132, 252, 0.2);
+            --color-accent-glow-blue: 0 0 25px rgba(59, 130, 246, 0.5), 0 0 50px rgba(59, 130, 246, 0.2);
+
+            --color-bg: var(--color-dark-surface);
+            --color-surface: var(--color-dark-card);
+            --color-text: rgba(255, 255, 255, 0.95);
+            --color-text-secondary: rgba(203, 213, 225, 1);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-primary-active: var(--color-teal-700);
+            
+            --space-8: 8px;
+            --space-12: 12px;
+            --space-16: 16px;
+            --space-20: 20px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-40: 40px;
+            
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+            
+            --duration-fast: 150ms;
+            --duration-normal: 250ms;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        body {
+            background: linear-gradient(135deg, #080e1a 0%, #10101e 50%, #080e1a 100%);
+            min-height: 100vh;
+            padding: var(--space-16);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: var(--space-40);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--space-8);
+            background: linear-gradient(135deg, var(--color-yellow-400) 0%, var(--color-purple-400) 50%, var(--color-blue-500) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-24);
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: var(--space-12);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-32);
+            animation: fadeIn 0.6s ease-out 0.2s both;
+        }
+
+        .tab-btn {
+            padding: var(--space-12) var(--space-24);
+            border: 2px solid var(--color-dark-border);
+            background: var(--color-dark-surface);
+            color: var(--color-text);
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--duration-normal) ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tab-btn.active {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 20px rgba(45, 212, 191, 0.5), 0 0 40px rgba(45, 212, 191, 0.2);
+        }
+
+        .tab-btn.active::before {
+            left: 100%;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-24);
+            margin-bottom: var(--space-40);
+        }
+
+        .concept-card {
+            background: var(--color-dark-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-24);
+            border: 2px solid var(--color-dark-border);
+            border-left: 4px solid var(--color-teal-500);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            transition: all var(--duration-normal) ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), transparent);
+            border-radius: 50%;
+            margin: -50px -50px 0 0;
+        }
+
+        /* Card color groups by subtopic */
+        .concept-card.card-algebra  { border-left-color: var(--color-teal-500); }
+        .concept-card.card-explog   { border-left-color: var(--color-blue-400); }
+        .concept-card.card-trig     { border-left-color: var(--color-purple-500); }
+        .concept-card.card-misc     { border-left-color: var(--color-orange-500); }
+        .concept-card.card-calc     { border-left-color: var(--color-green-500); }
+
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(45, 212, 191, 0.3), 0 0 15px rgba(45, 212, 191, 0.15);
+        }
+
+        .concept-card.card-explog:hover  { box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3), 0 0 15px rgba(59, 130, 246, 0.15); }
+        .concept-card.card-trig:hover    { box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3), 0 0 15px rgba(168, 85, 247, 0.15); }
+        .concept-card.card-misc:hover    { box-shadow: 0 8px 30px rgba(168, 75, 47, 0.3), 0 0 15px rgba(168, 75, 47, 0.15); }
+        .concept-card.card-calc:hover    { box-shadow: 0 8px 30px rgba(34, 197, 94, 0.3), 0 0 15px rgba(34, 197, 94, 0.15); }
+
+        .concept-card:not(.expanded) > *:not(h3) {
+            display: none;
+        }
+
+        .concept-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-12);
+            color: var(--color-text);
+            position: relative;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .concept-card h3::after {
+            content: ' \25B8';
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            display: inline-block;
+            margin-left: var(--space-8);
+        }
+
+        .concept-card.expanded h3::after {
+            content: ' \25BE';
+        }
+
+        .concept-card:not(.expanded) h3 {
+            margin-bottom: 0;
+        }
+
+        /* ===== FOCUS MODE ===== */
+
+        .review-grid.focus-mode {
+            display: flex;
+            justify-content: center;
+        }
+
+        .review-grid.focus-mode .concept-card {
+            display: none;
+        }
+
+        .review-grid.focus-mode .concept-card.focused {
+            display: block;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .review-grid.focus-mode .concept-card.focused:hover {
+            transform: none;
+        }
+
+        /* ===== BACK BUTTON ===== */
+
+        .card-back-btn {
+            display: none;
+            align-items: center;
+            gap: var(--space-8);
+            padding: var(--space-12) var(--space-20);
+            margin-bottom: var(--space-24);
+            background: var(--color-dark-card);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-base);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--duration-fast) ease;
+        }
+
+        .card-back-btn:hover {
+            color: var(--color-text);
+            background: var(--color-dark-border);
+            border-color: var(--color-primary);
+        }
+
+        .card-back-btn.visible {
+            display: inline-flex;
+        }
+
+        /* ===== SIDEBAR SECTION LABELS ===== */
+
+        .sidebar-section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary);
+            padding: var(--space-8) var(--space-16);
+            margin-top: var(--space-16);
+            list-style: none;
+        }
+
+        .sidebar-section-label:first-child {
+            margin-top: 0;
+        }
+
+        .sidebar-collapsible {
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-collapsible::after {
+            content: '\25B8';
+            font-size: 0.7rem;
+            transition: transform var(--duration-fast) ease;
+        }
+
+        .sidebar-collapsible.open::after {
+            transform: rotate(90deg);
+        }
+
+        .sidebar-group {
+            list-style: none;
+            display: none;
+            padding: 0;
+        }
+
+        .sidebar-group.open {
+            display: block;
+        }
+
+        .concept-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            font-size: 0.95rem;
+        }
+
+        .equation-box {
+            background: rgba(45, 212, 191, 0.12);
+            border: 2px solid rgba(45, 212, 191, 0.4);
+            border-radius: var(--radius-base);
+            padding: var(--space-12) var(--space-16);
+            margin: var(--space-16) 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: var(--color-teal-400);
+            line-height: 1.5;
+            box-shadow: 0 0 16px rgba(45, 212, 191, 0.2), inset 0 0 16px rgba(45, 212, 191, 0.08);
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            margin-bottom: var(--space-40);
+        }
+
+        .flashcard {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-32);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+            transition: all var(--duration-normal) ease;
+            border: 2px solid var(--color-dark-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flashcard::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.5s;
+            pointer-events: none;
+        }
+
+        .flashcard:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--color-primary);
+        }
+
+        .flashcard.flipped {
+            background: linear-gradient(135deg, rgba(33, 128, 141, 0.1), rgba(59, 130, 246, 0.1));
+            border-color: var(--color-primary);
+        }
+
+        .flashcard-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--space-16);
+        }
+
+        .flashcard-answer {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .flashcard-label {
+            position: absolute;
+            top: var(--space-16);
+            right: var(--space-16);
+            font-size: 0.85rem;
+            color: var(--color-teal-400);
+            background: rgba(45, 212, 191, 0.15);
+            padding: var(--space-4) var(--space-12);
+            border-radius: var(--radius-full);
+        }
+
+        .controls {
+            display: flex;
+            gap: var(--space-16);
+            justify-content: center;
+            margin-bottom: var(--space-32);
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: var(--space-12) var(--space-24);
+            border: none;
+            border-radius: var(--radius-base);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--duration-normal) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(45, 212, 191, 0.5), 0 0 15px rgba(45, 212, 191, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--color-dark-card);
+            color: var(--color-text);
+            border: 2px solid var(--color-dark-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-dark-border);
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-small {
+            padding: var(--space-8) var(--space-16);
+            font-size: 0.9rem;
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quiz-progress {
+            margin-bottom: var(--space-32);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--color-gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-bottom: var(--space-12);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-teal-500), var(--color-blue-400));
+            transition: width 0.4s ease;
+            border-radius: var(--radius-full);
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+        }
+
+        .question-card {
+            background: var(--color-dark-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-32);
+            margin-bottom: var(--space-24);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--color-dark-border);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .question-number {
+            font-size: 0.85rem;
+            color: var(--color-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-12);
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: var(--space-24);
+            line-height: 1.6;
+        }
+
+        .options {
+            display: grid;
+            gap: var(--space-12);
+            margin-bottom: var(--space-24);
+        }
+
+        .option {
+            padding: var(--space-20) var(--space-24) var(--space-20) 52px;
+            border: 2px solid var(--color-dark-border);
+            border-radius: var(--radius-base);
+            background: var(--color-dark-surface);
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1.5;
+            transition: all var(--duration-normal) ease;
+            position: relative;
+            text-align: center;
+            min-height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option:hover {
+            border-color: var(--color-primary);
+            background: rgba(45, 212, 191, 0.1);
+            transform: translateX(4px);
+        }
+
+        .option.selected {
+            border-color: var(--color-primary);
+            background: rgba(45, 212, 191, 0.15);
+        }
+
+        .option.correct {
+            border-color: var(--color-green-500);
+            background: rgba(34, 197, 94, 0.15);
+        }
+
+        .option.incorrect {
+            border-color: var(--color-red-500);
+            background: rgba(239, 68, 68, 0.15);
+        }
+
+        .option::before {
+            content: '';
+            position: absolute;
+            left: var(--space-16);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+            background: transparent;
+            transition: all var(--duration-normal) ease;
+        }
+
+        .option.selected::before,
+        .option.correct::before {
+            background: currentColor;
+            box-shadow: inset 0 0 0 4px var(--color-white);
+        }
+
+        .results-container {
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.12), rgba(96, 165, 250, 0.12));
+            border-radius: var(--radius-lg);
+            padding: var(--space-40);
+            text-align: center;
+            margin: var(--space-32) 0;
+            border: 2px solid var(--color-dark-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .results-score {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-teal-400), var(--color-blue-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-8);
+        }
+
+        .results-label {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-24);
+        }
+
+        .results-detail {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-16);
+            margin: var(--space-32) 0;
+        }
+
+        .results-stat {
+            background: var(--color-dark-surface);
+            padding: var(--space-16);
+            border-radius: var(--radius-base);
+            border: 1px solid var(--color-dark-border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .results-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-teal-400);
+        }
+
+        .results-stat-label {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-top: var(--space-4);
+        }
+
+        .quiz-history-section {
+            max-width: 700px;
+            margin: var(--space-32) auto 0;
+            padding: var(--space-24);
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-dark-border);
+        }
+
+        .quiz-history-table {
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        .quiz-history-pass {
+            color: var(--color-green-500);
+            font-weight: 700;
+        }
+
+        .quiz-history-ok {
+            color: var(--color-yellow-400);
+            font-weight: 700;
+        }
+
+        .quiz-history-fail {
+            color: var(--color-red-500);
+            font-weight: 700;
+        }
+
+        .quiz-history-actions {
+            display: flex;
+            gap: var(--space-12);
+            margin-top: var(--space-16);
+        }
+
+        .animation-visual {
+            width: 100%;
+            height: 200px;
+            background: rgba(45, 212, 191, 0.05);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-dark-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--space-16) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        .dot:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .dot:nth-child(2) { left: 30%; animation-delay: 0.2s; }
+        .dot:nth-child(3) { left: 50%; animation-delay: 0.4s; }
+        .dot:nth-child(4) { left: 70%; animation-delay: 0.6s; }
+        .dot:nth-child(5) { left: 90%; animation-delay: 0.8s; }
+
+        @keyframes bounce {
+            0%, 100% { top: 50%; opacity: 1; }
+            50% { top: 20%; opacity: 0.7; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .info-badge {
+            display: inline-block;
+            background: rgba(45, 212, 191, 0.15);
+            border: 2px solid rgba(45, 212, 191, 0.4);
+            border-left: 3px solid var(--color-primary);
+            padding: var(--space-12) var(--space-16);
+            border-radius: var(--radius-base);
+            margin: var(--space-12) 0;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: var(--space-16) 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--color-dark-surface);
+            border-radius: var(--radius-base);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--color-dark-border);
+        }
+
+        th {
+            background: var(--color-dark-card);
+            padding: var(--space-12) var(--space-16);
+            text-align: left;
+            font-weight: 700;
+            color: var(--color-teal-400);
+            border-bottom: 2px solid var(--color-dark-border);
+        }
+
+        td {
+            padding: var(--space-12) var(--space-16);
+            border-bottom: 1px solid var(--color-dark-border);
+            color: var(--color-text);
+        }
+
+        tr:hover {
+            background: rgba(45, 212, 191, 0.05);
+        }
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-20);
+        }
+
+        /* ===== SIDEBAR ===== */
+
+        .sidebar-toggle {
+            position: fixed;
+            top: var(--space-16);
+            left: var(--space-16);
+            z-index: 1001;
+            background: var(--color-dark-card);
+            color: var(--color-text);
+            border: 1px solid var(--color-dark-border);
+            border-radius: var(--radius-base);
+            width: 44px;
+            height: 44px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--duration-normal) ease;
+        }
+
+        .sidebar-toggle:hover {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 15px rgba(45, 212, 191, 0.4);
+        }
+
+        .sidebar-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--duration-normal) ease, visibility var(--duration-normal) ease;
+        }
+
+        .sidebar-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100vh;
+            background: var(--color-dark-card);
+            border-right: 2px solid var(--color-dark-border);
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            transition: left var(--duration-normal) ease;
+            padding: 72px var(--space-24) var(--space-24);
+        }
+
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-32);
+            padding-bottom: var(--space-16);
+            border-bottom: 1px solid var(--color-dark-border);
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            background: linear-gradient(135deg, var(--color-yellow-400), var(--color-purple-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: var(--space-8);
+            line-height: 1;
+            transition: color var(--duration-fast) ease;
+        }
+
+        .sidebar-close:hover {
+            color: var(--color-text);
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: var(--space-8);
+        }
+
+        .sidebar-link {
+            display: block;
+            padding: var(--space-12) var(--space-16);
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-base);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all var(--duration-fast) ease;
+        }
+
+        .sidebar-link:hover {
+            color: var(--color-text);
+            background: var(--color-dark-surface);
+            padding-left: var(--space-20);
+        }
+
+        .sidebar-link.active {
+            color: var(--color-teal-400);
+            background: rgba(45, 212, 191, 0.1);
+            border-left: 3px solid var(--color-teal-400);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .review-grid { grid-template-columns: 1fr; }
+            .nav-tabs { gap: var(--space-8); }
+            .tab-btn { padding: var(--space-10) var(--space-16); font-size: 0.9rem; }
+            .results-detail { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Navigation</h2>
+            <button class="sidebar-close" onclick="toggleSidebar()" aria-label="Close navigation">&times;</button>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-label">App Sections</li>
+            <li><a href="#tab-review" class="sidebar-link">📖 Review Topics</a></li>
+            <li><a href="#tab-unit-circle" class="sidebar-link">🔄 Unit Circle</a></li>
+            <li><a href="#tab-flashcards" class="sidebar-link">🎴 Flashcards</a></li>
+            <li><a href="#tab-quiz" class="sidebar-link">❓ Quiz Mode</a></li>
+
+            <li class="sidebar-section-label sidebar-collapsible" onclick="toggleSidebarSection(this)">Pre-Calc Review</li>
+            <ul class="sidebar-group">
+                <li><a href="#topic-functions-notation" class="sidebar-link">Functions & Notation</a></li>
+                <li><a href="#topic-exponentials-logs" class="sidebar-link">Exponentials & Logs</a></li>
+                <li><a href="#topic-log-properties" class="sidebar-link">Log Properties</a></li>
+                <li><a href="#topic-unit-circle" class="sidebar-link">The Unit Circle</a></li>
+                <li><a href="#topic-trig-reference" class="sidebar-link">Quick Trig Reference</a></li>
+                <li><a href="#topic-key-identities" class="sidebar-link">Key Identities</a></li>
+                <li><a href="#topic-sinusoidal" class="sidebar-link">Sinusoidal Models</a></li>
+                <li><a href="#topic-factoring" class="sidebar-link">Factoring Patterns</a></li>
+                <li><a href="#topic-quadratics" class="sidebar-link">Solving Quadratics</a></li>
+                <li><a href="#topic-algebra-skills" class="sidebar-link">More Algebra Skills</a></li>
+                <li><a href="#topic-rational-functions" class="sidebar-link">Rational Functions</a></li>
+                <li><a href="#topic-inverse-functions" class="sidebar-link">Inverse Functions</a></li>
+                <li><a href="#topic-lines-slopes" class="sidebar-link">Lines & Slopes</a></li>
+                <li><a href="#topic-abs-piecewise" class="sidebar-link">Absolute Value & Piecewise</a></li>
+                <li><a href="#topic-transformations" class="sidebar-link">Function Transformations</a></li>
+                <li><a href="#topic-inequalities" class="sidebar-link">Inequalities</a></li>
+                <li><a href="#topic-sequences" class="sidebar-link">Sequences & Series</a></li>
+                <li><a href="#topic-limits-preview" class="sidebar-link">Limits (Calculus Preview)</a></li>
+                <li><a href="#topic-common-mistakes" class="sidebar-link">Common Mistakes</a></li>
+                <li><a href="#topic-calculator" class="sidebar-link">Calculator Skills</a></li>
+            </ul>
+
+            <li class="sidebar-section-label sidebar-collapsible" onclick="toggleSidebarSection(this)">Calculus</li>
+            <ul class="sidebar-group">
+                <li><a href="#topic-function" class="sidebar-link">What is a Function?</a></li>
+                <li><a href="#topic-limit" class="sidebar-link">What is a Limit?</a></li>
+                <li><a href="#topic-derivative" class="sidebar-link">What is a Derivative?</a></li>
+                <li><a href="#topic-integral" class="sidebar-link">What is an Integral?</a></li>
+                <li><a href="#topic-continuity" class="sidebar-link">What is Continuity?</a></li>
+                <li><a href="#topic-quick-ref-chart" class="sidebar-link">Quick Reference Chart</a></li>
+                <li><a href="#topic-graph-ref-key" class="sidebar-link">Graph Reference Key</a></li>
+                <li><a href="#topic-calc-definitions" class="sidebar-link">Definitions</a></li>
+                <li><a href="#topic-rolles-theorem" class="sidebar-link">Rolle's Theorem</a></li>
+                <li><a href="#topic-mvt" class="sidebar-link">Mean Value Theorem</a></li>
+                <li><a href="#topic-corollaries" class="sidebar-link">Corollaries</a></li>
+                <li><a href="#topic-first-deriv-test" class="sidebar-link">First Derivative Test</a></li>
+                <li><a href="#topic-second-deriv-test" class="sidebar-link">Second Derivative Test</a></li>
+                <li><a href="#topic-graphing-derivatives" class="sidebar-link">Graphing with Derivatives</a></li>
+                <li><a href="#topic-integration-formulas" class="sidebar-link">Integration Formulas</a></li>
+            </ul>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>📚 Precalc Review Master</h1>
+            <p class="subtitle">Master precalculus concepts with interactive review, flashcards, and quizzes</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('review')">📖 Review</button>
+            <button class="tab-btn" onclick="switchTab('unit-circle')">🔄 Unit Circle</button>
+            <button class="tab-btn" onclick="switchTab('flashcards')">🎴 Flashcards</button>
+            <button class="tab-btn" onclick="switchTab('quiz')">❓ Quiz Mode</button>
+        </div>
+
+        <!-- REVIEW TAB -->
+        <div id="review" class="content-section active">
+            <button class="card-back-btn" id="cardBackBtn" onclick="exitFocusMode()">&larr; Back to all topics</button>
+            <div class="review-grid">
+                <!-- Functions -->
+                <div class="concept-card card-algebra" id="topic-functions-notation">
+                    <h3>📐 Functions & Notation</h3>
+                    <p>f(x) means "plug x into the expression"</p>
+                    <div class="equation-box">f(3) = Replace every x with 3<br>f(a+h) = Replace x with (a+h)</div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;"><strong>Domain:</strong> All valid x-values (watch for division by zero, √ negatives, log issues)</p>
+                    <p style="font-size: 0.9rem;"><strong>Range:</strong> All possible y-values</p>
+                </div>
+
+                <!-- Exponential & Log Core -->
+                <div class="concept-card card-explog" id="topic-exponentials-logs">
+                    <h3>🔢 Exponentials & Logs</h3>
+                    <p><strong>THE MOST IMPORTANT:</strong></p>
+                    <div class="equation-box">a<sup>x</sup> = y  ⟺  log<sub>a</sub>(y) = x</div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;">These are inverse operations—they undo each other!</p>
+                    <div class="info-badge">Natural base e: e<sup>x</sup> = y  ⟺  ln(y) = x</div>
+                </div>
+
+                <!-- Log Rules -->
+                <div class="concept-card card-explog" id="topic-log-properties">
+                    <h3>➕ Log Properties</h3>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        Product: log(MN) = log(M) + log(N)<br>
+                        Quotient: log(M/N) = log(M) − log(N)<br>
+                        Power: log(M<sup>k</sup>) = k·log(M)
+                    </div>
+                    <div class="info-badge" style="background: rgba(192, 21, 47, 0.1); border-left-color: var(--color-red-500); color: var(--color-red-500);">
+                        ❌ WRONG: ln(a+b) ≠ ln(a) + ln(b)<br>Only works for multiplication!
+                    </div>
+                </div>
+
+                <!-- Unit Circle -->
+                <div class="concept-card card-trig" id="topic-unit-circle">
+                    <h3>🔄 The Unit Circle</h3>
+                    <p><strong>Radius 1, centered at origin. Every point is (cos θ, sin θ).</strong></p>
+                    <div class="info-badge">
+                        <strong>Convert degrees ↔ radians:</strong><br>
+                        Radians = (π/180) × degrees<br>
+                        Degrees = (180/π) × radians
+                    </div>
+                    <div class="table-responsive">
+                        <table style="font-size: 0.9rem;">
+                            <tr>
+                                <th>Degrees</th>
+                                <th>Radians</th>
+                                <th>cos θ</th>
+                                <th>sin θ</th>
+                                <th>tan θ</th>
+                            </tr>
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <td>0°</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr style="background: rgba(33, 128, 141, 0.2);">
+                                <td>30°</td>
+                                <td><strong>π/6</strong></td>
+                                <td>√3/2</td>
+                                <td>1/2</td>
+                                <td>√3/3</td>
+                            </tr>
+                            <tr style="background: rgba(33, 128, 141, 0.2);">
+                                <td>45°</td>
+                                <td><strong>π/4</strong></td>
+                                <td>√2/2</td>
+                                <td>√2/2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr style="background: rgba(33, 128, 141, 0.2);">
+                                <td>60°</td>
+                                <td><strong>π/3</strong></td>
+                                <td>1/2</td>
+                                <td>√3/2</td>
+                                <td>√3</td>
+                            </tr>
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <td>90°</td>
+                                <td>π/2</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>undef</td>
+                            </tr>
+                            <tr>
+                                <td>120°</td>
+                                <td>2π/3</td>
+                                <td>−1/2</td>
+                                <td>√3/2</td>
+                                <td>−√3</td>
+                            </tr>
+                            <tr>
+                                <td>135°</td>
+                                <td>3π/4</td>
+                                <td>−√2/2</td>
+                                <td>√2/2</td>
+                                <td>−1</td>
+                            </tr>
+                            <tr>
+                                <td>150°</td>
+                                <td>5π/6</td>
+                                <td>−√3/2</td>
+                                <td>1/2</td>
+                                <td>−√3/3</td>
+                            </tr>
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <td>180°</td>
+                                <td>π</td>
+                                <td>−1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>270°</td>
+                                <td>3π/2</td>
+                                <td>0</td>
+                                <td>−1</td>
+                                <td>undef</td>
+                            </tr>
+                            <tr style="background: rgba(33, 128, 141, 0.1);">
+                                <td>360°</td>
+                                <td>2π</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p style="margin-top: var(--space-12); font-size: 0.85rem; color: var(--color-text-secondary);"><strong>Note:</strong> The highlighted rows (0°, 30°, 45°, 60°, 90°, 180°, 360°) are the key angles you must memorize!</p>
+                </div>
+
+                <!-- Trig Values Quick Reference -->
+                <div class="concept-card card-trig" id="topic-trig-reference">
+                    <h3>⚡ Quick Trig Reference</h3>
+                    <p><strong>Key angles (memorize these!):</strong></p>
+                    <div class="table-responsive">
+                        <table style="font-size: 0.9rem;">
+                            <tr>
+                                <th>Angle</th>
+                                <th>sin</th>
+                                <th>cos</th>
+                                <th>tan</th>
+                            </tr>
+                            <tr>
+                                <td>0 / π/2</td>
+                                <td>0 / 1</td>
+                                <td>1 / 0</td>
+                                <td>0 / undef</td>
+                            </tr>
+                            <tr>
+                                <td>π/6 (30°)</td>
+                                <td>1/2</td>
+                                <td>√3/2</td>
+                                <td>√3/3</td>
+                            </tr>
+                            <tr>
+                                <td>π/4 (45°)</td>
+                                <td>√2/2</td>
+                                <td>√2/2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>π/3 (60°)</td>
+                                <td>√3/2</td>
+                                <td>1/2</td>
+                                <td>√3</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Trig Identities -->
+                <div class="concept-card card-trig" id="topic-key-identities">
+                    <h3>⚙️ Key Identities</h3>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        sin²(x) + cos²(x) = 1<br>
+                        tan(x) = sin(x)/cos(x)<br>
+                        sin(2x) = 2sin(x)cos(x)
+                    </div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;"><strong>Even/Odd:</strong><br>sin(−x) = −sin(x) (odd)<br>cos(−x) = cos(x) (even)</p>
+                </div>
+
+                <!-- Sinusoidal Models -->
+                <div class="concept-card card-trig" id="topic-sinusoidal">
+                    <h3>〰️ Sinusoidal Models</h3>
+                    <div class="equation-box">y = A·sin(bx + c) + D</div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;">
+                        <strong>A</strong> = Amplitude<br>
+                        <strong>b</strong> = 2π/Period<br>
+                        <strong>D</strong> = Vertical shift (midline)
+                    </p>
+                </div>
+
+                <!-- Factoring -->
+                <div class="concept-card card-algebra" id="topic-factoring">
+                    <h3>🧮 Factoring Patterns</h3>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        Difference of squares: a² − b² = (a+b)(a−b)<br>
+                        Perfect square: a² ± 2ab + b² = (a±b)²<br>
+                        Sum/Diff cubes: a³ ± b³ = (a±b)(a² ∓ ab + b²)
+                    </div>
+                </div>
+
+                <!-- Quadratic Formula -->
+                <div class="concept-card card-algebra" id="topic-quadratics">
+                    <h3>✖️ Solving Quadratics</h3>
+                    <div class="equation-box">x = (−b ± √(b² − 4ac)) / (2a)</div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;">
+                        <strong>Discriminant Δ = b² − 4ac</strong><br>
+                        Δ > 0: Two real solutions<br>
+                        Δ = 0: One solution<br>
+                        Δ < 0: No real solutions
+                    </p>
+                </div>
+
+                <!-- Completing the Square & Rationalizing -->
+                <div class="concept-card card-algebra" id="topic-algebra-skills">
+                    <h3>🔧 More Algebra Skills</h3>
+                    <p><strong>Completing the Square:</strong></p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        x² + bx → x² + bx + (b/2)² − (b/2)²<br>
+                        = (x + b/2)² − (b/2)²
+                    </div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;"><strong>Example:</strong> x² + 6x + 1 = 0<br>
+                        (x² + 6x + 9) − 9 + 1 = 0 → (x + 3)² = 8 → x = −3 ± 2√2</p>
+                    <p style="margin-top: var(--space-12);"><strong>Rationalizing Denominators:</strong></p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        1/√a → multiply by √a/√a<br>
+                        1/(a + √b) → multiply by (a − √b)/(a − √b)
+                    </div>
+                    <div class="info-badge">Multiply by the conjugate to eliminate radicals from the denominator</div>
+                </div>
+
+                <!-- Rational Functions -->
+                <div class="concept-card card-algebra" id="topic-rational-functions">
+                    <h3>📊 Rational Functions</h3>
+                    <p><strong>Vertical Asymptotes:</strong> Set denominator = 0</p>
+                    <p><strong>Horizontal Asymptotes:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        deg(P) < deg(Q) → y = 0<br>
+                        deg(P) = deg(Q) → y = leading coef ratio<br>
+                        deg(P) > deg(Q) → none
+                    </p>
+                </div>
+
+                <!-- Inverse Functions -->
+                <div class="concept-card card-algebra" id="topic-inverse-functions">
+                    <h3>🔁 Inverse Functions</h3>
+                    <p><strong>Find inverse:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        1. Write y = f(x)<br>
+                        2. Swap x and y<br>
+                        3. Solve for y<br>
+                        4. Write as f⁻¹(x) = result
+                    </p>
+                    <div class="info-badge">Graphs are reflections across y = x</div>
+                </div>
+
+                <!-- Lines & Slopes -->
+                <div class="concept-card card-algebra" id="topic-lines-slopes">
+                    <h3>📏 Lines & Slopes</h3>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        Slope: m = (y₂ − y₁) / (x₂ − x₁)
+                    </div>
+                    <p style="margin-top: var(--space-12);"><strong>Forms of Linear Equations:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        <strong>Slope-intercept:</strong> y = mx + b<br>
+                        <strong>Point-slope:</strong> y − y₁ = m(x − x₁)<br>
+                        <strong>Standard form:</strong> Ax + By = C
+                    </p>
+                    <div class="info-badge">
+                        <strong>Parallel lines:</strong> same slope (m₁ = m₂)<br>
+                        <strong>Perpendicular lines:</strong> negative reciprocal slopes (m₁ · m₂ = −1)
+                    </div>
+                </div>
+
+                <!-- Absolute Value & Piecewise Functions -->
+                <div class="concept-card card-algebra" id="topic-abs-piecewise">
+                    <h3>📐 Absolute Value & Piecewise</h3>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        |x| = x if x ≥ 0, −x if x &lt; 0
+                    </div>
+                    <p style="margin-top: var(--space-12);"><strong>Solving Absolute Value Equations:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        |expression| = k → two cases:<br>
+                        expression = k &nbsp;OR&nbsp; expression = −k
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Absolute Value Inequalities:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        |expr| &lt; k → −k &lt; expr &lt; k (AND/between)<br>
+                        |expr| &gt; k → expr &lt; −k OR expr &gt; k (outside)
+                    </p>
+                    <div class="info-badge"><strong>Piecewise Functions:</strong> Check which domain condition the input satisfies, then use that piece's rule to evaluate.</div>
+                </div>
+
+                <!-- Function Transformations -->
+                <div class="concept-card card-algebra" id="topic-transformations">
+                    <h3>🔀 Function Transformations</h3>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        y = a · f(b(x − h)) + k
+                    </div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;">
+                        <strong>k:</strong> Vertical shift (up if k &gt; 0, down if k &lt; 0)<br>
+                        <strong>h:</strong> Horizontal shift (right if h &gt; 0, left if h &lt; 0)<br>
+                        <strong>a:</strong> Vertical stretch (|a| &gt; 1) or compress (|a| &lt; 1)<br>
+                        <strong>b:</strong> Horizontal compress (|b| &gt; 1) or stretch (|b| &lt; 1)
+                    </p>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;">
+                        <strong>Reflections:</strong><br>
+                        −f(x) = reflect over x-axis<br>
+                        f(−x) = reflect over y-axis
+                    </p>
+                    <div class="info-badge">Inside changes affect x (opposite direction); outside changes affect y (same direction)</div>
+                </div>
+
+                <!-- Inequalities -->
+                <div class="concept-card card-algebra" id="topic-inequalities">
+                    <h3>⚖️ Inequalities</h3>
+                    <p><strong>Linear Inequalities:</strong> Solve like equations, but <em>flip the sign</em> when multiplying or dividing by a negative.</p>
+                    <p style="margin-top: var(--space-12);"><strong>Polynomial/Rational Inequalities (Sign Chart):</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        1. Move everything to one side (≥ 0 or ≤ 0)<br>
+                        2. Factor completely<br>
+                        3. Find critical values (zeros and undefined points)<br>
+                        4. Test sign in each interval on number line<br>
+                        5. Select intervals that satisfy the inequality
+                    </p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        Interval notation:<br>
+                        (a, b) = open &nbsp;&nbsp; [a, b] = closed<br>
+                        (−∞, a) ∪ (b, ∞) = union of intervals
+                    </div>
+                </div>
+
+                <!-- Sequences and Series -->
+                <div class="concept-card card-misc" id="topic-sequences">
+                    <h3>🔢 Sequences & Series</h3>
+                    <p><strong>Arithmetic Sequence</strong> (constant difference d):</p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        a<sub>n</sub> = a₁ + (n − 1)d<br>
+                        Sum: S<sub>n</sub> = n(a₁ + a<sub>n</sub>) / 2
+                    </div>
+                    <p style="margin-top: var(--space-12);"><strong>Geometric Sequence</strong> (constant ratio r):</p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        a<sub>n</sub> = a₁ · r<sup>n−1</sup><br>
+                        Sum: S<sub>n</sub> = a₁(1 − r<sup>n</sup>) / (1 − r)
+                    </div>
+                    <div class="info-badge">Infinite geometric series converges when |r| &lt; 1: &nbsp; S = a₁ / (1 − r)</div>
+                </div>
+
+                <!-- Limits Preview -->
+                <div class="concept-card card-misc" id="topic-limits-preview">
+                    <h3>🎯 Limits (Calculus Preview)</h3>
+                    <p><strong>Core idea:</strong> What value does f(x) approach as x → c?</p>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;"><strong>Strategy:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        1. Try direct substitution first<br>
+                        2. If you get 0/0 (indeterminate): factor, cancel, or rationalize<br>
+                        3. For limits at ∞: divide every term by highest power of x
+                    </p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        Key facts:<br>
+                        lim(x→0) sin(x)/x = 1<br>
+                        lim(x→∞) 1/x<sup>n</sup> = 0 &nbsp;(n &gt; 0)<br>
+                        lim(x→a) [polynomial] = plug in a
+                    </div>
+                </div>
+
+                <!-- Common Mistakes -->
+                <div class="concept-card card-misc" id="topic-common-mistakes">
+                    <h3>⚠️ Common Mistakes to Avoid</h3>
+                    <div class="info-badge" style="background: rgba(192, 21, 47, 0.1); border-left-color: var(--color-red-500); color: var(--color-red-500);">
+                        These are the #1 exam killers — memorize what NOT to do!
+                    </div>
+                    <div class="equation-box" style="font-size: 0.9rem; margin-top: var(--space-12);">
+                        ❌ ln(a + b) ≠ ln(a) + ln(b)<br>
+                        ❌ (a + b)² ≠ a² + b² &nbsp;→ ✅ a² + 2ab + b²<br>
+                        ❌ √(a² + b²) ≠ a + b<br>
+                        ❌ 1/(a + b) ≠ 1/a + 1/b
+                    </div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;">
+                        <strong>Also watch out for:</strong><br>
+                        • Forgetting to flip inequality sign when ×/÷ by negative<br>
+                        • Ignoring domain restrictions (div by 0, √ of negatives, log of ≤ 0)<br>
+                        • Dropping parentheses: −3² = −9 but (−3)² = 9
+                    </p>
+                </div>
+
+                <!-- Calculator Skills -->
+                <div class="concept-card card-misc" id="topic-calculator">
+                    <h3>🖩 Calculator Skills</h3>
+                    <p><strong>Essential Buttons:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        sin, cos, tan, sin⁻¹, cos⁻¹, tan⁻¹<br>
+                        ln, log, e<sup>x</sup>, 10<sup>x</sup>, x², √, π, ^
+                    </p>
+                    <div class="info-badge" style="background: rgba(192, 21, 47, 0.1); border-left-color: var(--color-red-500); color: var(--color-red-500);">
+                        ALWAYS check: Degree vs Radian mode!<br>For calculus, use RADIAN mode (almost always).
+                    </div>
+                    <p style="margin-top: var(--space-12);"><strong>Change of Base:</strong></p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        log<sub>a</sub>(M) = ln(M) / ln(a)
+                    </div>
+                    <p style="margin-top: var(--space-12); font-size: 0.9rem;"><strong>Parentheses matter:</strong> −3² = −9 vs (−3)² = 9</p>
+                </div>
+
+                <!-- ===== CALCULUS PREVIEW TOPICS ===== -->
+
+                <!-- What is a Function? -->
+                <div class="concept-card card-calc" id="topic-function">
+                    <h3>📘 What is a Function?</h3>
+                    <p>A function is a mathematical entity that describes a relationship between two sets of values: the <strong>domain</strong> (inputs) and the <strong>codomain</strong> (outputs). Each input in the domain is mapped to exactly one output.</p>
+                    <div class="info-badge"><strong>Vertical Line Test:</strong> If a vertical line intersects the graph at more than one point, the graph does not represent a function.</div>
+                    <p style="margin-top: var(--space-12);"><strong>Ways to describe functions:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        • <strong>Algebraically</strong> — using equations<br>
+                        • <strong>Graphically</strong> — using plots<br>
+                        • <strong>Numerically</strong> — using tables<br>
+                        • <strong>Verbally</strong> — using words
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Types of functions:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">Polynomial, Rational, Exponential, Logarithmic, and Trigonometric functions.</p>
+                    <p style="margin-top: var(--space-12);"><strong>Example:</strong></p>
+                    <div class="equation-box">f(x) = 2x + 3</div>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">This is a linear function with slope 2 and y-intercept 3. The slope indicates the rate of change; the y-intercept is the value when x = 0.</p>
+                </div>
+
+                <!-- What is a Limit? -->
+                <div class="concept-card card-calc" id="topic-limit">
+                    <h3>📘 What is a Limit?</h3>
+                    <p>The <strong>limit</strong> of a function f(x) as x approaches a is the value that f(x) gets closer to as x gets closer to a.</p>
+                    <div class="equation-box">lim(x→a) f(x) = L</div>
+                    <p style="margin-top: var(--space-12);"><strong>Types of limits:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        • <strong>Two-sided limits</strong> — approaching from both left and right<br>
+                        • <strong>One-sided limits</strong> — from the left (x→a⁻) or from the right (x→a⁺)
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Techniques for finding limits:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        1. Direct substitution<br>
+                        2. Factoring<br>
+                        3. Rationalizing
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Example:</strong></p>
+                    <div class="equation-box" style="font-size: 0.9rem;">lim(x→1) (x² − 1)/(x − 1)</div>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">Direct substitution gives 0/0 (indeterminate). Factor numerator: (x−1)(x+1)/(x−1) = x+1. The limit as x→1 is <strong>2</strong>.</p>
+                </div>
+
+                <!-- What is a Derivative? -->
+                <div class="concept-card card-calc" id="topic-derivative">
+                    <h3>📘 What is a Derivative?</h3>
+                    <p>The <strong>derivative</strong> of a function f(x) at a point x is the rate of change of the function at that point.</p>
+                    <div class="equation-box">f'(x) = lim(h→0) [f(x+h) − f(x)] / h</div>
+                    <p style="margin-top: var(--space-12);"><strong>Interpretations:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        • The slope of the tangent line to the graph at a given point<br>
+                        • The instantaneous rate of change of the function
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Derivative rules:</strong></p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        Power rule: d/dx [x<sup>n</sup>] = nx<sup>n−1</sup><br>
+                        Product rule: d/dx [fg] = f'g + fg'<br>
+                        Quotient rule: d/dx [f/g] = (f'g − fg') / g²<br>
+                        Chain rule: d/dx [f(g(x))] = f'(g(x)) · g'(x)
+                    </div>
+                    <p style="margin-top: var(--space-12);"><strong>Example:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">For f(x) = x², the power rule gives f'(x) = 2x. At x = 2, the slope of the tangent line is <strong>4</strong>.</p>
+                </div>
+
+                <!-- What is an Integral? -->
+                <div class="concept-card card-calc" id="topic-integral">
+                    <h3>📘 What is an Integral?</h3>
+                    <p>The <strong>integral</strong> of a function f(x) from a to b is the area under the curve between x = a and x = b.</p>
+                    <div class="equation-box">∫<sub>a</sub><sup>b</sup> f(x) dx</div>
+                    <p style="margin-top: var(--space-12);"><strong>Types of integrals:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        • <strong>Definite integrals</strong> — compute a numerical value (area)<br>
+                        • <strong>Indefinite integrals</strong> — find an antiderivative (+ C)
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Techniques:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        1. Antiderivatives<br>
+                        2. Substitution<br>
+                        3. Integration by parts<br>
+                        4. Partial fractions
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Example:</strong></p>
+                    <div class="equation-box" style="font-size: 0.9rem;">∫<sub>0</sub><sup>1</sup> x² dx = [x³/3]<sub>0</sub><sup>1</sup> = 1/3 − 0 = 1/3</div>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">The antiderivative of x² is (1/3)x³. Evaluate at bounds 0 and 1 to get <strong>1/3</strong>.</p>
+                </div>
+
+                <!-- What is Continuity? -->
+                <div class="concept-card card-calc" id="topic-continuity">
+                    <h3>📘 What is Continuity?</h3>
+                    <p>A function f(x) is <strong>continuous</strong> at a point x = a if three conditions are met:</p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        1. f(a) is defined<br>
+                        2. lim(x→a) f(x) exists<br>
+                        3. lim(x→a) f(x) = f(a)
+                    </div>
+                    <p style="margin-top: var(--space-12);"><strong>Types of discontinuities:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        • <strong>Removable</strong> — a hole in the graph (limit exists but ≠ f(a))<br>
+                        • <strong>Jump</strong> — left and right limits differ<br>
+                        • <strong>Infinite</strong> — function approaches ±∞
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Examples:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">f(x) = x² is continuous at x = 2: f(2) = 4, and lim(x→2) f(x) = 4.</p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">f(x) = 1/x is discontinuous at x = 0: not defined there, and the limit does not exist (approaches ∞).</p>
+                    <div class="info-badge"><strong>Intermediate Value Theorem:</strong> If f is continuous on [a, b] and N is between f(a) and f(b), then there exists c in (a, b) such that f(c) = N.</div>
+                </div>
+
+                <!-- ===== CALCULUS TOPICS ===== -->
+
+                <!-- Quick Reference Chart -->
+                <div class="concept-card card-calc" id="topic-quick-ref-chart">
+                    <h3>📋 Quick Reference Chart</h3>
+                    <p>Key calculus terms and what they mean at a glance.</p>
+                    <div class="table-responsive">
+                        <table style="font-size: 0.9rem;">
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td><strong>Critical point</strong></td>
+                                    <td>f'(x) = 0 or undefined</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Increasing interval</strong></td>
+                                    <td>f'(x) &gt; 0</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td><strong>Decreasing interval</strong></td>
+                                    <td>f'(x) &lt; 0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inflection point</strong></td>
+                                    <td>f''(x) = 0 with sign change</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td><strong>Concave up</strong></td>
+                                    <td>f''(x) &gt; 0</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Concave down</strong></td>
+                                    <td>f''(x) &lt; 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Graph Reference Key -->
+                <div class="concept-card card-calc" id="topic-graph-ref-key">
+                    <h3>📈 Graph Reference Key</h3>
+                    <p>Reference markers on a typical function graph and what they represent.</p>
+                    <div class="table-responsive">
+                        <table style="font-size: 0.85rem;">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Location</th>
+                                    <th>Property</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>1</td>
+                                    <td>Top center</td>
+                                    <td>Critical Point</td>
+                                    <td>f'(x) = 0 — Local maximum</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Upper right</td>
+                                    <td>Concave Down</td>
+                                    <td>f''(x) &lt; 0, curve bends downward</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>3</td>
+                                    <td>Left side</td>
+                                    <td>Increasing</td>
+                                    <td>f'(x) &gt; 0, curve rising</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Lower left</td>
+                                    <td>Concave Down</td>
+                                    <td>f''(x) &lt; 0, curve bends downward</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>5</td>
+                                    <td>Bottom center</td>
+                                    <td>Critical Point</td>
+                                    <td>f'(x) = 0 — Local minimum</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Lower right</td>
+                                    <td>Concave Down</td>
+                                    <td>f''(x) &lt; 0, curve bends downward</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>7</td>
+                                    <td>Right side</td>
+                                    <td>Decreasing</td>
+                                    <td>f'(x) &lt; 0, curve falling</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Upper left</td>
+                                    <td>Inflection Point</td>
+                                    <td>f''(x) = 0 with sign change</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Definitions -->
+                <div class="concept-card card-calc" id="topic-calc-definitions">
+                    <h3>📖 Definitions</h3>
+                    <p>Core calculus definitions relating derivatives to function behavior.</p>
+                    <div class="table-responsive">
+                        <table style="font-size: 0.9rem;">
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Condition</th>
+                                    <th>Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td><strong>Critical Point</strong></td>
+                                    <td>f'(x) = 0</td>
+                                    <td>Horizontal tangent (max/min)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Increasing</strong></td>
+                                    <td>f'(x) &gt; 0</td>
+                                    <td>Function rising</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td><strong>Decreasing</strong></td>
+                                    <td>f'(x) &lt; 0</td>
+                                    <td>Function falling</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inflection Point</strong></td>
+                                    <td>f''(x) = 0 (sign change)</td>
+                                    <td>Concavity changes</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td><strong>Concave Up</strong></td>
+                                    <td>f''(x) &gt; 0</td>
+                                    <td>Curves upward ∪</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Concave Down</strong></td>
+                                    <td>f''(x) &lt; 0</td>
+                                    <td>Curves downward ∩</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Rolle's Theorem -->
+                <div class="concept-card card-calc" id="topic-rolles-theorem">
+                    <h3>📘 Rolle's Theorem</h3>
+                    <p>Let f be a continuous function over [a, b] and differentiable over (a, b) such that f(a) = f(b). There then exists at least one c in (a, b) such that f'(c) = 0.</p>
+                    <div class="info-badge">
+                        <strong>Three Conditions:</strong><br>
+                        1. f is continuous on [a, b]<br>
+                        2. f is differentiable on (a, b)<br>
+                        3. f(a) = f(b)
+                    </div>
+                    <div class="equation-box">
+                        If all 3 conditions hold → there exists c in (a, b) where f'(c) = 0
+                    </div>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-12); color: var(--color-text-secondary);">In other words, if a function starts and ends at the same height, somewhere in between the tangent line must be horizontal.</p>
+                </div>
+
+                <!-- Mean Value Theorem -->
+                <div class="concept-card card-calc" id="topic-mvt">
+                    <h3>📘 Mean Value Theorem (MVT)</h3>
+                    <p>Drops the requirement f(a) = f(b) from Rolle's Theorem. States that there is at least one point c in (a, b) where the instantaneous rate of change equals the average rate of change:</p>
+                    <div class="equation-box">
+                        f'(c) = (f(b) − f(a)) / (b − a)
+                    </div>
+                    <div class="info-badge">
+                        <strong>Conditions:</strong><br>
+                        1. f is continuous on [a, b]<br>
+                        2. f is differentiable on (a, b)
+                    </div>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-12); color: var(--color-text-secondary);">The slope of the tangent at some point c equals the slope of the secant line connecting (a, f(a)) to (b, f(b)).</p>
+                </div>
+
+                <!-- Corollaries -->
+                <div class="concept-card card-calc" id="topic-corollaries">
+                    <h3>📘 Corollaries</h3>
+                    <p style="margin-top: var(--space-12);"><strong>1. Functions with a Derivative of Zero:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">If f'(x) = 0 for all x in interval I, then f(x) = constant for all x in I.</p>
+                    <p style="margin-top: var(--space-12);"><strong>2. Constant Difference Theorem:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">If f'(x) = g'(x) for all x in I, then f(x) = g(x) + C for some constant C.</p>
+                    <p style="margin-top: var(--space-12);"><strong>3. Increasing and Decreasing Functions:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">Let f be continuous on [a, b] and differentiable on (a, b):</p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        f'(x) &gt; 0 for all x in (a, b) → f is increasing on [a, b]<br>
+                        f'(x) &lt; 0 for all x in (a, b) → f is decreasing on [a, b]
+                    </div>
+                </div>
+
+                <!-- First Derivative Test -->
+                <div class="concept-card card-calc" id="topic-first-deriv-test">
+                    <h3>📘 First Derivative Test</h3>
+                    <p>Suppose f is continuous over an interval I containing a critical point c, and differentiable over I except possibly at c:</p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        f' changes + → − at c &nbsp;→&nbsp; f(c) is a local maximum<br>
+                        f' changes − → + at c &nbsp;→&nbsp; f(c) is a local minimum<br>
+                        f' same sign both sides &nbsp;→&nbsp; f(c) is neither max nor min
+                    </div>
+                    <div class="info-badge">
+                        <strong>Key idea:</strong> Check sign of f'(x) on both sides of a critical point to classify it.
+                    </div>
+                </div>
+
+                <!-- Second Derivative Test -->
+                <div class="concept-card card-calc" id="topic-second-deriv-test">
+                    <h3>📘 Second Derivative Test</h3>
+                    <p>Used to classify critical points where f'(x) = 0.</p>
+                    <p style="margin-top: var(--space-12);"><strong>Steps:</strong></p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        1. Find f'(x) and set f'(x) = 0 to get critical points<br>
+                        2. Compute f''(x)<br>
+                        3. Evaluate f''(c) at each critical point:
+                    </p>
+                    <div class="equation-box" style="font-size: 0.9rem;">
+                        f''(c) &gt; 0 → f(c) is a local minimum<br>
+                        f''(c) &lt; 0 → f(c) is a local maximum<br>
+                        f''(c) = 0 → test is inconclusive
+                    </div>
+                    <div class="info-badge" style="background: rgba(249, 115, 22, 0.1); border-left-color: var(--color-orange-500); color: var(--color-orange-500);">
+                        <strong>Tip:</strong> If the second derivative test is inconclusive (f''(c) = 0), fall back to the First Derivative Test.
+                    </div>
+                </div>
+
+                <!-- Steps for Graphing a Function Using Derivatives -->
+                <div class="concept-card card-calc" id="topic-graphing-derivatives">
+                    <h3>📉 Graphing with Derivatives</h3>
+                    <p><strong>Step-by-step procedure for sketching a function using calculus:</strong></p>
+                    <p style="margin-top: var(--space-12);"><strong>Step 1:</strong> Find f'(x)</p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        Set f'(x) = 0 or find where f'(x) is undefined → <strong>critical points</strong><br>
+                        f'(x) &gt; 0 → increasing &nbsp;|&nbsp; f'(x) &lt; 0 → decreasing
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Step 2:</strong> Find f''(x)</p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">
+                        Set f''(x) = 0 or find where f''(x) is undefined → <strong>inflection points</strong><br>
+                        f''(x) &gt; 0 → concave up &nbsp;|&nbsp; f''(x) &lt; 0 → concave down
+                    </p>
+                    <p style="margin-top: var(--space-12);"><strong>Step 3:</strong> Analyze sign of f'(x) and f''(x)</p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">Use sign charts to determine behavior on each interval.</p>
+                    <p style="margin-top: var(--space-12);"><strong>Step 4:</strong> Identify key points</p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">Mark critical points (local max/min) and inflection points (concavity change).</p>
+                    <p style="margin-top: var(--space-12);"><strong>Step 5:</strong> Sketch the graph</p>
+                    <p style="font-size: 0.9rem; margin-top: var(--space-8);">Plot key points and connect using increasing/decreasing and concavity information.</p>
+                </div>
+
+                <!-- Integration Formulas -->
+                <div class="concept-card card-calc" id="topic-integration-formulas">
+                    <h3>∫ Integration Formulas</h3>
+                    <p>Essential differentiation and integration pairs to memorize.</p>
+                    <div class="table-responsive">
+                        <table style="font-size: 0.85rem;">
+                            <thead>
+                                <tr>
+                                    <th>Differentiation</th>
+                                    <th>Indefinite Integral</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>d/dx (k) = 0</td>
+                                    <td>∫ k dx = kx + C</td>
+                                </tr>
+                                <tr>
+                                    <td>d/dx (x<sup>n</sup>) = nx<sup>n−1</sup></td>
+                                    <td>∫ x<sup>n</sup> dx = x<sup>n+1</sup>/(n+1) + C, n ≠ −1</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>d/dx (ln|x|) = 1/x</td>
+                                    <td>∫ (1/x) dx = ln|x| + C</td>
+                                </tr>
+                                <tr>
+                                    <td>d/dx (e<sup>x</sup>) = e<sup>x</sup></td>
+                                    <td>∫ e<sup>x</sup> dx = e<sup>x</sup> + C</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>d/dx (sin x) = cos x</td>
+                                    <td>∫ cos x dx = sin x + C</td>
+                                </tr>
+                                <tr>
+                                    <td>d/dx (cos x) = −sin x</td>
+                                    <td>∫ sin x dx = −cos x + C</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>d/dx (tan x) = sec²x</td>
+                                    <td>∫ sec²x dx = tan x + C</td>
+                                </tr>
+                                <tr>
+                                    <td>d/dx (csc x) = −csc x cot x</td>
+                                    <td>∫ csc x cot x dx = −csc x + C</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>d/dx (sec x) = sec x tan x</td>
+                                    <td>∫ sec x tan x dx = sec x + C</td>
+                                </tr>
+                                <tr>
+                                    <td>d/dx (cot x) = −csc²x</td>
+                                    <td>∫ csc²x dx = −cot x + C</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>d/dx (sin⁻¹x) = 1/√(1−x²)</td>
+                                    <td>∫ 1/√(1−x²) dx = sin⁻¹x + C</td>
+                                </tr>
+                                <tr>
+                                    <td>d/dx (tan⁻¹x) = 1/(1+x²)</td>
+                                    <td>∫ 1/(1+x²) dx = tan⁻¹x + C</td>
+                                </tr>
+                                <tr style="background: rgba(45, 212, 191, 0.1);">
+                                    <td>d/dx (sec⁻¹|x|) = 1/(x√(x²−1))</td>
+                                    <td>∫ 1/(x√(x²−1)) dx = sec⁻¹|x| + C</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-40);">
+                <h2 style="margin-bottom: var(--space-24);">Visual Learning: Sine Wave Animation</h2>
+                <div class="animation-visual">
+                    <div class="wave">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <p style="color: var(--color-text-secondary); margin-top: var(--space-12);">See how amplitude and period work in oscillatory motion</p>
+            </div>
+        </div>
+
+        <!-- UNIT CIRCLE TAB -->
+        <div id="unit-circle" class="content-section">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: var(--space-24); color: var(--color-teal-400); font-size: 2rem;">The Unit Circle</h2>
+                
+                <div class="concept-card" style="margin-bottom: var(--space-32);">
+                    <h3 style="color: var(--color-teal-400);">Understanding the Unit Circle</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: var(--space-16);">
+                        The unit circle is a circle with radius 1 centered at the origin (0, 0). Every point on it is represented as <strong>(cos θ, sin θ)</strong>, where θ is the angle measured counterclockwise from the positive x-axis.
+                    </p>
+                    
+                    <div class="info-badge" style="margin-bottom: var(--space-16);">
+                        <strong>Key Insight:</strong> The x-coordinate of any point on the unit circle equals cos(θ), and the y-coordinate equals sin(θ).
+                    </div>
+                    
+                    <div style="background: rgba(45, 212, 191, 0.08); padding: var(--space-20); border-radius: var(--radius-base); border: 1px solid rgba(45, 212, 191, 0.3); margin-bottom: var(--space-16);">
+                        <h4 style="color: var(--color-teal-400); margin-bottom: var(--space-12);">Converting Between Degrees and Radians</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-24);">
+                            <div>
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Radians to Degrees:</p>
+                                <div class="equation-box">Degrees = (180/π) × Radians</div>
+                            </div>
+                            <div>
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary);">Degrees to Radians:</p>
+                                <div class="equation-box">Radians = (π/180) × Degrees</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-badge" style="background: rgba(249, 115, 22, 0.1); border-left-color: var(--color-orange-500); color: var(--color-orange-500);">
+                        <strong>🔑 Memorize These 4 Key Angles:</strong> 0°, 30° (π/6), 45° (π/4), 60° (π/3), and 90° (π/2). These appear constantly in calculus!
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: var(--space-24); color: var(--color-teal-400); font-size: 1.5rem;">Complete Unit Circle Reference Table</h3>
+                <div class="table-responsive">
+                    <table style="font-size: 0.95rem;">
+                        <thead>
+                            <tr>
+                                <th>Degrees</th>
+                                <th>Radians</th>
+                                <th>cos θ</th>
+                                <th>sin θ</th>
+                                <th>tan θ</th>
+                                <th>Quadrant</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: rgba(45, 212, 191, 0.1);">
+                                <td><strong>0°</strong></td>
+                                <td><strong>0</strong></td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Start (Positive x-axis)</td>
+                            </tr>
+                            <tr style="background: rgba(249, 115, 22, 0.08);">
+                                <td><strong>30°</strong></td>
+                                <td><strong>π/6</strong></td>
+                                <td>√3/2</td>
+                                <td>1/2</td>
+                                <td>√3/3</td>
+                                <td>Quadrant I (Key Angle)</td>
+                            </tr>
+                            <tr style="background: rgba(249, 115, 22, 0.08);">
+                                <td><strong>45°</strong></td>
+                                <td><strong>π/4</strong></td>
+                                <td>√2/2</td>
+                                <td>√2/2</td>
+                                <td>1</td>
+                                <td>Quadrant I (Key Angle)</td>
+                            </tr>
+                            <tr style="background: rgba(249, 115, 22, 0.08);">
+                                <td><strong>60°</strong></td>
+                                <td><strong>π/3</strong></td>
+                                <td>1/2</td>
+                                <td>√3/2</td>
+                                <td>√3</td>
+                                <td>Quadrant I (Key Angle)</td>
+                            </tr>
+                            <tr style="background: rgba(45, 212, 191, 0.1);">
+                                <td><strong>90°</strong></td>
+                                <td><strong>π/2</strong></td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>undefined</td>
+                                <td>Positive y-axis</td>
+                            </tr>
+                            <tr>
+                                <td>120°</td>
+                                <td>2π/3</td>
+                                <td>−1/2</td>
+                                <td>√3/2</td>
+                                <td>−√3</td>
+                                <td>Quadrant II</td>
+                            </tr>
+                            <tr>
+                                <td>135°</td>
+                                <td>3π/4</td>
+                                <td>−√2/2</td>
+                                <td>√2/2</td>
+                                <td>−1</td>
+                                <td>Quadrant II</td>
+                            </tr>
+                            <tr>
+                                <td>150°</td>
+                                <td>5π/6</td>
+                                <td>−√3/2</td>
+                                <td>1/2</td>
+                                <td>−√3/3</td>
+                                <td>Quadrant II</td>
+                            </tr>
+                            <tr style="background: rgba(45, 212, 191, 0.1);">
+                                <td><strong>180°</strong></td>
+                                <td><strong>π</strong></td>
+                                <td>−1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Negative x-axis</td>
+                            </tr>
+                            <tr>
+                                <td>210°</td>
+                                <td>7π/6</td>
+                                <td>−√3/2</td>
+                                <td>−1/2</td>
+                                <td>√3/3</td>
+                                <td>Quadrant III</td>
+                            </tr>
+                            <tr>
+                                <td>225°</td>
+                                <td>5π/4</td>
+                                <td>−√2/2</td>
+                                <td>−√2/2</td>
+                                <td>1</td>
+                                <td>Quadrant III</td>
+                            </tr>
+                            <tr>
+                                <td>240°</td>
+                                <td>4π/3</td>
+                                <td>−1/2</td>
+                                <td>−√3/2</td>
+                                <td>√3</td>
+                                <td>Quadrant III</td>
+                            </tr>
+                            <tr style="background: rgba(45, 212, 191, 0.1);">
+                                <td><strong>270°</strong></td>
+                                <td><strong>3π/2</strong></td>
+                                <td>0</td>
+                                <td>−1</td>
+                                <td>undefined</td>
+                                <td>Negative y-axis</td>
+                            </tr>
+                            <tr>
+                                <td>300°</td>
+                                <td>5π/3</td>
+                                <td>1/2</td>
+                                <td>−√3/2</td>
+                                <td>−√3</td>
+                                <td>Quadrant IV</td>
+                            </tr>
+                            <tr>
+                                <td>315°</td>
+                                <td>7π/4</td>
+                                <td>√2/2</td>
+                                <td>−√2/2</td>
+                                <td>−1</td>
+                                <td>Quadrant IV</td>
+                            </tr>
+                            <tr>
+                                <td>330°</td>
+                                <td>11π/6</td>
+                                <td>√3/2</td>
+                                <td>−1/2</td>
+                                <td>−√3/3</td>
+                                <td>Quadrant IV</td>
+                            </tr>
+                            <tr style="background: rgba(45, 212, 191, 0.1);">
+                                <td><strong>360°</strong></td>
+                                <td><strong>2π</strong></td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>Back to Start</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="concept-card" style="margin-top: var(--space-32);">
+                    <h3 style="color: var(--color-teal-400);">Key Patterns to Remember</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-24);">
+                        <div>
+                            <h4 style="color: var(--color-text); margin-bottom: var(--space-12);">📐 Quadrant I (0° to 90°)</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-secondary);">All trig functions are <strong style="color: var(--color-green-500);">positive</strong>. This is where the key angles live!</p>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--color-text); margin-bottom: var(--space-12);">⚠️ Other Quadrants</h4>
+                            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-secondary);"><strong>QII:</strong> sin positive, cos/tan negative | <strong>QIII:</strong> tan positive, sin/cos negative | <strong>QIV:</strong> cos positive, sin/tan negative</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-badge" style="margin-top: var(--space-20); background: rgba(34, 197, 94, 0.1); border-left-color: var(--color-green-500); color: var(--color-green-500);">
+                        <strong>💡 Study Tip:</strong> Focus on Quadrant I first. The other quadrants use reference angles to find the same values with different signs. Once you master the key angles (30°, 45°, 60°), you can figure out almost any angle!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLASHCARDS TAB -->
+        <div id="flashcards" class="content-section">
+            <div class="flashcard-container">
+                <div id="currentFlashcard" class="flashcard" onclick="toggleFlashcard()">
+                    <span class="flashcard-label"><span id="cardIndex">1</span> / <span id="cardTotal">10</span></span>
+                    <div class="flashcard-question" id="questionText">What is the core relationship between exponentials and logarithms?</div>
+                    <div class="flashcard-answer" id="answerText" style="display: none;">a<sup>x</sup> = y  ⟺  log<sub>a</sub>(y) = x (they are inverses—they undo each other)</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-secondary btn-small" onclick="previousCard()">← Previous</button>
+                <button class="btn btn-primary" onclick="toggleFlashcard()">Flip Card</button>
+                <button class="btn btn-secondary btn-small" onclick="nextCard()">Next →</button>
+            </div>
+
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-16);">Click the card or use the Flip button to reveal answers</p>
+                <button class="btn btn-primary" onclick="shuffleCards()">🔀 Shuffle Deck</button>
+            </div>
+        </div>
+
+        <!-- QUIZ TAB -->
+        <div id="quiz" class="content-section">
+            <div class="quiz-container">
+                <div id="quizContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== FLASHCARDS DATA (consolidated from flashcards-data.js) =====
+        const FLASHCARDS = [
+
+    // ==================== FUNCTIONS (4 cards) ====================
+    { topic: 'functions', q: 'What does f(a + h) mean?', a: 'Replace every <em>x</em> in the function rule with <strong>(a + h)</strong>, keeping the parentheses. For example, if f(x) = x<sup>2</sup>, then f(a + h) = (a + h)<sup>2</sup> = a<sup>2</sup> + 2ah + h<sup>2</sup>.' },
+    { topic: 'functions', q: 'What three things restrict the domain of a function?', a: '1. <strong>Division by zero</strong> — denominator ≠ 0.<br>2. <strong>Even roots of negatives</strong> — value under the root ≥ 0.<br>3. <strong>Logarithms of non-positives</strong> — argument &gt; 0.' },
+    { topic: 'functions', q: 'How do you evaluate the composition (f ∘ g)(x)?', a: '(f ∘ g)(x) = f(g(x)). First evaluate g(x), then plug that result into f. The domain is all x in the domain of g such that g(x) is in the domain of f.' },
+    { topic: 'functions', q: 'What is the difference between domain and range?', a: '<strong>Domain</strong> = set of all valid input (x) values.<br><strong>Range</strong> = set of all possible output (y) values the function can produce.' },
+
+    // ==================== EXPONENTIALS (4 cards) ====================
+    { topic: 'exponentials', q: 'State the core relationship between exponentials and logarithms.', a: 'a<sup>x</sup> = y &nbsp;⟺&nbsp; log<sub>a</sub>(y) = x. They are inverse operations — they undo each other.' },
+    { topic: 'exponentials', q: 'State all three logarithm properties (product, quotient, power).', a: 'Product: log(MN) = log(M) + log(N)<br>Quotient: log(M/N) = log(M) − log(N)<br>Power: log(M<sup>k</sup>) = k · log(M)' },
+    { topic: 'exponentials', q: 'What is the change of base formula?', a: 'log<sub>a</sub>(M) = ln(M) / ln(a). This lets you evaluate any log base using only the natural log (ln) button on your calculator.' },
+    { topic: 'exponentials', q: 'State three key log/exp values you must memorize.', a: 'ln(1) = 0 &nbsp;|&nbsp; ln(e) = 1 &nbsp;|&nbsp; e<sup>ln(x)</sup> = x. Also: log<sub>a</sub>(1) = 0 and log<sub>a</sub>(a) = 1 for any valid base a.' },
+
+    // ==================== TRIGONOMETRY (4 cards) ====================
+    { topic: 'trigonometry', q: 'State the Pythagorean identity.', a: 'sin<sup>2</sup>(x) + cos<sup>2</sup>(x) = 1. This is the most fundamental trig identity and is used constantly in calculus.' },
+    { topic: 'trigonometry', q: 'State both double-angle formulas for sin(2x) and cos(2x).', a: 'sin(2x) = 2 sin(x) cos(x)<br>cos(2x) = cos<sup>2</sup>(x) − sin<sup>2</sup>(x) = 2cos<sup>2</sup>(x) − 1 = 1 − 2sin<sup>2</sup>(x)' },
+    { topic: 'trigonometry', q: 'Which trig functions are even and which are odd?', a: '<strong>Even:</strong> cos(−x) = cos(x), sec(−x) = sec(x).<br><strong>Odd:</strong> sin(−x) = −sin(x), tan(−x) = −tan(x), csc(−x) = −csc(x), cot(−x) = −cot(x).' },
+    { topic: 'trigonometry', q: 'Express tan(x) and the two other Pythagorean identities.', a: 'tan(x) = sin(x)/cos(x)<br>1 + tan<sup>2</sup>(x) = sec<sup>2</sup>(x)<br>1 + cot<sup>2</sup>(x) = csc<sup>2</sup>(x)' },
+
+    // ==================== UNIT CIRCLE (4 cards) ====================
+    { topic: 'unit-circle', q: 'What are cos(π/6) and sin(π/6)?', a: 'cos(π/6) = √3/2 &nbsp;and&nbsp; sin(π/6) = 1/2. (30° angle — the cosine is the larger value.)' },
+    { topic: 'unit-circle', q: 'What are cos(π/4) and sin(π/4)?', a: 'cos(π/4) = √2/2 &nbsp;and&nbsp; sin(π/4) = √2/2. (45° angle — both coordinates are equal.)' },
+    { topic: 'unit-circle', q: 'Which trig functions are positive in each quadrant?', a: '<strong>QI:</strong> All positive &nbsp;|&nbsp; <strong>QII:</strong> sin, csc &nbsp;|&nbsp; <strong>QIII:</strong> tan, cot &nbsp;|&nbsp; <strong>QIV:</strong> cos, sec. Mnemonic: <em>All Students Take Calculus</em>.' },
+    { topic: 'unit-circle', q: 'How do you convert between degrees and radians?', a: 'Degrees → Radians: multiply by π/180.<br>Radians → Degrees: multiply by 180/π.<br>Example: 60° × (π/180) = π/3.' },
+
+    // ==================== SINUSOIDAL (3 cards) ====================
+    { topic: 'sinusoidal', q: 'In y = A · sin(bx + c) + D, what does each parameter control?', a: '<strong>A</strong> = amplitude (vertical stretch).<br><strong>b</strong> = frequency; period = 2π/b.<br><strong>c</strong> = phase constant; phase shift = −c/b (horizontal shift).<br><strong>D</strong> = vertical shift (midline y = D).' },
+    { topic: 'sinusoidal', q: 'How do you find the period of y = 3 sin(2x) − 5?', a: 'Period = 2π/b = 2π/2 = <strong>π</strong>. The amplitude is 3 and the midline is y = −5, but only b affects the period.' },
+    { topic: 'sinusoidal', q: 'How do you find amplitude from a graph showing max and min values?', a: 'Amplitude = (max − min) / 2. The midline is D = (max + min) / 2. For example, if max = 8 and min = 2, then A = 3 and D = 5.' },
+
+    // ==================== POLYNOMIALS (3 cards) ====================
+    { topic: 'polynomials', q: 'How does the degree and leading coefficient determine end behavior?', a: '<strong>Even degree, positive lead:</strong> both ends → +∞.<br><strong>Even degree, negative lead:</strong> both ends → −∞.<br><strong>Odd degree, positive lead:</strong> left → −∞, right → +∞.<br><strong>Odd degree, negative lead:</strong> left → +∞, right → −∞.' },
+    { topic: 'polynomials', q: 'How do you find the horizontal asymptote of a rational function P(x)/Q(x)?', a: 'Compare degrees: deg(P) &lt; deg(Q) → y = 0.<br>deg(P) = deg(Q) → y = ratio of leading coefficients.<br>deg(P) &gt; deg(Q) → no horizontal asymptote (oblique or none).' },
+    { topic: 'polynomials', q: 'How do you find vertical asymptotes of a rational function?', a: 'Set the denominator equal to zero and solve. Each solution x = a is a vertical asymptote <em>only if</em> the numerator is not also zero at x = a (otherwise it may be a hole).' },
+
+    // ==================== ALGEBRA SKILLS (4 cards) ====================
+    { topic: 'algebra-skills', q: 'State the difference of squares and sum/difference of cubes patterns.', a: 'a<sup>2</sup> − b<sup>2</sup> = (a + b)(a − b)<br>a<sup>3</sup> + b<sup>3</sup> = (a + b)(a<sup>2</sup> − ab + b<sup>2</sup>)<br>a<sup>3</sup> − b<sup>3</sup> = (a − b)(a<sup>2</sup> + ab + b<sup>2</sup>)' },
+    { topic: 'algebra-skills', q: 'State the quadratic formula and explain the discriminant.', a: 'x = (−b ± √(b<sup>2</sup> − 4ac)) / (2a).<br>Discriminant Δ = b<sup>2</sup> − 4ac:<br>Δ &gt; 0 → two distinct real roots.<br>Δ = 0 → one repeated real root.<br>Δ &lt; 0 → no real roots (two complex roots).' },
+    { topic: 'algebra-skills', q: 'What are the steps to complete the square for x<sup>2</sup> + bx?', a: 'Take half of b, square it, then add and subtract: x<sup>2</sup> + bx = (x + b/2)<sup>2</sup> − (b/2)<sup>2</sup>. Example: x<sup>2</sup> + 6x = (x + 3)<sup>2</sup> − 9.' },
+    { topic: 'algebra-skills', q: 'How do you rationalize a denominator with a binomial radical like 1/(√a + b)?', a: 'Multiply numerator and denominator by the <strong>conjugate</strong> (√a − b):<br>1/(√a + b) · (√a − b)/(√a − b) = (√a − b)/(a − b<sup>2</sup>).' },
+
+    // ==================== LINES (3 cards) ====================
+    { topic: 'lines', q: 'State the slope formula and the three main forms of a line.', a: 'Slope: m = (y<sub>2</sub> − y<sub>1</sub>) / (x<sub>2</sub> − x<sub>1</sub>).<br><strong>Slope-intercept:</strong> y = mx + b.<br><strong>Point-slope:</strong> y − y<sub>1</sub> = m(x − x<sub>1</sub>).<br><strong>Standard:</strong> Ax + By = C.' },
+    { topic: 'lines', q: 'What is the relationship between slopes of parallel and perpendicular lines?', a: '<strong>Parallel lines:</strong> same slope (m<sub>1</sub> = m<sub>2</sub>).<br><strong>Perpendicular lines:</strong> slopes are negative reciprocals (m<sub>1</sub> · m<sub>2</sub> = −1). Example: if m = 2, the perpendicular slope is −1/2.' },
+    { topic: 'lines', q: 'What does a slope of zero vs. an undefined slope look like?', a: 'Slope = 0 → <strong>horizontal line</strong> (y = constant).<br>Slope undefined → <strong>vertical line</strong> (x = constant). A vertical line is NOT a function.' },
+
+    // ==================== ABSOLUTE VALUE & PIECEWISE (3 cards) ====================
+    { topic: 'absolute-piecewise', q: 'State the formal definition of |x|.', a: '|x| = x if x ≥ 0, and |x| = −x if x &lt; 0. Absolute value gives the distance from zero, so the result is always ≥ 0.' },
+    { topic: 'absolute-piecewise', q: 'How do you solve |expression| = k?', a: 'If k &gt; 0: set up two equations: expression = k OR expression = −k, then solve both.<br>If k = 0: expression = 0.<br>If k &lt; 0: no solution (absolute value cannot be negative).' },
+    { topic: 'absolute-piecewise', q: 'How do you solve |expression| &lt; k (where k &gt; 0)?', a: 'Rewrite as a compound inequality: −k &lt; expression &lt; k, then solve for x. For |expression| &gt; k, split into: expression &lt; −k OR expression &gt; k.' },
+
+    // ==================== INVERSES (3 cards) ====================
+    { topic: 'inverses', q: 'What is the definition of an inverse function?', a: 'f and g are inverses if f(g(x)) = x and g(f(x)) = x for all x in their respective domains. The domain of f becomes the range of f<sup>−1</sup>, and vice versa.' },
+    { topic: 'inverses', q: 'What are the steps to find an inverse function algebraically?', a: '1. Write y = f(x).<br>2. Swap x and y.<br>3. Solve for y.<br>4. Write the result as f<sup>−1</sup>(x) = ... <br>5. Verify: check that f(f<sup>−1</sup>(x)) = x.' },
+    { topic: 'inverses', q: 'How are the graphs of f and f<sup>−1</sup> related?', a: 'The graph of f<sup>−1</sup> is the <strong>reflection of f across the line y = x</strong>. Every point (a, b) on f corresponds to point (b, a) on f<sup>−1</sup>.' },
+
+    // ==================== TRANSFORMATIONS (4 cards) ====================
+    { topic: 'transformations', q: 'What does y = f(x) + k do to the graph? What about y = f(x + h)?', a: 'y = f(x) + k shifts the graph <strong>up</strong> by k (down if k &lt; 0).<br>y = f(x + h) shifts the graph <strong>left</strong> by h (right if h &lt; 0). Remember: horizontal shifts go opposite to the sign.' },
+    { topic: 'transformations', q: 'How do vertical and horizontal stretches/compressions work?', a: 'y = a · f(x): vertical stretch by factor |a| (if |a| &gt; 1) or compression (if 0 &lt; |a| &lt; 1).<br>y = f(bx): horizontal compression by factor 1/|b| (if |b| &gt; 1) or stretch by factor 1/|b| (if 0 &lt; |b| &lt; 1). Horizontal transformations act opposite to what the number suggests.' },
+    { topic: 'transformations', q: 'What do y = −f(x) and y = f(−x) do?', a: 'y = −f(x) reflects across the <strong>x-axis</strong> (flip vertically).<br>y = f(−x) reflects across the <strong>y-axis</strong> (flip horizontally).' },
+    { topic: 'transformations', q: 'In what order should you apply multiple transformations?', a: '1. Horizontal stretch/compression and reflection (inside the function).<br>2. Horizontal shift.<br>3. Vertical stretch/compression and reflection.<br>4. Vertical shift (outside the function).' },
+
+    // ==================== INEQUALITIES (3 cards) ====================
+    { topic: 'inequalities', q: 'What critical rule must you remember when solving inequalities?', a: 'When you <strong>multiply or divide both sides by a negative number</strong>, you must <strong>flip the inequality sign</strong>. Example: −2x &gt; 6 becomes x &lt; −3.' },
+    { topic: 'inequalities', q: 'How does the sign chart method work for polynomial/rational inequalities?', a: '1. Move everything to one side (compare to 0).<br>2. Factor completely and find all zeros/undefined points.<br>3. Plot them on a number line, creating intervals.<br>4. Test a value in each interval to determine the sign.<br>5. Select intervals that satisfy the inequality.' },
+    { topic: 'inequalities', q: 'How do you write solutions in interval notation?', a: 'Use ( ) for strict inequalities (&lt;, &gt;) and [ ] for inclusive (≤, ≥). Use ∞ and −∞ always with parentheses. Example: −3 ≤ x &lt; 5 is written [−3, 5). Union: use ∪ for disjoint intervals.' },
+
+    // ==================== SEQUENCES (4 cards) ====================
+    { topic: 'sequences', q: 'State the formulas for the n-th term and sum of an arithmetic sequence.', a: 'n-th term: a<sub>n</sub> = a<sub>1</sub> + (n − 1)d, where d is the common difference.<br>Sum of first n terms: S<sub>n</sub> = n(a<sub>1</sub> + a<sub>n</sub>) / 2.' },
+    { topic: 'sequences', q: 'State the formulas for the n-th term and sum of a geometric sequence.', a: 'n-th term: a<sub>n</sub> = a<sub>1</sub> · r<sup>n−1</sup>, where r is the common ratio.<br>Sum of first n terms: S<sub>n</sub> = a<sub>1</sub>(1 − r<sup>n</sup>) / (1 − r), for r ≠ 1.' },
+    { topic: 'sequences', q: 'What is the formula for an infinite geometric series, and when does it converge?', a: 'S = a<sub>1</sub> / (1 − r), valid only when |r| &lt; 1. If |r| ≥ 1, the series diverges (sum does not exist).' },
+    { topic: 'sequences', q: 'How do you determine if a sequence is arithmetic vs. geometric?', a: '<strong>Arithmetic:</strong> consecutive terms have a constant <em>difference</em> (a<sub>n+1</sub> − a<sub>n</sub> = d).<br><strong>Geometric:</strong> consecutive terms have a constant <em>ratio</em> (a<sub>n+1</sub> / a<sub>n</sub> = r).' },
+
+    // ==================== LIMITS (3 cards) ====================
+    { topic: 'limits', q: 'What does lim(x→a) f(x) = L mean intuitively?', a: 'As x gets arbitrarily close to a (from both sides), f(x) gets arbitrarily close to L. The function does <em>not</em> need to be defined at x = a — only the behavior <em>near</em> a matters.' },
+    { topic: 'limits', q: 'What are the common indeterminate forms, and what do you do about 0/0?', a: 'Common indeterminate forms: 0/0 and ∞/∞. For 0/0: try factoring, rationalizing (multiply by conjugate), or simplifying. The goal is to cancel the common factor causing 0/0, then substitute again.' },
+    { topic: 'limits', q: 'How do you find the limit of a polynomial as x → c?', a: 'For polynomials (and most "nice" functions), simply <strong>substitute</strong>: lim(x→c) p(x) = p(c). This works because polynomials are continuous everywhere — direct substitution is the first technique to try.' },
+
+    // ==================== COMMON MISTAKES (3 cards) ====================
+    { topic: 'common-mistakes', q: 'Why is ln(a + b) ≠ ln(a) + ln(b)?', a: 'The log product rule says ln(a · b) = ln(a) + ln(b) — it requires <strong>multiplication</strong> inside, not addition. There is no simplification rule for the log of a sum.' },
+    { topic: 'common-mistakes', q: 'What is the correct expansion of (a + b)<sup>2</sup>?', a: '(a + b)<sup>2</sup> = a<sup>2</sup> + <strong>2ab</strong> + b<sup>2</sup>. Common mistake: writing a<sup>2</sup> + b<sup>2</sup> and forgetting the cross term 2ab.' },
+    { topic: 'common-mistakes', q: 'Is √(a<sup>2</sup> + b<sup>2</sup>) equal to a + b?', a: '<strong>No!</strong> √(a<sup>2</sup> + b<sup>2</sup>) ≠ a + b. You cannot "distribute" a square root over addition. For example, √(9 + 16) = √25 = 5, but 3 + 4 = 7.' },
+
+    // ==================== CALCULATOR (3 cards) ====================
+    { topic: 'calculator', q: 'When should your calculator be in radian mode vs. degree mode?', a: 'Use <strong>radian mode</strong> for all calculus and most precalc problems (especially when angles involve π). Use <strong>degree mode</strong> only when the problem specifically gives angles in degrees. Always check before evaluating trig functions!' },
+    { topic: 'calculator', q: 'How do you compute log base 5 of 20 on a calculator that only has ln?', a: 'Use the change of base formula: log<sub>5</sub>(20) = ln(20) / ln(5) ≈ 2.9957 / 1.6094 ≈ 1.861. Many calculators also have a logBASE function: look for log<sub>a</sub>(x) or logBASE.' },
+    { topic: 'calculator', q: 'What is a common calculator pitfall with negative numbers and exponents?', a: 'Entering −3<sup>2</sup> as <code>-3^2</code> gives −9 (exponent first, then negation). To square negative three, you must use parentheses: <code>(-3)^2</code> = 9. Always parenthesize negative bases.' },
+
+    // ==================== CALCULUS: LIMITS (7 cards) ====================
+    { topic: 'calc-limits', q: 'What is the limit of f(x) = 3x² − 2x + 1 as x approaches 2?', a: 'Substitute x = 2: f(2) = 3(4) − 2(2) + 1 = 12 − 4 + 1 = <strong>9</strong>. Polynomials are continuous, so direct substitution works.' },
+    { topic: 'calc-limits', q: 'What is the value of lim(x→0) sin(x)/x?', a: 'This is a fundamental limit: lim(x→0) sin(x)/x = <strong>1</strong>. This result is used frequently in calculus, especially when finding derivatives of trig functions.' },
+    { topic: 'calc-limits', q: 'What is the limit of (x² − 4)/(x − 2) as x approaches 2?', a: 'Factor the numerator: (x + 2)(x − 2)/(x − 2) = x + 2. At x = 2: 2 + 2 = <strong>4</strong>. Cancel the common factor before substituting.' },
+    { topic: 'calc-limits', q: 'What is the value of lim(x→∞) (2x² + 3x)/(x² + 1)?', a: 'When degrees are equal, the limit is the ratio of leading coefficients: 2/1 = <strong>2</strong>. Divide every term by x² to see why.' },
+    { topic: 'calc-limits', q: 'What is the limit of 1/x as x approaches infinity?', a: 'As x grows without bound, 1/x shrinks toward <strong>0</strong>. This is a foundational limit: lim(x→∞) 1/x = 0.' },
+    { topic: 'calc-limits', q: 'What is the value of lim(x→3) (x² − 9)/(x − 3)?', a: 'Factor: (x + 3)(x − 3)/(x − 3) = x + 3. At x = 3: 3 + 3 = <strong>6</strong>. The 0/0 indeterminate form resolves after cancellation.' },
+    { topic: 'calc-limits', q: 'What is the limit of e<sup>x</sup> as x approaches negative infinity?', a: 'As x → −∞, e<sup>x</sup> → <strong>0</strong>. The exponential function approaches zero from the positive side but never reaches it.' },
+
+    // ==================== CALCULUS: DERIVATIVES (10 cards) ====================
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = x³?', a: 'Power rule: bring down the exponent and subtract 1.<br>f\'(x) = 3x<sup>3−1</sup> = <strong>3x<sup>2</sup></strong>.' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = sin(x)?', a: 'f\'(x) = <strong>cos(x)</strong>. This is a fundamental derivative to memorize.' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = e<sup>x</sup>?', a: 'f\'(x) = <strong>e<sup>x</sup></strong>. The exponential function is its own derivative — one of the most remarkable facts in calculus.' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = ln(x)?', a: 'f\'(x) = <strong>1/x</strong>. This pairs with the integral: ∫(1/x) dx = ln|x| + C.' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = x² + 3x − 4?', a: 'Apply the power rule term by term:<br>f\'(x) = 2x + 3 − 0 = <strong>2x + 3</strong>.' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = cos(x)?', a: 'f\'(x) = <strong>−sin(x)</strong>. Note the negative sign — a common source of errors!' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = tan(x)?', a: 'f\'(x) = <strong>sec<sup>2</sup>(x)</strong>. Derived by applying the quotient rule to sin(x)/cos(x).' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = x·sin(x)?', a: 'Product rule: f\'(x) = (1)·sin(x) + x·cos(x) = <strong>sin(x) + x·cos(x)</strong>.' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = 1/x?', a: 'Rewrite as x<sup>−1</sup>, then apply the power rule:<br>f\'(x) = −1·x<sup>−2</sup> = <strong>−1/x<sup>2</sup></strong>.' },
+    { topic: 'calc-derivatives', q: 'What is the derivative of f(x) = x⁴ − 2x³ + 5x² − 3x + 1?', a: 'Apply the power rule term by term:<br>f\'(x) = <strong>4x<sup>3</sup> − 6x<sup>2</sup> + 10x − 3</strong>.' },
+
+    // ==================== CALCULUS: INTEGRALS (10 cards) ====================
+    { topic: 'calc-integrals', q: 'What is the integral of f(x) = x²?', a: 'Reverse power rule: add 1 to the exponent, divide by the new exponent.<br>∫x<sup>2</sup> dx = x<sup>3</sup>/3 + C = <strong>x<sup>3</sup>/3 + C</strong>.' },
+    { topic: 'calc-integrals', q: 'What is the value of ∫e<sup>x</sup> dx?', a: '<strong>e<sup>x</sup> + C</strong>. The exponential function is its own antiderivative, just as it is its own derivative.' },
+    { topic: 'calc-integrals', q: 'What is the integral of f(x) = sin(x)?', a: '∫sin(x) dx = <strong>−cos(x) + C</strong>. Note the negative sign — the derivative of −cos(x) is sin(x).' },
+    { topic: 'calc-integrals', q: 'What is the value of ∫(1/x) dx?', a: '<strong>ln|x| + C</strong>. The absolute value is important because ln is only defined for positive arguments, but 1/x exists for all x ≠ 0.' },
+    { topic: 'calc-integrals', q: 'What is the integral of f(x) = cos(x)?', a: '∫cos(x) dx = <strong>sin(x) + C</strong>. The derivative of sin(x) is cos(x), confirming this antiderivative.' },
+    { topic: 'calc-integrals', q: 'What is the value of ∫x³ dx?', a: 'Reverse power rule: ∫x<sup>3</sup> dx = x<sup>4</sup>/4 + C = <strong>x<sup>4</sup>/4 + C</strong>.' },
+    { topic: 'calc-integrals', q: 'What is the integral of f(x) = 1/x²?', a: 'Rewrite as x<sup>−2</sup>: ∫x<sup>−2</sup> dx = x<sup>−1</sup>/(−1) + C = <strong>−1/x + C</strong>.' },
+    { topic: 'calc-integrals', q: 'What is the value of ∫(2x + 3) dx?', a: 'Integrate term by term: 2·(x<sup>2</sup>/2) + 3x + C = <strong>x<sup>2</sup> + 3x + C</strong>.' },
+    { topic: 'calc-integrals', q: 'What is the integral of f(x) = tan(x)?', a: '∫tan(x) dx = <strong>−ln|cos(x)| + C</strong>, which is equivalently written as ln|sec(x)| + C.' },
+    { topic: 'calc-integrals', q: 'What is the value of ∫√x dx?', a: 'Rewrite as x<sup>1/2</sup>: ∫x<sup>1/2</sup> dx = x<sup>3/2</sup>/(3/2) + C = <strong>(2/3)x<sup>3/2</sup> + C</strong>.' },
+
+    // ==================== CALCULUS: APPLICATIONS (8 cards) ====================
+    { topic: 'calc-applications', q: 'What is the slope of the tangent line to y = x² at x = 2?', a: 'The slope of the tangent line is the derivative evaluated at the point.<br>dy/dx = 2x. At x = 2: slope = 2(2) = <strong>4</strong>.' },
+    { topic: 'calc-applications', q: 'What are the critical points of f(x) = x³ − 3x²?', a: 'Set f\'(x) = 0: 3x<sup>2</sup> − 6x = 3x(x − 2) = 0.<br>Critical points: <strong>x = 0 and x = 2</strong>.' },
+    { topic: 'calc-applications', q: 'What is the maximum value of f(x) = x⁴ − 4x³ + 4 on [0, 4]?', a: 'f\'(x) = 4x<sup>3</sup> − 12x<sup>2</sup> = 4x<sup>2</sup>(x − 3) = 0 → x = 0, 3.<br>Evaluate: f(0) = 4, f(3) = 81 − 108 + 4 = −23, f(4) = 256 − 256 + 4 = 4.<br>Maximum = <strong>4</strong> (at endpoints x = 0 and x = 4).' },
+    { topic: 'calc-applications', q: 'What is the minimum value of f(x) = x² − 4x + 4?', a: 'f(x) = (x − 2)<sup>2</sup>, a perfect square. This is always ≥ 0.<br>Minimum at x = 2: f(2) = (2 − 2)<sup>2</sup> = <strong>0</strong>.' },
+    { topic: 'calc-applications', q: 'What is the rate of change of f(x) = x² at x = 3?', a: 'The rate of change is the derivative: f\'(x) = 2x.<br>At x = 3: f\'(3) = 2(3) = <strong>6</strong>.' },
+    { topic: 'calc-applications', q: 'What is the derivative of f(x) = x²·sin(x)?', a: 'Product rule: f\'(x) = 2x·sin(x) + x<sup>2</sup>·cos(x) = <strong>2x·sin(x) + x<sup>2</sup>·cos(x)</strong>.' },
+    { topic: 'calc-applications', q: 'What is the slope of the tangent line to y = ln(x) at x = 1?', a: 'dy/dx = 1/x. At x = 1: slope = 1/1 = <strong>1</strong>.' },
+    { topic: 'calc-applications', q: 'What are the critical points of f(x) = x³ − 6x² + 11x − 6?', a: 'f\'(x) = 3x<sup>2</sup> − 12x + 11 = 0. Quadratic formula:<br>x = (12 ± √(144 − 132))/6 = (12 ± 2√3)/6 = <strong>(6 ± √3)/3</strong>.' }
+
+        ];
+
+        const flashcards = FLASHCARDS;
+
+        let currentCardIndex = 0;
+        let isFlipped = false;
+        let cardDeck = [...flashcards];
+
+        // ===== QUIZ DATA =====
+        const quizQuestions = [
+            { q: "If f(x) = x² − 3x + 2, what is f(2)?", opts: ["0", "2", "4", "6"], ans: 0 },
+            { q: "Solve: 2^x = 16", opts: ["2", "3", "4", "8"], ans: 2 },
+            { q: "Which is equivalent to ln(e^5)?", opts: ["1", "e", "5", "e^5"], ans: 2 },
+            { q: "Expand: log(x²y/z)", opts: ["2log(x) + log(y) − log(z)", "log(x) + log(y) − log(z)", "2log(x) − log(y) − log(z)", "log(2x) + log(y) − log(z)"], ans: 0 },
+            { q: "What is cos(π/3)?", opts: ["0", "1/2", "√3/2", "1"], ans: 1 },
+            { q: "Factor: x² − 9", opts: ["(x−3)²", "(x+3)²", "(x−3)(x+3)", "(x−3)(x−3)"], ans: 2 },
+            { q: "Solve: sin(x) = 1/2 for x ∈ [0, 2π)", opts: ["π/6, 5π/6", "π/3, 2π/3", "π/4, 3π/4", "π/6, π/3"], ans: 0 },
+            { q: "Find the amplitude of y = 3sin(2x) − 5", opts: ["2", "3", "5", "−5"], ans: 1 },
+            { q: "Simplify: sin²(x) + cos²(x)", opts: ["0", "1", "sin(2x)", "tan(x)"], ans: 1 },
+            { q: "What is ln(1)?", opts: ["0", "1", "undefined", "e"], ans: 0 },
+            { q: "Solve: |x − 3| = 5", opts: ["3", "8, −2", "5, −5", "−2, 8"], ans: 3 },
+            { q: "Find the period of y = cos(πx)", opts: ["π", "2π", "2", "1/2"], ans: 2 },
+            { q: "Which are perpendicular lines?", opts: ["m=2, m=2", "m=2, m=−1/2", "m=2, m=1/2", "m=2, m=1"], ans: 1 },
+            { q: "For f(x) = 1/(x−2), what is the vertical asymptote?", opts: ["x=0", "x=1", "x=2", "x=−2"], ans: 2 },
+            { q: "Solve: x² − 5x + 6 = 0", opts: ["1, 6", "2, 3", "−2, −3", "2, −3"], ans: 1 },
+        ];
+
+        // Calculus quiz question pool (35 questions) — stored for later integration into randomized quiz
+        const calculusQuizPool = [
+            // Limits (7 questions)
+            { q: "What is the limit of f(x) = 3x² − 2x + 1 as x approaches 2?", opts: ["9", "5", "11", "7"], ans: 0 },
+            { q: "Evaluate: lim(x→0) sin(x)/x", opts: ["0", "1", "∞", "undefined"], ans: 1 },
+            { q: "What is the limit of (x² − 4)/(x − 2) as x approaches 2?", opts: ["0", "2", "4", "undefined"], ans: 2 },
+            { q: "Evaluate: lim(x→∞) (2x² + 3x)/(x² + 1)", opts: ["0", "1", "2", "3"], ans: 2 },
+            { q: "What is the limit of 1/x as x approaches infinity?", opts: ["0", "1", "∞", "undefined"], ans: 0 },
+            { q: "Evaluate: lim(x→3) (x² − 9)/(x − 3)", opts: ["0", "3", "6", "9"], ans: 2 },
+            { q: "What is the limit of e^x as x approaches negative infinity?", opts: ["0", "1", "−∞", "∞"], ans: 0 },
+            // Derivatives (10 questions)
+            { q: "What is the derivative of f(x) = x³?", opts: ["x²", "3x", "3x²", "x³"], ans: 2 },
+            { q: "Find the derivative of f(x) = sin(x).", opts: ["cos(x)", "−cos(x)", "−sin(x)", "tan(x)"], ans: 0 },
+            { q: "What is the derivative of f(x) = e^x?", opts: ["xe^(x−1)", "e^x", "e^(x−1)", "ln(x)"], ans: 1 },
+            { q: "Find the derivative of f(x) = ln(x).", opts: ["x", "1/x", "ln(x)/x", "e^x"], ans: 1 },
+            { q: "What is the derivative of f(x) = x² + 3x − 4?", opts: ["2x + 3", "x² + 3", "2x − 4", "2x + 3x"], ans: 0 },
+            { q: "Find the derivative of f(x) = cos(x).", opts: ["sin(x)", "−sin(x)", "−cos(x)", "tan(x)"], ans: 1 },
+            { q: "What is the derivative of f(x) = tan(x)?", opts: ["sec(x)", "cot(x)", "sec²(x)", "−csc²(x)"], ans: 2 },
+            { q: "Find the derivative of f(x) = x·sin(x).", opts: ["cos(x)", "x·cos(x)", "sin(x) + cos(x)", "sin(x) + x·cos(x)"], ans: 3 },
+            { q: "What is the derivative of f(x) = 1/x?", opts: ["1/x²", "−1/x²", "ln(x)", "−ln(x)"], ans: 1 },
+            { q: "Find the derivative of f(x) = x⁴ − 2x³ + 5x² − 3x + 1.", opts: ["4x³ − 6x² + 10x − 3", "4x³ − 2x² + 5x − 3", "x³ − 6x² + 10x − 3", "4x⁴ − 6x³ + 10x² − 3x"], ans: 0 },
+            // Integrals (10 questions)
+            { q: "What is the integral of f(x) = x²?", opts: ["x³/3 + C", "2x + C", "x³ + C", "x²/2 + C"], ans: 0 },
+            { q: "Evaluate: ∫ e^x dx", opts: ["e^x + C", "xe^x + C", "e^(x+1)/(x+1) + C", "ln(x) + C"], ans: 0 },
+            { q: "What is the integral of f(x) = sin(x)?", opts: ["cos(x) + C", "−cos(x) + C", "−sin(x) + C", "sin²(x)/2 + C"], ans: 1 },
+            { q: "Evaluate: ∫ (1/x) dx", opts: ["x + C", "ln(x) + C", "ln|x| + C", "−1/x² + C"], ans: 2 },
+            { q: "What is the integral of f(x) = cos(x)?", opts: ["sin(x) + C", "−sin(x) + C", "cos²(x) + C", "tan(x) + C"], ans: 0 },
+            { q: "Evaluate: ∫ x³ dx", opts: ["3x² + C", "x⁴ + C", "x⁴/4 + C", "x³/3 + C"], ans: 2 },
+            { q: "What is the integral of f(x) = 1/x²?", opts: ["−1/x + C", "1/x + C", "ln(x²) + C", "−2/x³ + C"], ans: 0 },
+            { q: "Evaluate: ∫ (2x + 3) dx", opts: ["x² + 3x + C", "2x² + 3x + C", "x² + 3 + C", "2 + C"], ans: 0 },
+            { q: "What is the integral of f(x) = tan(x)?", opts: ["sec²(x) + C", "−ln|cos(x)| + C", "ln|sin(x)| + C", "−cot(x) + C"], ans: 1 },
+            { q: "Evaluate: ∫ √x dx", opts: ["(2/3)x^(3/2) + C", "(1/2)x^(1/2) + C", "2√x + C", "(3/2)x^(1/2) + C"], ans: 0 },
+            // Applications (8 questions)
+            { q: "What is the slope of the tangent line to y = x² at x = 2?", opts: ["2", "4", "8", "1"], ans: 1 },
+            { q: "Find the critical points of f(x) = x³ − 3x².", opts: ["x = 0 only", "x = 3 only", "x = 0 and x = 2", "x = 1 and x = 3"], ans: 2 },
+            { q: "What is the maximum value of f(x) = x⁴ − 4x³ + 4 on [0, 4]?", opts: ["4", "−23", "0", "260"], ans: 0 },
+            { q: "Find the minimum value of f(x) = x² − 4x + 4.", opts: ["0", "2", "4", "−4"], ans: 0 },
+            { q: "What is the rate of change of f(x) = x² at x = 3?", opts: ["3", "6", "9", "12"], ans: 1 },
+            { q: "Find the derivative of f(x) = x²·sin(x).", opts: ["2x·sin(x)", "x²·cos(x)", "2x·sin(x) + x²·cos(x)", "2x·cos(x) − x²·sin(x)"], ans: 2 },
+            { q: "What is the slope of the tangent line to y = ln(x) at x = 1?", opts: ["0", "1", "e", "undefined"], ans: 1 },
+            { q: "Find the critical points of f(x) = x³ − 6x² + 11x − 6.", opts: ["x = 1, 2, 3", "x = (6 ± √3)/3", "x = 2 only", "x = 3 ± √2"], ans: 1 },
+        ];
+
+        // Combined pool of all quiz questions (50 total)
+        const allQuizQuestions = [...quizQuestions, ...calculusQuizPool];
+
+        let quizState = {
+            current: 0,
+            answers: [],
+            submitted: false,
+            activeQuiz: [],
+        };
+
+        // ===== TAB SWITCHING =====
+        function switchTab(tab) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById(tab).classList.add('active');
+            event.target.classList.add('active');
+
+            if (tab === 'quiz' && (!quizState.activeQuiz || quizState.activeQuiz.length === 0)) {
+                initQuiz();
+            }
+        }
+
+        // ===== FLASHCARD FUNCTIONS =====
+        function toggleFlashcard() {
+            isFlipped = !isFlipped;
+            const question = document.getElementById('questionText');
+            const answer = document.getElementById('answerText');
+            const card = document.getElementById('currentFlashcard');
+
+            if (isFlipped) {
+                question.style.display = 'none';
+                answer.style.display = 'block';
+                card.classList.add('flipped');
+            } else {
+                question.style.display = 'block';
+                answer.style.display = 'none';
+                card.classList.remove('flipped');
+            }
+        }
+
+        function nextCard() {
+            isFlipped = false;
+            currentCardIndex = (currentCardIndex + 1) % cardDeck.length;
+            updateFlashcard();
+        }
+
+        function previousCard() {
+            isFlipped = false;
+            currentCardIndex = (currentCardIndex - 1 + cardDeck.length) % cardDeck.length;
+            updateFlashcard();
+        }
+
+        function shuffleCards() {
+            cardDeck = [...flashcards].sort(() => Math.random() - 0.5);
+            currentCardIndex = 0;
+            isFlipped = false;
+            updateFlashcard();
+        }
+
+        function updateFlashcard() {
+            const card = cardDeck[currentCardIndex];
+            document.getElementById('questionText').innerHTML = card.q;
+            document.getElementById('answerText').innerHTML = card.a;
+            document.getElementById('cardIndex').textContent = currentCardIndex + 1;
+            document.getElementById('cardTotal').textContent = cardDeck.length;
+            
+            const cardEl = document.getElementById('currentFlashcard');
+            cardEl.classList.remove('flipped');
+            document.getElementById('questionText').style.display = 'block';
+            document.getElementById('answerText').style.display = 'none';
+        }
+
+        // ===== QUIZ FUNCTIONS =====
+        function initQuiz() {
+            var shuffled = [...allQuizQuestions].sort(function() { return Math.random() - 0.5; });
+            var selected = shuffled.slice(0, 10);
+            quizState = {
+                current: 0,
+                answers: new Array(10).fill(null),
+                submitted: false,
+                activeQuiz: selected,
+            };
+            renderQuestionCard();
+        }
+
+        function renderQuestionCard() {
+            const container = document.getElementById('quizContent');
+            const q = quizState.activeQuiz[quizState.current];
+            const progress = ((quizState.current + 1) / quizState.activeQuiz.length) * 100;
+
+            let html = `
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                    <div class="progress-text">Question ${quizState.current + 1} of ${quizState.activeQuiz.length}</div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-number">Question ${quizState.current + 1}</div>
+                    <div class="question-text">${q.q}</div>
+                    <div class="options">
+            `;
+
+            q.opts.forEach((opt, idx) => {
+                const selected = quizState.answers[quizState.current] === idx;
+                const isCorrect = idx === q.ans;
+                let className = 'option';
+                
+                if (quizState.submitted) {
+                    if (isCorrect) className += ' correct';
+                    else if (selected && !isCorrect) className += ' incorrect';
+                } else if (selected) {
+                    className += ' selected';
+                }
+
+                html += `<div class="${className}" onclick="selectAnswer(${idx})">${opt}</div>`;
+            });
+
+            html += `</div><div class="controls" style="display: flex; justify-content: space-between; align-items: center;">`;
+
+            if (quizState.current > 0) {
+                html += `<button class="btn btn-secondary" onclick="prevQuestion()">← Previous</button>`;
+            }
+
+            if (!quizState.submitted) {
+                html += `<button class="btn btn-primary" onclick="nextQuestion()">Next →</button>`;
+            } else {
+                html += `<button class="btn btn-primary" onclick="nextQuestion()">${quizState.current < quizState.activeQuiz.length - 1 ? 'Next →' : 'See Results'}</button>`;
+            }
+
+            html += `<button class="btn btn-secondary btn-small" onclick="endQuizEarly()" style="margin-left: auto;">End Quiz</button>`;
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+        }
+
+        function selectAnswer(idx) {
+            if (!quizState.submitted) {
+                quizState.answers[quizState.current] = idx;
+                renderQuestionCard();
+            }
+        }
+
+        function nextQuestion() {
+            if (quizState.submitted) {
+                if (quizState.current < quizState.activeQuiz.length - 1) {
+                    quizState.current++;
+                    quizState.submitted = false;
+                    renderQuestionCard();
+                } else {
+                    showResults();
+                }
+            } else {
+                if (quizState.answers[quizState.current] === null) {
+                    alert('Please select an answer before proceeding!');
+                    return;
+                }
+                quizState.submitted = true;
+                renderQuestionCard();
+            }
+        }
+
+        function prevQuestion() {
+            if (quizState.current > 0) {
+                quizState.current--;
+                quizState.submitted = false;
+                renderQuestionCard();
+            }
+        }
+
+        function endQuizEarly() {
+            if (confirm('End quiz and save your results? Unanswered questions will not be scored.')) {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            var answered = quizState.answers.filter(function(a) { return a !== null; }).length;
+            var correct = quizState.answers.filter(function(ans, idx) {
+                return ans !== null && ans === quizState.activeQuiz[idx].ans;
+            }).length;
+            var total = answered;
+            var percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+            var isPartial = answered < quizState.activeQuiz.length;
+
+            saveQuizResult(correct, total, percent);
+
+            var statusLabel = isPartial
+                ? 'Quiz Ended — ' + answered + ' of ' + quizState.activeQuiz.length + ' answered'
+                : 'Quiz Complete!';
+            var incorrectCount = total - correct;
+
+            const container = document.getElementById('quizContent');
+            container.innerHTML = `
+                <div class="results-container">
+                    <div class="results-score">${percent}%</div>
+                    <div class="results-label">${statusLabel}</div>
+                    <div class="results-detail">
+                        <div class="results-stat">
+                            <div class="results-stat-value">${correct}</div>
+                            <div class="results-stat-label">Correct Answers</div>
+                        </div>
+                        <div class="results-stat">
+                            <div class="results-stat-value">${incorrectCount}</div>
+                            <div class="results-stat-label">Incorrect Answers</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: 1rem; margin: var(--space-24) 0;">
+                        ${percent >= 80 ? '🎉 Excellent work! You\'re ready for Calculus!' : percent >= 60 ? '👍 Good job! Review weak areas.' : '📚 Keep studying! Focus on fundamentals.'}
+                    </p>
+                    <button class="btn btn-primary" onclick="switchToQuiz()">Retake Quiz</button>
+                </div>
+
+                <div class="quiz-history-section">
+                    <h3 style="color: var(--color-text); margin-bottom: var(--space-16);">Past Results</h3>
+                    ${renderQuizHistory()}
+                    <div class="quiz-history-actions">
+                        <button class="btn btn-secondary btn-small" onclick="exportQuizResults()">Export to CSV</button>
+                        <button class="btn btn-secondary btn-small" onclick="clearQuizHistory()">Clear History</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function switchToQuiz() {
+            initQuiz();
+        }
+
+        // ===== QUIZ RESULTS PERSISTENCE =====
+
+        function saveQuizResult(correct, total, percent) {
+            const history = getQuizHistory();
+            history.push({
+                date: new Date().toISOString(),
+                correct: correct,
+                total: total,
+                percent: percent
+            });
+            localStorage.setItem('precalcQuizResults', JSON.stringify(history));
+        }
+
+        function getQuizHistory() {
+            try {
+                const data = localStorage.getItem('precalcQuizResults');
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function renderQuizHistory() {
+            const history = getQuizHistory();
+            if (history.length === 0) return '<p style="color: var(--color-text-secondary); font-size: 0.9rem;">No previous attempts yet.</p>';
+
+            let rows = '';
+            history.slice().reverse().forEach((r, i) => {
+                const d = new Date(r.date);
+                const dateStr = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                const badge = r.percent >= 80 ? 'quiz-history-pass' : r.percent >= 60 ? 'quiz-history-ok' : 'quiz-history-fail';
+                rows += `<tr>
+                    <td>${history.length - i}</td>
+                    <td>${dateStr}</td>
+                    <td>${r.correct} / ${r.total}</td>
+                    <td><span class="${badge}">${r.percent}%</span></td>
+                </tr>`;
+            });
+
+            return `
+                <div class="table-responsive">
+                    <table class="quiz-history-table">
+                        <tr><th>#</th><th>Date</th><th>Score</th><th>Percent</th></tr>
+                        ${rows}
+                    </table>
+                </div>`;
+        }
+
+        function exportQuizResults() {
+            const history = getQuizHistory();
+            if (history.length === 0) {
+                alert('No quiz results to export.');
+                return;
+            }
+
+            let csv = 'Attempt,Date,Correct,Total,Percent\n';
+            history.forEach((r, i) => {
+                const d = new Date(r.date);
+                const dateStr = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                csv += `${i + 1},"${dateStr}",${r.correct},${r.total},${r.percent}%\n`;
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'precalc-quiz-results.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function clearQuizHistory() {
+            if (confirm('Clear all quiz history? This cannot be undone.')) {
+                localStorage.removeItem('precalcQuizResults');
+                var historySection = document.querySelector('.quiz-history-section');
+                if (historySection) {
+                    historySection.innerHTML = `
+                        <h3 style="color: var(--color-text); margin-bottom: var(--space-16);">Past Results</h3>
+                        ${renderQuizHistory()}
+                        <div class="quiz-history-actions">
+                            <button class="btn btn-secondary btn-small" onclick="exportQuizResults()">Export to CSV</button>
+                            <button class="btn btn-secondary btn-small" onclick="clearQuizHistory()">Clear History</button>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // ===== SIDEBAR =====
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebarOverlay').classList.toggle('open');
+        }
+
+        function toggleSidebarSection(el) {
+            el.classList.toggle('open');
+            var group = el.nextElementSibling;
+            if (group && group.classList.contains('sidebar-group')) {
+                group.classList.toggle('open');
+            }
+        }
+
+        // ===== COLLAPSIBLE CARDS & FOCUS MODE =====
+
+        document.querySelector('.review-grid').addEventListener('click', function(e) {
+            const card = e.target.closest('.concept-card');
+            if (!card) return;
+            const grid = document.querySelector('.review-grid');
+
+            if (grid.classList.contains('focus-mode')) {
+                // Already in focus mode, ignore clicks
+                return;
+            }
+
+            // Enter focus mode
+            grid.classList.add('focus-mode');
+            card.classList.add('expanded', 'focused');
+            document.getElementById('cardBackBtn').classList.add('visible');
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        function exitFocusMode() {
+            const grid = document.querySelector('.review-grid');
+            grid.classList.remove('focus-mode');
+            grid.querySelectorAll('.concept-card').forEach(function(c) {
+                c.classList.remove('expanded', 'focused');
+            });
+            document.getElementById('cardBackBtn').classList.remove('visible');
+        }
+
+        // Sidebar link navigation: handle tab links and card links
+        document.querySelectorAll('.sidebar-link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var href = this.getAttribute('href');
+
+                // Close sidebar
+                document.getElementById('sidebar').classList.remove('open');
+                document.getElementById('sidebarOverlay').classList.remove('open');
+
+                // Tab links (e.g. #tab-review, #tab-flashcards)
+                if (href.startsWith('#tab-')) {
+                    var tabName = href.substring(5); // remove '#tab-'
+                    document.querySelectorAll('.content-section').forEach(function(s) { s.classList.remove('active'); });
+                    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+                    document.getElementById(tabName).classList.add('active');
+                    // Find matching tab button
+                    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+                        if (btn.textContent.toLowerCase().indexOf(tabName.replace('-', ' ').replace('unit circle', 'unit')) > -1 ||
+                            btn.getAttribute('onclick').indexOf("'" + tabName + "'") > -1) {
+                            btn.classList.add('active');
+                        }
+                    });
+                    if (tabName === 'quiz') {
+                        if (quizState.current === 0 && quizState.answers.length === 0) {
+                            initQuiz();
+                        }
+                    }
+                    return;
+                }
+
+                // Card links (e.g. #topic-functions-notation)
+                var targetId = href.substring(1);
+                var targetCard = document.getElementById(targetId);
+                if (!targetCard) return;
+
+                // Switch to review tab if not already active
+                var reviewSection = document.getElementById('review');
+                if (!reviewSection.classList.contains('active')) {
+                    document.querySelectorAll('.content-section').forEach(function(s) { s.classList.remove('active'); });
+                    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+                    reviewSection.classList.add('active');
+                    document.querySelector('.tab-btn').classList.add('active');
+                }
+
+                // Exit any existing focus mode first
+                exitFocusMode();
+
+                // Enter focus mode on target card
+                var grid = document.querySelector('.review-grid');
+                grid.classList.add('focus-mode');
+                targetCard.classList.add('expanded', 'focused');
+                document.getElementById('cardBackBtn').classList.add('visible');
+
+                // Scroll to card
+                setTimeout(function() {
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
