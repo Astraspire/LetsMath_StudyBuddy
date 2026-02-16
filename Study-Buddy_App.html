@@ -916,9 +916,124 @@
             border-left: 3px solid var(--color-teal-400);
         }
 
+        /* ===== HOMEPAGE AREA CARDS ===== */
+
+        .homepage-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .area-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-24);
+            margin-bottom: var(--space-40);
+        }
+
+        .area-card {
+            background: var(--color-dark-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-32);
+            border: 2px solid var(--color-dark-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            transition: all var(--duration-normal) ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .area-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.1), transparent);
+            border-radius: 50%;
+            margin: -50px -50px 0 0;
+        }
+
+        .area-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(45, 212, 191, 0.3), 0 0 15px rgba(45, 212, 191, 0.15);
+            border-color: var(--color-teal-500);
+        }
+
+        .area-card.area-algebra { border-left: 4px solid var(--color-teal-500); }
+        .area-card.area-trig { border-left: 4px solid var(--color-purple-500); }
+        .area-card.area-calculus { border-left: 4px solid var(--color-green-500); }
+        .area-card.area-precalc-general { border-left: 4px solid var(--color-orange-500); }
+
+        .area-card.area-algebra:hover { box-shadow: 0 8px 30px rgba(45, 212, 191, 0.3), 0 0 15px rgba(45, 212, 191, 0.15); }
+        .area-card.area-trig:hover { box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3), 0 0 15px rgba(168, 85, 247, 0.15); }
+        .area-card.area-calculus:hover { box-shadow: 0 8px 30px rgba(34, 197, 94, 0.3), 0 0 15px rgba(34, 197, 94, 0.15); }
+        .area-card.area-precalc-general:hover { box-shadow: 0 8px 30px rgba(249, 115, 22, 0.3), 0 0 15px rgba(249, 115, 22, 0.15); }
+
+        .area-card-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-16);
+            display: block;
+        }
+
+        .area-card h2 {
+            font-size: 1.5rem;
+            color: var(--color-text);
+            margin-bottom: var(--space-12);
+            position: relative;
+            z-index: 1;
+        }
+
+        .area-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Area card expanded state */
+        .area-card-expanded {
+            display: none;
+        }
+
+        .area-card-expanded.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .area-directory {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-16);
+            margin-top: var(--space-24);
+        }
+
+        .area-directory a {
+            display: block;
+            padding: var(--space-20);
+            background: var(--color-dark-card);
+            border: 2px solid var(--color-dark-border);
+            border-radius: var(--radius-base);
+            color: var(--color-text);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            transition: all var(--duration-fast) ease;
+        }
+
+        .area-directory a:hover {
+            background: var(--color-dark-border);
+            border-color: var(--color-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(45, 212, 191, 0.2);
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .review-grid { grid-template-columns: 1fr; }
+            .area-cards-grid { grid-template-columns: 1fr; }
+            .area-directory { grid-template-columns: 1fr; }
 
             .results-detail { grid-template-columns: 1fr; }
         }
@@ -934,6 +1049,7 @@
         </div>
         <ul class="sidebar-nav">
             <li class="sidebar-section-label">App Sections</li>
+            <li><a href="#tab-home" class="sidebar-link">🏠 Home</a></li>
             <li><a href="#tab-review" class="sidebar-link">📖 Review Topics</a></li>
             <li><a href="#tab-unit-circle" class="sidebar-link">🔄 Unit Circle</a></li>
             <li><a href="#tab-flashcards" class="sidebar-link">🎴 Flashcards</a></li>
@@ -1029,8 +1145,96 @@
             <p class="subtitle">Master precalculus &amp; calculus with interactive review, flashcards, and quizzes</p>
         </header>
 
+        <!-- HOME TAB -->
+        <div id="home" class="content-section active">
+            <div class="homepage-container">
+                <!-- Four Area Cards -->
+                <div id="areaCardsGrid" class="area-cards-grid">
+                    <div class="area-card area-algebra" onclick="selectArea('algebra')">
+                        <span class="area-card-icon">📐</span>
+                        <h2>Algebra</h2>
+                        <p>Functions, polynomials, rational expressions, and more</p>
+                    </div>
+                    <div class="area-card area-trig" onclick="selectArea('trig')">
+                        <span class="area-card-icon">📊</span>
+                        <h2>Trigonometry</h2>
+                        <p>Unit circle, identities, graphs, and applications</p>
+                    </div>
+                    <div class="area-card area-calculus" onclick="selectArea('calculus')">
+                        <span class="area-card-icon">📈</span>
+                        <h2>Calculus</h2>
+                        <p>Limits, derivatives, integrals, and theorems</p>
+                    </div>
+                    <div class="area-card area-precalc-general" onclick="selectArea('precalc-general')">
+                        <span class="area-card-icon">🎯</span>
+                        <h2>Precalc General</h2>
+                        <p>General precalculus topics and problem-solving</p>
+                    </div>
+                </div>
+
+                <!-- Expanded Area Views -->
+                <div id="areaExpanded-algebra" class="area-card-expanded">
+                    <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
+                    <div class="concept-card area-algebra" style="cursor: default; transform: none; max-width: 100%;">
+                        <span class="area-card-icon">📐</span>
+                        <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Algebra</h2>
+                        <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">Explore algebra topics from functions and notation to advanced polynomial analysis.</p>
+                        <nav class="area-directory">
+                            <a href="#tab-review-algebra">📖 Review Cards</a>
+                            <a href="#tab-review-algebra-expansion">⭐ Expansion Review</a>
+                            <a href="#tab-flashcards-algebra">🎴 Flashcards</a>
+                            <a href="#tab-quiz-algebra">❓ Quiz</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div id="areaExpanded-trig" class="area-card-expanded">
+                    <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
+                    <div class="concept-card area-trig" style="cursor: default; transform: none; max-width: 100%;">
+                        <span class="area-card-icon">📊</span>
+                        <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Trigonometry</h2>
+                        <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">Master trigonometry from the unit circle to advanced applications.</p>
+                        <nav class="area-directory">
+                            <a href="#tab-review-trig">📖 Review Cards</a>
+                            <a href="#tab-review-trig-expansion">⭐ Expansion Review</a>
+                            <a href="#tab-flashcards-trig">🎴 Flashcards</a>
+                            <a href="#tab-quiz-trig">❓ Quiz</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div id="areaExpanded-calculus" class="area-card-expanded">
+                    <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
+                    <div class="concept-card area-calculus" style="cursor: default; transform: none; max-width: 100%;">
+                        <span class="area-card-icon">📈</span>
+                        <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Calculus</h2>
+                        <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">Explore fundamental calculus concepts including limits, derivatives, and integrals.</p>
+                        <nav class="area-directory">
+                            <a href="#tab-review-calculus">📖 Review Cards</a>
+                            <a href="#tab-flashcards-calculus">🎴 Flashcards</a>
+                            <a href="#tab-quiz-calculus">❓ Quiz</a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div id="areaExpanded-precalc-general" class="area-card-expanded">
+                    <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
+                    <div class="concept-card area-precalc-general" style="cursor: default; transform: none; max-width: 100%;">
+                        <span class="area-card-icon">🎯</span>
+                        <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Precalc General</h2>
+                        <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">General precalculus topics and foundational concepts.</p>
+                        <nav class="area-directory">
+                            <a href="#tab-review-precalc-general">📖 Review Cards</a>
+                            <a href="#tab-flashcards-precalc-general">🎴 Flashcards</a>
+                            <a href="#tab-quiz-precalc-general">❓ Quiz</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- REVIEW TAB -->
-        <div id="review" class="content-section active">
+        <div id="review" class="content-section">
             <div style="text-align: center; margin-bottom: var(--space-16);">
                 <label for="reviewTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Jump to topic:</label>
                 <select id="reviewTopicSelect" onchange="goToTopic(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
@@ -2815,6 +3019,43 @@
         // ===== APP CONFIG =====
         const APP_NAME = "Let's Math!";
 
+        // ===== AREA CARDS CONFIG =====
+        const AREA_CARDS = [
+            { id: "algebra", label: "Algebra", area: "algebra" },
+            { id: "trig", label: "Trigonometry", area: "trig" },
+            { id: "calculus", label: "Calculus", area: "calculus" },
+            { id: "precalc-general", label: "Precalc General", area: "precalc-general" }
+        ];
+
+        let selectedArea = null;
+
+        // Select an area card (show expanded view)
+        function selectArea(areaId) {
+            selectedArea = areaId;
+            
+            // Hide the grid of area cards
+            document.getElementById('areaCardsGrid').style.display = 'none';
+            
+            // Show the expanded view for the selected area
+            const expandedView = document.getElementById(`areaExpanded-${areaId}`);
+            if (expandedView) {
+                expandedView.classList.add('active');
+            }
+        }
+
+        // Deselect area (return to four-card view)
+        function deselectArea() {
+            if (selectedArea) {
+                const expandedView = document.getElementById(`areaExpanded-${selectedArea}`);
+                if (expandedView) {
+                    expandedView.classList.remove('active');
+                }
+            }
+            
+            selectedArea = null;
+            document.getElementById('areaCardsGrid').style.display = '';
+        }
+
         // ===== CONTENT INDEX =====
         // Load from Organized-Content-Library.md via contentIndex.json
         let contentIndex = null;
@@ -3390,7 +3631,7 @@
         function updateHero(activeTab) {
             var hero = document.getElementById('home-hero');
             if (!hero) return;
-            if (activeTab === 'review') {
+            if (activeTab === 'home') {
                 hero.classList.remove('is-hidden');
             } else {
                 hero.classList.add('is-hidden');
@@ -3796,6 +4037,45 @@
                 // Tab links (e.g. #tab-review, #tab-flashcards)
                 if (href.startsWith('#tab-')) {
                     var tabName = href.substring(5); // remove '#tab-'
+                    
+                    // Handle area-specific navigation (e.g., tab-review-algebra, tab-flashcards-trig)
+                    if (tabName.includes('-')) {
+                        var parts = tabName.split('-');
+                        var mainTab = parts[0]; // 'review', 'flashcards', 'quiz'
+                        var areaOrType = parts[1]; // 'algebra', 'trig', 'expansion', etc.
+                        
+                        // Check if this is an area-specific navigation
+                        if (['algebra', 'trig', 'calculus', 'precalc'].includes(areaOrType)) {
+                            // Map precalc to precalc-general
+                            var area = areaOrType === 'precalc' ? 'precalc-general' : areaOrType;
+                            
+                            // Switch to the appropriate tab
+                            document.querySelectorAll('.content-section').forEach(function(s) { s.classList.remove('active'); });
+                            document.getElementById(mainTab).classList.add('active');
+                            updateHero(mainTab);
+                            
+                            // For flashcards and quiz, set the filter
+                            if (mainTab === 'flashcards') {
+                                // Set flashcard topic filter
+                                setFlashcardTopic(area);
+                                var topicSelect = document.getElementById('flashcardTopicSelect');
+                                if (topicSelect) {
+                                    topicSelect.value = area;
+                                }
+                            } else if (mainTab === 'quiz') {
+                                // Set quiz topic filter
+                                setQuizTopic(area);
+                                var quizSelect = document.getElementById('quizTopicSelect');
+                                if (quizSelect) {
+                                    quizSelect.value = area;
+                                }
+                            }
+                            
+                            return;
+                        }
+                    }
+                    
+                    // Standard tab switching
                     document.querySelectorAll('.content-section').forEach(function(s) { s.classList.remove('active'); });
                     document.getElementById(tabName).classList.add('active');
                     updateHero(tabName);
