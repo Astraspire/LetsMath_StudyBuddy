@@ -3209,8 +3209,47 @@
                 <label for="flashcardTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Filter by topic:</label>
                 <select id="flashcardTopicSelect" onchange="filterFlashcards(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
                     <option value="">All Topics</option>
-                    <option value="_legacy_precalc">— Original Pre-Calc Cards —</option>
-                    <option value="_legacy_calculus">— Original Calculus Cards —</option>
+                    <optgroup label="Core Review">
+                        <option value="functions-notation">Functions &amp; Notation</option>
+                        <option value="exponentials-logs">Exponentials &amp; Logs</option>
+                        <option value="log-properties">Log Properties</option>
+                        <option value="unit-circle">Unit Circle</option>
+                        <option value="trig-reference">Quick Trig Reference</option>
+                        <option value="trig-identities">Key Identities</option>
+                        <option value="sinusoidal-models">Sinusoidal Models</option>
+                        <option value="polynomials">Factoring Patterns</option>
+                        <option value="quadratics">Solving Quadratics</option>
+                        <option value="algebra-manipulation">More Algebra Skills</option>
+                        <option value="rational-functions">Rational Functions</option>
+                        <option value="inverse-functions">Inverse Functions</option>
+                        <option value="linear-functions">Lines &amp; Slopes</option>
+                        <option value="absolute-value-piecewise">Absolute Value &amp; Piecewise</option>
+                        <option value="transformations">Function Transformations</option>
+                        <option value="inequalities">Inequalities</option>
+                        <option value="sequences-series">Sequences &amp; Series</option>
+                        <option value="limits">Limits (Calculus Preview)</option>
+                        <option value="common-mistakes">Common Mistakes</option>
+                        <option value="calculator-skills">Calculator Skills</option>
+                    </optgroup>
+                    <optgroup label="Calculus Preview">
+                        <option value="calc-what-is-function">What Is a Function?</option>
+                        <option value="calc-what-is-limit">What Is a Limit?</option>
+                        <option value="calc-what-is-derivative">What Is a Derivative?</option>
+                        <option value="calc-what-is-integral">What Is an Integral?</option>
+                        <option value="calc-continuity">What Is Continuity?</option>
+                    </optgroup>
+                    <optgroup label="Calculus Topics">
+                        <option value="calc-quick-ref">Sketching Graphs</option>
+                        <option value="calc-graph-key">Graph Reference Key</option>
+                        <option value="calc-definitions">Definitions</option>
+                        <option value="calc-rolles">Rolle's Theorem</option>
+                        <option value="calc-mvt">Mean Value Theorem</option>
+                        <option value="calc-corollaries">Corollaries</option>
+                        <option value="calc-first-deriv-test">First Derivative Test</option>
+                        <option value="calc-second-deriv-test">Second Derivative Test</option>
+                        <option value="calc-graphing">Graphing with Derivatives</option>
+                        <option value="calc-integration">Integration Formulas</option>
+                    </optgroup>
                     <optgroup label="Precalculus (Expanded)">
                         <option value="precalc_domain_range">A1. Domain &amp; Range</option>
                         <option value="precalc_rates_of_change">A2. Rates of Change</option>
@@ -3271,8 +3310,47 @@
                 <label for="quizTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Quiz topic:</label>
                 <select id="quizTopicSelect" onchange="setQuizTopic(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
                     <option value="">All Topics (random 10)</option>
-                    <option value="_legacy_precalc">— Original Pre-Calc —</option>
-                    <option value="_legacy_calculus">— Original Calculus —</option>
+                    <optgroup label="Core Review">
+                        <option value="functions-notation">Functions &amp; Notation</option>
+                        <option value="exponentials-logs">Exponentials &amp; Logs</option>
+                        <option value="log-properties">Log Properties</option>
+                        <option value="unit-circle">Unit Circle</option>
+                        <option value="trig-reference">Quick Trig Reference</option>
+                        <option value="trig-identities">Key Identities</option>
+                        <option value="sinusoidal-models">Sinusoidal Models</option>
+                        <option value="polynomials">Factoring Patterns</option>
+                        <option value="quadratics">Solving Quadratics</option>
+                        <option value="algebra-manipulation">More Algebra Skills</option>
+                        <option value="rational-functions">Rational Functions</option>
+                        <option value="inverse-functions">Inverse Functions</option>
+                        <option value="linear-functions">Lines &amp; Slopes</option>
+                        <option value="absolute-value-piecewise">Absolute Value &amp; Piecewise</option>
+                        <option value="transformations">Function Transformations</option>
+                        <option value="inequalities">Inequalities</option>
+                        <option value="sequences-series">Sequences &amp; Series</option>
+                        <option value="limits">Limits (Calculus Preview)</option>
+                        <option value="common-mistakes">Common Mistakes</option>
+                        <option value="calculator-skills">Calculator Skills</option>
+                    </optgroup>
+                    <optgroup label="Calculus Preview">
+                        <option value="calc-what-is-function">What Is a Function?</option>
+                        <option value="calc-what-is-limit">What Is a Limit?</option>
+                        <option value="calc-what-is-derivative">What Is a Derivative?</option>
+                        <option value="calc-what-is-integral">What Is an Integral?</option>
+                        <option value="calc-continuity">What Is Continuity?</option>
+                    </optgroup>
+                    <optgroup label="Calculus Topics">
+                        <option value="calc-quick-ref">Sketching Graphs</option>
+                        <option value="calc-graph-key">Graph Reference Key</option>
+                        <option value="calc-definitions">Definitions</option>
+                        <option value="calc-rolles">Rolle's Theorem</option>
+                        <option value="calc-mvt">Mean Value Theorem</option>
+                        <option value="calc-corollaries">Corollaries</option>
+                        <option value="calc-first-deriv-test">First Derivative Test</option>
+                        <option value="calc-second-deriv-test">Second Derivative Test</option>
+                        <option value="calc-graphing">Graphing with Derivatives</option>
+                        <option value="calc-integration">Integration Formulas</option>
+                    </optgroup>
                     <optgroup label="Precalculus (Expanded)">
                         <option value="precalc_domain_range">A1. Domain &amp; Range</option>
                         <option value="precalc_rates_of_change">A2. Rates of Change</option>
@@ -9390,23 +9468,15 @@
         // ===== YU-GI-OH! TOGGLE STATE =====
         let yugiohEnabled = JSON.parse(localStorage.getItem('yugiohEnabled') ?? 'true');
 
-        // Legacy topic groupings for the filter dropdown
-        const LEGACY_PRECALC_TOPICS = ['functions','exponentials','trigonometry','unit-circle','sinusoidal','polynomials','algebra-skills','lines','absolute-piecewise','inverses','transformations','inequalities','sequences','limits','common-mistakes','calculator'];
-        const LEGACY_CALCULUS_TOPICS = ['calc-limits','calc-derivatives','calc-integrals','calc-applications'];
-
         function getFilteredFlashcards() {
             let pool;
             if (!currentFlashcardTopicId) {
                 pool = [...FLASHCARDS];
-            } else if (currentFlashcardTopicId === '_legacy_precalc') {
-                pool = FLASHCARDS.filter(c => c.topic && LEGACY_PRECALC_TOPICS.includes(c.topic));
-            } else if (currentFlashcardTopicId === '_legacy_calculus') {
-                pool = FLASHCARDS.filter(c => c.topic && LEGACY_CALCULUS_TOPICS.includes(c.topic));
             } else if (['algebra', 'trig', 'calculus', 'precalc-general'].includes(currentFlashcardTopicId)) {
                 // Filter by area
                 pool = FLASHCARDS.filter(c => c.area === currentFlashcardTopicId);
             } else {
-                // Filter by subtopic
+                // Filter by subtopic (handles Core Review, Calculus, and Expansion topics)
                 pool = FLASHCARDS.filter(c => c.subtopic === currentFlashcardTopicId);
             }
             // Apply Yu-Gi-Oh! toggle filter
@@ -9433,64 +9503,64 @@
 
         // ===== QUIZ DATA =====
         const quizQuestions = [
-            { q: "If f(x) = x² − 3x + 2, what is f(2)?", opts: ["0", "2", "4", "6"], ans: 0 },
-            { q: "Solve: 2^x = 16", opts: ["2", "3", "4", "8"], ans: 2 },
-            { q: "Which is equivalent to ln(e^5)?", opts: ["1", "e", "5", "e^5"], ans: 2 },
-            { q: "Expand: log(x²y/z)", opts: ["2log(x) + log(y) − log(z)", "log(x) + log(y) − log(z)", "2log(x) − log(y) − log(z)", "log(2x) + log(y) − log(z)"], ans: 0 },
-            { q: "What is cos(π/3)?", opts: ["0", "1/2", "√3/2", "1"], ans: 1 },
-            { q: "Factor: x² − 9", opts: ["(x−3)²", "(x+3)²", "(x−3)(x+3)", "(x−3)(x−3)"], ans: 2 },
-            { q: "Solve: sin(x) = 1/2 for x ∈ [0, 2π)", opts: ["π/6, 5π/6", "π/3, 2π/3", "π/4, 3π/4", "π/6, π/3"], ans: 0 },
-            { q: "Find the amplitude of y = 3sin(2x) − 5", opts: ["2", "3", "5", "−5"], ans: 1 },
-            { q: "Simplify: sin²(x) + cos²(x)", opts: ["0", "1", "sin(2x)", "tan(x)"], ans: 1 },
-            { q: "What is ln(1)?", opts: ["0", "1", "undefined", "e"], ans: 0 },
-            { q: "Solve: |x − 3| = 5", opts: ["3", "8, −2", "5, −5", "−2, 8"], ans: 3 },
-            { q: "Find the period of y = cos(πx)", opts: ["π", "2π", "2", "1/2"], ans: 2 },
-            { q: "Which are perpendicular lines?", opts: ["m=2, m=2", "m=2, m=−1/2", "m=2, m=1/2", "m=2, m=1"], ans: 1 },
-            { q: "For f(x) = 1/(x−2), what is the vertical asymptote?", opts: ["x=0", "x=1", "x=2", "x=−2"], ans: 2 },
-            { q: "Solve: x² − 5x + 6 = 0", opts: ["1, 6", "2, 3", "−2, −3", "2, −3"], ans: 1 },
+            { subtopic: 'functions-notation', q: "If f(x) = x² − 3x + 2, what is f(2)?", opts: ["0", "2", "4", "6"], ans: 0 },
+            { subtopic: 'exponentials-logs', q: "Solve: 2^x = 16", opts: ["2", "3", "4", "8"], ans: 2 },
+            { subtopic: 'exponentials-logs', q: "Which is equivalent to ln(e^5)?", opts: ["1", "e", "5", "e^5"], ans: 2 },
+            { subtopic: 'log-properties', q: "Expand: log(x²y/z)", opts: ["2log(x) + log(y) − log(z)", "log(x) + log(y) − log(z)", "2log(x) − log(y) − log(z)", "log(2x) + log(y) − log(z)"], ans: 0 },
+            { subtopic: 'unit-circle', q: "What is cos(π/3)?", opts: ["0", "1/2", "√3/2", "1"], ans: 1 },
+            { subtopic: 'polynomials', q: "Factor: x² − 9", opts: ["(x−3)²", "(x+3)²", "(x−3)(x+3)", "(x−3)(x−3)"], ans: 2 },
+            { subtopic: 'trig-identities', q: "Solve: sin(x) = 1/2 for x ∈ [0, 2π)", opts: ["π/6, 5π/6", "π/3, 2π/3", "π/4, 3π/4", "π/6, π/3"], ans: 0 },
+            { subtopic: 'sinusoidal-models', q: "Find the amplitude of y = 3sin(2x) − 5", opts: ["2", "3", "5", "−5"], ans: 1 },
+            { subtopic: 'trig-identities', q: "Simplify: sin²(x) + cos²(x)", opts: ["0", "1", "sin(2x)", "tan(x)"], ans: 1 },
+            { subtopic: 'exponentials-logs', q: "What is ln(1)?", opts: ["0", "1", "undefined", "e"], ans: 0 },
+            { subtopic: 'absolute-value-piecewise', q: "Solve: |x − 3| = 5", opts: ["3", "8, −2", "5, −5", "−2, 8"], ans: 3 },
+            { subtopic: 'sinusoidal-models', q: "Find the period of y = cos(πx)", opts: ["π", "2π", "2", "1/2"], ans: 2 },
+            { subtopic: 'linear-functions', q: "Which are perpendicular lines?", opts: ["m=2, m=2", "m=2, m=−1/2", "m=2, m=1/2", "m=2, m=1"], ans: 1 },
+            { subtopic: 'rational-functions', q: "For f(x) = 1/(x−2), what is the vertical asymptote?", opts: ["x=0", "x=1", "x=2", "x=−2"], ans: 2 },
+            { subtopic: 'quadratics', q: "Solve: x² − 5x + 6 = 0", opts: ["1, 6", "2, 3", "−2, −3", "2, −3"], ans: 1 },
         ];
 
         // Calculus quiz question pool (35 questions) — stored for later integration into randomized quiz
         const calculusQuizPool = [
             // Limits (7 questions)
-            { q: "What is the limit of f(x) = 3x² − 2x + 1 as x approaches 2?", opts: ["9", "5", "11", "7"], ans: 0 },
-            { q: "Evaluate: lim(x→0) sin(x)/x", opts: ["0", "1", "∞", "undefined"], ans: 1 },
-            { q: "What is the limit of (x² − 4)/(x − 2) as x approaches 2?", opts: ["0", "2", "4", "undefined"], ans: 2 },
-            { q: "Evaluate: lim(x→∞) (2x² + 3x)/(x² + 1)", opts: ["0", "1", "2", "3"], ans: 2 },
-            { q: "What is the limit of 1/x as x approaches infinity?", opts: ["0", "1", "∞", "undefined"], ans: 0 },
-            { q: "Evaluate: lim(x→3) (x² − 9)/(x − 3)", opts: ["0", "3", "6", "9"], ans: 2 },
-            { q: "What is the limit of e^x as x approaches negative infinity?", opts: ["0", "1", "−∞", "∞"], ans: 0 },
+            { subtopic: 'limits', q: "What is the limit of f(x) = 3x² − 2x + 1 as x approaches 2?", opts: ["9", "5", "11", "7"], ans: 0 },
+            { subtopic: 'limits', q: "Evaluate: lim(x→0) sin(x)/x", opts: ["0", "1", "∞", "undefined"], ans: 1 },
+            { subtopic: 'limits', q: "What is the limit of (x² − 4)/(x − 2) as x approaches 2?", opts: ["0", "2", "4", "undefined"], ans: 2 },
+            { subtopic: 'limits', q: "Evaluate: lim(x→∞) (2x² + 3x)/(x² + 1)", opts: ["0", "1", "2", "3"], ans: 2 },
+            { subtopic: 'limits', q: "What is the limit of 1/x as x approaches infinity?", opts: ["0", "1", "∞", "undefined"], ans: 0 },
+            { subtopic: 'limits', q: "Evaluate: lim(x→3) (x² − 9)/(x − 3)", opts: ["0", "3", "6", "9"], ans: 2 },
+            { subtopic: 'limits', q: "What is the limit of e^x as x approaches negative infinity?", opts: ["0", "1", "−∞", "∞"], ans: 0 },
             // Derivatives (10 questions)
-            { q: "What is the derivative of f(x) = x³?", opts: ["x²", "3x", "3x²", "x³"], ans: 2 },
-            { q: "Find the derivative of f(x) = sin(x).", opts: ["cos(x)", "−cos(x)", "−sin(x)", "tan(x)"], ans: 0 },
-            { q: "What is the derivative of f(x) = e^x?", opts: ["xe^(x−1)", "e^x", "e^(x−1)", "ln(x)"], ans: 1 },
-            { q: "Find the derivative of f(x) = ln(x).", opts: ["x", "1/x", "ln(x)/x", "e^x"], ans: 1 },
-            { q: "What is the derivative of f(x) = x² + 3x − 4?", opts: ["2x + 3", "x² + 3", "2x − 4", "2x + 3x"], ans: 0 },
-            { q: "Find the derivative of f(x) = cos(x).", opts: ["sin(x)", "−sin(x)", "−cos(x)", "tan(x)"], ans: 1 },
-            { q: "What is the derivative of f(x) = tan(x)?", opts: ["sec(x)", "cot(x)", "sec²(x)", "−csc²(x)"], ans: 2 },
-            { q: "Find the derivative of f(x) = x·sin(x).", opts: ["cos(x)", "x·cos(x)", "sin(x) + cos(x)", "sin(x) + x·cos(x)"], ans: 3 },
-            { q: "What is the derivative of f(x) = 1/x?", opts: ["1/x²", "−1/x²", "ln(x)", "−ln(x)"], ans: 1 },
-            { q: "Find the derivative of f(x) = x⁴ − 2x³ + 5x² − 3x + 1.", opts: ["4x³ − 6x² + 10x − 3", "4x³ − 2x² + 5x − 3", "x³ − 6x² + 10x − 3", "4x⁴ − 6x³ + 10x² − 3x"], ans: 0 },
+            { subtopic: 'derivatives', q: "What is the derivative of f(x) = x³?", opts: ["x²", "3x", "3x²", "x³"], ans: 2 },
+            { subtopic: 'derivatives', q: "Find the derivative of f(x) = sin(x).", opts: ["cos(x)", "−cos(x)", "−sin(x)", "tan(x)"], ans: 0 },
+            { subtopic: 'derivatives', q: "What is the derivative of f(x) = e^x?", opts: ["xe^(x−1)", "e^x", "e^(x−1)", "ln(x)"], ans: 1 },
+            { subtopic: 'derivatives', q: "Find the derivative of f(x) = ln(x).", opts: ["x", "1/x", "ln(x)/x", "e^x"], ans: 1 },
+            { subtopic: 'derivatives', q: "What is the derivative of f(x) = x² + 3x − 4?", opts: ["2x + 3", "x² + 3", "2x − 4", "2x + 3x"], ans: 0 },
+            { subtopic: 'derivatives', q: "Find the derivative of f(x) = cos(x).", opts: ["sin(x)", "−sin(x)", "−cos(x)", "tan(x)"], ans: 1 },
+            { subtopic: 'derivatives', q: "What is the derivative of f(x) = tan(x)?", opts: ["sec(x)", "cot(x)", "sec²(x)", "−csc²(x)"], ans: 2 },
+            { subtopic: 'derivatives', q: "Find the derivative of f(x) = x·sin(x).", opts: ["cos(x)", "x·cos(x)", "sin(x) + cos(x)", "sin(x) + x·cos(x)"], ans: 3 },
+            { subtopic: 'derivatives', q: "What is the derivative of f(x) = 1/x?", opts: ["1/x²", "−1/x²", "ln(x)", "−ln(x)"], ans: 1 },
+            { subtopic: 'derivatives', q: "Find the derivative of f(x) = x⁴ − 2x³ + 5x² − 3x + 1.", opts: ["4x³ − 6x² + 10x − 3", "4x³ − 2x² + 5x − 3", "x³ − 6x² + 10x − 3", "4x⁴ − 6x³ + 10x² − 3x"], ans: 0 },
             // Integrals (10 questions)
-            { q: "What is the integral of f(x) = x²?", opts: ["x³/3 + C", "2x + C", "x³ + C", "x²/2 + C"], ans: 0 },
-            { q: "Evaluate: ∫ e^x dx", opts: ["e^x + C", "xe^x + C", "e^(x+1)/(x+1) + C", "ln(x) + C"], ans: 0 },
-            { q: "What is the integral of f(x) = sin(x)?", opts: ["cos(x) + C", "−cos(x) + C", "−sin(x) + C", "sin²(x)/2 + C"], ans: 1 },
-            { q: "Evaluate: ∫ (1/x) dx", opts: ["x + C", "ln(x) + C", "ln|x| + C", "−1/x² + C"], ans: 2 },
-            { q: "What is the integral of f(x) = cos(x)?", opts: ["sin(x) + C", "−sin(x) + C", "cos²(x) + C", "tan(x) + C"], ans: 0 },
-            { q: "Evaluate: ∫ x³ dx", opts: ["3x² + C", "x⁴ + C", "x⁴/4 + C", "x³/3 + C"], ans: 2 },
-            { q: "What is the integral of f(x) = 1/x²?", opts: ["−1/x + C", "1/x + C", "ln(x²) + C", "−2/x³ + C"], ans: 0 },
-            { q: "Evaluate: ∫ (2x + 3) dx", opts: ["x² + 3x + C", "2x² + 3x + C", "x² + 3 + C", "2 + C"], ans: 0 },
-            { q: "What is the integral of f(x) = tan(x)?", opts: ["sec²(x) + C", "−ln|cos(x)| + C", "ln|sin(x)| + C", "−cot(x) + C"], ans: 1 },
-            { q: "Evaluate: ∫ √x dx", opts: ["(2/3)x^(3/2) + C", "(1/2)x^(1/2) + C", "2√x + C", "(3/2)x^(1/2) + C"], ans: 0 },
+            { subtopic: 'integrals', q: "What is the integral of f(x) = x²?", opts: ["x³/3 + C", "2x + C", "x³ + C", "x²/2 + C"], ans: 0 },
+            { subtopic: 'integrals', q: "Evaluate: ∫ e^x dx", opts: ["e^x + C", "xe^x + C", "e^(x+1)/(x+1) + C", "ln(x) + C"], ans: 0 },
+            { subtopic: 'integrals', q: "What is the integral of f(x) = sin(x)?", opts: ["cos(x) + C", "−cos(x) + C", "−sin(x) + C", "sin²(x)/2 + C"], ans: 1 },
+            { subtopic: 'integrals', q: "Evaluate: ∫ (1/x) dx", opts: ["x + C", "ln(x) + C", "ln|x| + C", "−1/x² + C"], ans: 2 },
+            { subtopic: 'integrals', q: "What is the integral of f(x) = cos(x)?", opts: ["sin(x) + C", "−sin(x) + C", "cos²(x) + C", "tan(x) + C"], ans: 0 },
+            { subtopic: 'integrals', q: "Evaluate: ∫ x³ dx", opts: ["3x² + C", "x⁴ + C", "x⁴/4 + C", "x³/3 + C"], ans: 2 },
+            { subtopic: 'integrals', q: "What is the integral of f(x) = 1/x²?", opts: ["−1/x + C", "1/x + C", "ln(x²) + C", "−2/x³ + C"], ans: 0 },
+            { subtopic: 'integrals', q: "Evaluate: ∫ (2x + 3) dx", opts: ["x² + 3x + C", "2x² + 3x + C", "x² + 3 + C", "2 + C"], ans: 0 },
+            { subtopic: 'integrals', q: "What is the integral of f(x) = tan(x)?", opts: ["sec²(x) + C", "−ln|cos(x)| + C", "ln|sin(x)| + C", "−cot(x) + C"], ans: 1 },
+            { subtopic: 'integrals', q: "Evaluate: ∫ √x dx", opts: ["(2/3)x^(3/2) + C", "(1/2)x^(1/2) + C", "2√x + C", "(3/2)x^(1/2) + C"], ans: 0 },
             // Applications (8 questions)
-            { q: "What is the slope of the tangent line to y = x² at x = 2?", opts: ["2", "4", "8", "1"], ans: 1 },
-            { q: "Find the critical points of f(x) = x³ − 3x².", opts: ["x = 0 only", "x = 3 only", "x = 0 and x = 2", "x = 1 and x = 3"], ans: 2 },
-            { q: "What is the maximum value of f(x) = x⁴ − 4x³ + 4 on [0, 4]?", opts: ["4", "−23", "0", "260"], ans: 0 },
-            { q: "Find the minimum value of f(x) = x² − 4x + 4.", opts: ["0", "2", "4", "−4"], ans: 0 },
-            { q: "What is the rate of change of f(x) = x² at x = 3?", opts: ["3", "6", "9", "12"], ans: 1 },
-            { q: "Find the derivative of f(x) = x²·sin(x).", opts: ["2x·sin(x)", "x²·cos(x)", "2x·sin(x) + x²·cos(x)", "2x·cos(x) − x²·sin(x)"], ans: 2 },
-            { q: "What is the slope of the tangent line to y = ln(x) at x = 1?", opts: ["0", "1", "e", "undefined"], ans: 1 },
-            { q: "Find the critical points of f(x) = x³ − 6x² + 11x − 6.", opts: ["x = 1, 2, 3", "x = (6 ± √3)/3", "x = 2 only", "x = 3 ± √2"], ans: 1 },
+            { subtopic: 'applications', q: "What is the slope of the tangent line to y = x² at x = 2?", opts: ["2", "4", "8", "1"], ans: 1 },
+            { subtopic: 'applications', q: "Find the critical points of f(x) = x³ − 3x².", opts: ["x = 0 only", "x = 3 only", "x = 0 and x = 2", "x = 1 and x = 3"], ans: 2 },
+            { subtopic: 'applications', q: "What is the maximum value of f(x) = x⁴ − 4x³ + 4 on [0, 4]?", opts: ["4", "−23", "0", "260"], ans: 0 },
+            { subtopic: 'applications', q: "Find the minimum value of f(x) = x² − 4x + 4.", opts: ["0", "2", "4", "−4"], ans: 0 },
+            { subtopic: 'applications', q: "What is the rate of change of f(x) = x² at x = 3?", opts: ["3", "6", "9", "12"], ans: 1 },
+            { subtopic: 'applications', q: "Find the derivative of f(x) = x²·sin(x).", opts: ["2x·sin(x)", "x²·cos(x)", "2x·sin(x) + x²·cos(x)", "2x·cos(x) − x²·sin(x)"], ans: 2 },
+            { subtopic: 'applications', q: "What is the slope of the tangent line to y = ln(x) at x = 1?", opts: ["0", "1", "e", "undefined"], ans: 1 },
+            { subtopic: 'applications', q: "Find the critical points of f(x) = x³ − 6x² + 11x − 6.", opts: ["x = 1, 2, 3", "x = (6 ± √3)/3", "x = 2 only", "x = 3 ± √2"], ans: 1 },
         ];
 
         // Expansion quiz pool (39 questions) — from expansion plan topics A1-A13, B1-B14
@@ -9576,10 +9646,12 @@
 
         function getFilteredQuizPool() {
             let pool;
-            if (!currentQuizTopicId) pool = [...allQuizQuestions];
-            else if (currentQuizTopicId === '_legacy_precalc') pool = [...quizQuestions];
-            else if (currentQuizTopicId === '_legacy_calculus') pool = [...calculusQuizPool];
-            else pool = allQuizQuestions.filter(q => q.topicId === currentQuizTopicId);
+            if (!currentQuizTopicId) {
+                pool = [...allQuizQuestions];
+            } else {
+                // Filter by topicId (expansion topics) or subtopic (core review + calculus)
+                pool = allQuizQuestions.filter(q => q.topicId === currentQuizTopicId || q.subtopic === currentQuizTopicId);
+            }
             // Apply Yu-Gi-Oh! toggle filter
             if (!yugiohEnabled && contentIndex) {
                 const yugiohSubtopics = new Set(
