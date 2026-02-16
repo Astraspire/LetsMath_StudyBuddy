@@ -3208,79 +3208,11 @@
             <div style="text-align: center; margin-bottom: var(--space-16);">
                 <label for="flashcardTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Filter by topic:</label>
                 <select id="flashcardTopicSelect" onchange="filterFlashcards(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
-                    <option value="">All Topics</option>
-                    <optgroup label="Core Review">
-                        <option value="functions-notation">Functions &amp; Notation</option>
-                        <option value="exponentials-logs">Exponentials &amp; Logs</option>
-                        <option value="log-properties">Log Properties</option>
-                        <option value="unit-circle">Unit Circle</option>
-                        <option value="trig-reference">Quick Trig Reference</option>
-                        <option value="trig-identities">Key Identities</option>
-                        <option value="sinusoidal-models">Sinusoidal Models</option>
-                        <option value="polynomials">Factoring Patterns</option>
-                        <option value="quadratics">Solving Quadratics</option>
-                        <option value="algebra-manipulation">More Algebra Skills</option>
-                        <option value="rational-functions">Rational Functions</option>
-                        <option value="inverse-functions">Inverse Functions</option>
-                        <option value="linear-functions">Lines &amp; Slopes</option>
-                        <option value="absolute-value-piecewise">Absolute Value &amp; Piecewise</option>
-                        <option value="transformations">Function Transformations</option>
-                        <option value="inequalities">Inequalities</option>
-                        <option value="sequences-series">Sequences &amp; Series</option>
-                        <option value="limits">Limits (Calculus Preview)</option>
-                        <option value="common-mistakes">Common Mistakes</option>
-                        <option value="calculator-skills">Calculator Skills</option>
-                    </optgroup>
-                    <optgroup label="Calculus Preview">
-                        <option value="calc-what-is-function">What Is a Function?</option>
-                        <option value="calc-what-is-limit">What Is a Limit?</option>
-                        <option value="calc-what-is-derivative">What Is a Derivative?</option>
-                        <option value="calc-what-is-integral">What Is an Integral?</option>
-                        <option value="calc-continuity">What Is Continuity?</option>
-                    </optgroup>
-                    <optgroup label="Calculus Topics">
-                        <option value="calc-quick-ref">Sketching Graphs</option>
-                        <option value="calc-graph-key">Graph Reference Key</option>
-                        <option value="calc-definitions">Definitions</option>
-                        <option value="calc-rolles">Rolle's Theorem</option>
-                        <option value="calc-mvt">Mean Value Theorem</option>
-                        <option value="calc-corollaries">Corollaries</option>
-                        <option value="calc-first-deriv-test">First Derivative Test</option>
-                        <option value="calc-second-deriv-test">Second Derivative Test</option>
-                        <option value="calc-graphing">Graphing with Derivatives</option>
-                        <option value="calc-integration">Integration Formulas</option>
-                    </optgroup>
-                    <optgroup label="Precalculus (Expanded)">
-                        <option value="precalc_domain_range">A1. Domain &amp; Range</option>
-                        <option value="precalc_rates_of_change">A2. Rates of Change</option>
-                        <option value="precalc_composition">A3. Function Composition</option>
-                        <option value="precalc_linear_functions">A4. Linear Functions</option>
-                        <option value="precalc_polynomials_deep">A5. Polynomials (Deep)</option>
-                        <option value="precalc_quadratics_expanded">A6. Quadratics (Expanded)</option>
-                        <option value="precalc_factor_remainder">A7. Factor &amp; Remainder</option>
-                        <option value="precalc_real_zeros">A8. Real Zeros</option>
-                        <option value="precalc_complex_zeros">A9. Complex Zeros</option>
-                        <option value="precalc_rational_functions_deep">A10. Rational Functions (Deep)</option>
-                        <option value="precalc_inverses_radicals">A11. Inverses &amp; Radicals</option>
-                        <option value="precalc_exponential_models">A12. Exponential (Expanded)</option>
-                        <option value="precalc_logarithmic_models">A13. Logarithmic (Expanded)</option>
-                    </optgroup>
-                    <optgroup label="Trigonometry (Expanded)">
-                        <option value="trig_angles_measure">B1. Angles &amp; Measure</option>
-                        <option value="trig_six_functions">B2. Six Trig Functions</option>
-                        <option value="trig_identities_proofs">B3. Trig Identities (Proofs)</option>
-                        <option value="trig_graphs_all_functions">B4. Trig Graphs (All)</option>
-                        <option value="trig_inverse_functions">B5. Inverse Trig Functions</option>
-                        <option value="trig_equations">B6. Trig Equations</option>
-                        <option value="trig_law_of_sines">B7. Law of Sines</option>
-                        <option value="trig_law_of_cosines">B8. Law of Cosines</option>
-                        <option value="trig_polar_coordinates">B9. Polar Coordinates</option>
-                        <option value="trig_vectors">B10. Vectors</option>
-                        <option value="trig_parametric_equations">B11. Parametric Equations</option>
-                        <option value="trig_polar_complex">B12. Polar Complex Numbers</option>
-                        <option value="trig_harmonic_motion">B13. Harmonic Motion</option>
-                        <option value="trig_polar_conics">B14. Polar Conics</option>
-                    </optgroup>
+                    <option value="">🔀 All Topics (Shuffle)</option>
+                    <option value="_core_review">📘 Core Review</option>
+                    <option value="_calculus">📐 Calculus</option>
+                    <option value="_precalc_expanded">📗 Precalculus (Expanded)</option>
+                    <option value="_trig_expanded">🔺 Trigonometry (Expanded)</option>
                 </select>
             </div>
 
@@ -3309,79 +3241,11 @@
             <div style="text-align: center; margin-bottom: var(--space-16);">
                 <label for="quizTopicSelect" style="color: var(--color-text-secondary); margin-right: var(--space-8);">Quiz topic:</label>
                 <select id="quizTopicSelect" onchange="setQuizTopic(this.value)" style="padding: 6px 12px; border-radius: 8px; background: var(--color-surface); color: var(--color-text-primary); border: 1px solid var(--color-border); font-size: 0.95rem;">
-                    <option value="">All Topics (random 10)</option>
-                    <optgroup label="Core Review">
-                        <option value="functions-notation">Functions &amp; Notation</option>
-                        <option value="exponentials-logs">Exponentials &amp; Logs</option>
-                        <option value="log-properties">Log Properties</option>
-                        <option value="unit-circle">Unit Circle</option>
-                        <option value="trig-reference">Quick Trig Reference</option>
-                        <option value="trig-identities">Key Identities</option>
-                        <option value="sinusoidal-models">Sinusoidal Models</option>
-                        <option value="polynomials">Factoring Patterns</option>
-                        <option value="quadratics">Solving Quadratics</option>
-                        <option value="algebra-manipulation">More Algebra Skills</option>
-                        <option value="rational-functions">Rational Functions</option>
-                        <option value="inverse-functions">Inverse Functions</option>
-                        <option value="linear-functions">Lines &amp; Slopes</option>
-                        <option value="absolute-value-piecewise">Absolute Value &amp; Piecewise</option>
-                        <option value="transformations">Function Transformations</option>
-                        <option value="inequalities">Inequalities</option>
-                        <option value="sequences-series">Sequences &amp; Series</option>
-                        <option value="limits">Limits (Calculus Preview)</option>
-                        <option value="common-mistakes">Common Mistakes</option>
-                        <option value="calculator-skills">Calculator Skills</option>
-                    </optgroup>
-                    <optgroup label="Calculus Preview">
-                        <option value="calc-what-is-function">What Is a Function?</option>
-                        <option value="calc-what-is-limit">What Is a Limit?</option>
-                        <option value="calc-what-is-derivative">What Is a Derivative?</option>
-                        <option value="calc-what-is-integral">What Is an Integral?</option>
-                        <option value="calc-continuity">What Is Continuity?</option>
-                    </optgroup>
-                    <optgroup label="Calculus Topics">
-                        <option value="calc-quick-ref">Sketching Graphs</option>
-                        <option value="calc-graph-key">Graph Reference Key</option>
-                        <option value="calc-definitions">Definitions</option>
-                        <option value="calc-rolles">Rolle's Theorem</option>
-                        <option value="calc-mvt">Mean Value Theorem</option>
-                        <option value="calc-corollaries">Corollaries</option>
-                        <option value="calc-first-deriv-test">First Derivative Test</option>
-                        <option value="calc-second-deriv-test">Second Derivative Test</option>
-                        <option value="calc-graphing">Graphing with Derivatives</option>
-                        <option value="calc-integration">Integration Formulas</option>
-                    </optgroup>
-                    <optgroup label="Precalculus (Expanded)">
-                        <option value="precalc_domain_range">A1. Domain &amp; Range</option>
-                        <option value="precalc_rates_of_change">A2. Rates of Change</option>
-                        <option value="precalc_composition">A3. Function Composition</option>
-                        <option value="precalc_linear_functions">A4. Linear Functions</option>
-                        <option value="precalc_polynomials_deep">A5. Polynomials (Deep)</option>
-                        <option value="precalc_quadratics_expanded">A6. Quadratics (Expanded)</option>
-                        <option value="precalc_factor_remainder">A7. Factor &amp; Remainder</option>
-                        <option value="precalc_real_zeros">A8. Real Zeros</option>
-                        <option value="precalc_complex_zeros">A9. Complex Zeros</option>
-                        <option value="precalc_rational_functions_deep">A10. Rational Functions (Deep)</option>
-                        <option value="precalc_inverses_radicals">A11. Inverses &amp; Radicals</option>
-                        <option value="precalc_exponential_models">A12. Exponential (Expanded)</option>
-                        <option value="precalc_logarithmic_models">A13. Logarithmic (Expanded)</option>
-                    </optgroup>
-                    <optgroup label="Trigonometry (Expanded)">
-                        <option value="trig_angles_measure">B1. Angles &amp; Measure</option>
-                        <option value="trig_six_functions">B2. Six Trig Functions</option>
-                        <option value="trig_identities_proofs">B3. Trig Identities (Proofs)</option>
-                        <option value="trig_graphs_all_functions">B4. Trig Graphs (All)</option>
-                        <option value="trig_inverse_functions">B5. Inverse Trig Functions</option>
-                        <option value="trig_equations">B6. Trig Equations</option>
-                        <option value="trig_law_of_sines">B7. Law of Sines</option>
-                        <option value="trig_law_of_cosines">B8. Law of Cosines</option>
-                        <option value="trig_polar_coordinates">B9. Polar Coordinates</option>
-                        <option value="trig_vectors">B10. Vectors</option>
-                        <option value="trig_parametric_equations">B11. Parametric Equations</option>
-                        <option value="trig_polar_complex">B12. Polar Complex Numbers</option>
-                        <option value="trig_harmonic_motion">B13. Harmonic Motion</option>
-                        <option value="trig_polar_conics">B14. Polar Conics</option>
-                    </optgroup>
+                    <option value="">🔀 All Topics (Random 10)</option>
+                    <option value="_core_review">📘 Core Review</option>
+                    <option value="_calculus">📐 Calculus</option>
+                    <option value="_precalc_expanded">📗 Precalculus (Expanded)</option>
+                    <option value="_trig_expanded">🔺 Trigonometry (Expanded)</option>
                 </select>
             </div>
 
@@ -9468,16 +9332,55 @@
         // ===== YU-GI-OH! TOGGLE STATE =====
         let yugiohEnabled = JSON.parse(localStorage.getItem('yugiohEnabled') ?? 'true');
 
+        // Map TOPICS registry IDs → contentIndex subtopic values for expansion topics
+        const TOPIC_TO_SUBTOPIC = {
+            'precalc_domain_range': 'domain-range',
+            'precalc_rates_of_change': 'rates-of-change',
+            'precalc_composition': 'function-composition',
+            'precalc_linear_functions': 'linear-functions',
+            'precalc_polynomials_deep': 'polynomials-deep',
+            'precalc_quadratics_expanded': 'quadratics-expanded',
+            'precalc_factor_remainder': 'factor-remainder',
+            'precalc_real_zeros': 'real-zeros',
+            'precalc_complex_zeros': 'complex-zeros',
+            'precalc_rational_functions_deep': 'rational-functions-deep',
+            'precalc_inverses_radicals': 'inverses-radicals',
+            'precalc_exponential_models': 'exponential-models',
+            'precalc_logarithmic_models': 'logarithmic-models',
+            'trig_angles_measure': 'angles-measure',
+            'trig_six_functions': 'six-functions-identities',
+            'trig_identities_proofs': 'trig-identities-proofs',
+            'trig_graphs_all_functions': 'trig-graphs',
+            'trig_inverse_functions': 'inverse-trig',
+            'trig_equations': 'trig-equations',
+            'trig_law_of_sines': 'law-of-sines',
+            'trig_law_of_cosines': 'law-of-cosines',
+            'trig_polar_coordinates': 'polar-coordinates',
+            'trig_vectors': 'vectors',
+            'trig_parametric_equations': 'parametric-equations',
+            'trig_polar_complex': 'polar-complex',
+            'trig_harmonic_motion': 'harmonic-motion',
+            'trig_polar_conics': 'polar-conics-rotation',
+        };
+
         function getFilteredFlashcards() {
             let pool;
             if (!currentFlashcardTopicId) {
                 pool = [...FLASHCARDS];
-            } else if (['algebra', 'trig', 'calculus', 'precalc-general'].includes(currentFlashcardTopicId)) {
-                // Filter by area
-                pool = FLASHCARDS.filter(c => c.area === currentFlashcardTopicId);
+            } else if (currentFlashcardTopicId === '_core_review') {
+                // Core Review: original precalc cards (FC-ALG-*, FC-TRIG-*, FC-CALC-P01)
+                pool = FLASHCARDS.filter(c => c.sourceId && !c.sourceId.startsWith('FC-EA-') && !c.sourceId.startsWith('FC-EB-') && !c.sourceId.startsWith('FC-CALC-0'));
+            } else if (currentFlashcardTopicId === '_calculus') {
+                // Calculus: calc preview + calc topics (FC-CALC-*)
+                pool = FLASHCARDS.filter(c => c.sourceId && c.sourceId.startsWith('FC-CALC-'));
+            } else if (currentFlashcardTopicId === '_precalc_expanded') {
+                // Precalculus Expanded: A1-A13 (FC-EA-*)
+                pool = FLASHCARDS.filter(c => c.sourceId && c.sourceId.startsWith('FC-EA-'));
+            } else if (currentFlashcardTopicId === '_trig_expanded') {
+                // Trigonometry Expanded: B1-B14 (FC-EB-*)
+                pool = FLASHCARDS.filter(c => c.sourceId && c.sourceId.startsWith('FC-EB-'));
             } else {
-                // Filter by subtopic (handles Core Review, Calculus, and Expansion topics)
-                pool = FLASHCARDS.filter(c => c.subtopic === currentFlashcardTopicId);
+                pool = [...FLASHCARDS];
             }
             // Apply Yu-Gi-Oh! toggle filter
             if (!yugiohEnabled) {
@@ -9633,8 +9536,13 @@
             { topicId: 'trig_polar_conics', q: "A conic with eccentricity e = 0.5 is:", opts: ["Circle", "Ellipse", "Parabola", "Hyperbola"], ans: 1 },
         ];
 
-        // Combined pool of all quiz questions (89 total: 15 legacy + 35 calculus + 39 expansion)
-        const allQuizQuestions = [...quizQuestions, ...calculusQuizPool, ...expansionQuizPool];
+        // Combined pool of all quiz questions (89 total: 15 core + 35 calculus + 39 expansion)
+        // Tag each question with a group for simplified dropdown filtering
+        const allQuizQuestions = [
+            ...quizQuestions.map(q => ({...q, group: 'core'})),
+            ...calculusQuizPool.map(q => ({...q, group: 'calculus'})),
+            ...expansionQuizPool.map(q => ({...q, group: q.topicId && q.topicId.startsWith('trig_') ? 'trig_exp' : 'precalc_exp'})),
+        ];
 
         let quizState = {
             current: 0,
@@ -9644,13 +9552,25 @@
         };
         let currentQuizTopicId = '';
 
+        // Map from group dropdown values to quiz group tags
+        const QUIZ_GROUP_MAP = {
+            '_core_review': 'core',
+            '_calculus': 'calculus',
+            '_precalc_expanded': 'precalc_exp',
+            '_trig_expanded': 'trig_exp',
+        };
+
         function getFilteredQuizPool() {
             let pool;
             if (!currentQuizTopicId) {
                 pool = [...allQuizQuestions];
             } else {
-                // Filter by topicId (expansion topics) or subtopic (core review + calculus)
-                pool = allQuizQuestions.filter(q => q.topicId === currentQuizTopicId || q.subtopic === currentQuizTopicId);
+                const groupTag = QUIZ_GROUP_MAP[currentQuizTopicId];
+                if (groupTag) {
+                    pool = allQuizQuestions.filter(q => q.group === groupTag);
+                } else {
+                    pool = [...allQuizQuestions];
+                }
             }
             // Apply Yu-Gi-Oh! toggle filter
             if (!yugiohEnabled && contentIndex) {
@@ -9704,21 +9624,30 @@
             // Fade hero image in/out
             updateHero(tab);
 
-            // Cross-tab sync: when switching to flashcards or quiz, default to currentTopicId
+            // Cross-tab sync: map individual topicId to the matching group dropdown value
+            function getGroupForTopicId(topicId) {
+                if (!topicId) return '';
+                if (topicId.startsWith('precalc_')) return '_precalc_expanded';
+                if (topicId.startsWith('trig_')) return '_trig_expanded';
+                return '_core_review';
+            }
+
             if (tab === 'flashcards' && currentTopicId) {
+                var groupVal = getGroupForTopicId(currentTopicId);
                 var fcSelect = document.getElementById('flashcardTopicSelect');
                 if (fcSelect) {
-                    fcSelect.value = currentTopicId;
-                    filterFlashcards(currentTopicId);
+                    fcSelect.value = groupVal;
+                    filterFlashcards(groupVal);
                 }
             }
 
             if (tab === 'quiz') {
                 if (currentTopicId) {
+                    var groupVal = getGroupForTopicId(currentTopicId);
                     var qSelect = document.getElementById('quizTopicSelect');
                     if (qSelect) {
-                        qSelect.value = currentTopicId;
-                        currentQuizTopicId = currentTopicId;
+                        qSelect.value = groupVal;
+                        currentQuizTopicId = groupVal;
                     }
                 }
                 if (!quizState.activeQuiz || quizState.activeQuiz.length === 0) {
