@@ -1356,7 +1356,7 @@
         <ul class="sidebar-nav">
             <li class="sidebar-section-label">App Sections</li>
             <li><a href="#tab-home" class="sidebar-link">🏠 Home</a></li>
-            <li><a href="#tab-directory" class="sidebar-link">📂 Directory</a></li>
+            <li><a href="#tab-directory" class="sidebar-link">📂 Directory Search</a></li>
             <li><a href="#tab-review" class="sidebar-link">📖 Review Topics</a></li>
             <li><a href="#tab-unit-circle" class="sidebar-link">🔄 Unit Circle</a></li>
             <li><a href="#tab-flashcards" class="sidebar-link">🎴 Flashcards</a></li>
@@ -1475,7 +1475,7 @@
 
         <!-- DIRECTORY TAB -->
         <div id="directory" class="content-section">
-            <h1 style="text-align:center; margin-bottom: var(--space-8);">📂 Content Directory</h1>
+            <h1 style="text-align:center; margin-bottom: var(--space-8);">📂 Directory Search</h1>
             <p style="text-align:center; color: var(--color-text-secondary); margin-bottom: var(--space-24);">Choose a content type, then narrow by area, course, subtopic, or tier.</p>
 
             <div class="directory-filter-panel">
@@ -1567,7 +1567,7 @@
                         <option value="topic-calc-continuity">What Is Continuity?</option>
                     </optgroup>
                     <optgroup label="Calculus Topics">
-                        <option value="topic-calc-quick-ref">Quick Reference Chart</option>
+                        <option value="topic-calc-quick-ref">Sketching Graphs</option>
                         <option value="topic-calc-graph-key">Graph Reference Key</option>
                         <option value="topic-calc-definitions">Definitions</option>
                         <option value="topic-calc-rolles">Rolle's Theorem</option>
@@ -2127,10 +2127,10 @@
 
                 <!-- ===== CALCULUS TOPICS ===== -->
 
-                <!-- Quick Reference Chart -->
+                <!-- Sketching Graphs -->
                 <div class="concept-card card-calc" id="topic-quick-ref-chart">
-                    <h3>📋 Quick Reference Chart</h3>
-                    <p>Key calculus terms and what they mean at a glance.</p>
+                    <h3>📋 Sketching Graphs</h3>
+                    <p>Key calculus terms for sketching and analyzing graphs at a glance.</p>
                     <div class="table-responsive">
                         <table style="font-size: 0.9rem;">
                             <thead>
@@ -3556,8 +3556,8 @@
       "course": "calculus",
       "area": "calculus",
       "type": "review-card",
-      "subtopic": "quick-reference-chart",
-      "title": "R-CALC-07 · Quick Reference Chart",
+      "subtopic": "sketching-graphs",
+      "title": "R-CALC-07 · Sketching Graphs",
       "body": "| Term | Meaning |\n| --- | --- |\n| Critical point | f'(x) = 0 or undefined |\n| Increasing interval | f'(x) > 0 |\n| Decreasing interval | f'(x) < 0 |\n| Inflection point | f''(x) = 0 with sign change |\n| Concave up | f''(x) > 0 |\n| Concave down | f''(x) < 0 |"
     },
     {
@@ -6786,8 +6786,8 @@
       "course": "calculus",
       "area": "calculus",
       "type": "review-card",
-      "subtopic": "quick-reference-chart",
-      "title": "R-CALC-07 · Quick Reference Chart",
+      "subtopic": "sketching-graphs",
+      "title": "R-CALC-07 · Sketching Graphs",
       "body": "| Term | Meaning |\n| --- | --- |\n| Critical point | f'(x) = 0 or undefined |\n| Increasing interval | f'(x) > 0 |\n| Decreasing interval | f'(x) < 0 |\n| Inflection point | f''(x) = 0 with sign change |\n| Concave up | f''(x) > 0 |\n| Concave down | f''(x) < 0 |"
     },
     "R-CALC-08": {
@@ -10231,23 +10231,82 @@
             }
         }
 
+        // Expansion code → TOPICS registry ID (for DOM lookup as topic-{id})
+        var CODE_TO_TOPIC_ID = {
+            'A1':'precalc_domain_range','A2':'precalc_rates_of_change',
+            'A3':'precalc_composition','A4':'precalc_linear_functions',
+            'A5':'precalc_polynomials_deep','A6':'precalc_quadratics_expanded',
+            'A7':'precalc_factor_remainder','A8':'precalc_real_zeros',
+            'A9':'precalc_complex_zeros','A10':'precalc_rational_functions_deep',
+            'A11':'precalc_inverses_radicals','A12':'precalc_exponential_models',
+            'A13':'precalc_logarithmic_models',
+            'B1':'trig_angles_measure','B2':'trig_six_functions',
+            'B3':'trig_identities_proofs','B4':'trig_graphs_all_functions',
+            'B5':'trig_inverse_functions','B6':'trig_equations',
+            'B7':'trig_law_of_sines','B8':'trig_law_of_cosines',
+            'B9':'trig_polar_coordinates','B10':'trig_vectors',
+            'B11':'trig_parametric_equations','B12':'trig_polar_complex',
+            'B13':'trig_harmonic_motion','B14':'trig_polar_conics'
+        };
+
+        // Override map for original review cards where subtopic ≠ DOM element ID
+        var SUBTOPIC_TO_ELEMENT = {
+            'algebra-manipulation':'topic-algebra-skills',
+            'linear-functions':'topic-lines-slopes',
+            'absolute-value-piecewise':'topic-abs-piecewise',
+            'sequences-series':'topic-sequences',
+            'quick-trig-reference':'topic-trig-reference',
+            'trig-identities':'topic-key-identities',
+            'sinusoidal-models':'topic-sinusoidal',
+            'unit-circle-deep':'topic-unit-circle',
+            'complete-unit-circle':'topic-unit-circle',
+            'quadrant-patterns':'topic-unit-circle',
+            'what-is-a-function':'topic-function',
+            'what-is-a-limit':'topic-limit',
+            'what-is-a-derivative':'topic-derivative',
+            'what-is-an-integral':'topic-integral',
+            'quick-reference-chart':'topic-quick-ref-chart',
+            'sketching-graphs':'topic-quick-ref-chart',
+            'graph-reference':'topic-graph-ref-key',
+            'definitions':'topic-calc-definitions',
+            'mean-value-theorem':'topic-mvt',
+            'first-derivative-test':'topic-first-deriv-test',
+            'second-derivative-test':'topic-second-deriv-test',
+            'graphing-with-derivatives':'topic-graphing-derivatives',
+            'calculator-skills':'topic-calculator'
+        };
+
         function findReviewCardElement(id) {
-            // 1. Direct data-id lookup
-            var el = document.querySelector('[data-id="' + id + '"]');
+            // 1. Direct data-id lookup (scoped to review section only)
+            var el = document.querySelector('#review .concept-card[data-id="' + id + '"]');
             if (el) return el;
 
-            // 2. Map content index ID → subtopic → topic-{subtopic} DOM id
+            // 2. Find the item in contentIndex
+            var item = null;
             if (contentIndex && contentIndex.items) {
                 for (var i = 0; i < contentIndex.items.length; i++) {
-                    if (contentIndex.items[i].id === id && contentIndex.items[i].subtopic) {
-                        var topicEl = document.getElementById('topic-' + contentIndex.items[i].subtopic);
-                        if (topicEl) return topicEl;
-                        break;
-                    }
+                    if (contentIndex.items[i].id === id) { item = contentIndex.items[i]; break; }
                 }
             }
+            if (!item) return null;
 
-            // 3. Fallback: search concept-card h3 text for the ID
+            // 3. Expansion items: use code → TOPICS ID → DOM element
+            if (item.code && CODE_TO_TOPIC_ID[item.code]) {
+                el = document.getElementById('topic-' + CODE_TO_TOPIC_ID[item.code]);
+                if (el) return el;
+            }
+
+            // 4. Check subtopic override map, then try direct topic-{subtopic}
+            if (item.subtopic) {
+                if (SUBTOPIC_TO_ELEMENT[item.subtopic]) {
+                    el = document.getElementById(SUBTOPIC_TO_ELEMENT[item.subtopic]);
+                    if (el) return el;
+                }
+                el = document.getElementById('topic-' + item.subtopic);
+                if (el) return el;
+            }
+
+            // 5. Fallback: search concept-card h3 text for the ID
             var cards = document.querySelectorAll('#review .concept-card');
             for (var j = 0; j < cards.length; j++) {
                 var h3 = cards[j].querySelector('h3');
