@@ -2815,6 +2815,58 @@
         // ===== APP CONFIG =====
         const APP_NAME = "Let's Math!";
 
+        // ===== CONTENT INDEX =====
+        // Load from Organized-Content-Library.md via contentIndex.json
+        let contentIndex = null;
+        let FLASHCARDS = [];
+        
+        // Load contentIndex.json
+        async function loadContentIndex() {
+            try {
+                const response = await fetch('contentIndex.json');
+                contentIndex = await response.json();
+                
+                // Convert flashcard items to individual cards
+                const flashcardItems = contentIndex.items.filter(item => item.type === 'flashcard');
+                FLASHCARDS = [];
+                
+                flashcardItems.forEach(item => {
+                    if (item.qa && item.qa.length > 0) {
+                        item.qa.forEach((qa, idx) => {
+                            FLASHCARDS.push({
+                                id: `${item.id}-${idx + 1}`,
+                                sourceId: item.id,
+                                course: item.course,
+                                area: item.area,
+                                type: item.type,
+                                subtopic: item.subtopic,
+                                tier: item.tier,
+                                yugioh: item.yugioh,
+                                q: qa.q,
+                                a: qa.a
+                            });
+                        });
+                    }
+                });
+                
+                console.log(`Loaded ${FLASHCARDS.length} flashcards from ${flashcardItems.length} flashcard items`);
+                
+                // Initialize flashcard deck after loading
+                cardDeck = [...FLASHCARDS];
+                if (cardDeck.length > 0) {
+                    updateFlashcard();
+                }
+            } catch (error) {
+                console.error('Failed to load contentIndex.json:', error);
+                // Fall back to legacy flashcards
+                FLASHCARDS = LEGACY_FLASHCARDS;
+                cardDeck = [...FLASHCARDS];
+                if (cardDeck.length > 0) {
+                    updateFlashcard();
+                }
+            }
+        }
+
         // ===== TOPICS REGISTRY (Expansion Plan) =====
         const TOPICS = [
           // --- Precalculus (A1-A13) ---
@@ -2848,8 +2900,8 @@
           { id: 'trig_polar_conics',               label: 'Conic Sections in Polar Form',           tier: 3, section: 'Trigonometry' },
         ];
 
-        // ===== FLASHCARDS DATA (consolidated from flashcards-data.js) =====
-        const FLASHCARDS = [
+        // ===== LEGACY FLASHCARDS DATA (fallback) =====
+        const LEGACY_FLASHCARDS = [
 
     // ==================== FUNCTIONS (4 cards) ====================
     { topic: 'functions', q: 'What does f(a + h) mean?', a: 'Replace every <em>x</em> in the function rule with <strong>(a + h)</strong>, keeping the parentheses. For example, if f(x) = x<sup>2</sup>, then f(a + h) = (a + h)<sup>2</sup> = a<sup>2</sup> + 2ah + h<sup>2</sup>.' },
@@ -3113,11 +3165,9 @@
 
         ];
 
-        const flashcards = FLASHCARDS;
-
         let currentCardIndex = 0;
         let isFlipped = false;
-        let cardDeck = [...flashcards];
+        let cardDeck = [];  // Will be initialized after loading contentIndex
         let currentFlashcardTopicId = '';
         let currentTopicId = null; // Cross-tab sync: last selected topic
 
@@ -3126,14 +3176,19 @@
         const LEGACY_CALCULUS_TOPICS = ['calc-limits','calc-derivatives','calc-integrals','calc-applications'];
 
         function getFilteredFlashcards() {
-            if (!currentFlashcardTopicId) return [...flashcards];
+            if (!currentFlashcardTopicId) return [...FLASHCARDS];
             if (currentFlashcardTopicId === '_legacy_precalc') {
-                return flashcards.filter(c => c.topic && LEGACY_PRECALC_TOPICS.includes(c.topic));
+                return FLASHCARDS.filter(c => c.topic && LEGACY_PRECALC_TOPICS.includes(c.topic));
             }
             if (currentFlashcardTopicId === '_legacy_calculus') {
-                return flashcards.filter(c => c.topic && LEGACY_CALCULUS_TOPICS.includes(c.topic));
+                return FLASHCARDS.filter(c => c.topic && LEGACY_CALCULUS_TOPICS.includes(c.topic));
             }
-            return flashcards.filter(c => c.topicId === currentFlashcardTopicId);
+            // Filter by area (algebra, trig, calculus, precalc-general)
+            if (['algebra', 'trig', 'calculus', 'precalc-general'].includes(currentFlashcardTopicId)) {
+                return FLASHCARDS.filter(c => c.area === currentFlashcardTopicId);
+            }
+            // Filter by subtopic
+            return FLASHCARDS.filter(c => c.subtopic === currentFlashcardTopicId);
         }
 
         function filterFlashcards(topicId) {
@@ -3421,6 +3476,15 @@
             cardEl.classList.remove('flipped');
             document.getElementById('questionText').style.display = 'block';
             document.getElementById('answerText').style.display = 'none';
+            
+            // Add data attributes for tag-based filtering
+            if (card.id) cardEl.setAttribute('data-id', card.id);
+            if (card.course) cardEl.setAttribute('data-course', card.course);
+            if (card.area) cardEl.setAttribute('data-area', card.area);
+            if (card.type) cardEl.setAttribute('data-type', card.type);
+            if (card.subtopic) cardEl.setAttribute('data-subtopic', card.subtopic);
+            if (card.tier) cardEl.setAttribute('data-tier', card.tier);
+            if (card.yugioh) cardEl.setAttribute('data-yugioh', card.yugioh);
         }
 
         // ===== QUIZ FUNCTIONS =====
@@ -3771,6 +3835,9 @@
                 }, 300);
             });
         });
+        
+        // Initialize content index on page load
+        loadContentIndex();
     </script>
 
 <!--
