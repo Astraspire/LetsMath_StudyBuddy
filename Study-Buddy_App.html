@@ -1175,58 +1175,58 @@
                 <!-- Expanded Area Views -->
                 <div id="areaExpanded-algebra" class="area-card-expanded">
                     <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
-                    <div class="concept-card area-algebra" style="cursor: default; transform: none; max-width: 100%;">
+                    <div class="concept-card area-algebra expanded" style="cursor: default; transform: none; max-width: 100%;">
                         <span class="area-card-icon">📐</span>
                         <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Algebra</h2>
                         <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">Explore algebra topics from functions and notation to advanced polynomial analysis.</p>
                         <nav class="area-directory">
-                            <a href="#tab-review-algebra">📖 Review Cards</a>
-                            <a href="#tab-review-algebra-expansion">⭐ Expansion Review</a>
-                            <a href="#tab-flashcards-algebra">🎴 Flashcards</a>
-                            <a href="#tab-quiz-algebra">❓ Quiz</a>
+                            <a href="#" onclick="navigateToArea('review', 'algebra'); return false;">📖 Review Cards</a>
+                            <a href="#" onclick="navigateToArea('review', 'algebra-expansion'); return false;">⭐ Expansion Review</a>
+                            <a href="#" onclick="navigateToArea('flashcards', 'algebra'); return false;">🎴 Flashcards</a>
+                            <a href="#" onclick="navigateToArea('quiz', 'algebra'); return false;">❓ Quiz</a>
                         </nav>
                     </div>
                 </div>
 
                 <div id="areaExpanded-trig" class="area-card-expanded">
                     <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
-                    <div class="concept-card area-trig" style="cursor: default; transform: none; max-width: 100%;">
+                    <div class="concept-card area-trig expanded" style="cursor: default; transform: none; max-width: 100%;">
                         <span class="area-card-icon">📊</span>
                         <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Trigonometry</h2>
                         <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">Master trigonometry from the unit circle to advanced applications.</p>
                         <nav class="area-directory">
-                            <a href="#tab-review-trig">📖 Review Cards</a>
-                            <a href="#tab-review-trig-expansion">⭐ Expansion Review</a>
-                            <a href="#tab-flashcards-trig">🎴 Flashcards</a>
-                            <a href="#tab-quiz-trig">❓ Quiz</a>
+                            <a href="#" onclick="navigateToArea('review', 'trig'); return false;">📖 Review Cards</a>
+                            <a href="#" onclick="navigateToArea('review', 'trig-expansion'); return false;">⭐ Expansion Review</a>
+                            <a href="#" onclick="navigateToArea('flashcards', 'trig'); return false;">🎴 Flashcards</a>
+                            <a href="#" onclick="navigateToArea('quiz', 'trig'); return false;">❓ Quiz</a>
                         </nav>
                     </div>
                 </div>
 
                 <div id="areaExpanded-calculus" class="area-card-expanded">
                     <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
-                    <div class="concept-card area-calculus" style="cursor: default; transform: none; max-width: 100%;">
+                    <div class="concept-card area-calculus expanded" style="cursor: default; transform: none; max-width: 100%;">
                         <span class="area-card-icon">📈</span>
                         <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Calculus</h2>
                         <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">Explore fundamental calculus concepts including limits, derivatives, and integrals.</p>
                         <nav class="area-directory">
-                            <a href="#tab-review-calculus">📖 Review Cards</a>
-                            <a href="#tab-flashcards-calculus">🎴 Flashcards</a>
-                            <a href="#tab-quiz-calculus">❓ Quiz</a>
+                            <a href="#" onclick="navigateToArea('review', 'calculus'); return false;">📖 Review Cards</a>
+                            <a href="#" onclick="navigateToArea('flashcards', 'calculus'); return false;">🎴 Flashcards</a>
+                            <a href="#" onclick="navigateToArea('quiz', 'calculus'); return false;">❓ Quiz</a>
                         </nav>
                     </div>
                 </div>
 
                 <div id="areaExpanded-precalc-general" class="area-card-expanded">
                     <button class="card-back-btn" onclick="deselectArea()" style="display: inline-flex;">&larr; Back to all areas</button>
-                    <div class="concept-card area-precalc-general" style="cursor: default; transform: none; max-width: 100%;">
+                    <div class="concept-card area-precalc-general expanded" style="cursor: default; transform: none; max-width: 100%;">
                         <span class="area-card-icon">🎯</span>
                         <h2 style="font-size: 2rem; margin-bottom: var(--space-24);">Precalc General</h2>
                         <p style="margin-bottom: var(--space-24); font-size: 1.1rem;">General precalculus topics and foundational concepts.</p>
                         <nav class="area-directory">
-                            <a href="#tab-review-precalc-general">📖 Review Cards</a>
-                            <a href="#tab-flashcards-precalc-general">🎴 Flashcards</a>
-                            <a href="#tab-quiz-precalc-general">❓ Quiz</a>
+                            <a href="#" onclick="navigateToArea('review', 'precalc-general'); return false;">📖 Review Cards</a>
+                            <a href="#" onclick="navigateToArea('flashcards', 'precalc-general'); return false;">🎴 Flashcards</a>
+                            <a href="#" onclick="navigateToArea('quiz', 'precalc-general'); return false;">❓ Quiz</a>
                         </nav>
                     </div>
                 </div>
@@ -3054,6 +3054,35 @@
             
             selectedArea = null;
             document.getElementById('areaCardsGrid').style.display = '';
+        }
+
+        // Navigate to a specific section with area filter
+        function navigateToArea(section, area) {
+            // Switch to the appropriate tab
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+            updateHero(section);
+            
+            // Apply area filter for flashcards and quiz
+            if (section === 'flashcards') {
+                filterFlashcards(area);
+                const topicSelect = document.getElementById('flashcardTopicSelect');
+                if (topicSelect) {
+                    topicSelect.value = area;
+                }
+            } else if (section === 'quiz') {
+                setQuizTopic(area);
+                const quizSelect = document.getElementById('quizTopicSelect');
+                if (quizSelect) {
+                    quizSelect.value = area;
+                }
+                // Initialize quiz if needed
+                if (quizState.current === 0 && quizState.answers.length === 0) {
+                    initQuiz();
+                }
+            }
+            // For review, we'd need to filter or navigate to specific cards
+            // This can be implemented later if needed
         }
 
         // ===== CONTENT INDEX =====
