@@ -9913,6 +9913,7 @@
                 total: total,
                 percent: percent,
                 questions: quizState.activeQuiz.map(function(q) {
+                    // subtopic: topic tag from core/calculus pools; topicId: topic tag from expansion pool; group: quiz pool source (core/calculus/precalc_exp/trig_exp)
                     return {
                         q: q.q,
                         opts: q.opts,
