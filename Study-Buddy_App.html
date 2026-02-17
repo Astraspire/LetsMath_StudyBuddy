@@ -1344,6 +1344,7 @@
             .results-detail { grid-template-columns: 1fr; }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@4.1.0/dist/jspdf.umd.min.js"></script>
 </head>
 <body>
     <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
@@ -9884,6 +9885,7 @@
                         ${percent >= 80 ? '🎉 Excellent work! You\'re ready for Calculus!' : percent >= 60 ? '👍 Good job! Review weak areas.' : '📚 Keep studying! Focus on fundamentals.'}
                     </p>
                     <button class="btn btn-primary" onclick="switchToQuiz()">Retake Quiz</button>
+                    <button class="btn btn-secondary" onclick="downloadQuizPDF()" style="margin-left: 8px;">Download PDF</button>
                 </div>
 
                 <div class="quiz-history-section">
@@ -9909,7 +9911,17 @@
                 date: new Date().toISOString(),
                 correct: correct,
                 total: total,
-                percent: percent
+                percent: percent,
+                questions: quizState.activeQuiz.map(function(q) {
+                    // subtopic: topic tag from core/calculus pools; topicId: topic tag from expansion pool; group: quiz pool source (core/calculus/precalc_exp/trig_exp)
+                    return {
+                        q: q.q,
+                        opts: q.opts,
+                        ans: q.ans,
+                        tags: [q.subtopic || q.topicId || '', q.group || ''].filter(Boolean)
+                    };
+                }),
+                userAnswers: quizState.answers.slice()
             });
             localStorage.setItem('precalcQuizResults', JSON.stringify(history));
         }
@@ -9929,21 +9941,26 @@
 
             let rows = '';
             history.slice().reverse().forEach((r, i) => {
+                const actualIndex = history.length - 1 - i;
                 const d = new Date(r.date);
                 const dateStr = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                 const badge = r.percent >= 80 ? 'quiz-history-pass' : r.percent >= 60 ? 'quiz-history-ok' : 'quiz-history-fail';
+                const pdfBtn = r.questions && r.questions.length > 0
+                    ? '<button class="btn btn-secondary btn-small" onclick="downloadQuizPDF(' + actualIndex + ')" style="padding: 2px 8px; font-size: 0.75rem;">PDF</button>'
+                    : '';
                 rows += `<tr>
                     <td>${history.length - i}</td>
                     <td>${dateStr}</td>
                     <td>${r.correct} / ${r.total}</td>
                     <td><span class="${badge}">${r.percent}%</span></td>
+                    <td>${pdfBtn}</td>
                 </tr>`;
             });
 
             return `
                 <div class="table-responsive">
                     <table class="quiz-history-table">
-                        <tr><th>#</th><th>Date</th><th>Score</th><th>Percent</th></tr>
+                        <tr><th>#</th><th>Date</th><th>Score</th><th>Percent</th><th></th></tr>
                         ${rows}
                     </table>
                 </div>`;
@@ -9972,6 +9989,166 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+        }
+
+        function sanitizeTextForPDF(text) {
+            if (!text) return '';
+            return text
+                .replace(/⁴/g, '^4').replace(/⁵/g, '^5')
+                .replace(/√/g, 'sqrt').replace(/π/g, 'pi').replace(/θ/g, 'theta')
+                .replace(/∞/g, 'inf').replace(/∫/g, 'integral ')
+                .replace(/→/g, '->').replace(/←/g, '<-')
+                .replace(/−/g, '-').replace(/·/g, '*')
+                .replace(/⟨/g, '<').replace(/⟩/g, '>')
+                .replace(/∘/g, ' o ').replace(/≥/g, '>=').replace(/≤/g, '<=');
+        }
+
+        function downloadQuizPDF(historyIndex) {
+            var history = getQuizHistory();
+            if (typeof historyIndex === 'undefined' || historyIndex === null) {
+                historyIndex = history.length - 1;
+            }
+            var entry = history[historyIndex];
+            if (!entry) {
+                alert('Quiz result not found.');
+                return;
+            }
+            if (!entry.questions || entry.questions.length === 0) {
+                alert('Detailed question data is not available for this result. Only newer quiz attempts include full question details.');
+                return;
+            }
+            if (typeof window.jspdf === 'undefined') {
+                alert('PDF library is still loading. Please try again in a moment.');
+                return;
+            }
+
+            var jsPDF = window.jspdf.jsPDF;
+            var doc = new jsPDF({ unit: 'mm', format: 'letter' });
+            var pageWidth = doc.internal.pageSize.getWidth();
+            var pageHeight = doc.internal.pageSize.getHeight();
+            var margin = 15;
+            var usable = pageWidth - 2 * margin;
+            var y = margin;
+
+            // ---- Header ----
+            doc.setFillColor(0, 128, 128);
+            doc.rect(0, 0, pageWidth, 28, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(18);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Let's Math! - Quiz Results", pageWidth / 2, 12, { align: 'center' });
+            doc.setFontSize(11);
+            doc.setFont('helvetica', 'normal');
+            var d = new Date(entry.date);
+            var dateStr = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            doc.text('Date: ' + dateStr + '    Score: ' + entry.correct + '/' + entry.total + ' (' + entry.percent + '%)', pageWidth / 2, 22, { align: 'center' });
+            y = 36;
+
+            // ---- Question Cards ----
+            var questions = entry.questions;
+            var userAnswers = entry.userAnswers || [];
+
+            for (var i = 0; i < questions.length; i++) {
+                var q = questions[i];
+                var userAns = (i < userAnswers.length) ? userAnswers[i] : null;
+                var isCorrect = userAns !== null && userAns === q.ans;
+                var wasAnswered = userAns !== null;
+
+                // Estimate card height
+                var questionText = sanitizeTextForPDF(q.q);
+                var wrappedQ = doc.splitTextToSize(questionText, usable - 16);
+                var optionLines = 0;
+                var optTexts = [];
+                for (var j = 0; j < q.opts.length; j++) {
+                    var optText = sanitizeTextForPDF(q.opts[j]);
+                    var wrapped = doc.splitTextToSize(optText, usable - 30);
+                    optTexts.push(wrapped);
+                    optionLines += wrapped.length;
+                }
+                var tagLine = (q.tags && q.tags.length > 0) ? q.tags.join(', ') : '';
+                var cardHeight = 12 + (wrappedQ.length * 5) + 4 + (optionLines * 5.5) + (q.opts.length * 2) + (tagLine ? 10 : 4) + 4;
+
+                // Check if card fits on current page
+                if (y + cardHeight > pageHeight - margin) {
+                    doc.addPage();
+                    y = margin;
+                }
+
+                // Card background
+                var cardColor = isCorrect ? [235, 250, 240] : (wasAnswered ? [255, 240, 240] : [245, 245, 245]);
+                doc.setFillColor(cardColor[0], cardColor[1], cardColor[2]);
+                doc.roundedRect(margin, y, usable, cardHeight, 3, 3, 'F');
+                doc.setDrawColor(200, 200, 200);
+                doc.roundedRect(margin, y, usable, cardHeight, 3, 3, 'S');
+
+                var cardY = y + 7;
+
+                // Question number badge
+                doc.setFontSize(9);
+                doc.setFont('helvetica', 'bold');
+                doc.setTextColor(255, 255, 255);
+                var badgeColor = isCorrect ? [34, 139, 34] : (wasAnswered ? [200, 50, 50] : [150, 150, 150]);
+                doc.setFillColor(badgeColor[0], badgeColor[1], badgeColor[2]);
+                doc.roundedRect(margin + 4, cardY - 4, 28, 6, 1.5, 1.5, 'F');
+                doc.text('Question ' + (i + 1), margin + 18, cardY, { align: 'center' });
+                cardY += 5;
+
+                // Question text
+                doc.setFontSize(10);
+                doc.setFont('helvetica', 'bold');
+                doc.setTextColor(30, 30, 30);
+                doc.text(wrappedQ, margin + 8, cardY);
+                cardY += wrappedQ.length * 5 + 3;
+
+                // Options
+                doc.setFontSize(9);
+                var labels = ['A', 'B', 'C', 'D', 'E', 'F'];
+                for (var j = 0; j < q.opts.length; j++) {
+                    var isUserAnswer = userAns === j;
+                    var isCorrectOpt = q.ans === j;
+                    var prefix = labels[j] + ') ';
+                    var suffix = '';
+                    if (isCorrectOpt && isUserAnswer) {
+                        suffix = '  [Your Answer - Correct]';
+                        doc.setTextColor(34, 139, 34);
+                        doc.setFont('helvetica', 'bold');
+                    } else if (isCorrectOpt) {
+                        suffix = '  [Correct Answer]';
+                        doc.setTextColor(34, 139, 34);
+                        doc.setFont('helvetica', 'bold');
+                    } else if (isUserAnswer) {
+                        suffix = '  [Your Answer]';
+                        doc.setTextColor(200, 50, 50);
+                        doc.setFont('helvetica', 'bold');
+                    } else {
+                        doc.setTextColor(80, 80, 80);
+                        doc.setFont('helvetica', 'normal');
+                    }
+                    var fullOpt = prefix + optTexts[j].join(' ') + suffix;
+                    var wrappedOpt = doc.splitTextToSize(fullOpt, usable - 20);
+                    doc.text(wrappedOpt, margin + 12, cardY);
+                    cardY += wrappedOpt.length * 5.5 + 1.5;
+                }
+
+                // Tags
+                if (tagLine) {
+                    cardY += 2;
+                    doc.setFontSize(8);
+                    doc.setFont('helvetica', 'italic');
+                    doc.setTextColor(100, 100, 100);
+                    doc.text('Tags: ' + tagLine, margin + 8, cardY);
+                }
+
+                y += cardHeight + 5;
+            }
+
+            // ---- Footer on last page ----
+            doc.setFontSize(8);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(150, 150, 150);
+            doc.text("Generated by Let's Math! Study Buddy", pageWidth / 2, pageHeight - 8, { align: 'center' });
+
+            doc.save('quiz-results-' + entry.date.slice(0, 10) + '.pdf');
         }
 
         function clearQuizHistory() {
