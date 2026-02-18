@@ -10209,9 +10209,10 @@
 
                 var qArea = q._area || deriveQuizArea(q);
                 var qSubtopic = q._subtopic || deriveQuizSubtopic(q);
+                var safeSubtopic = qSubtopic.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
                 var metaHtml = '<div class="quiz-result-meta">'
                     + '<span class="quiz-tag quiz-tag-area">' + friendlyArea(qArea) + '</span>'
-                    + '<span class="quiz-tag quiz-tag-subtopic" onclick="handleQuizTagClick(\'' + qSubtopic.replace(/'/g, "\\'") + '\')">' + qSubtopic + '</span>'
+                    + '<span class="quiz-tag quiz-tag-subtopic" onclick="handleQuizTagClick(\'' + qSubtopic.replace(/'/g, "\\'") + '\')">' + safeSubtopic + '</span>'
                     + '</div>';
 
                 resultsBreakdownHtml += '<div class="quiz-result-item ' + statusClass + '">'
@@ -10376,10 +10377,10 @@
                         var isSkipped = userAns === null;
                         var result = isSkipped ? 'skipped' : (isCorrect ? 'correct' : 'incorrect');
                         var qArea = q.area || '';
-                        var qSub = q.subtopic || (q.tags ? q.tags[0] : '') || '';
+                        var qSub = q.subtopic || (q.tags && q.tags[0]) || '';
                         var qText = q.q.replace(/"/g, '""');
-                        var userAnsText = userAns !== null && q.opts ? q.opts[userAns] : '';
-                        var correctAnsText = q.opts ? q.opts[q.ans] : '';
+                        var userAnsText = (userAns !== null && q.opts ? q.opts[userAns] : '').replace(/"/g, '""');
+                        var correctAnsText = (q.opts ? q.opts[q.ans] : '').replace(/"/g, '""');
                         csv += `${i + 1},"${dateStr}",${r.correct},${r.total},${r.percent}%,"${qText}","${qArea}","${qSub}","${userAnsText}","${correctAnsText}",${result}\n`;
                     });
                 } else {
@@ -10478,7 +10479,7 @@
                 if (q.tags && q.tags.length > 0) {
                     q.tags.forEach(function(t) { if (tagParts.indexOf(t) === -1) tagParts.push(t); });
                 }
-                var tagLine = tagParts.length > 0 ? tagParts.join(', ') : '';
+                var tagLine = tagParts.length > 0 ? sanitizeTextForPDF(tagParts.join(', ')) : '';
                 var cardHeight = 12 + (wrappedQ.length * 5) + 4 + (optionLines * 5.5) + (q.opts.length * 2) + (tagLine ? 10 : 4) + 4;
 
                 // Check if card fits on current page
