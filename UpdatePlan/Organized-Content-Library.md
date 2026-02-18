@@ -1960,7 +1960,7 @@ D) -2
 
 ## WEB APP INTEGRATION NOTES:
 
-### Recommended Changes to Study-Buddy Interface:
+### Recommended Changes to LetsMath Interface:
 1. **Topic Dropdown:** Group by subtopic (e.g., "Functions & Domain" contains R-ALG-01, E-ALG-01, FC-ALG-01-10, QZ-ALG-01-20)
 2. **Yu-Gi-Oh! Toggle:** Enable/disable analogies site-wide
 3. **Tier Filtering:** Essential(1), Important(2), Advanced(3) for expansion content

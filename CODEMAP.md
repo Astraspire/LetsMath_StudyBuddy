@@ -1,7 +1,7 @@
-# Let's Math! Study Buddy - Code Map & Developer Guide
+# Let's Math! - Code Map & Developer Guide
 
 **Last Updated:** 2026-02-18  
-**File Version:** Study-Buddy_App.html (~10,667 lines)  
+**File Version:** LetsMath_App.html (~10,667 lines)  
 **Purpose:** Navigation guide for developers and AI agents working with this codebase
 
 ---
@@ -24,7 +24,7 @@
 ## 🚀 Quick Reference
 
 ### File Sizes & Stats
-- **Study-Buddy_App.html**: 10,667 lines (main application)
+- **LetsMath_App.html**: 10,667 lines (main application)
 - **Organized-Content-Library.md**: 1,433 lines (content source)
 - **README.md**: 469 lines (user & developer documentation)
 - **Total Quiz Questions**: 89 (15 legacy precalc + 35 calculus + 39 expansion)
@@ -41,7 +41,7 @@
 ### Quick File Navigation
 ```
 Repository Root
-├── Study-Buddy_App.html          ← Main app (START HERE)
+├── LetsMath_App.html          ← Main app (START HERE)
 ├── Organized-Content-Library.md  ← Content source/reference
 ├── README.md                      ← User documentation
 ├── CODEMAP.md                     ← This file (developer guide)
@@ -60,7 +60,7 @@ Repository Root
 
 ### Core Files
 
-#### `Study-Buddy_App.html` (10,667 lines)
+#### `LetsMath_App.html` (10,667 lines)
 The complete single-page application containing:
 - All HTML markup
 - Inline CSS styles (~1,800 lines)
@@ -111,7 +111,7 @@ Update planning and instructions
 
 ### Overall Structure
 
-The `Study-Buddy_App.html` file is organized in this order:
+The `LetsMath_App.html` file is organized in this order:
 
 ```
 <!DOCTYPE html>
@@ -675,7 +675,7 @@ Essential precalculus concepts for foundation building.
 #### 1. Content Updates
 To add/modify content:
 1. Edit `Organized-Content-Library.md` (optional - for reference)
-2. Directly edit the `CONTENT_INDEX_DATA` object in `Study-Buddy_App.html`
+2. Directly edit the `CONTENT_INDEX_DATA` object in `LetsMath_App.html`
 3. Ensure proper tagging (id, course, area, type, subtopic, etc.)
 4. Refresh browser to test
 

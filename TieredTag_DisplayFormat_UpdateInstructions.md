@@ -24,7 +24,7 @@ You will receive:
 - `Organized-Content-Library.md` – the current content library.[2]
 - `Updated-Organized-Content-Library.md` – the new library with **tier assignments for all review cards**.  
 - This guide – `Agent-Implementation-Guide.md`.  
-- The existing app file – `Study-Buddy_App.html` (name may be `Study-BuddyApp.html`).[1]
+- The existing app file – `LetsMath_App.html`.[1]
 
 ### 1.2 Content model (from README)
 
