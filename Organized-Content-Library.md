@@ -41,7 +41,7 @@
 
 ## 1A. Algebra Review Cards
 
-<!-- tags: id:R-ALG-01, course:precalc, area:algebra, type:review-card, subtopic:functions-domain-range, yugioh:yes -->
+<!-- tags: id:R-ALG-01, course:precalc, area:algebra, type:review-card, subtopic:functions-domain-range, yugioh:yes, tier:1-essential -->
 ### R-ALG-01: Functions, Notation, Domain, and Range
 
 **What is a function?**
@@ -66,7 +66,7 @@ Think of a function like a **Monster Card Effect**. When you activate it, you ne
 
 ---
 
-<!-- tags: id:R-ALG-02, course:precalc, area:algebra, type:review-card, subtopic:factoring-patterns, yugioh:yes -->
+<!-- tags: id:R-ALG-02, course:precalc, area:algebra, type:review-card, subtopic:factoring-patterns, yugioh:yes, tier:1-essential -->
 ### R-ALG-02: Factoring Patterns
 
 **Difference of squares:**
@@ -90,7 +90,7 @@ Factoring is like **breaking down a Fusion Monster** into its Fusion Materials! 
 
 ---
 
-<!-- tags: id:R-ALG-03, course:precalc, area:algebra, type:review-card, subtopic:quadratics-solving, yugioh:no -->
+<!-- tags: id:R-ALG-03, course:precalc, area:algebra, type:review-card, subtopic:quadratics-solving, yugioh:no, tier:1-essential -->
 ### R-ALG-03: Solving Quadratics
 
 **Quadratic Formula:**
@@ -119,7 +119,7 @@ To solve x² + bx = c:
 
 ---
 
-<!-- tags: id:R-ALG-04, course:precalc, area:algebra, type:review-card, subtopic:algebra-manipulation, yugioh:yes -->
+<!-- tags: id:R-ALG-04, course:precalc, area:algebra, type:review-card, subtopic:algebra-manipulation, yugioh:yes, tier:2-important -->
 ### R-ALG-04: Rationalizing Denominators and Algebraic Manipulation
 
 **Rationalizing with square roots:**
@@ -141,7 +141,7 @@ The conjugate trick is like using **Mirror Force** to flip the situation! Just a
 
 ---
 
-<!-- tags: id:R-ALG-05, course:precalc, area:algebra, type:review-card, subtopic:rational-functions-asymptotes, yugioh:yes -->
+<!-- tags: id:R-ALG-05, course:precalc, area:algebra, type:review-card, subtopic:rational-functions-asymptotes, yugioh:yes, tier:1-essential -->
 ### R-ALG-05: Rational Functions and Asymptotes
 
 **Rational function:** f(x) = P(x)/Q(x) where P and Q are polynomials
@@ -166,7 +166,7 @@ Vertical asymptotes are like **card zones on your field**—you can't place more
 
 ---
 
-<!-- tags: id:R-ALG-06, course:precalc, area:algebra, type:review-card, subtopic:inverse-functions, yugioh:yes -->
+<!-- tags: id:R-ALG-06, course:precalc, area:algebra, type:review-card, subtopic:inverse-functions, yugioh:yes, tier:1-essential -->
 ### R-ALG-06: Inverse Functions
 
 **What is an inverse?**
@@ -198,7 +198,7 @@ Inverse functions are like **Spell/Trap removal cards**! If your opponent activa
 
 ---
 
-<!-- tags: id:R-ALG-07, course:precalc, area:algebra, type:review-card, subtopic:linear-functions-slopes, yugioh:no -->
+<!-- tags: id:R-ALG-07, course:precalc, area:algebra, type:review-card, subtopic:linear-functions-slopes, yugioh:no, tier:1-essential -->
 ### R-ALG-07: Linear Functions and Slopes
 
 **Slope formula:**
@@ -224,7 +224,7 @@ m = (y₂ - y₁)/(x₂ - x₁) = rise/run
 
 ---
 
-<!-- tags: id:R-ALG-08, course:precalc, area:algebra, type:review-card, subtopic:absolute-value-piecewise, yugioh:yes -->
+<!-- tags: id:R-ALG-08, course:precalc, area:algebra, type:review-card, subtopic:absolute-value-piecewise, yugioh:yes, tier:2-important -->
 ### R-ALG-08: Absolute Value and Piecewise Functions
 
 **Absolute value definition:**
@@ -253,7 +253,7 @@ Absolute value is like **ATK/DEF values**—they're always non-negative! When yo
 
 ---
 
-<!-- tags: id:R-ALG-09, course:precalc, area:algebra, type:review-card, subtopic:function-transformations, yugioh:yes -->
+<!-- tags: id:R-ALG-09, course:precalc, area:algebra, type:review-card, subtopic:function-transformations, yugioh:yes, tier:1-essential -->
 ### R-ALG-09: Function Transformations
 
 **Transformation notation:** y = a·f(b(x - h)) + k
@@ -288,7 +288,7 @@ Transformations are like **equip spells modifying monster stats**! Vertical stre
 
 ---
 
-<!-- tags: id:R-ALG-10, course:precalc, area:algebra, type:review-card, subtopic:inequalities-sign-charts, yugioh:no -->
+<!-- tags: id:R-ALG-10, course:precalc, area:algebra, type:review-card, subtopic:inequalities-sign-charts, yugioh:no, tier:2-important -->
 ### R-ALG-10: Solving Inequalities and Sign Charts
 
 **Linear inequalities:**
@@ -321,7 +321,7 @@ Solve like equations, BUT: flip inequality sign when multiplying/dividing by neg
 
 ---
 
-<!-- tags: id:R-ALG-11, course:precalc, area:algebra, type:review-card, subtopic:exponentials-logs-basics, yugioh:yes -->
+<!-- tags: id:R-ALG-11, course:precalc, area:algebra, type:review-card, subtopic:exponentials-logs-basics, yugioh:yes, tier:1-essential -->
 ### R-ALG-11: Exponentials and Logarithms - Basics
 
 **Core relationship (definition of logarithm):**
@@ -353,7 +353,7 @@ Exponentials and logs are **Fusion and De-Fusion**! If Fusion (exponential) comb
 
 ---
 
-<!-- tags: id:R-ALG-12, course:precalc, area:algebra, type:review-card, subtopic:log-properties, yugioh:yes -->
+<!-- tags: id:R-ALG-12, course:precalc, area:algebra, type:review-card, subtopic:log-properties, yugioh:yes, tier:1-essential -->
 ### R-ALG-12: Logarithm Properties
 
 **Product rule:**
@@ -386,7 +386,7 @@ Log properties work like **Chain Links**! The product rule (addition) is like ch
 
 ---
 
-<!-- tags: id:R-ALG-13, course:precalc, area:algebra, type:review-card, subtopic:sequences-series, yugioh:yes -->
+<!-- tags: id:R-ALG-13, course:precalc, area:algebra, type:review-card, subtopic:sequences-series, yugioh:yes, tier:2-important -->
 ### R-ALG-13: Sequences and Series
 
 **Arithmetic sequence:** constant difference (d)
@@ -417,7 +417,7 @@ Arithmetic sequences are like **gradually powering up** in turns: "Gain 500 LP e
 
 ## 1B. Trigonometry Review Cards
 
-<!-- tags: id:R-TRIG-01, course:precalc, area:trig, type:review-card, subtopic:unit-circle-values, yugioh:yes -->
+<!-- tags: id:R-TRIG-01, course:precalc, area:trig, type:review-card, subtopic:unit-circle-values, yugioh:yes, tier:1-essential -->
 ### R-TRIG-01: The Unit Circle - Structure and Key Angles
 
 **Unit Circle definition:**
@@ -462,7 +462,7 @@ The unit circle is like the **Spell/Trap Card Zones** arranged in order! Start a
 
 ---
 
-<!-- tags: id:R-TRIG-02, course:precalc, area:trig, type:review-card, subtopic:six-trig-functions, yugioh:no -->
+<!-- tags: id:R-TRIG-02, course:precalc, area:trig, type:review-card, subtopic:six-trig-functions, yugioh:no, tier:1-essential -->
 ### R-TRIG-02: The Six Trigonometric Functions
 
 **Definitions from point (x, y) on terminal side, distance r from origin:**
@@ -497,7 +497,7 @@ The unit circle is like the **Spell/Trap Card Zones** arranged in order! Start a
 
 ---
 
-<!-- tags: id:R-TRIG-03, course:precalc, area:trig, type:review-card, subtopic:fundamental-identities, yugioh:yes -->
+<!-- tags: id:R-TRIG-03, course:precalc, area:trig, type:review-card, subtopic:fundamental-identities, yugioh:yes, tier:1-essential -->
 ### R-TRIG-03: Fundamental Trigonometric Identities
 
 **Pythagorean Identities:**
@@ -531,7 +531,7 @@ Pythagorean Identity (sin² + cos² = 1) is like the **fundamental rule "you can
 
 ---
 
-<!-- tags: id:R-TRIG-04, course:precalc, area:trig, type:review-card, subtopic:graphing-sinusoidal, yugioh:yes -->
+<!-- tags: id:R-TRIG-04, course:precalc, area:trig, type:review-card, subtopic:graphing-sinusoidal, yugioh:yes, tier:1-essential -->
 ### R-TRIG-04: Graphing Sinusoidal Functions
 
 **Standard form:**
@@ -571,7 +571,7 @@ Sinusoidal graphs are like **LP changes during a duel**! Amplitude (A) is the ma
 
 ## 1C. Calculus Review Cards
 
-<!-- tags: id:R-CALC-01, course:calculus, area:calculus, type:review-card, subtopic:limits-basics, yugioh:yes -->
+<!-- tags: id:R-CALC-01, course:calculus, area:calculus, type:review-card, subtopic:limits-basics, yugioh:yes, tier:1-essential -->
 ### R-CALC-01: Limits - Concept and Basic Evaluation
 
 **Limit definition:**
@@ -612,7 +612,7 @@ Limits are like **declaring an attack** but the monster hasn't reached the oppon
 
 ---
 
-<!-- tags: id:R-CALC-02, course:calculus, area:calculus, type:review-card, subtopic:derivative-rules, yugioh:yes -->
+<!-- tags: id:R-CALC-02, course:calculus, area:calculus, type:review-card, subtopic:derivative-rules, yugioh:yes, tier:1-essential -->
 ### R-CALC-02: Derivative Rules - Power, Product, Quotient, Chain
 
 **Basic derivatives (memorize!):**
@@ -647,7 +647,7 @@ Derivative rules are like **effect activation patterns**! Power rule is straight
 
 ---
 
-<!-- tags: id:R-CALC-03, course:calculus, area:calculus, type:review-card, subtopic:integration-basics, yugioh:no -->
+<!-- tags: id:R-CALC-03, course:calculus, area:calculus, type:review-card, subtopic:integration-basics, yugioh:no, tier:1-essential -->
 ### R-CALC-03: Integration - Antiderivatives and Basic Rules
 
 **Integration as "anti-derivative":**
@@ -677,7 +677,7 @@ Take the derivative! Should get original function back.
 
 ---
 
-<!-- tags: id:R-CALC-04, course:calculus, area:calculus, type:review-card, subtopic:applications-calculus, yugioh:yes -->
+<!-- tags: id:R-CALC-04, course:calculus, area:calculus, type:review-card, subtopic:applications-calculus, yugioh:yes, tier:1-essential -->
 ### R-CALC-04: Applications - Critical Points, Max/Min, Related Rates
 
 **Critical points:**
