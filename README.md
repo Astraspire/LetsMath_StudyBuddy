@@ -1,4 +1,4 @@
-# Lets Math!
+# Let's Math!
 
 An interactive web application for mastering precalculus and calculus concepts through multiple study modes: review cards, flashcards, quizzes, and comprehensive content search.
 

@@ -1,4 +1,4 @@
-# Lets Math! - Code Map & Developer Guide
+# Let's Math! - Code Map & Developer Guide
 
 **Last Updated:** 2026-02-18  
 **File Version:** LetsMath_App.html (~10,667 lines)  
