@@ -29,6 +29,9 @@ An interactive web application for mastering precalculus and calculus concepts t
 
 ### Navigation
 
+#### App Title
+- **Click "Let's Math!"**: Clicking the app title at the top navigates back to the Home tab from any section.
+
 #### Sidebar Menu
 - **Toggle Sidebar**: Click the hamburger menu (☰) in the top-left corner to open/close the navigation sidebar
 - **Quick Access**: Sidebar provides instant access to all major sections:
@@ -88,12 +91,18 @@ A powerful content browser that lets you find exactly what you need.
 Comprehensive concept cards with detailed explanations, formulas, and examples.
 
 **Features:**
-- **Topic Dropdown**: Jump directly to any topic using the dropdown menu
+- **Area Filter Dropdown**: Filter review cards by major section:
+  - Algebra Review — shows all algebra, exponentials/logs, and expanded precalc cards
+  - Trigonometry Review — shows all trig and expanded trig cards
+  - Calculus Review — shows all calculus cards
+  - Precalc General — shows sequences, limits preview, common mistakes, calculator skills
+  - All Topics (default) — shows every card
 - **Focus Mode**: Click any concept card to enter full-screen focus mode
-  - Exit with the × button or press `Esc`
+  - Exit with the "← Back to all topics" button
   - Minimizes distractions for deep study
 - **Color-Coded Cards**: Each subject area has a distinct color scheme
 - **Rich Content**: Includes formulas, tables, graphs, and step-by-step explanations
+- **Yu-Gi-Oh! Integration**: 31+ topics include optional Yu-Gi-Oh! themed analogies
 
 **Topics Include:**
 - Core Review: Functions, Factoring, Quadratics, Rational Functions, Lines, Transformations, etc.
@@ -125,12 +134,13 @@ Interactive study cards with question/answer flip functionality.
 - **Next/Previous arrows** - Navigate through the deck
 - **"🔀 Shuffle Cards"** - Randomize the deck order
 - **Topic Filter** - Dropdown to filter by topic group:
-  - Core Review (45 essential cards)
+  - Core Review (essential precalc/trig cards)
   - All Calculus (calculus cards)
-  - Expanded Precalc (35 advanced precalc cards)
-  - Expanded Trig (41 advanced trig cards)
+  - Expanded Precalc (advanced precalc cards)
+  - Expanded Trig (advanced trig cards)
 
 **Card Display:**
+- 141 total flashcard Q/A pairs across 47 flashcard items
 - Current position shown (e.g., "3 / 15")
 - Cards automatically filtered based on Yu-Gi-Oh! mode
 - Smooth flip animation
@@ -160,6 +170,16 @@ Test your knowledge with multiple-choice quizzes.
 - **Question Counter**: "Question X of 10"
 - **End Quiz Early**: Button to finish and see results before completing all questions
 - **Retry**: Start a new quiz at any time
+- **Full Results Panel**: After quiz completion, an expandable/collapsible panel shows per-question breakdown:
+  - Question text with all options listed
+  - Correct answer highlighted green, wrong answers struck through in red
+  - Skipped questions marked with gray indicator
+  - Defaults to collapsed; click "📋 View Full Results" to expand
+- **PDF Export**: Download a PDF of your quiz results
+- **Quiz History**: Past quiz attempts saved to localStorage with score, date, and percentage
+  - Per-item deletion via 🗑 trash icon on each history row
+  - "Clear All" button to reset entire history
+  - CSV export of all quiz results
 
 **Quiz Pool**: 89+ total questions across all topics
 
@@ -169,9 +189,9 @@ Test your knowledge with multiple-choice quizzes.
 
 #### Focus Mode
 - Click any review card to enter full-screen focus mode
-- Removes all navigation and distractions
-- Large, center-aligned content
-- Click × button to exit focus mode
+- Large, center-aligned content for deep study
+- Click "← Back to all topics" button to exit focus mode
+- Exiting focus mode resets any active area filter
 
 #### Yu-Gi-Oh! Mode
 - Toggle in sidebar to show/hide Yu-Gi-Oh! themed content
@@ -245,13 +265,14 @@ Each content item has these properties:
 - `course`: "precalc" or "calculus"
 - `area`: "algebra", "trig", "calculus", or "precalc-general"
 - `type`: "review-card", "expansion-review", "flashcard", or "quiz"
-- `subtopic`: Fine-grained classification (e.g., "unit-circle", "limits-preview")
+- `subtopic`: Fine-grained classification (e.g., "functions-domain-range", "factoring-patterns")
 - `tier`: "1-essential", "2-important", or "3-advanced" (for expansion content)
 - `code`: A1-A13 or B1-B14 (for expansion topics)
 - `yugioh`: "yes" or "no" (Yu-Gi-Oh! crossover availability)
 - `title`: Display title
-- `content`: The actual content (for review cards)
-- `q` and `a`: Question and answer (for flashcards)
+- `body`: The actual content text
+- `qa`: Array of `{q, a}` pairs (for flashcards)
+- `questions`: Array of `{q, opts, ans}` objects (for quiz items)
 
 #### ID Format Convention
 - `R-{AREA}-{##}` - Review Cards
@@ -271,6 +292,8 @@ Where `{AREA}` is:
 - **Tab Switching**: `switchTab(tab)` - Controls which section is visible
 - **Sidebar Toggle**: `toggleSidebar()` - Opens/closes navigation sidebar
 - **Hero Management**: `updateHero(activeTab)` - Fades hero image in/out
+- **Title Navigation**: Clicking the "Let's Math!" title (`#app-title`) calls `switchTab('home')`
+- **Review Area Filter**: `filterReviewByArea(area)` - Shows/hides review cards by major area using `REVIEW_AREA_MAP`
 
 #### 2. Flashcard Engine
 ```javascript
@@ -293,12 +316,17 @@ renderQuestionCard()  // Displays current question
 selectAnswer(idx)     // Records user's answer
 nextQuestion()        // Advances quiz
 prevQuestion()        // Goes back
-showQuizResults()     // Shows final score
+showResults()         // Shows final score + full results panel
+toggleQuizResultsPanel()  // Expand/collapse per-question breakdown
+deleteQuizHistoryItem(i)  // Remove individual history record
+refreshQuizHistorySection()  // Re-render quiz history
 ```
 
 - Quiz state: `quizState` object tracks current position, answers, submission status
 - Three question pools: `quizQuestions` (core), `calculusQuizPool`, `expansionQuizPool`
 - Combined pool: `allQuizQuestions` (89+ questions total)
+- Quiz history persisted in `localStorage` under `precalcQuizResults`
+- PDF export via `downloadQuizPDF()` and CSV export via `exportQuizResults()`
 
 #### 4. Directory Search
 ```javascript
@@ -317,12 +345,11 @@ handleDirectoryItemClick(id)   // Navigates to clicked item
 ```javascript
 // Core functions:
 enterFocusMode(element)  // Enters full-screen card view
-exitFocusMode()          // Returns to normal view
+exitFocusMode()          // Returns to normal view, resets area filter
 ```
 
 - Creates overlay and cloned card
-- Keyboard support (Esc to exit)
-- Click-outside-to-close support
+- Exiting resets `display: ''` on all cards and area filter dropdown
 
 #### 6. Area Cards (Home Page)
 ```javascript
@@ -368,6 +395,9 @@ Used for dropdown navigation and cross-referencing.
 - `.area-card` - Home page area cards
 - `.sidebar` - Navigation sidebar
 - `.focus-overlay` - Focus mode overlay
+- `.quiz-results-collapsible` - Expandable/collapsible full results panel
+- `.quiz-result-item` - Per-question result card (`.correct`, `.incorrect`, `.skipped`)
+- `.quiz-history-delete` - Per-item trash delete button in quiz history
 
 **Utility Classes:**
 - Color modifiers: `.area-algebra`, `.area-trig`, etc.
@@ -390,7 +420,7 @@ Used for dropdown navigation and cross-referencing.
 3. **State Management**:
    - Global variables for state (no framework needed)
    - Synchronization between tabs via shared state variables
-   - LocalStorage not currently used (stateless across sessions)
+   - `localStorage` used for quiz history persistence (`precalcQuizResults`)
 
 ### Browser Compatibility
 
@@ -402,8 +432,9 @@ Used for dropdown navigation and cross-referencing.
 ### Content Source
 
 The content is derived from `Organized-Content-Library.md`:
-- Structured markdown with HTML comment tags
-- Schema defined at top of file
+- Structured markdown with HTML comment tags for tagging (id, course, area, type, subtopic, yugioh, tier, code)
+- 150 tagged content items: 38 review cards, 27 expansion reviews, 47 flashcard items (141 Q/A pairs), 38 quiz items
+- 31+ topics include Yu-Gi-Oh! crossover analogies
 - Content extracted and transformed into `CONTENT_INDEX_DATA`
 - To update content: modify library file, then regenerate index data
 
@@ -433,11 +464,15 @@ The content is derived from `Organized-Content-Library.md`:
 | Feature | Location | Purpose |
 |---------|----------|---------|
 | Comprehensive topics | Review Tab | Deep study and understanding |
+| Area filtering | Review Dropdown | Show only Algebra, Trig, Calculus, or Precalc General cards |
 | Quick memorization | Flashcards | Active recall practice |
 | Self-testing | Quiz Mode | Knowledge assessment |
+| Full quiz results | Quiz Results Panel | Per-question breakdown after quiz |
+| Quiz history | Quiz History Section | Track past attempts, delete individual records |
 | Find specific content | Directory | Advanced search and filtering |
 | Unit circle reference | Unit Circle Tab | Quick angle/value lookup |
 | Subject overview | Home | Navigate by subject area |
+| Title navigation | App Title | Click "Let's Math!" to return Home |
 
 ---
 
