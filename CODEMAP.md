@@ -28,7 +28,7 @@
 - **Organized-Content-Library.md**: 1,433 lines (content source)
 - **README.md**: 469 lines (user & developer documentation)
 - **Total Quiz Questions**: 89 (15 legacy precalc + 35 calculus + 39 expansion)
-- **Total Flashcards**: 120+ items
+- **Total Flashcards**: 121 items (45 core + 76 expansion: 35 precalc + 41 trig)
 - **Expansion Topics**: 27 (A1-A13 precalc + B1-B14 trig)
 
 ### Key Technologies
@@ -571,8 +571,8 @@ var TOPICS = [
 - `--color-primary-active`: Active state
 
 #### Subject Area Colors
-- **Algebra**: Purple/violet (`--color-purple-*`)
-- **Trigonometry**: Blue (`--color-blue-*`)
+- **Algebra**: Teal/cyan (`--color-teal-*`)
+- **Trigonometry**: Purple (`--color-purple-*`)
 - **Calculus**: Green (`--color-green-*`)
 - **Precalc General**: Orange/amber (`--color-orange-*`)
 

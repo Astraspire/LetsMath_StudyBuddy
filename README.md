@@ -125,10 +125,10 @@ Interactive study cards with question/answer flip functionality.
 - **Next/Previous arrows** - Navigate through the deck
 - **"🔀 Shuffle Cards"** - Randomize the deck order
 - **Topic Filter** - Dropdown to filter by topic group:
-  - Core Review (15 essential cards)
-  - All Calculus (14 calculus cards)
-  - Expanded Precalc (13 advanced precalc cards)
-  - Expanded Trig (14 advanced trig cards)
+  - Core Review (45 essential cards)
+  - All Calculus (calculus cards)
+  - Expanded Precalc (35 advanced precalc cards)
+  - Expanded Trig (41 advanced trig cards)
 
 **Card Display:**
 - Current position shown (e.g., "3 / 15")
@@ -180,8 +180,8 @@ Test your knowledge with multiple-choice quizzes.
 - All content remains educational and relevant to the math topics
 
 #### Color-Coded System
-- **Algebra**: Purple/violet theme
-- **Trigonometry**: Blue theme  
+- **Algebra**: Teal/cyan theme
+- **Trigonometry**: Purple theme  
 - **Calculus**: Green theme
 - **Precalc-General**: Orange/amber theme
 - **Mixed/Neutral**: Slate gray
