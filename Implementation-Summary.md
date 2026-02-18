@@ -168,7 +168,7 @@ Read `Agent-Implementation-Guide.md` to understand:
 Replace your current `Organized-Content-Library.md` with `Updated-Organized-Content-Library.md` in your project directory.
 
 ### Step 3: Update Web App Data Structure
-Have your coding agent modify `Study-Buddy_App.html`:
+Have your coding agent modify `LetsMath_App.html`:
 
 1. **Update CONTENT_INDEX_DATA:**
    - Re-parse the updated content library

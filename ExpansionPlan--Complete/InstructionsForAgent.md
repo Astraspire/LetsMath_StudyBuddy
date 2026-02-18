@@ -1,8 +1,8 @@
 Study App – Single‑File HTML Implementation Plan
 
-All content and logic must live in Study-Buddy_App.html. This plan assumes:
+All content and logic must live in LetsMath_App.html. This plan assumes:
 
-    The agent can edit Study-Buddy_App.html directly.​
+    The agent can edit LetsMath_App.html directly.​
 
     The agent can reference Website-Content-Inventory.md, Precalc.pdf, and Trigonometry.pdf for content.
 
@@ -12,7 +12,7 @@ All content and logic must live in Study-Buddy_App.html. This plan assumes:
 
     Map Current Sections
 
-        In Study-Buddy_App.html, locate:
+        In LetsMath_App.html, locate:
 
             The Review tab content (static notes, unit circle, algebra, etc.).​
 
@@ -114,7 +114,7 @@ All content and logic must live in Study-Buddy_App.html. This plan assumes:
 
     Inspect JS Structure
 
-        Locate the JS array(s) that hold flashcards in Study-Buddy_App.html (e.g., flashcards = [...]).​
+        Locate the JS array(s) that hold flashcards in LetsMath_App.html (e.g., flashcards = [...]).​
 
         Determine fields:
 
@@ -320,7 +320,7 @@ Same pattern, but these can be shorter initial writeups.
 
 Because everything is in one file:
 
-    At the bottom of Study-Buddy_App.html, add a maintenance comment block or <pre> log:
+    At the bottom of LetsMath_App.html, add a maintenance comment block or <pre> log:
 
     xml
     <!--

@@ -436,7 +436,7 @@ if (appTitle) {
 
 - **No frameworks** – vanilla JS only. [1]
 - Maintain current **CSS variable system** and color‑coding by area. [1]
-- Keep all changes within the **single HTML file** layout (Study-BuddyApp.html).
+- Keep all changes within the **single HTML file** layout (LetsMath_App.html).
 - Do not change existing IDs or class names unless necessary; prefer adding new ones.
 
 ***

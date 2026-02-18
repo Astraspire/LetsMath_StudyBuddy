@@ -1,4 +1,4 @@
-# Let's Math! - Pre-Calculus Study Buddy
+# Lets Math!
 
 An interactive web application for mastering precalculus and calculus concepts through multiple study modes: review cards, flashcards, quizzes, and comprehensive content search.
 
@@ -23,7 +23,7 @@ An interactive web application for mastering precalculus and calculus concepts t
 
 ### Getting Started
 
-1. **Open the App**: Simply open `Study-Buddy_App.html` in any modern web browser (Chrome, Firefox, Safari, Edge).
+1. **Open the App**: Simply open `LetsMath_App.html` in any modern web browser (Chrome, Firefox, Safari, Edge).
 2. **No Installation Required**: This is a self-contained single-page application - no server or dependencies needed.
 3. **Works Offline**: Once loaded, the app works completely offline.
 
@@ -226,7 +226,7 @@ When you navigate to a specific topic in one mode, the app remembers it when you
 
 ```
 LetsMath_StudyBuddy/
-├── Study-Buddy_App.html                    # Main application (single-page app)
+├── LetsMath_App.html                    # Main application (single-page app)
 ├── Organized-Content-Library.md            # Content source with structured tagging (includes tier tags)
 ├── Updated-Organized-Content-Library.md    # Updated content library with tier assignments
 ├── README.md                               # This file (user & developer documentation)
@@ -240,7 +240,7 @@ LetsMath_StudyBuddy/
 ### Architecture
 
 **Single-Page Application (SPA)**
-- Everything is contained in one HTML file: `Study-Buddy_App.html`
+- Everything is contained in one HTML file: `LetsMath_App.html`
 - No external dependencies (no npm, no build process)
 - Self-contained: all CSS and JavaScript inline
 - Data embedded as JavaScript object literals

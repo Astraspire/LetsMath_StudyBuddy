@@ -2,7 +2,7 @@
 
 You have:
 
-- `Study-Buddy_App.html` (single‑file app).
+- `LetsMath_App.html` (single‑file app).
 - `Study_App_Expansion_Plan.md` – full topic list: key points, formulas, flashcards, quizzes, Yu‑Gi‑Oh! notes.
 - `Study_App_Expansion_Plan_partial-additional.md` – overlapping subset/backup slice of the main plan.
 - `Website-Content-Inventory.md`.
@@ -48,7 +48,7 @@ Rule: Do not invent new content. Use the two plan markdown files as the canonica
    - B13. Applications of Sinusoids / Harmonic Motion → `trig_harmonic_motion`
    - B14. Conic Sections in Polar Form / Rotation of Axes → `trig_polar_conics`
 
-3. Inside `Study-Buddy_App.html`, add a script block with a topics registry:
+3. Inside `LetsMath_App.html`, add a script block with a topics registry:
 
 ```js
 const TOPICS = [
@@ -74,7 +74,7 @@ For every topic A1–A13, B1–B14 in `Study_App_Expansion_Plan.md`:
    - `Quiz`
    - Optional `Yu-Gi-Oh! Crossover`
 
-2. In the Review tab area inside `Study-Buddy_App.html`, create a section:
+2. In the Review tab area inside `LetsMath_App.html`, create a section:
 
 ```html
 <section id="precalc_domain_range" class="topic-section">
@@ -120,7 +120,7 @@ For every topic A1–A13, B1–B14 in `Study_App_Expansion_Plan.md`:
 
 ### 3.1 Normalize Flashcard Data Structure in HTML
 
-1. In `Study-Buddy_App.html`, locate the JavaScript structure that holds flashcards. Standardize it to something like:
+1. In `LetsMath_App.html`, locate the JavaScript structure that holds flashcards. Standardize it to something like:
 
 ```js
 const FLASHCARDS = [
@@ -198,7 +198,7 @@ function getFlashcardsForTopic(topicId) {
 
 ### 4.1 Normalize Quiz Data Structure in HTML
 
-1. In `Study-Buddy_App.html`, locate the quiz question data. Standardize it to:
+1. In `LetsMath_App.html`, locate the quiz question data. Standardize it to:
 
 ```js
 const QUIZ_QUESTIONS = [
@@ -364,7 +364,7 @@ let currentTopicId = null;
 
 ## 7. Maintenance and Progress Logging Inside the HTML
 
-1. At the bottom of `Study-Buddy_App.html`, add a multi-line comment with a simple log:
+1. At the bottom of `LetsMath_App.html`, add a multi-line comment with a simple log:
 
 ```html
 <!--
