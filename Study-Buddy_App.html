@@ -827,6 +827,47 @@
             border-top: 1px solid var(--color-dark-border);
         }
 
+        .quiz-result-meta {
+            margin-top: 4px;
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .quiz-tag {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 4px;
+            margin-bottom: 2px;
+        }
+
+        .quiz-tag-area {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+        }
+
+        .quiz-tag-subtopic {
+            background: rgba(148, 163, 184, 0.15);
+            color: #e5e7eb;
+            cursor: pointer;
+        }
+
+        .quiz-tag-subtopic:hover {
+            opacity: 1;
+            background: rgba(148, 163, 184, 0.3);
+        }
+
+        .quiz-tag-id {
+            background: rgba(15, 23, 42, 0.8);
+            color: #f9fafb;
+        }
+
+        .concept-card.highlight {
+            outline: 3px solid var(--color-teal-400, #2dd4bf);
+            outline-offset: 2px;
+            transition: outline 0.3s ease;
+        }
+
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -9985,11 +10026,40 @@
         }
 
         // ===== QUIZ FUNCTIONS =====
+        function deriveQuizArea(question) {
+            // Derive area from subtopic, topicId, or group
+            var sub = question.subtopic || '';
+            var tid = question.topicId || '';
+            var grp = question.group || '';
+            if (grp === 'calculus') return 'calculus';
+            if (tid.startsWith('trig_')) return 'trig';
+            if (tid.startsWith('precalc_')) return 'algebra';
+            // Core pool subtopic mapping
+            var trigSubs = ['unit-circle', 'trig-identities', 'sinusoidal-models'];
+            if (trigSubs.indexOf(sub) !== -1) return 'trig';
+            if (sub) return 'algebra';
+            return 'precalc-general';
+        }
+
+        function deriveQuizSubtopic(question) {
+            return question.subtopic || question.topicId || '';
+        }
+
+        function friendlyArea(area) {
+            var map = { 'algebra': 'Algebra', 'trig': 'Trigonometry', 'calculus': 'Calculus', 'precalc-general': 'Precalc General' };
+            return map[area] || area;
+        }
+
         function initQuiz() {
             var pool = getFilteredQuizPool();
             var shuffled = pool.sort(function() { return Math.random() - 0.5; });
             var count = Math.min(10, shuffled.length);
-            var selected = shuffled.slice(0, count);
+            var selected = shuffled.slice(0, count).map(function(q) {
+                // Enrich each question with area and subtopic for result tagging
+                if (!q._area) q._area = deriveQuizArea(q);
+                if (!q._subtopic) q._subtopic = deriveQuizSubtopic(q);
+                return q;
+            });
             quizState = {
                 current: 0,
                 answers: new Array(count).fill(null),
@@ -10137,10 +10207,18 @@
                     explanation = 'Your answer: ' + optLetter(userAns) + ') ' + q.opts[userAns] + ' ✗ — Correct: ' + optLetter(q.ans) + ') ' + q.opts[q.ans];
                 }
 
+                var qArea = q._area || deriveQuizArea(q);
+                var qSubtopic = q._subtopic || deriveQuizSubtopic(q);
+                var metaHtml = '<div class="quiz-result-meta">'
+                    + '<span class="quiz-tag quiz-tag-area">' + friendlyArea(qArea) + '</span>'
+                    + '<span class="quiz-tag quiz-tag-subtopic" onclick="handleQuizTagClick(\'' + qSubtopic.replace(/'/g, "\\'") + '\')">' + qSubtopic + '</span>'
+                    + '</div>';
+
                 resultsBreakdownHtml += '<div class="quiz-result-item ' + statusClass + '">'
                     + '<div class="quiz-result-question">Q' + (idx + 1) + '. ' + q.q + '</div>'
                     + '<ul class="quiz-result-options">' + optsHtml + '</ul>'
                     + '<div class="quiz-result-explanation">' + explanation + '</div>'
+                    + metaHtml
                     + '</div>';
             });
 
@@ -10228,7 +10306,9 @@
                         q: q.q,
                         opts: q.opts,
                         ans: q.ans,
-                        tags: [q.subtopic || q.topicId || '', q.group || ''].filter(Boolean)
+                        tags: [q.subtopic || q.topicId || '', q.group || ''].filter(Boolean),
+                        area: q._area || deriveQuizArea(q),
+                        subtopic: q._subtopic || deriveQuizSubtopic(q)
                     };
                 }),
                 userAnswers: quizState.answers.slice()
@@ -10284,11 +10364,27 @@
                 return;
             }
 
-            let csv = 'Attempt,Date,Correct,Total,Percent\n';
+            let csv = 'Attempt,Date,Correct,Total,Percent,Question,Area,Subtopic,UserAnswer,CorrectAnswer,Result\n';
             history.forEach((r, i) => {
                 const d = new Date(r.date);
                 const dateStr = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                csv += `${i + 1},"${dateStr}",${r.correct},${r.total},${r.percent}%\n`;
+                if (r.questions && r.questions.length > 0) {
+                    var userAnswers = r.userAnswers || [];
+                    r.questions.forEach((q, qi) => {
+                        var userAns = qi < userAnswers.length ? userAnswers[qi] : null;
+                        var isCorrect = userAns !== null && userAns === q.ans;
+                        var isSkipped = userAns === null;
+                        var result = isSkipped ? 'skipped' : (isCorrect ? 'correct' : 'incorrect');
+                        var qArea = q.area || '';
+                        var qSub = q.subtopic || (q.tags ? q.tags[0] : '') || '';
+                        var qText = q.q.replace(/"/g, '""');
+                        var userAnsText = userAns !== null && q.opts ? q.opts[userAns] : '';
+                        var correctAnsText = q.opts ? q.opts[q.ans] : '';
+                        csv += `${i + 1},"${dateStr}",${r.correct},${r.total},${r.percent}%,"${qText}","${qArea}","${qSub}","${userAnsText}","${correctAnsText}",${result}\n`;
+                    });
+                } else {
+                    csv += `${i + 1},"${dateStr}",${r.correct},${r.total},${r.percent}%,,,,,,\n`;
+                }
             });
 
             const blob = new Blob([csv], { type: 'text/csv' });
@@ -10376,7 +10472,13 @@
                     optTexts.push(wrapped);
                     optionLines += wrapped.length;
                 }
-                var tagLine = (q.tags && q.tags.length > 0) ? q.tags.join(', ') : '';
+                var tagParts = [];
+                if (q.area) tagParts.push(q.area);
+                if (q.subtopic) tagParts.push(q.subtopic);
+                if (q.tags && q.tags.length > 0) {
+                    q.tags.forEach(function(t) { if (tagParts.indexOf(t) === -1) tagParts.push(t); });
+                }
+                var tagLine = tagParts.length > 0 ? tagParts.join(', ') : '';
                 var cardHeight = 12 + (wrappedQ.length * 5) + 4 + (optionLines * 5.5) + (q.opts.length * 2) + (tagLine ? 10 : 4) + 4;
 
                 // Check if card fits on current page
@@ -10797,6 +10899,40 @@
             'graphing-with-derivatives':'topic-graphing-derivatives',
             'calculator-skills':'topic-calculator'
         };
+
+        function handleQuizTagClick(subtopic) {
+            switchTab('review');
+            // Reset area filter to show all topics
+            var reviewSelect = document.getElementById('reviewTopicSelect');
+            if (reviewSelect) {
+                reviewSelect.value = '';
+                filterReviewByArea('');
+            }
+            // Try to find a review card for this subtopic
+            var el = null;
+            // Check SUBTOPIC_TO_ELEMENT first
+            if (SUBTOPIC_TO_ELEMENT[subtopic]) {
+                el = document.getElementById(SUBTOPIC_TO_ELEMENT[subtopic]);
+            }
+            if (!el) {
+                el = document.getElementById('topic-' + subtopic);
+            }
+            // Fallback: search CONTENT_INDEX_DATA for a review card with this subtopic
+            if (!el && contentIndex && contentIndex.items) {
+                for (var i = 0; i < contentIndex.items.length; i++) {
+                    var item = contentIndex.items[i];
+                    if (item.subtopic === subtopic && item.type === 'review-card') {
+                        el = findReviewCardElement(item.id);
+                        if (el) break;
+                    }
+                }
+            }
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                el.classList.add('highlight');
+                setTimeout(function() { el.classList.remove('highlight'); }, 2500);
+            }
+        }
 
         function findReviewCardElement(id) {
             // 1. Direct data-id lookup (scoped to review section only)
