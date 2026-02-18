@@ -10026,23 +10026,23 @@
                 var isCorrect = userAns !== null && userAns === q.ans;
                 var isSkipped = userAns === null;
                 var statusClass = isSkipped ? 'skipped' : (isCorrect ? 'correct' : 'incorrect');
-                var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+                function optLetter(i) { return String.fromCharCode(65 + i); }
 
                 var optsHtml = '';
                 q.opts.forEach(function(opt, oi) {
                     var liClass = '';
                     if (oi === q.ans) liClass = 'option-correct';
                     if (oi === userAns && userAns !== q.ans) liClass = 'option-user-wrong';
-                    optsHtml += '<li class="' + liClass + '">' + letters[oi] + ') ' + opt + '</li>';
+                    optsHtml += '<li class="' + liClass + '">' + optLetter(oi) + ') ' + opt + '</li>';
                 });
 
                 var explanation = '';
                 if (isSkipped) {
-                    explanation = 'Skipped — Correct answer: ' + letters[q.ans] + ') ' + q.opts[q.ans];
+                    explanation = 'Skipped — Correct answer: ' + optLetter(q.ans) + ') ' + q.opts[q.ans];
                 } else if (isCorrect) {
-                    explanation = 'Your answer: ' + letters[userAns] + ') ' + q.opts[userAns] + ' ✓';
+                    explanation = 'Your answer: ' + optLetter(userAns) + ') ' + q.opts[userAns] + ' ✓';
                 } else {
-                    explanation = 'Your answer: ' + letters[userAns] + ') ' + q.opts[userAns] + ' ✗ — Correct: ' + letters[q.ans] + ') ' + q.opts[q.ans];
+                    explanation = 'Your answer: ' + optLetter(userAns) + ') ' + q.opts[userAns] + ' ✗ — Correct: ' + optLetter(q.ans) + ') ' + q.opts[q.ans];
                 }
 
                 resultsBreakdownHtml += '<div class="quiz-result-item ' + statusClass + '">'
