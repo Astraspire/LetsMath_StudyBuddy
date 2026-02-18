@@ -707,7 +707,108 @@
             margin-top: var(--space-16);
         }
 
+        /* Quiz Full Results Collapsible Panel */
+        .quiz-results-collapsible {
+            max-width: 700px;
+            margin: var(--space-16) auto 0;
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--color-primary);
+            background: rgba(45, 212, 191, 0.05);
+            overflow: hidden;
+        }
 
+        .quiz-results-header {
+            padding: var(--space-12) var(--space-16);
+        }
+
+        .quiz-results-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 1.0rem;
+            color: var(--color-primary);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-8) 0;
+        }
+
+        .quiz-results-toggle:hover {
+            color: var(--color-primary-hover);
+        }
+
+        .quiz-results-arrow {
+            font-size: 1.2rem;
+            transition: transform var(--duration-normal) ease;
+        }
+
+        .quiz-results-collapsible.collapsed .quiz-results-body {
+            display: none;
+        }
+
+        .quiz-results-collapsible.expanded .quiz-results-body {
+            display: block;
+            padding: 0 var(--space-16) var(--space-16);
+        }
+
+        .quiz-result-item {
+            padding: var(--space-12);
+            margin-bottom: var(--space-12);
+            border-radius: var(--radius-base);
+            border: 1px solid var(--color-dark-border);
+            background: var(--color-dark-surface);
+        }
+
+        .quiz-result-item.correct {
+            border-left: 4px solid var(--color-green-500);
+        }
+
+        .quiz-result-item.incorrect {
+            border-left: 4px solid var(--color-red-500);
+        }
+
+        .quiz-result-item.skipped {
+            border-left: 4px solid var(--color-gray-300);
+        }
+
+        .quiz-result-question {
+            font-weight: 600;
+            margin-bottom: var(--space-8);
+            color: var(--color-text);
+        }
+
+        .quiz-result-options {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--space-8) 0;
+        }
+
+        .quiz-result-options li {
+            padding: 4px var(--space-8);
+            margin-bottom: 2px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        .quiz-result-options li.option-correct {
+            color: var(--color-green-500);
+            font-weight: 600;
+        }
+
+        .quiz-result-options li.option-user-wrong {
+            color: var(--color-red-500);
+            text-decoration: line-through;
+        }
+
+        .quiz-result-explanation {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--color-dark-border);
+        }
 
         @keyframes slideDown {
             from {
@@ -9918,6 +10019,39 @@
                 : 'Quiz Complete!';
             var incorrectCount = total - correct;
 
+            // Build per-question results breakdown
+            var resultsBreakdownHtml = '';
+            quizState.activeQuiz.forEach(function(q, idx) {
+                var userAns = quizState.answers[idx];
+                var isCorrect = userAns !== null && userAns === q.ans;
+                var isSkipped = userAns === null;
+                var statusClass = isSkipped ? 'skipped' : (isCorrect ? 'correct' : 'incorrect');
+                var letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+                var optsHtml = '';
+                q.opts.forEach(function(opt, oi) {
+                    var liClass = '';
+                    if (oi === q.ans) liClass = 'option-correct';
+                    if (oi === userAns && userAns !== q.ans) liClass = 'option-user-wrong';
+                    optsHtml += '<li class="' + liClass + '">' + letters[oi] + ') ' + opt + '</li>';
+                });
+
+                var explanation = '';
+                if (isSkipped) {
+                    explanation = 'Skipped — Correct answer: ' + letters[q.ans] + ') ' + q.opts[q.ans];
+                } else if (isCorrect) {
+                    explanation = 'Your answer: ' + letters[userAns] + ') ' + q.opts[userAns] + ' ✓';
+                } else {
+                    explanation = 'Your answer: ' + letters[userAns] + ') ' + q.opts[userAns] + ' ✗ — Correct: ' + letters[q.ans] + ') ' + q.opts[q.ans];
+                }
+
+                resultsBreakdownHtml += '<div class="quiz-result-item ' + statusClass + '">'
+                    + '<div class="quiz-result-question">Q' + (idx + 1) + '. ' + q.q + '</div>'
+                    + '<ul class="quiz-result-options">' + optsHtml + '</ul>'
+                    + '<div class="quiz-result-explanation">' + explanation + '</div>'
+                    + '</div>';
+            });
+
             const container = document.getElementById('quizContent');
             container.innerHTML = `
                 <div class="results-container">
@@ -9940,6 +10074,18 @@
                     <button class="btn btn-secondary" onclick="downloadQuizPDF()" style="margin-left: 8px;">Download PDF</button>
                 </div>
 
+                <div id="quiz-results-details" class="quiz-results-collapsible collapsed">
+                    <div class="quiz-results-header">
+                        <button id="quiz-results-toggle" class="quiz-results-toggle" onclick="toggleQuizResultsPanel()">
+                            <span class="quiz-results-title">📋 View Full Results</span>
+                            <span class="quiz-results-arrow">▸</span>
+                        </button>
+                    </div>
+                    <div class="quiz-results-body">
+                        ${resultsBreakdownHtml}
+                    </div>
+                </div>
+
                 <div class="quiz-history-section">
                     <h3 style="color: var(--color-text); margin-bottom: var(--space-16);">Past Results</h3>
                     ${renderQuizHistory()}
@@ -9953,6 +10099,26 @@
 
         function switchToQuiz() {
             initQuiz();
+        }
+
+        function toggleQuizResultsPanel() {
+            var details = document.getElementById('quiz-results-details');
+            var arrow = details ? details.querySelector('.quiz-results-arrow') : null;
+            var title = details ? details.querySelector('.quiz-results-title') : null;
+            if (!details) return;
+
+            var isCollapsed = details.classList.contains('collapsed');
+            if (isCollapsed) {
+                details.classList.remove('collapsed');
+                details.classList.add('expanded');
+                if (arrow) arrow.textContent = '▾';
+                if (title) title.textContent = '📋 Hide Full Results';
+            } else {
+                details.classList.remove('expanded');
+                details.classList.add('collapsed');
+                if (arrow) arrow.textContent = '▸';
+                if (title) title.textContent = '📋 View Full Results';
+            }
         }
 
         // ===== QUIZ RESULTS PERSISTENCE =====
