@@ -589,8 +589,8 @@ var TOPICS = [
 
 #### Area-Specific Modifiers
 ```css
-.area-algebra   /* Purple theme */
-.area-trig      /* Blue theme */
+.area-algebra   /* Teal/cyan theme */
+.area-trig      /* Purple theme */
 .area-calculus  /* Green theme */
 .area-precalc-general  /* Orange theme */
 ```
@@ -864,8 +864,8 @@ These make navigation easier in large files.
 1. **Change Area Colors:**
 ```css
 /* Find area-specific color variables */
-.area-algebra { --area-color: var(--color-purple-500); }
-.area-trig { --area-color: var(--color-blue-500); }
+.area-algebra { --area-color: var(--color-teal-500); }
+.area-trig { --area-color: var(--color-purple-500); }
 /* etc. */
 ```
 
