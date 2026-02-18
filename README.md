@@ -77,7 +77,7 @@ A powerful content browser that lets you find exactly what you need.
    - **Course**: Precalc or Calculus
    - **Area**: Algebra, Trig, Calculus, Precalc-General
    - **Subtopic**: Fine-grained topics (e.g., "unit-circle", "exponentials")
-   - **Tier**: For expansion content - 1-essential, 2-important, 3-advanced
+   - **Tier**: For review and expansion content - 1-essential, 2-important, 3-advanced
 
 3. **View Results**:
    - Results show as colored cards with tags
@@ -174,12 +174,15 @@ Test your knowledge with multiple-choice quizzes.
   - Question text with all options listed
   - Correct answer highlighted green, wrong answers struck through in red
   - Skipped questions marked with gray indicator
+  - **Topic tags** below each question showing area (e.g., "Algebra") and clickable subtopic
+  - Clicking a subtopic tag navigates to the matching review card in the Review Topics tab with a brief highlight
   - Defaults to collapsed; click "📋 View Full Results" to expand
-- **PDF Export**: Download a PDF of your quiz results
+- **PDF Export**: Download a PDF of your quiz results (includes topic tags)
 - **Quiz History**: Past quiz attempts saved to localStorage with score, date, and percentage
+  - **Topic tags** displayed below each history entry showing areas and clickable subtopics covered
   - Per-item deletion via 🗑 trash icon on each history row
   - "Clear All" button to reset entire history
-  - CSV export of all quiz results
+  - CSV export of all quiz results (includes per-question area, subtopic, and result)
 
 **Quiz Pool**: 89+ total questions across all topics
 
@@ -223,13 +226,15 @@ When you navigate to a specific topic in one mode, the app remembers it when you
 
 ```
 LetsMath_StudyBuddy/
-├── Study-Buddy_App.html           # Main application (single-page app)
-├── Organized-Content-Library.md   # Content source with structured tagging
-├── README.md                       # This file (user & developer documentation)
-├── CODEMAP.md                      # Code map & developer navigation guide
-├── IMPLEMENTATION_SUMMARY.md      # Development notes
-├── ExpansionPlan--Complete/       # Planning documents for expanded content
-└── UpdatePlan/                    # Update planning documents
+├── Study-Buddy_App.html                    # Main application (single-page app)
+├── Organized-Content-Library.md            # Content source with structured tagging (includes tier tags)
+├── Updated-Organized-Content-Library.md    # Updated content library with tier assignments
+├── README.md                               # This file (user & developer documentation)
+├── CODEMAP.md                              # Code map & developer navigation guide
+├── IMPLEMENTATION_SUMMARY.md               # Development notes
+├── TieredTag_DisplayFormat_UpdateInstructions.md  # Update instructions for tiered tag system
+├── ExpansionPlan--Complete/                # Planning documents for expanded content
+└── UpdatePlan/                             # Update planning documents
 ```
 
 ### Architecture
@@ -266,7 +271,7 @@ Each content item has these properties:
 - `area`: "algebra", "trig", "calculus", or "precalc-general"
 - `type`: "review-card", "expansion-review", "flashcard", or "quiz"
 - `subtopic`: Fine-grained classification (e.g., "functions-domain-range", "factoring-patterns")
-- `tier`: "1-essential", "2-important", or "3-advanced" (for expansion content)
+- `tier`: "1-essential", "2-important", or "3-advanced" (for review cards and expansion content)
 - `code`: A1-A13 or B1-B14 (for expansion topics)
 - `yugioh`: "yes" or "no" (Yu-Gi-Oh! crossover availability)
 - `title`: Display title
@@ -327,6 +332,8 @@ refreshQuizHistorySection()  // Re-render quiz history
 - Combined pool: `allQuizQuestions` (89+ questions total)
 - Quiz history persisted in `localStorage` under `precalcQuizResults`
 - PDF export via `downloadQuizPDF()` and CSV export via `exportQuizResults()`
+- Topic tagging: `deriveQuizArea()`, `deriveQuizSubtopic()`, `friendlyArea()` derive metadata for quiz result tags
+- Result navigation: `handleQuizTagClick(subtopic)` navigates from quiz results/history to matching review card with highlight
 
 #### 4. Directory Search
 ```javascript
@@ -397,7 +404,11 @@ Used for dropdown navigation and cross-referencing.
 - `.focus-overlay` - Focus mode overlay
 - `.quiz-results-collapsible` - Expandable/collapsible full results panel
 - `.quiz-result-item` - Per-question result card (`.correct`, `.incorrect`, `.skipped`)
+- `.quiz-result-meta` - Topic tag container in quiz result items
+- `.quiz-tag` - Base class for topic tags (`.quiz-tag-area`, `.quiz-tag-subtopic`, `.quiz-tag-id`)
+- `.quiz-history-meta` - Topic tag container in quiz history rows
 - `.quiz-history-delete` - Per-item trash delete button in quiz history
+- `.concept-card.highlight` - Temporary highlight when navigating from quiz tags to review cards
 
 **Utility Classes:**
 - Color modifiers: `.area-algebra`, `.area-trig`, etc.
@@ -431,9 +442,9 @@ Used for dropdown navigation and cross-referencing.
 
 ### Content Source
 
-The content is derived from `Organized-Content-Library.md`:
+The content is derived from `Organized-Content-Library.md` (updated with tier tags):
 - Structured markdown with HTML comment tags for tagging (id, course, area, type, subtopic, yugioh, tier, code)
-- 150 tagged content items: 38 review cards, 27 expansion reviews, 47 flashcard items (141 Q/A pairs), 38 quiz items
+- 150 tagged content items: 38 review cards (with tier tags), 27 expansion reviews, 47 flashcard items (141 Q/A pairs), 38 quiz items
 - 31+ topics include Yu-Gi-Oh! crossover analogies
 - Content extracted and transformed into `CONTENT_INDEX_DATA`
 - To update content: modify library file, then regenerate index data
@@ -441,9 +452,9 @@ The content is derived from `Organized-Content-Library.md`:
 ### Expansion Content
 
 **Tiered System:**
-- **Tier 1 (Essential)**: Must-know topics for strong foundation
-- **Tier 2 (Important)**: Commonly needed, high-value topics
-- **Tier 3 (Advanced)**: Deeper dives, specialized applications
+- **Tier 1 (Essential)**: Must-know topics for strong foundation (applies to both review cards and expansion content)
+- **Tier 2 (Important)**: Commonly needed, high-value topics (applies to both review cards and expansion content)
+- **Tier 3 (Advanced)**: Deeper dives, specialized applications (expansion content only)
 
 **Topic Coverage:**
 - **A-Series (A1-A13)**: Advanced precalculus topics
@@ -467,9 +478,10 @@ The content is derived from `Organized-Content-Library.md`:
 | Area filtering | Review Dropdown | Show only Algebra, Trig, Calculus, or Precalc General cards |
 | Quick memorization | Flashcards | Active recall practice |
 | Self-testing | Quiz Mode | Knowledge assessment |
-| Full quiz results | Quiz Results Panel | Per-question breakdown after quiz |
-| Quiz history | Quiz History Section | Track past attempts, delete individual records |
-| Find specific content | Directory | Advanced search and filtering |
+| Full quiz results | Quiz Results Panel | Per-question breakdown with topic tags |
+| Quiz result tags | Quiz Results Panel | Clickable area/subtopic tags linking to review content |
+| Quiz history | Quiz History Section | Track past attempts with topic tags, delete individual records |
+| Find specific content | Directory | Advanced search and filtering (including tier filter) |
 | Unit circle reference | Unit Circle Tab | Quick angle/value lookup |
 | Subject overview | Home | Navigate by subject area |
 | Title navigation | App Title | Click "Let's Math!" to return Home |
