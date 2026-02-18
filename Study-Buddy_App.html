@@ -724,6 +724,11 @@
             color: var(--color-red-500);
         }
 
+        .quiz-history-meta {
+            padding: 4px 0 8px;
+            font-size: 0.8rem;
+        }
+
         /* Quiz Full Results Collapsible Panel */
         .quiz-results-collapsible {
             max-width: 700px;
@@ -1492,6 +1497,27 @@
             border-color: var(--color-primary);
             transform: translateY(-4px);
             box-shadow: 0 4px 12px rgba(45, 212, 191, 0.2);
+        }
+
+        @media (min-width: 1100px) {
+            .homepage-container {
+                max-width: 1280px;
+            }
+
+            .area-cards-grid {
+                max-width: 1280px;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .homepage-container {
+                max-width: 1400px;
+            }
+
+            .area-cards-grid {
+                max-width: 1400px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -10296,23 +10322,32 @@
 
         function saveQuizResult(correct, total, percent) {
             const history = getQuizHistory();
+            var questionData = quizState.activeQuiz.map(function(q) {
+                return {
+                    q: q.q,
+                    opts: q.opts,
+                    ans: q.ans,
+                    tags: [q.subtopic || q.topicId || '', q.group || ''].filter(Boolean),
+                    area: q._area || deriveQuizArea(q),
+                    subtopic: q._subtopic || deriveQuizSubtopic(q)
+                };
+            });
+            // Derive summary arrays of unique areas and subtopics for history display
+            var areaSet = {};
+            var subtopicSet = {};
+            questionData.forEach(function(q) {
+                if (q.area) areaSet[q.area] = true;
+                if (q.subtopic) subtopicSet[q.subtopic] = true;
+            });
             history.push({
                 date: new Date().toISOString(),
                 correct: correct,
                 total: total,
                 percent: percent,
-                questions: quizState.activeQuiz.map(function(q) {
-                    // subtopic: topic tag from core/calculus pools; topicId: topic tag from expansion pool; group: quiz pool source (core/calculus/precalc_exp/trig_exp)
-                    return {
-                        q: q.q,
-                        opts: q.opts,
-                        ans: q.ans,
-                        tags: [q.subtopic || q.topicId || '', q.group || ''].filter(Boolean),
-                        area: q._area || deriveQuizArea(q),
-                        subtopic: q._subtopic || deriveQuizSubtopic(q)
-                    };
-                }),
-                userAnswers: quizState.answers.slice()
+                questions: questionData,
+                userAnswers: quizState.answers.slice(),
+                areas: Object.keys(areaSet),
+                subtopics: Object.keys(subtopicSet)
             });
             localStorage.setItem('precalcQuizResults', JSON.stringify(history));
         }
@@ -10340,13 +10375,40 @@
                     ? '<button class="btn btn-secondary btn-small" onclick="downloadQuizPDF(' + actualIndex + ')" style="padding: 2px 8px; font-size: 0.75rem;">PDF</button>'
                     : '';
                 const deleteBtn = '<button class="quiz-history-delete" onclick="deleteQuizHistoryItem(' + actualIndex + ')" title="Delete this attempt" aria-label="Delete quiz attempt from ' + dateStr + '">🗑</button>';
+
+                // Build topic tags from stored areas/subtopics or derive from questions
+                var histAreas = r.areas || [];
+                var histSubtopics = r.subtopics || [];
+                if (histAreas.length === 0 && r.questions) {
+                    var aSet = {};
+                    r.questions.forEach(function(q) { if (q.area) aSet[q.area] = true; });
+                    histAreas = Object.keys(aSet);
+                }
+                if (histSubtopics.length === 0 && r.questions) {
+                    var sSet = {};
+                    r.questions.forEach(function(q) { var s = q.subtopic || (q.tags && q.tags[0]) || ''; if (s) sSet[s] = true; });
+                    histSubtopics = Object.keys(sSet);
+                }
+                var tagHtml = '';
+                if (histAreas.length > 0 || histSubtopics.length > 0) {
+                    tagHtml = '<tr><td colspan="5"><div class="quiz-history-meta">';
+                    histAreas.forEach(function(a) {
+                        tagHtml += '<span class="quiz-tag quiz-tag-area">' + friendlyArea(a) + '</span>';
+                    });
+                    histSubtopics.forEach(function(s) {
+                        var safe = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                        tagHtml += '<span class="quiz-tag quiz-tag-subtopic" onclick="handleQuizTagClick(\'' + s.replace(/'/g, "\\'") + '\')">' + safe + '</span>';
+                    });
+                    tagHtml += '</div></td></tr>';
+                }
+
                 rows += `<tr>
                     <td>${history.length - i}</td>
                     <td>${dateStr}</td>
                     <td>${r.correct} / ${r.total}</td>
                     <td><span class="${badge}">${r.percent}%</span></td>
                     <td>${pdfBtn} ${deleteBtn}</td>
-                </tr>`;
+                </tr>${tagHtml}`;
             });
 
             return `
