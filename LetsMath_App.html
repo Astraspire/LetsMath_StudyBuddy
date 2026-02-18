@@ -204,6 +204,14 @@
         .tier-badge.tier-2 { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
         .tier-badge.tier-3 { background: rgba(168, 85, 247, 0.15); color: #a78bfa; }
 
+        /* Area category tags */
+        .area-tag { display: inline-block; font-size: 0.65rem; padding: 2px 7px; border-radius: 6px; vertical-align: middle; margin-left: 8px; font-weight: 600; letter-spacing: 0.03em; }
+        .area-tag.area-algebra { background: rgba(45, 212, 191, 0.15); color: #2dd4bf; }
+        .area-tag.area-trig { background: rgba(168, 85, 247, 0.15); color: #a78bfa; }
+        .area-tag.area-calculus { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .area-tag.area-general { background: rgba(249, 115, 22, 0.15); color: #f97316; }
+        .area-tag.area-precalc { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+
         .concept-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 8px 30px rgba(45, 212, 191, 0.3), 0 0 15px rgba(45, 212, 191, 0.15);
@@ -1733,7 +1741,7 @@
             <div class="review-grid">
                 <!-- Functions -->
                 <div class="concept-card card-algebra" id="topic-functions-notation">
-                    <h3>📐 Functions & Notation</h3>
+                    <h3>📐 Functions & Notation <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>f(x) means "plug x into the expression"</p>
                     <div class="equation-box">f(3) = Replace every x with 3<br>f(a+h) = Replace x with (a+h)</div>
                     <p style="margin-top: var(--space-12); font-size: 0.9rem;"><strong>Domain:</strong> All valid x-values (watch for division by zero, √ negatives, log issues)</p>
@@ -1742,7 +1750,7 @@
 
                 <!-- Exponential & Log Core -->
                 <div class="concept-card card-explog" id="topic-exponentials-logs">
-                    <h3>🔢 Exponentials & Logs</h3>
+                    <h3>🔢 Exponentials & Logs <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><strong>THE MOST IMPORTANT:</strong></p>
                     <div class="equation-box">a<sup>x</sup> = y  ⟺  log<sub>a</sub>(y) = x</div>
                     <p style="margin-top: var(--space-12); font-size: 0.9rem;">These are inverse operations—they undo each other!</p>
@@ -1751,7 +1759,7 @@
 
                 <!-- Log Rules -->
                 <div class="concept-card card-explog" id="topic-log-properties">
-                    <h3>➕ Log Properties</h3>
+                    <h3>➕ Log Properties <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         Product: log(MN) = log(M) + log(N)<br>
                         Quotient: log(M/N) = log(M) − log(N)<br>
@@ -1764,7 +1772,7 @@
 
                 <!-- Unit Circle -->
                 <div class="concept-card card-trig" id="topic-unit-circle">
-                    <h3>🔄 The Unit Circle</h3>
+                    <h3>🔄 The Unit Circle <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><strong>Radius 1, centered at origin. Every point is (cos θ, sin θ).</strong></p>
                     <div class="info-badge">
                         <strong>Convert degrees ↔ radians:</strong><br>
@@ -1864,7 +1872,7 @@
 
                 <!-- Trig Values Quick Reference -->
                 <div class="concept-card card-trig" id="topic-trig-reference">
-                    <h3>⚡ Quick Trig Reference</h3>
+                    <h3>⚡ Quick Trig Reference <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><strong>Key angles (memorize these!):</strong></p>
                     <div class="table-responsive">
                         <table style="font-size: 0.9rem;">
@@ -1904,7 +1912,7 @@
 
                 <!-- Trig Identities -->
                 <div class="concept-card card-trig" id="topic-key-identities">
-                    <h3>⚙️ Key Identities</h3>
+                    <h3>⚙️ Key Identities <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         sin²(x) + cos²(x) = 1<br>
                         tan(x) = sin(x)/cos(x)<br>
@@ -1915,7 +1923,7 @@
 
                 <!-- Sinusoidal Models -->
                 <div class="concept-card card-trig" id="topic-sinusoidal">
-                    <h3>〰️ Sinusoidal Models</h3>
+                    <h3>〰️ Sinusoidal Models <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <div class="equation-box">y = A·sin(bx + c) + D</div>
                     <p style="margin-top: var(--space-12); font-size: 0.9rem;">
                         <strong>A</strong> = Amplitude<br>
@@ -1926,7 +1934,7 @@
 
                 <!-- Factoring -->
                 <div class="concept-card card-algebra" id="topic-factoring">
-                    <h3>🧮 Factoring Patterns</h3>
+                    <h3>🧮 Factoring Patterns <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         Difference of squares: a² − b² = (a+b)(a−b)<br>
                         Perfect square: a² ± 2ab + b² = (a±b)²<br>
@@ -1936,7 +1944,7 @@
 
                 <!-- Quadratic Formula -->
                 <div class="concept-card card-algebra" id="topic-quadratics">
-                    <h3>✖️ Solving Quadratics</h3>
+                    <h3>✖️ Solving Quadratics <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <div class="equation-box">x = (−b ± √(b² − 4ac)) / (2a)</div>
                     <p style="margin-top: var(--space-12); font-size: 0.9rem;">
                         <strong>Discriminant Δ = b² − 4ac</strong><br>
@@ -1948,7 +1956,7 @@
 
                 <!-- Completing the Square & Rationalizing -->
                 <div class="concept-card card-algebra" id="topic-algebra-skills">
-                    <h3>🔧 More Algebra Skills</h3>
+                    <h3>🔧 More Algebra Skills <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><strong>Completing the Square:</strong></p>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         x² + bx → x² + bx + (b/2)² − (b/2)²<br>
@@ -1966,7 +1974,7 @@
 
                 <!-- Rational Functions -->
                 <div class="concept-card card-algebra" id="topic-rational-functions">
-                    <h3>📊 Rational Functions</h3>
+                    <h3>📊 Rational Functions <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><strong>Vertical Asymptotes:</strong> Set denominator = 0</p>
                     <p><strong>Horizontal Asymptotes:</strong></p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">
@@ -1978,7 +1986,7 @@
 
                 <!-- Inverse Functions -->
                 <div class="concept-card card-algebra" id="topic-inverse-functions">
-                    <h3>🔁 Inverse Functions</h3>
+                    <h3>🔁 Inverse Functions <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><strong>Find inverse:</strong></p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">
                         1. Write y = f(x)<br>
@@ -1991,7 +1999,7 @@
 
                 <!-- Lines & Slopes -->
                 <div class="concept-card card-algebra" id="topic-lines-slopes">
-                    <h3>📏 Lines & Slopes</h3>
+                    <h3>📏 Lines & Slopes <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         Slope: m = (y₂ − y₁) / (x₂ − x₁)
                     </div>
@@ -2009,7 +2017,7 @@
 
                 <!-- Absolute Value & Piecewise Functions -->
                 <div class="concept-card card-algebra" id="topic-abs-piecewise">
-                    <h3>📐 Absolute Value & Piecewise</h3>
+                    <h3>📐 Absolute Value & Piecewise <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         |x| = x if x ≥ 0, −x if x &lt; 0
                     </div>
@@ -2028,7 +2036,7 @@
 
                 <!-- Function Transformations -->
                 <div class="concept-card card-algebra" id="topic-transformations">
-                    <h3>🔀 Function Transformations</h3>
+                    <h3>🔀 Function Transformations <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         y = a · f(b(x − h)) + k
                     </div>
@@ -2048,7 +2056,7 @@
 
                 <!-- Inequalities -->
                 <div class="concept-card card-algebra" id="topic-inequalities">
-                    <h3>⚖️ Inequalities</h3>
+                    <h3>⚖️ Inequalities <span class="area-tag area-algebra">Algebra</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><strong>Linear Inequalities:</strong> Solve like equations, but <em>flip the sign</em> when multiplying or dividing by a negative.</p>
                     <p style="margin-top: var(--space-12);"><strong>Polynomial/Rational Inequalities (Sign Chart):</strong></p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">
@@ -2067,7 +2075,7 @@
 
                 <!-- Sequences and Series -->
                 <div class="concept-card card-misc" id="topic-sequences">
-                    <h3>🔢 Sequences & Series</h3>
+                    <h3>🔢 Sequences & Series <span class="area-tag area-general">General</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><strong>Arithmetic Sequence</strong> (constant difference d):</p>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         a<sub>n</sub> = a₁ + (n − 1)d<br>
@@ -2083,7 +2091,7 @@
 
                 <!-- Limits Preview -->
                 <div class="concept-card card-misc" id="topic-limits-preview">
-                    <h3>🎯 Limits (Calculus Preview)</h3>
+                    <h3>🎯 Limits (Calculus Preview) <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><strong>Core idea:</strong> What value does f(x) approach as x → c?</p>
                     <p style="margin-top: var(--space-12); font-size: 0.9rem;"><strong>Strategy:</strong></p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">
@@ -2101,7 +2109,7 @@
 
                 <!-- Common Mistakes -->
                 <div class="concept-card card-misc" id="topic-common-mistakes">
-                    <h3>⚠️ Common Mistakes to Avoid</h3>
+                    <h3>⚠️ Common Mistakes to Avoid <span class="area-tag area-general">General</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <div class="info-badge" style="background: rgba(192, 21, 47, 0.1); border-left-color: var(--color-red-500); color: var(--color-red-500);">
                         These are the #1 exam killers — memorize what NOT to do!
                     </div>
@@ -2121,7 +2129,7 @@
 
                 <!-- Calculator Skills -->
                 <div class="concept-card card-misc" id="topic-calculator">
-                    <h3>🖩 Calculator Skills</h3>
+                    <h3>🖩 Calculator Skills <span class="area-tag area-general">General</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><strong>Essential Buttons:</strong></p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">
                         sin, cos, tan, sin⁻¹, cos⁻¹, tan⁻¹<br>
@@ -2141,7 +2149,7 @@
 
                 <!-- What is a Function? -->
                 <div class="concept-card card-calc" id="topic-function">
-                    <h3>📘 What is a Function?</h3>
+                    <h3>📘 What is a Function? <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>A function is a mathematical entity that describes a relationship between two sets of values: the <strong>domain</strong> (inputs) and the <strong>codomain</strong> (outputs). Each input in the domain is mapped to exactly one output.</p>
                     <div class="info-badge"><strong>Vertical Line Test:</strong> If a vertical line intersects the graph at more than one point, the graph does not represent a function.</div>
                     <p style="margin-top: var(--space-12);"><strong>Ways to describe functions:</strong></p>
@@ -2160,7 +2168,7 @@
 
                 <!-- What is a Limit? -->
                 <div class="concept-card card-calc" id="topic-limit">
-                    <h3>📘 What is a Limit?</h3>
+                    <h3>📘 What is a Limit? <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>The <strong>limit</strong> of a function f(x) as x approaches a is the value that f(x) gets closer to as x gets closer to a.</p>
                     <div class="equation-box">lim(x→a) f(x) = L</div>
                     <p style="margin-top: var(--space-12);"><strong>Types of limits:</strong></p>
@@ -2181,7 +2189,7 @@
 
                 <!-- What is a Derivative? -->
                 <div class="concept-card card-calc" id="topic-derivative">
-                    <h3>📘 What is a Derivative?</h3>
+                    <h3>📘 What is a Derivative? <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>The <strong>derivative</strong> of a function f(x) at a point x is the rate of change of the function at that point.</p>
                     <div class="equation-box">f'(x) = lim(h→0) [f(x+h) − f(x)] / h</div>
                     <p style="margin-top: var(--space-12);"><strong>Interpretations:</strong></p>
@@ -2202,7 +2210,7 @@
 
                 <!-- What is an Integral? -->
                 <div class="concept-card card-calc" id="topic-integral">
-                    <h3>📘 What is an Integral?</h3>
+                    <h3>📘 What is an Integral? <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>The <strong>integral</strong> of a function f(x) from a to b is the area under the curve between x = a and x = b.</p>
                     <div class="equation-box">∫<sub>a</sub><sup>b</sup> f(x) dx</div>
                     <p style="margin-top: var(--space-12);"><strong>Types of integrals:</strong></p>
@@ -2224,7 +2232,7 @@
 
                 <!-- What is Continuity? -->
                 <div class="concept-card card-calc" id="topic-continuity">
-                    <h3>📘 What is Continuity?</h3>
+                    <h3>📘 What is Continuity? <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>A function f(x) is <strong>continuous</strong> at a point x = a if three conditions are met:</p>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         1. f(a) is defined<br>
@@ -2247,7 +2255,7 @@
 
                 <!-- Sketching Graphs -->
                 <div class="concept-card card-calc" id="topic-quick-ref-chart">
-                    <h3>📋 Sketching Graphs</h3>
+                    <h3>📋 Sketching Graphs <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p>Key calculus terms for sketching and analyzing graphs at a glance.</p>
                     <div class="table-responsive">
                         <table style="font-size: 0.9rem;">
@@ -2289,7 +2297,7 @@
 
                 <!-- Graph Reference Key -->
                 <div class="concept-card card-calc" id="topic-graph-ref-key">
-                    <h3>📈 Graph Reference Key</h3>
+                    <h3>📈 Graph Reference Key <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p>Reference markers on a typical function graph and what they represent.</p>
                     <div class="table-responsive">
                         <table style="font-size: 0.85rem;">
@@ -2357,7 +2365,7 @@
 
                 <!-- Definitions -->
                 <div class="concept-card card-calc" id="topic-calc-definitions">
-                    <h3>📖 Definitions</h3>
+                    <h3>📖 Definitions <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p>Core calculus definitions relating derivatives to function behavior.</p>
                     <div class="table-responsive">
                         <table style="font-size: 0.9rem;">
@@ -2406,7 +2414,7 @@
 
                 <!-- Rolle's Theorem -->
                 <div class="concept-card card-calc" id="topic-rolles-theorem">
-                    <h3>📘 Rolle's Theorem</h3>
+                    <h3>📘 Rolle's Theorem <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p>Let f be a continuous function over [a, b] and differentiable over (a, b) such that f(a) = f(b). There then exists at least one c in (a, b) such that f'(c) = 0.</p>
                     <div class="info-badge">
                         <strong>Three Conditions:</strong><br>
@@ -2422,7 +2430,7 @@
 
                 <!-- Mean Value Theorem -->
                 <div class="concept-card card-calc" id="topic-mvt">
-                    <h3>📘 Mean Value Theorem (MVT)</h3>
+                    <h3>📘 Mean Value Theorem (MVT) <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>Drops the requirement f(a) = f(b) from Rolle's Theorem. States that there is at least one point c in (a, b) where the instantaneous rate of change equals the average rate of change:</p>
                     <div class="equation-box">
                         f'(c) = (f(b) − f(a)) / (b − a)
@@ -2437,7 +2445,7 @@
 
                 <!-- Corollaries -->
                 <div class="concept-card card-calc" id="topic-corollaries">
-                    <h3>📘 Corollaries</h3>
+                    <h3>📘 Corollaries <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p style="margin-top: var(--space-12);"><strong>1. Functions with a Derivative of Zero:</strong></p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">If f'(x) = 0 for all x in interval I, then f(x) = constant for all x in I.</p>
                     <p style="margin-top: var(--space-12);"><strong>2. Constant Difference Theorem:</strong></p>
@@ -2452,7 +2460,7 @@
 
                 <!-- First Derivative Test -->
                 <div class="concept-card card-calc" id="topic-first-deriv-test">
-                    <h3>📘 First Derivative Test</h3>
+                    <h3>📘 First Derivative Test <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>Suppose f is continuous over an interval I containing a critical point c, and differentiable over I except possibly at c:</p>
                     <div class="equation-box" style="font-size: 0.9rem;">
                         f' changes + → − at c &nbsp;→&nbsp; f(c) is a local maximum<br>
@@ -2466,7 +2474,7 @@
 
                 <!-- Second Derivative Test -->
                 <div class="concept-card card-calc" id="topic-second-deriv-test">
-                    <h3>📘 Second Derivative Test</h3>
+                    <h3>📘 Second Derivative Test <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>Used to classify critical points where f'(x) = 0.</p>
                     <p style="margin-top: var(--space-12);"><strong>Steps:</strong></p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">
@@ -2486,7 +2494,7 @@
 
                 <!-- Steps for Graphing a Function Using Derivatives -->
                 <div class="concept-card card-calc" id="topic-graphing-derivatives">
-                    <h3>📉 Graphing with Derivatives</h3>
+                    <h3>📉 Graphing with Derivatives <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><strong>Step-by-step procedure for sketching a function using calculus:</strong></p>
                     <p style="margin-top: var(--space-12);"><strong>Step 1:</strong> Find f'(x)</p>
                     <p style="font-size: 0.9rem; margin-top: var(--space-8);">
@@ -2508,7 +2516,7 @@
 
                 <!-- Integration Formulas -->
                 <div class="concept-card card-calc" id="topic-integration-formulas">
-                    <h3>∫ Integration Formulas</h3>
+                    <h3>∫ Integration Formulas <span class="area-tag area-calculus">Calculus</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p>Essential differentiation and integration pairs to memorize.</p>
                     <div class="table-responsive">
                         <table style="font-size: 0.85rem;">
@@ -2582,7 +2590,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_domain_range – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_domain_range">
-                    <h3>📘 A1. Domain and Range <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>📘 A1. Domain and Range <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>Detailed treatment — interval notation, set-builder notation, toolkit function domains, piecewise functions.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2607,7 +2615,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_composition – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_composition">
-                    <h3>📘 A3. Composition of Functions <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>📘 A3. Composition of Functions <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>Composition notation, evaluating from tables/graphs/formulas, domain of compositions, decomposition.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2630,7 +2638,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_polynomials_deep – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_polynomials_deep">
-                    <h3>📘 A5. Power Functions &amp; Polynomial Functions (Deep Dive) <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>📘 A5. Power Functions &amp; Polynomial Functions (Deep Dive) <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>Power functions, end behavior, intercepts, turning points, multiplicity, polynomial inequalities.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2659,7 +2667,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_quadratics_expanded – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_quadratics_expanded">
-                    <h3>📘 A6. Quadratic Functions (Expanded) <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>📘 A6. Quadratic Functions (Expanded) <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>Vertex form, completing the square, max/min applications, optimization problems.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2680,7 +2688,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_factor_remainder – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_factor_remainder">
-                    <h3>📘 A7. Factor Theorem, Remainder Theorem &amp; Synthetic Division <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>📘 A7. Factor Theorem, Remainder Theorem &amp; Synthetic Division <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>Remainder/Factor theorems, polynomial long division, synthetic division, finding zeros.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2698,7 +2706,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_rates_of_change – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_rates_of_change">
-                    <h3>📘 A2. Rates of Change &amp; Behavior of Graphs <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>📘 A2. Rates of Change &amp; Behavior of Graphs <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Average rate of change, increasing/decreasing intervals, local extrema, concavity, inflection points.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2718,7 +2726,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_linear_functions – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_linear_functions">
-                    <h3>📘 A4. Linear Functions (Detailed Treatment) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>📘 A4. Linear Functions (Detailed Treatment) <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Modeling, interpretation of slope, finding equations from data, parallel/perpendicular lines.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2732,7 +2740,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_real_zeros – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_real_zeros">
-                    <h3>📘 A8. Real Zeros of Polynomials <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>📘 A8. Real Zeros of Polynomials <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Rational Roots Theorem, Cauchy's Bound, systematic zero-finding strategies.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2744,7 +2752,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_complex_zeros – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_complex_zeros">
-                    <h3>📘 A9. Complex Zeros <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>📘 A9. Complex Zeros <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Imaginary unit, complex arithmetic, Fundamental Theorem of Algebra, conjugate pairs.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2763,7 +2771,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_rational_functions_deep – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_rational_functions_deep">
-                    <h3>📘 A10. Rational Functions (Deep Dive) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>📘 A10. Rational Functions (Deep Dive) <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Oblique asymptotes, holes, writing equations from graphs, sign analysis.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2783,7 +2791,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_exponential_models – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_exponential_models">
-                    <h3>📘 A12. Exponential Functions (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>📘 A12. Exponential Functions (Expanded) <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Growth/decay models, half-life, doubling time, compound interest, fitting models.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2809,7 +2817,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_logarithmic_models – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_logarithmic_models">
-                    <h3>📘 A13. Logarithmic Functions (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>📘 A13. Logarithmic Functions (Expanded) <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Graphs of log functions, solving log equations, applications (pH, decibels, Richter scale).</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2824,7 +2832,7 @@
 
                 <!-- IMPLEMENTATION STATUS: precalc_inverses_radicals – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-precalc-exp" id="topic-precalc_inverses_radicals">
-                    <h3>📘 A11. Inverses &amp; Radical Functions <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <h3>📘 A11. Inverses &amp; Radical Functions <span class="area-tag area-precalc">Precalc</span> <span class="tier-badge tier-3">🔬 Advanced</span></h3>
                     <p><em>Restricting domains, inverse of quadratics, radical functions, solving radical equations.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2841,7 +2849,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_six_functions – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_six_functions">
-                    <h3>🔺 B2. The Six Circular Functions &amp; Fundamental Identities <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>🔺 B2. The Six Circular Functions &amp; Fundamental Identities <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>All six trig functions, reciprocal/quotient/Pythagorean/cofunction identities, ASTC rule.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2862,7 +2870,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_identities_proofs – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_identities_proofs">
-                    <h3>🔺 B3. Trigonometric Identities (Proving &amp; Verifying) <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>🔺 B3. Trigonometric Identities (Proving &amp; Verifying) <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>Sum/difference formulas, double-angle, half-angle, power-reducing formulas, proof strategies.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2892,7 +2900,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_inverse_functions – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_inverse_functions">
-                    <h3>🔺 B5. Inverse Trigonometric Functions <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>🔺 B5. Inverse Trigonometric Functions <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>arcsin, arccos, arctan domains/ranges, composing trig and inverse trig functions.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2907,7 +2915,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_equations – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_equations">
-                    <h3>🔺 B6. Trigonometric Equations &amp; Inequalities <span class="tier-badge tier-1">⭐ Essential</span></h3>
+                    <h3>🔺 B6. Trigonometric Equations &amp; Inequalities <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-1">⭐ Essential</span></h3>
                     <p><em>Systematic solving techniques, general solutions with +2πk, multi-angle equations, quadratic-type trig equations.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2926,7 +2934,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_angles_measure – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_angles_measure">
-                    <h3>🔺 B1. Angles and Their Measure (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>🔺 B1. Angles and Their Measure (Expanded) <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>DMS system, arc length, sector area, circular motion, angular/linear velocity.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2953,7 +2961,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_graphs_all_functions – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_graphs_all_functions">
-                    <h3>🔺 B4. Graphs of Trigonometric Functions (Expanded) <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>🔺 B4. Graphs of Trigonometric Functions (Expanded) <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>Graphs of all six trig functions, period/asymptote analysis, transformations.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2968,7 +2976,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_law_of_sines – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_law_of_sines">
-                    <h3>🔺 B7. Law of Sines <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>🔺 B7. Law of Sines <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>AAS/ASA/SSA cases, the ambiguous case (SSA), deriving equations from triangle relationships.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -2986,7 +2994,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_law_of_cosines – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_law_of_cosines">
-                    <h3>🔺 B8. Law of Cosines <span class="tier-badge tier-2">📗 Important</span></h3>
+                    <h3>🔺 B8. Law of Cosines <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-2">📗 Important</span></h3>
                     <p><em>SAS/SSS cases, connection to Pythagorean theorem, finding angles from three sides.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -3008,7 +3016,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_polar_coordinates – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_polar_coordinates">
-                    <h3>🔺 B9. Polar Coordinates <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <h3>🔺 B9. Polar Coordinates <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-3">🔬 Advanced</span></h3>
                     <p><em>Polar ↔ Cartesian conversion, multiple representations, polar graphs (cardioids, rose curves, limaçons).</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -3022,7 +3030,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_vectors – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_vectors">
-                    <h3>🔺 B10. Vectors <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <h3>🔺 B10. Vectors <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-3">🔬 Advanced</span></h3>
                     <p><em>Magnitude, direction, unit vectors, operations, dot product, angle between vectors, projection, work.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -3039,7 +3047,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_parametric_equations – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_parametric_equations">
-                    <h3>🔺 B11. Parametric Equations <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <h3>🔺 B11. Parametric Equations <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-3">🔬 Advanced</span></h3>
                     <p><em>Parameter elimination, common parametrizations (line, circle, ellipse), orientation.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -3062,7 +3070,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_polar_complex – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_polar_complex">
-                    <h3>🔺 B12. Polar Form of Complex Numbers <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <h3>🔺 B12. Polar Form of Complex Numbers <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-3">🔬 Advanced</span></h3>
                     <p><em>Polar representation, multiplication/division in polar form, De Moivre's Theorem, nth roots.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -3077,7 +3085,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_harmonic_motion – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_harmonic_motion">
-                    <h3>🔺 B13. Applications of Sinusoids / Harmonic Motion <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <h3>🔺 B13. Applications of Sinusoids / Harmonic Motion <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-3">🔬 Advanced</span></h3>
                     <p><em>Ferris wheels, springs, sound waves, daylight models, fitting sinusoidal models to data.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
@@ -3093,7 +3101,7 @@
 
                 <!-- IMPLEMENTATION STATUS: trig_polar_conics – review=done, flashcards=done, quiz=done -->
                 <div class="concept-card card-trig-exp" id="topic-trig_polar_conics">
-                    <h3>🔺 B14. Conic Sections in Polar Form / Rotation of Axes <span class="tier-badge tier-3">🔬 Advanced</span></h3>
+                    <h3>🔺 B14. Conic Sections in Polar Form / Rotation of Axes <span class="area-tag area-trig">Trig</span> <span class="tier-badge tier-3">🔬 Advanced</span></h3>
                     <p><em>Polar form of conics with eccentricity, rotation of axes to remove xy-term.</em></p>
                     <h4>Key Ideas</h4>
                     <ul>
