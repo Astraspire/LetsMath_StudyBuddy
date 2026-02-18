@@ -171,7 +171,7 @@ Test your knowledge with multiple-choice quizzes.
 - Click any review card to enter full-screen focus mode
 - Removes all navigation and distractions
 - Large, center-aligned content
-- Press `Esc` or click × to exit
+- Click × button to exit focus mode
 
 #### Yu-Gi-Oh! Mode
 - Toggle in sidebar to show/hide Yu-Gi-Oh! themed content
@@ -202,13 +202,13 @@ When you navigate to a specific topic in one mode, the app remembers it when you
 ### Project Structure
 
 ```
-Pre-Calculus-Study-Buddy/
+LetsMath_StudyBuddy/
 ├── Study-Buddy_App.html           # Main application (single-page app)
 ├── Organized-Content-Library.md   # Content source with structured tagging
-├── README.md                       # This file
+├── README.md                       # This file (user & developer documentation)
+├── CODEMAP.md                      # Code map & developer navigation guide
 ├── IMPLEMENTATION_SUMMARY.md      # Development notes
 ├── ExpansionPlan--Complete/       # Planning documents for expanded content
-├── Math Source Material References/ # Reference materials
 └── UpdatePlan/                    # Update planning documents
 ```
 
