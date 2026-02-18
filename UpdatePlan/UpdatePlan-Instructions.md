@@ -1,4 +1,4 @@
-# UpdatePlan-Instructions
+# UpdatePlan-Instructions -- ALREADY DONE
 
 ## 0. Global Renaming and Branding
 
