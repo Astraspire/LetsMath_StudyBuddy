@@ -4,14 +4,30 @@ An interactive web application for mastering precalculus and calculus concepts t
 
 ---
 
+## ⬇️ How to Download the App from GitHub
+
+You don't need to install anything — just download the HTML file and open it in your browser!
+
+1. Go to the repository page on GitHub: [https://github.com/Astraspire/LetsMath_StudyBuddy](https://github.com/Astraspire/LetsMath_StudyBuddy)
+2. Click on the file **`LetsMath_App_v1.html`** in the file list.
+3. On the file page, click the **"Download raw file"** button (or press the download icon ⬇️ in the top-right of the file view).
+4. Save the file anywhere on your computer.
+5. Open the saved file in any modern web browser (Chrome, Firefox, Safari, Edge) — no internet connection needed after downloading!
+
+> **Tip:** If you right-click the file link and choose "Save link as…", you can save it directly.
+
+---
+
 ## 📚 Table of Contents
 
-1. [How to Use the App](#how-to-use-the-app)
+1. [How to Download the App](#️-how-to-download-the-app-from-github)
+2. [Recent Changes](#-recent-changes)
+3. [How to Use the App](#-how-to-use-the-app)
    - [Getting Started](#getting-started)
    - [Navigation](#navigation)
    - [Study Modes](#study-modes)
    - [Special Features](#special-features)
-2. [Codebase Overview](#codebase-overview)
+4. [Codebase Overview](#-codebase-overview)
    - [Project Structure](#project-structure)
    - [Architecture](#architecture)
    - [Content Organization](#content-organization)
@@ -19,11 +35,32 @@ An interactive web application for mastering precalculus and calculus concepts t
 
 ---
 
+## 🆕 Recent Changes
+
+### v1 Release
+- **File renamed** to `LetsMath_App_v1.html` to mark the first stable version.
+- **Tier System added** to all 21 core review cards (R-*):
+  - **Tier 1 – Essential** (17 cards): Absolute must-know foundations (unit circle, function notation, derivative/integral basics, fundamental identities, etc.)
+  - **Tier 2 – Important** (4 cards): High-value topics that are commonly needed (rationalizing denominators, absolute value/piecewise functions, solving inequalities, sequences & series)
+  - **Tier 3 – Advanced**: Used only for expansion content (E-* cards)
+- **Tiered tag format** standardized across all content items (id → course → area → type → subtopic → yugioh → tier → code)
+- **Tier filter** in Directory Search lets you browse content by tier level
+- **Tier badges** displayed on review cards in the app
+- **Quiz Results Panel** added: after completing a quiz, an expandable/collapsible panel shows a per-question breakdown with correct/incorrect/skipped indicators
+- **Topic tags** on quiz results and history: clickable area and subtopic tags link directly to the matching review card
+- **Quiz History** enhancements: per-item deletion (🗑 trash icon), "Clear All" button, and CSV export
+- **PDF Export** for quiz results
+- **Full Results Panel** defaults to collapsed; click "📋 View Full Results" to expand
+- **89+ quiz questions** across all topic areas
+- **141 flashcard Q/A pairs** across 47 flashcard items
+
+---
+
 ## 🚀 How to Use the App
 
 ### Getting Started
 
-1. **Open the App**: Simply open `LetsMath_App.html` in any modern web browser (Chrome, Firefox, Safari, Edge).
+1. **Open the App**: Simply open `LetsMath_App_v1.html` in any modern web browser (Chrome, Firefox, Safari, Edge).
 2. **No Installation Required**: This is a self-contained single-page application - no server or dependencies needed.
 3. **Works Offline**: Once loaded, the app works completely offline.
 
@@ -226,12 +263,12 @@ When you navigate to a specific topic in one mode, the app remembers it when you
 
 ```
 LetsMath_StudyBuddy/
-├── LetsMath_App.html                    # Main application (single-page app)
+├── LetsMath_App_v1.html                 # Main application (single-page app)
 ├── Organized-Content-Library.md            # Content source with structured tagging (includes tier tags)
 ├── Updated-Organized-Content-Library.md    # Updated content library with tier assignments
 ├── README.md                               # This file (user & developer documentation)
 ├── CODEMAP.md                              # Code map & developer navigation guide
-├── IMPLEMENTATION_SUMMARY.md               # Development notes
+├── Implementation-Summary.md               # Development notes and tier assignment summary
 ├── TieredTag_DisplayFormat_UpdateInstructions.md  # Update instructions for tiered tag system
 ├── ExpansionPlan--Complete/                # Planning documents for expanded content
 └── UpdatePlan/                             # Update planning documents
@@ -240,7 +277,7 @@ LetsMath_StudyBuddy/
 ### Architecture
 
 **Single-Page Application (SPA)**
-- Everything is contained in one HTML file: `LetsMath_App.html`
+- Everything is contained in one HTML file: `LetsMath_App_v1.html`
 - No external dependencies (no npm, no build process)
 - Self-contained: all CSS and JavaScript inline
 - Data embedded as JavaScript object literals
@@ -497,12 +534,6 @@ The content is derived from `Organized-Content-Library.md` (updated with tier ta
 5. **Focus Mode**: Use for deep study of challenging concepts
 6. **Spaced Repetition**: Return to quiz and flashcards regularly
 7. **Yu-Gi-Oh! Mode**: If helpful, use crossover examples to make concepts memorable
-
----
-
-## 📄 License
-
-Educational resource for math students. See repository for details.
 
 ---
 
