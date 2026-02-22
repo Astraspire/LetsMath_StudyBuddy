@@ -37,6 +37,10 @@ You don't need to install anything — just download the HTML file and open it i
 
 ## 🆕 Recent Changes
 
+### v1.1 Bug Fixes
+- **Directory Search navigation fixed**: Clicking a Review Card item in Directory Search now correctly navigates to and opens the expanded card with full explanations. Root cause was missing entries in the `SUBTOPIC_TO_ELEMENT` lookup map — 16 core review card subtopics were unmapped. All 38 review cards are now fully navigable from Directory Search.
+- **Back arrow now returns to previous page**: The "← Back to all topics" button in focus mode now correctly returns the user to whatever page they came from (e.g., Directory Search) instead of always staying on the Review Topics page. Internal callers (area filter, etc.) are unaffected.
+
 ### v1 Release
 - **File renamed** to `LetsMath_App_v1.html` to mark the first stable version.
 - **Tier System added** to all 21 core review cards (R-*):
