@@ -1784,7 +1784,7 @@
                     <option value="precalc-general">Precalc General</option>
                 </select>
             </div>
-            <button class="card-back-btn" id="cardBackBtn" onclick="exitFocusMode()">&larr; Back to all topics</button>
+            <button class="card-back-btn" id="cardBackBtn" onclick="exitFocusMode(true)">&larr; Back to all topics</button>
             <div class="review-grid">
                 <!-- Functions -->
                 <div class="concept-card card-algebra" id="topic-functions-notation">
@@ -10779,11 +10779,13 @@
 
         // ===== COLLAPSIBLE CARDS & FOCUS MODE =====
 
-        function enterFocusMode(cardEl) {
+        function enterFocusMode(cardEl, originTab) {
             if (!cardEl) return;
             var grid = document.querySelector('.review-grid');
             // Exit any existing focus mode first
             exitFocusMode();
+            // Track where we came from (default null = review tab)
+            focusModeOriginTab = originTab || null;
             // Enter focus mode on the target card
             grid.classList.add('focus-mode');
             cardEl.classList.add('expanded', 'focused');
@@ -10791,7 +10793,7 @@
             cardEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        function exitFocusMode() {
+        function exitFocusMode(navigate) {
             var grid = document.querySelector('.review-grid');
             grid.classList.remove('focus-mode');
             grid.querySelectorAll('.concept-card').forEach(function(c) {
@@ -10802,6 +10804,12 @@
             // Reset area filter dropdown to "All Topics"
             var dropdown = document.getElementById('reviewTopicSelect');
             if (dropdown) dropdown.selectedIndex = 0;
+            // Return to origin tab only when triggered by the back button
+            if (navigate && focusModeOriginTab) {
+                var origin = focusModeOriginTab;
+                focusModeOriginTab = null;
+                switchTab(origin);
+            }
         }
 
         document.querySelector('.review-grid').addEventListener('click', function(e) {
@@ -10888,6 +10896,7 @@
         
         // ===== DIRECTORY FUNCTIONS =====
         var currentDirectoryType = '';
+        var focusModeOriginTab = null;
 
         function populateSubtopicFilter() {
             var select = document.getElementById('dirFilterSubtopic');
@@ -11023,7 +11032,7 @@
                 var el = findReviewCardElement(id);
                 if (el) {
                     setTimeout(function() {
-                        enterFocusMode(el);
+                        enterFocusMode(el, 'directory');
                     }, 300);
                 }
             }
@@ -11071,7 +11080,23 @@
             'first-derivative-test':'topic-first-deriv-test',
             'second-derivative-test':'topic-second-deriv-test',
             'graphing-with-derivatives':'topic-graphing-derivatives',
-            'calculator-skills':'topic-calculator'
+            'calculator-skills':'topic-calculator',
+            'functions-domain-range':'topic-functions-notation',
+            'factoring-patterns':'topic-factoring',
+            'quadratics-solving':'topic-quadratics',
+            'rational-functions-asymptotes':'topic-rational-functions',
+            'linear-functions-slopes':'topic-lines-slopes',
+            'function-transformations':'topic-transformations',
+            'inequalities-sign-charts':'topic-inequalities',
+            'exponentials-logs-basics':'topic-exponentials-logs',
+            'unit-circle-values':'topic-unit-circle',
+            'six-trig-functions':'topic-trig-reference',
+            'fundamental-identities':'topic-key-identities',
+            'graphing-sinusoidal':'topic-sinusoidal',
+            'limits-basics':'topic-limits-preview',
+            'derivative-rules':'topic-derivative',
+            'integration-basics':'topic-integral',
+            'applications-calculus':'topic-first-deriv-test'
         };
 
         function handleQuizTagClick(subtopic) {

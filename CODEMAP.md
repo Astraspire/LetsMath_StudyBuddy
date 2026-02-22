@@ -1,7 +1,7 @@
 # Let's Math! - Code Map & Developer Guide
 
-**Last Updated:** 2026-02-18  
-**File Version:** LetsMath_App.html (~10,667 lines)  
+**Last Updated:** 2026-02-22  
+**File Version:** LetsMath_App_v1.html (~11,311 lines)  
 **Purpose:** Navigation guide for developers and AI agents working with this codebase
 
 ---
@@ -961,6 +961,17 @@ padding: var(--space-24);
 - Verify `selectedDirectoryType` is set
 - Check `getFilteredDirectoryItems()` logic
 - Verify content items have correct `type` tag
+
+### Directory search review-card items don't open the card?
+- Check `SUBTOPIC_TO_ELEMENT` map — each review card's `subtopic` must have an entry mapping to its DOM element ID
+- Check `CODE_TO_TOPIC_ID` map for expansion items (E-ALG-*, E-TRIG-*)
+- `findReviewCardElement(id)` resolves in this order: `data-id` attr → code lookup → SUBTOPIC_TO_ELEMENT → direct `topic-{subtopic}` → text fallback
+
+### Back button doesn't return to previous tab?
+- `focusModeOriginTab` global variable tracks which tab triggered focus mode
+- `enterFocusMode(cardEl, originTab)` — pass the origin tab ID as second argument
+- `exitFocusMode(navigate)` — pass `true` only from the back button to trigger tab navigation
+- Internal callers (e.g. `filterReviewByArea`) call `exitFocusMode()` without `true` so they don't navigate away
 
 ### Focus mode not working?
 - Check `enterFocusMode()` function
