@@ -737,6 +737,53 @@
             font-size: 0.8rem;
         }
 
+        /* Quiz History Preview Panel (shown before quiz starts) */
+        .quiz-history-preview {
+            max-width: 700px;
+            margin: 0 auto var(--space-24);
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-dark-border);
+            overflow: hidden;
+        }
+
+        .quiz-history-preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-12) var(--space-16);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-text);
+            user-select: none;
+            background: rgba(45, 212, 191, 0.05);
+            border-bottom: 1px solid transparent;
+            transition: background var(--duration-fast) ease;
+        }
+
+        .quiz-history-preview-header:hover {
+            background: rgba(45, 212, 191, 0.1);
+        }
+
+        .quiz-history-preview-header.open {
+            border-bottom-color: var(--color-dark-border);
+        }
+
+        .quiz-history-preview-arrow {
+            font-size: 0.85rem;
+            transition: transform var(--duration-fast) ease;
+        }
+
+        .quiz-history-preview-body {
+            padding: var(--space-16);
+            display: none;
+        }
+
+        .quiz-history-preview-body.open {
+            display: block;
+        }
+
         /* Quiz Full Results Collapsible Panel */
         .quiz-results-collapsible {
             max-width: 700px;
@@ -3373,6 +3420,20 @@
                     <option value="_precalc_expanded">📗 Precalculus (Expanded)</option>
                     <option value="_trig_expanded">🔺 Trigonometry (Expanded)</option>
                 </select>
+            </div>
+
+            <div class="quiz-history-preview" id="quizHistoryPreview">
+                <div class="quiz-history-preview-header" id="quizHistoryPreviewHeader" onclick="toggleQuizHistoryPreview()">
+                    <span>📊 Previous Quiz Results</span>
+                    <span class="quiz-history-preview-arrow" id="quizHistoryPreviewArrow">▸</span>
+                </div>
+                <div class="quiz-history-preview-body" id="quizHistoryPreviewBody">
+                    <div id="quizHistoryPreviewContent"></div>
+                    <div class="quiz-history-actions" id="quizHistoryPreviewActions" style="display:none;">
+                        <button class="btn btn-secondary btn-small" onclick="exportQuizResults()">Export to CSV</button>
+                        <button class="btn btn-secondary btn-small" onclick="clearQuizHistory()">Clear History</button>
+                    </div>
+                </div>
             </div>
 
             <div class="quiz-container">
@@ -9993,6 +10054,7 @@
                 if (!quizState.activeQuiz || quizState.activeQuiz.length === 0) {
                     initQuiz();
                 }
+                initQuizHistoryPreview();
             }
 
             if (tab === 'directory') {
@@ -10358,6 +10420,7 @@
                 subtopics: Object.keys(subtopicSet)
             });
             localStorage.setItem('precalcQuizResults', JSON.stringify(history));
+            refreshQuizHistoryPreview();
         }
 
         function getQuizHistory() {
@@ -10645,6 +10708,43 @@
                     + '<button class="btn btn-secondary btn-small" onclick="clearQuizHistory()">Clear History</button>'
                     + '</div>';
             }
+            // Also refresh the persistent preview panel
+            refreshQuizHistoryPreview();
+        }
+
+        function initQuizHistoryPreview() {
+            var content = document.getElementById('quizHistoryPreviewContent');
+            if (!content) return;
+            var history = getQuizHistory();
+            content.innerHTML = renderQuizHistory();
+            var actions = document.getElementById('quizHistoryPreviewActions');
+            if (actions) actions.style.display = history.length > 0 ? '' : 'none';
+        }
+
+        function refreshQuizHistoryPreview() {
+            var content = document.getElementById('quizHistoryPreviewContent');
+            if (!content) return;
+            var history = getQuizHistory();
+            content.innerHTML = renderQuizHistory();
+            var actions = document.getElementById('quizHistoryPreviewActions');
+            if (actions) actions.style.display = history.length > 0 ? '' : 'none';
+        }
+
+        function toggleQuizHistoryPreview() {
+            var body = document.getElementById('quizHistoryPreviewBody');
+            var arrow = document.getElementById('quizHistoryPreviewArrow');
+            var header = document.getElementById('quizHistoryPreviewHeader');
+            if (!body) return;
+            var isOpen = body.classList.contains('open');
+            if (isOpen) {
+                body.classList.remove('open');
+                if (arrow) arrow.textContent = '▸';
+                if (header) header.classList.remove('open');
+            } else {
+                body.classList.add('open');
+                if (arrow) arrow.textContent = '▾';
+                if (header) header.classList.add('open');
+            }
         }
 
         function deleteQuizHistoryItem(index) {
@@ -10795,7 +10895,10 @@
             var subtopics = [];
             var seen = {};
             for (var i = 0; i < contentIndex.items.length; i++) {
-                var st = contentIndex.items[i].subtopic;
+                var item = contentIndex.items[i];
+                // Only include subtopics from review-card and expansion-review items
+                if (item.type !== 'review-card' && item.type !== 'expansion-review') continue;
+                var st = item.subtopic;
                 if (st && !seen[st]) {
                     seen[st] = true;
                     subtopics.push(st);
@@ -11115,6 +11218,7 @@
         loadContentIndex();
         populateSubtopicFilter();
         renderDirectoryResults();
+        initQuizHistoryPreview();
 
         // Step 5: Make "Let's Math" title navigate to Home tab
         var appTitle = document.getElementById('app-title');
