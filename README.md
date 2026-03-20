@@ -37,6 +37,23 @@ You don't need to install anything — just download the HTML file and open it i
 
 ## 🆕 Recent Changes
 
+### v1.2 Content Accuracy & Feature Update
+- **Yu-Gi-Oh! analogy accuracy audit**: Cross-referenced all 22 analogies against the Official Rulebook (Version 10) and verified card mechanics. Fixed 8 analogies with game mechanic inaccuracies:
+  - R-ALG-02: Fixed mislabeled "difference of squares" example (was actually cubes); added De-Fusion card reference
+  - R-ALG-04: Replaced Mirror Force (destroys, doesn't flip) with Book of Moon for the conjugate sign-change metaphor
+  - R-ALG-06: Removed inaccurate Dark Bribe/Pot of Greed sub-analogy; promoted Book of Moon/Book of Taiyou as primary inverse function illustration
+  - R-ALG-09: Replaced Megamorph (conditional doubler/halver) with Axe of Despair for vertical stretch metaphor
+  - R-ALG-11: Clarified Polymerization requires specific recipe, De-Fusion material return is conditional on GY presence
+  - R-ALG-12: Tightened Chain Link warning to precisely parallel log(a+b) ≠ log(a)+log(b) error
+  - R-ALG-13: Replaced Upstart Goblin (gives LP to opponent, not user) with burn damage convergence example
+  - E-ALG-03: Fixed Torrential Tribute chain framing to correctly show summons vs. chain links
+- **Quiz engine fix**: Populated 31 previously empty `questions[]` arrays — all 89 quiz questions now fully interactive (previously only 15 were wired into the quiz engine)
+- **Body field cleanup**: Removed leaked markdown section headers from 11 quiz/flashcard items
+- **Sidebar calculator**: Added a collapsible basic calculator (0-9, decimal, +, −, ×, ÷, backspace, clear) in the sidebar navigation
+- **Full-width responsive layout**: Removed max-width cap — content now stretches to fill the browser on large screens. Added wider grid layouts for 1600px+ displays. Mobile layout preserved.
+- **All links and filters verified** to navigate to correct destinations
+- **Yu-Gi-Oh! mode confirmed ON by default** with toggle synced to localStorage
+
 ### v1.1 Bug Fixes
 - **Directory Search navigation fixed**: Clicking a Review Card item in Directory Search now correctly navigates to and opens the expanded card with full explanations. Root cause was missing entries in the `SUBTOPIC_TO_ELEMENT` lookup map — 16 core review card subtopics were unmapped. All 38 review cards are now fully navigable from Directory Search.
 - **Back arrow now returns to previous page**: The "← Back to all topics" button in focus mode now correctly returns the user to whatever page they came from (e.g., Directory Search) instead of always staying on the Review Topics page. Internal callers (area filter, etc.) are unaffected.
@@ -85,6 +102,9 @@ You don't need to install anything — just download the HTML file and open it i
 
 #### Yu-Gi-Oh! Mode Toggle
 Located in the sidebar, this toggle enables/disables Yu-Gi-Oh! themed crossover examples integrated throughout the content. Cards with Yu-Gi-Oh! content are specially tagged and can be filtered.
+
+#### Calculator
+A collapsible basic calculator is available in the sidebar below the Yu-Gi-Oh! toggle. Click "🧮 Calculator" to expand it. Supports addition, subtraction, multiplication, division, decimal points, and backspace.
 
 ---
 
@@ -370,7 +390,7 @@ refreshQuizHistorySection()  // Re-render quiz history
 
 - Quiz state: `quizState` object tracks current position, answers, submission status
 - Three question pools: `quizQuestions` (core), `calculusQuizPool`, `expansionQuizPool`
-- Combined pool: `allQuizQuestions` (89+ questions total)
+- Combined pool: `allQuizQuestions` (89 questions total, all fully interactive)
 - Quiz history persisted in `localStorage` under `precalcQuizResults`
 - PDF export via `downloadQuizPDF()` and CSV export via `exportQuizResults()`
 - Topic tagging: `deriveQuizArea()`, `deriveQuizSubtopic()`, `friendlyArea()` derive metadata for quiz result tags
@@ -426,6 +446,17 @@ The `TOPICS` array defines all review topics:
 ```
 
 Used for dropdown navigation and cross-referencing.
+
+#### 9. Sidebar Calculator
+```javascript
+// Core functions:
+toggleCalcSection()  // Expand/collapse calculator panel
+calcInput(val)       // Append digit or operator
+calcClear()          // Reset display
+calcBackspace()      // Delete last character
+calcEquals()         // Evaluate expression
+```
+Basic 4-function calculator with digit input, decimal point, and error handling for division by zero.
 
 ### CSS Architecture
 
@@ -486,6 +517,7 @@ Used for dropdown navigation and cross-referencing.
 The content is derived from `Organized-Content-Library.md` (updated with tier tags):
 - Structured markdown with HTML comment tags for tagging (id, course, area, type, subtopic, yugioh, tier, code)
 - 150 tagged content items: 38 review cards (with tier tags), 27 expansion reviews, 47 flashcard items (141 Q/A pairs), 38 quiz items
+- All 89 quiz questions are fully interactive across all topic areas
 - 31+ topics include Yu-Gi-Oh! crossover analogies
 - Content extracted and transformed into `CONTENT_INDEX_DATA`
 - To update content: modify library file, then regenerate index data
@@ -526,6 +558,7 @@ The content is derived from `Organized-Content-Library.md` (updated with tier ta
 | Unit circle reference | Unit Circle Tab | Quick angle/value lookup |
 | Subject overview | Home | Navigate by subject area |
 | Title navigation | App Title | Click "Let's Math!" to return Home |
+| Calculator | Sidebar | Quick arithmetic during study |
 
 ---
 
