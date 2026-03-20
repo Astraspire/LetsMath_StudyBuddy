@@ -86,7 +86,7 @@ For x² + bx + c, find two numbers that:
 - Add to b
 
 **Yu-Gi-Oh! Mode:**
-Factoring is like **breaking down a Fusion Monster** into its Fusion Materials! A Fusion Monster (polynomial) can be split into its components (factors). Difference of squares is like splitting "Blue-Eyes Ultimate Dragon" (a³) back into three "Blue-Eyes White Dragons" (a). The sum/difference of cubes formulas are like special Fusion Recipes—you need to memorize the exact pattern to reverse the summoning!
+Factoring is like breaking down a Fusion Monster into its Fusion Materials using **De-Fusion**! The sum/difference of cubes formulas are like the recipe for 'Blue-Eyes Ultimate Dragon'—it splits (factors) back into exactly 3 'Blue-Eyes White Dragons,' just like a³ - b³ factors into (a - b)(a² + ab + b²). Difference of squares (a² - b²) is like a 2-material Fusion: one factor is the sum (a + b), the other is the difference (a - b). Each factoring pattern is a unique 'De-Fusion recipe'—you must memorize the exact form!
 
 ---
 
@@ -137,7 +137,7 @@ To eliminate (a + √b) from denominator:
 Find common denominator, just like with numbers.
 
 **Yu-Gi-Oh! Mode:**
-The conjugate trick is like using **Mirror Force** to flip the situation! Just as Mirror Force turns your opponent's Attack Position monsters (positive) into destruction (negative), the conjugate changes + to - to eliminate radicals through the difference of squares. Rationalizing is mandatory in "tournament rules" (math class)—no radicals allowed in denominators!
+The conjugate trick is like using **Book of Moon** to flip the situation! Book of Moon targets a face-up monster (+) and flips it face-down Defense Position (−), completely changing its state—just like the conjugate changes (3 + √2) into (3 − √2) to flip the sign. The resulting multiplication eliminates the radical through the difference of squares, leaving a clean rational number. Rationalizing is mandatory in 'tournament rules' (math class)—no radicals allowed in denominators!
 
 ---
 
@@ -194,7 +194,7 @@ f(f⁻¹(x)) = x and f⁻¹(f(x)) = x
 4. f⁻¹(x) = (x + 3)/2
 
 **Yu-Gi-Oh! Mode:**
-Inverse functions are like **Spell/Trap removal cards**! If your opponent activates "Pot of Greed" (function), a card like "Dark Bribe" negates it and returns the game to the previous state (inverse). Or think of **Book of Moon** (flipping face-up to face-down) and **Book of Taiyou** (flipping face-down to face-up)—they're inverses of each other!
+Inverse functions are most clearly illustrated by **Book of Moon** (flipping a face-up monster face-down) and **Book of Taiyou** (flipping a face-down monster face-up)—they're perfect inverses of each other! f(x) applied then f⁻¹(x) returns you exactly to the start: Book of Moon then Book of Taiyou on the same monster restores its original face-up state. For a broader metaphor: activating a Normal Spell is like applying f(x), and a Counter Trap that negates it is like f⁻¹—reversing the activation before it changes the game state.
 
 ---
 
@@ -284,7 +284,7 @@ Absolute value is like **ATK/DEF values**—they're always non-negative! When yo
 - Shift DOWN 3: -2(x + 1)² - 3
 
 **Yu-Gi-Oh! Mode:**
-Transformations are like **equip spells modifying monster stats**! Vertical stretch (multiplying by a) is like "Megamorph" doubling ATK. Horizontal shift is like changing battle phases—the timing shifts but the action is the same. Reflection over x-axis is like switching between Attack and Defense mode—flipping the orientation!
+Transformations are like equip spells modifying monster stats! Vertical stretch (multiplying by a where a > 1) is like **Axe of Despair** adding a flat 1000 ATK boost—the monster is scaled up. Multiplying by 'a' where 0 < a < 1 (compression) is like a debuff halving its stats. Horizontal shift is like changing battle phases—the timing shifts but the monster is the same. Reflection over the x-axis is like switching between Attack Position and Defense Position—the same values, but orientation is flipped!
 
 ---
 
@@ -349,7 +349,7 @@ where e ≈ 2.71828...
 - log(10) = 1 (base 10)
 
 **Yu-Gi-Oh! Mode:**
-Exponentials and logs are **Fusion and De-Fusion**! If Fusion (exponential) combines materials into a stronger monster, De-Fusion (logarithm) splits it back. Starting with 2³ = 8 is like using Polymerization to fuse 3 monsters into one 8-star boss. Taking log₂(8) = 3 is like De-Fusion splitting that boss back into the 3 original materials!
+Exponentials and logs are like **Fusion Summoning and De-Fusion**! The exponential aˣ = y is like Polymerization: you input specific materials (the base a and exponent x) following a Fusion Monster's recipe to produce a powerful result (y). The logarithm logₐ(y) = x asks 'which exponent x produced this result?'—like **De-Fusion** returning a Fusion Monster to the Extra Deck and (if the materials are still in the GY) recovering the originals. Just as De-Fusion requires the materials to still be in the Graveyard, the inverse log only works when y is in the valid domain. **2³ = 8 → Polymerization creates an 8000-ATK boss. log₂(8) = 3 → De-Fusion reveals the 3 original monsters that made it.**
 
 ---
 
@@ -382,7 +382,7 @@ Useful for calculator: logₐ(x) = ln(x)/ln(a)
 = 2log(x) + log(y) - 3log(z)
 
 **Yu-Gi-Oh! Mode:**
-Log properties work like **Chain Links**! The product rule (addition) is like chaining multiple effects together—combine separate activations. The power rule (multiplication) is like a monster effect that activates multiple times, cumulative damage. Remember: **you can't chain through addition/subtraction** in logs, just like how you can't skip Chain Links in Yu-Gi-Oh!
+Log properties work like **Chain Links**! The product rule (addition) is like chaining multiple effects together—combine separate activations. The power rule (multiplication) is like a monster effect that activates multiple times, cumulative damage. Remember: **you can't arbitrarily combine what's inside the log**, just like how you can't merge separate Chain Links into one—log(a + b) is NOT log(a) + log(b), just as two separate activations don't merge into one combined effect. Each log term has its own identity, just like each Chain Link resolves independently!
 
 ---
 
@@ -411,7 +411,7 @@ Log properties work like **Chain Links**! The product rule (addition) is like ch
 Infinite geometric series converges ONLY if |r| < 1
 
 **Yu-Gi-Oh! Mode:**
-Arithmetic sequences are like **gradually powering up** in turns: "Gain 500 LP each turn" (constant addition). Geometric sequences are like **exponential monster multiplication**: "Each turn, double the number of tokens" (constant multiplication). An infinite converging series is like calculating total LP gained from "Upstart Goblin" effects that keep halving—eventually approaches a limit!
+Arithmetic sequences are like **gradually powering up** in turns: "Gain 500 LP each turn" (constant addition). Geometric sequences are like **exponential monster multiplication**: "Each turn, double the number of tokens" (constant multiplication). An infinite converging series (|r| < 1) is like calculating **total burn damage** from a repeating effect: 'Deal 1000 damage. Each turn, deal half the previous amount: 500, then 250, then 125...' The total damage approaches 1000/(1 - 1/2) = 2000 LP—a finite limit even though the damage never truly stops! This is convergence in action.
 
 ---
 
